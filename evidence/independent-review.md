@@ -1,0 +1,59 @@
+# Independent audit: DiffSPECFEM
+
+Audit status: final numerical review passed for the advertised one/two-rank four-coordinate SH application. Earlier provisional findings and their closures are retained below. No target implementation or frozen skill files were changed.
+
+## Evidence reviewed
+
+Frozen v0.1.0 skill and derivative, numerical-acceptance, application-record contracts; `DiffSPECFEM/native/discrete_adjoint.f90`, `native/iterate_time.patch`, `scripts/patch_native.py`, `diffspecfem/adapter.py`, `scripts/validate.py`, `diffspecfem/numerics.py`, `evidence/acceptance.json`, `evidence/validation-attempt1.json`; supplied native SH example and the relevant public SPECFEM force, source, mass, Newmark, interpolation, output code. No private old adapter, Hybrid, or sibling solver implementation was consulted for this review.
+
+## Numerical derivation and production route
+
+For the supplied serial CPU planar isotropic SH / zero-initial-state / Newmark / full-rate displacement / no attenuation / free-reflecting boundary case, the reverse recurrence is consistent with native predictor -> force/mass -> corrector -> observation ordering. The history hook sits immediately after `write_seismograms` (patch lines 178-182). Reverse corrector and predictor at `discrete_adjoint.f90:78-80,121-124` retain the appropriate displacement, velocity and acceleration cotangents.
+
+The force transpose genuinely calls original `compute_forces_viscoelastic` twice per step (lines 105-110). In this restricted SH configuration the assembled force is symmetric negative stiffness. The local shear-modulus sensitivity at lines 86-100 uses physical coordinate gradients and SEM quadrature/Jacobian weights. Density mass sensitivity is present at line 101: `-weight * (M^-1 bar_a) * saved_a`; saved acceleration includes source acceleration, so the derivative of the mass-scaled source is not omitted. Native force source interpolation/time function is fixed by the supplied SOURCE, fixed mesh, DT, and USER_T0.
+
+`adapter.py:68-74` executes a subprocess native forward, creates a fresh float64 receiver leaf, differentiates the actual selected Torch objective, and passes that cotangent to native reverse. The processed objective (lines 79-87) includes FIR filtering, tanh, receiver mixing, and time weights. Production model gradients do not use parameter finite differences or a temporal AD tape. Validation finite differences are clearly confined to checks. The four-coordinate chain rule at lines 65-66 is correct for independent regional log(rho), log(Vs) with mu=rho*Vs^2 and VP fixed.
+
+The supported application is the fixed four-coordinate two-layer example (4 receivers, 800 samples), not the complete SPECFEM feature set or arbitrary material fields. Serial CPU scope is explicitly rejected for MPI/GPU and several unsupported physics in native lines 18-25. Full u/a history is written and later loaded in full, with no temporal replay. The history byte formula assumes double precision; final build provenance must substantiate CUSTOM_REAL=8.
+
+## Actionable evidence issue
+
+P2 — The current standalone sampling dot gate is tautological: `scripts/validate.py:29-31` constructs one NumPy C from exported weights then compares C against NumPy C.T. It does not exercise the native injection implementation (`discrete_adjoint.f90:112-119`), native station ordering, or observation of history. It can pass even if native injection is broken. Native model Taylor/dot checks do exercise injection for the chosen objective cotangents, so this is a validation-coverage issue, not evidence of a wrong derivative. Recommended repair: record actual native sample/injection action outputs for independent dot probes, and directly verify C times saved native u_n equals native traces (including duplicate/interpolated receivers and ordering). Root/producer were notified; closure pending final report.
+
+## Attempt-1 raw outcomes checked
+
+Attempt 1 correctly retains overall `passed=false`. Both ordinary and processed data VJPs pass with observable second-order residuals, nonzero gradients, and separate regional rho / Vs / mixed directions. Both pure Vs Taylor sweeps fail the helper's requirement for two consecutive central matches, although their central errors decrease about fourfold per halving and the positive Taylor residual slope approaches 2. The processed pure Vs directional derivative is -0.5566339505598321 and last error is 3.2317347108401506e-6 at h=0.000625; ordinary Vs last error is 1.4130487389451933e-9. Extending to smaller epsilons without changing tolerances is mathematically justified and the acceptance file documents/retains this repair.
+
+The native-forward gate reports exact equality with nonzero native norm 0.010289524635616696; the raw baseline data/executable provenance are not yet locally available, so I cannot independently establish baseline independence from this JSON alone. Mixed-direction native model-dot relative errors are 6.44e-10 (ordinary) and 7.18e-10 (processed), far below 1e-5 tolerance; these use the same objective cotangents as Taylor and are not an independent arbitrary data probe.
+
+## Confidence limits
+
+This is a code/numerical audit, not a rerun or heavy native build. Final acceptance, frozen packet pre/post hashes, source pin/build settings, source/extension raw comparisons, history, raw gradients, runtime/resource scopes, commands/failures and packaging remain to be inspected once producer synchronizes them. Existing source supports a credible restricted native discrete adjoint; final success should not be declared from the attempt-1 report, which still fails.
+
+## Source repair inspected (raw rerun pending)
+
+The producer has refactored native sampling into `ds_scatter` (`native/discrete_adjoint.f90:53-66`) and uses it both in production reverse (line 160) and independent native probe (line 85). Probe forward uses original `compute_vector_one_element` and `compute_interpolated_dva` (82-83), and emits actual node/receiver action outputs. Validator lines 33-41 now check the native probe dot and native traces against sampled saved u history. The prior NumPy-only check is accurately labelled `sampling_algebra_only`. This is a sound structural repair to the P2 concern; raw final run is still required. Earlier core line numbers shift by +48 in the revised native file.
+
+## Two-rank source extension reviewed (runtime pending)
+
+The current `native/discrete_adjoint.f90` supports partitioned histories/files. `ds_scatter` (64-84) allocates a fresh local receiver source, applies native MPI assembly only to that new contribution, and adds it to existing assembled `bu`. Reverse native force is separately assembled (180-188) before adding to `bu`. This avoids the common error of reassembling/doubling an existing replicated adjoint state. Global data cotangent is mapped by `recloc` (145-150). The local mass/shear sensitivities (157-179) are over unique local elements; exported `kmato(e)` (200-201) enables correct regional reduction in `adapter.py:59-67` over all rank files. Those element contributions must not be divided by interface replica multiplicity.
+
+The native sampling probe uses coordinate-based fields (95-99), so replicas agree. `scripts/validate_mpi.py:38,46` divides both node probes by sqrt(multiplicity), yielding the proper unique-node inner product; actual receiver forward/scatter actions are tested. Saved-history reconstruction (40-49) sums only unique receiver owner contributions and checks trace ordering/time convention.
+
+Pending record repairs sent to producer: preserve original 2-rank baseline work tree/log before `s.forward(target)` deletes it (`validate_mpi.py:20-23`); log complete actual mpirun/nice argv rather than only underlying executable (`adapter.py:24-28`); explicitly declare/enforce validated rank counts (1,2), since current ranks argument is otherwise unrestricted. No final MPI numerical acceptance yet; producer-reported smoke agreement has not been independently checked from raw artifacts.
+
+## Final numerical acceptance and release decision
+
+**Numerical release gate: YES for the declared restricted application.** Source repairs, final serial and two-rank raw artifacts, baseline traces and full L2 forward histories were independently checked. No target code, frozen skill, or heavy native run was changed/executed by this reviewer. Publication should finish the frozen-packet post-integrity/application status fields and retain the physical-resolution disclosure.
+
+The final `validation.json` and `mpi2/validation.json` both pass. Every supplied Taylor step is retained; the rho, Vs and mixed positive remainders approach order 2, and smaller epsilons produce the required consecutive central matches. All gradients/slopes are nonzero. The first failed sweep remains present; extending epsilons without loosening tolerance is justified by its observed O(h^2) truncation error.
+
+Independent recomputation from NPZs and native text/binary files is saved at `/private/tmp/native-adapter-audit-specfem-raw.json`. I recomputed the ordinary and processed objective and analytical data VJP using independent NumPy convolution/tanh/mixing transposes: ordinary cotangents match exactly, processed cotangents agree at relative 4.74e-16 (serial) and 4.57e-16 (MPI). Native cotangent binary files exactly match the NPZ values. Native raw kernel files exactly match the saved arrays; all 1600 rows (64 elements x 25 GLL points) reduce through the declared material VJP to the saved four-vector exactly. This supports actual processed-objective AD reaching the native source rather than a hard-coded L2 residual.
+
+The original serial and original two-process native baseline `.semd` arrays are bitwise identical to their corresponding extension traces. Their nonzero data norm is approximately 0.0102895246356167. Actual native probe dot products recomputed from native node/receiver files have relative discrepancies of 3.64e-16 (serial) and 1.21e-16 (MPI), closing the earlier algebra-only sampling issue. Reconstructing traces from the full saved u history gives relative errors 1.42e-16 and 1.39e-16, maximum absolute error 2.17e-19.
+
+Full serial history has header [1089,800,4], nonzero u norm 0.140145 and acceleration norm 219.729, and 13,939,212 bytes. The two MPI files each have 565 local nodes and 800 steps, receiver counts 1 and 3, 7,232,012 bytes each (14,464,024 total). Their 41 shared coordinate nodes have **exactly equal displacement and acceleration histories at every step**, establishing replica consistency rather than merely an interface-weighted scalar equality. Independent hashes are retained in the raw audit JSON and agree with the package history provenance.
+
+Final source guards validate Python rank counts 1/2. Full launched `nice/mpirun` argv is now logged, and the original MPI baseline is archived before the next prepare deletes transient work. The final explicit patch embeds the exact current native module. The final reverse still invokes the unchanged force routine twice per time step per rank (the two native element phases), saves full u/a history, and does no temporal replay. Density source/mass dependence is included by the full saved acceleration term; local element sensitivities are summed once rather than double-counting replicated nodes.
+
+No speed or universal solver-feature claim follows. The chosen coarse 8x8 discrete test uses a 6 Hz source although the native resolution diagnostic recommends approximately <=2.048 Hz; it is a discrete forward-preservation/derivative verification, not a continuum-convergence accuracy demonstration. Density and Vs gradients for this fixed SH example are supported; the excluded physics and model settings remain outside acceptance. Frozen post-integrity and final application-record status were still being finalized by producer/root at audit handoff.

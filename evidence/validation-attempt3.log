@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/home/xiwang/DiffSPECFEM/scripts/validate.py", line 38, in <module>
+    sampled=(C@saved[:,0,:].T)
+ValueError: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 1089 is different from 893)

@@ -1,0 +1,8 @@
+{
+  "version": "0.1.0",
+  "packet_sha256": "b09e0ee57324f715b80178c2a30cb26a2140b1ea3d5545ad8b15dc5680dca49f",
+  "files": 7,
+  "status": "passed",
+  "phase": "before adaptation",
+  "record_source": "Exact freeze.py verify result observed before source clone/build in application agent tool log; this record transcribed during packaging"
+}

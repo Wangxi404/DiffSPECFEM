@@ -1,0 +1,94 @@
+Using bundled Scotch
+make -C "./external_libs/scotch/src"
+make[1]: Entering directory '/home/xiwang/DiffSPECFEM/vendor/specfem2d-mpi/external_libs/scotch_5.1.12b/src'
+(cd libscotch ;      make scotch ; make install)
+make[2]: Entering directory '/home/xiwang/DiffSPECFEM/vendor/specfem2d-mpi/external_libs/scotch_5.1.12b/src/libscotch'
+make CC="gcc" CCD="gcc"	\
+				scotch.h				\
+				scotchf.h				\
+				libscotch.a				\
+				libscotcherr.a			\
+				libscotcherrexit.a
+make[3]: Entering directory '/home/xiwang/DiffSPECFEM/vendor/specfem2d-mpi/external_libs/scotch_5.1.12b/src/libscotch'
+make[3]: 'scotch.h' is up to date.
+make[3]: 'scotchf.h' is up to date.
+make[3]: 'libscotch.a' is up to date.
+make[3]: 'libscotcherr.a' is up to date.
+make[3]: 'libscotcherrexit.a' is up to date.
+make[3]: Leaving directory '/home/xiwang/DiffSPECFEM/vendor/specfem2d-mpi/external_libs/scotch_5.1.12b/src/libscotch'
+make[2]: Leaving directory '/home/xiwang/DiffSPECFEM/vendor/specfem2d-mpi/external_libs/scotch_5.1.12b/src/libscotch'
+make[2]: Entering directory '/home/xiwang/DiffSPECFEM/vendor/specfem2d-mpi/external_libs/scotch_5.1.12b/src/libscotch'
+make[2]: Nothing to be done for 'install'.
+make[2]: Leaving directory '/home/xiwang/DiffSPECFEM/vendor/specfem2d-mpi/external_libs/scotch_5.1.12b/src/libscotch'
+(cd scotch ;         make scotch ; make install)
+make[2]: Entering directory '/home/xiwang/DiffSPECFEM/vendor/specfem2d-mpi/external_libs/scotch_5.1.12b/src/scotch'
+make CC="gcc" SCOTCHLIB=scotch	\
+				acpl				\
+				amk_ccc				\
+				amk_fft2				\
+				amk_grf				\
+				amk_hy				\
+				amk_m2				\
+				amk_p2				\
+				atst				\
+				gbase				\
+				gcv				\
+				gmap				\
+				gmk_hy				\
+				gmk_m2				\
+				gmk_m3				\
+				gmk_msh				\
+				gmk_ub2				\
+				gmtst				\
+				gord				\
+				gotst				\
+				gout				\
+				gpart				\
+				gscat				\
+				gtst				\
+				mcv				\
+				mmk_m2				\
+				mmk_m3				\
+				mord				\
+				mtst
+make[3]: Entering directory '/home/xiwang/DiffSPECFEM/vendor/specfem2d-mpi/external_libs/scotch_5.1.12b/src/scotch'
+make[3]: 'acpl' is up to date.
+make[3]: 'amk_ccc' is up to date.
+make[3]: 'amk_fft2' is up to date.
+make[3]: 'amk_grf' is up to date.
+make[3]: 'amk_hy' is up to date.
+make[3]: 'amk_m2' is up to date.
+make[3]: 'amk_p2' is up to date.
+make[3]: 'atst' is up to date.
+make[3]: 'gbase' is up to date.
+make[3]: 'gcv' is up to date.
+make[3]: 'gmap' is up to date.
+make[3]: 'gmk_hy' is up to date.
+make[3]: 'gmk_m2' is up to date.
+make[3]: 'gmk_m3' is up to date.
+make[3]: 'gmk_msh' is up to date.
+make[3]: 'gmk_ub2' is up to date.
+make[3]: 'gmtst' is up to date.
+make[3]: 'gord' is up to date.
+make[3]: 'gotst' is up to date.
+make[3]: 'gout' is up to date.
+make[3]: 'gpart' is up to date.
+make[3]: 'gscat' is up to date.
+make[3]: 'gtst' is up to date.
+make[3]: 'mcv' is up to date.
+make[3]: 'mmk_m2' is up to date.
+make[3]: 'mmk_m3' is up to date.
+make[3]: 'mord' is up to date.
+make[3]: 'mtst' is up to date.
+make[3]: Leaving directory '/home/xiwang/DiffSPECFEM/vendor/specfem2d-mpi/external_libs/scotch_5.1.12b/src/scotch'
+make[2]: Leaving directory '/home/xiwang/DiffSPECFEM/vendor/specfem2d-mpi/external_libs/scotch_5.1.12b/src/scotch'
+make[2]: Entering directory '/home/xiwang/DiffSPECFEM/vendor/specfem2d-mpi/external_libs/scotch_5.1.12b/src/scotch'
+make[2]: Nothing to be done for 'install'.
+make[2]: Leaving directory '/home/xiwang/DiffSPECFEM/vendor/specfem2d-mpi/external_libs/scotch_5.1.12b/src/scotch'
+make[1]: Leaving directory '/home/xiwang/DiffSPECFEM/vendor/specfem2d-mpi/external_libs/scotch_5.1.12b/src'
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/iterate_time.spec.o src/specfem2D/iterate_time.F90
+
+building xspecfem2D without CUDA support
+
+mpif90 -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -o ./bin/xspecfem2D ./obj/specfem2D_par.spec_module.o ./obj/acoustic_forcing_boundary.spec.o ./obj/add_acoustic_forcing.spec.o ./obj/add_manual_crack.spec.o ./obj/assemble_MPI.spec.o ./obj/attenuation_model.spec.o ./obj/axisymmetric_routines.spec.o ./obj/calendar.spec.o ./obj/check_grid.spec.o ./obj/check_stability.spec.o ./obj/comp_source_time_function.spec.o ./obj/compute_add_sources_acoustic.spec.o ./obj/compute_add_sources_poro.spec.o ./obj/compute_add_sources_viscoelastic.spec.o ./obj/compute_arrays_source.spec.o ./obj/compute_attenuation_poro_fluid_part.spec.o ./obj/compute_attenuation_viscoelastic.spec.o ./obj/compute_Bielak_conditions.spec.o ./obj/compute_coupling_acoustic_el.spec.o ./obj/compute_coupling_acoustic_po.spec.o ./obj/compute_coupling_poro_ac.spec.o ./obj/compute_coupling_poro_viscoelastic.spec.o ./obj/compute_coupling_viscoelastic_ac.spec.o ./obj/compute_coupling_viscoelastic_po.spec.o ./obj/compute_curl_one_element.spec.o ./obj/compute_energy.spec.o ./obj/compute_forces_viscoacoustic.spec.o ./obj/compute_attenuation_viscoacoustic.spec.o ./obj/compute_forces_viscoacoustic_calling_routine.spec.o ./obj/compute_forces_poroelastic_calling_routine.spec.o ./obj/compute_forces_poro_fluid.spec.o ./obj/compute_forces_poro_solid.spec.o ./obj/compute_forces_poro_viscous_damping.spec.o ./obj/compute_forces_viscoelastic.spec.o ./obj/compute_forces_viscoelastic_calling_routine.spec.o ./obj/compute_gpu_acoustic.spec.o ./obj/compute_gpu_elastic.spec.o ./obj/compute_gradient_attenuation.spec.o ./obj/compute_interpolated_dva.spec.o ./obj/compute_normal_vector.spec.o ./obj/compute_pressure.spec.o ./obj/compute_stacey_acoustic.spec.o ./obj/compute_stacey_elastic.spec.o ./obj/compute_stacey_poroelastic.spec.o ./obj/compute_vector_field.spec.o ./obj/construct_acoustic_surface.spec.o ./obj/convert_time.spec.o ./obj/create_color_image.spec.o ./obj/createnum_fast.spec.o ./obj/createnum_slow.spec.o ./obj/datim.spec.o ./obj/define_derivation_matrices.spec.o ./obj/define_external_model.spec.o ./obj/define_external_model_from_tomo_file.spec.o ./obj/define_external_model_from_marmousi.spec.o ./obj/enforce_acoustic_free_surface.spec.o ./obj/enforce_fields.spec.o ./obj/finalize_simulation.spec.o ./obj/get_coupling_edges.spec.o ./obj/get_MPI.spec.o ./obj/get_global.spec.o ./obj/get_poroelastic_velocities.spec.o ./obj/get_simulation_domains.spec.o ./obj/initialize_simulation.spec.o ./obj/invert_mass_matrix.spec.o ./obj/is_in_convex_quadrilateral.spec.o ./obj/iterate_time.spec.o ./obj/iterate_time_undoatt.spec.o ./obj/locate_receivers.spec.o ./obj/locate_source.spec.o ./obj/moving_sources_par.spec.o ./obj/netlib_specfun_erf.spec.o ./obj/noise_tomography.spec.o ./obj/paco_beyond_critical.spec.o ./obj/paco_convolve_fft.spec.o ./obj/plot_gll.spec.o ./obj/plot_post.spec.o ./obj/pml_init.spec.o ./obj/pml_compute.spec.o ./obj/pml_compute_accel_contribution.spec.o ./obj/pml_compute_memory_variables.spec.o ./obj/prepare_absorb.spec.o ./obj/prepare_assemble_MPI.spec.o ./obj/prepare_attenuation.spec.o ./obj/prepare_color_image.spec.o ./obj/prepare_gpu.spec.o ./obj/prepare_initial_field.spec.o ./obj/prepare_noise.spec.o ./obj/prepare_pml.spec.o ./obj/prepare_source_time_function.spec.o ./obj/prepare_timerun.spec.o ./obj/prepare_wavefields.spec.o ./obj/read_materials.spec.o ./obj/read_mesh_databases.spec.o ./obj/read_external_model.spec.o ./obj/read_forward_arrays.spec.o ./obj/read_save_binary_database.spec.o ./obj/recompute_jacobian.spec.o ./obj/save_adjoint_kernels.spec.o ./obj/save_forward_arrays.spec.o ./obj/save_model_files.spec.o ./obj/save_openDX_jacobian.spec.o ./obj/set_source_parameters.spec.o ./obj/setup_GLL_points.spec.o ./obj/setup_mesh.spec.o ./obj/setup_sources_receivers.spec.o ./obj/sort_array_coordinates.spec.o ./obj/specfem2D.spec.o ./obj/update_displacement_LDDRK.spec.o ./obj/update_displacement_Newmark.spec.o ./obj/update_displacement_RK.spec.o ./obj/update_displacement_symplectic.spec.o ./obj/compute_kernels.spec.o ./obj/write_jpeg_image.cc.o ./obj/attenuation_compute_param.cc.o ./obj/write_movie_output.spec.o ./obj/write_output_SU.spec.o ./obj/write_seismograms.spec.o ./obj/write_postscript_snapshot.spec.o ./obj/write_color_image_snaphot.spec.o ./obj/write_wavefield_dumps.spec.o ./obj/save_read_array_for_undoatt.spec.o  ./obj/jaricom.cc_jpeg.o ./obj/jcapimin.cc_jpeg.o ./obj/jcapistd.cc_jpeg.o ./obj/jcarith.cc_jpeg.o ./obj/jccoefct.cc_jpeg.o ./obj/jccolor.cc_jpeg.o ./obj/jcdctmgr.cc_jpeg.o ./obj/jchuff.cc_jpeg.o ./obj/jcinit.cc_jpeg.o ./obj/jcmainct.cc_jpeg.o ./obj/jcmarker.cc_jpeg.o ./obj/jcmaster.cc_jpeg.o ./obj/jcomapi.cc_jpeg.o ./obj/jcparam.cc_jpeg.o ./obj/jcprepct.cc_jpeg.o ./obj/jcsample.cc_jpeg.o ./obj/jctrans.cc_jpeg.o ./obj/jdapimin.cc_jpeg.o ./obj/jdapistd.cc_jpeg.o ./obj/jdarith.cc_jpeg.o ./obj/jdatadst.cc_jpeg.o ./obj/jdatasrc.cc_jpeg.o ./obj/jdcoefct.cc_jpeg.o ./obj/jdcolor.cc_jpeg.o ./obj/jddctmgr.cc_jpeg.o ./obj/jdhuff.cc_jpeg.o ./obj/jdinput.cc_jpeg.o ./obj/jdmainct.cc_jpeg.o ./obj/jdmarker.cc_jpeg.o ./obj/jdmaster.cc_jpeg.o ./obj/jdmerge.cc_jpeg.o ./obj/jdpostct.cc_jpeg.o ./obj/jdsample.cc_jpeg.o ./obj/jdtrans.cc_jpeg.o ./obj/jerror.cc_jpeg.o ./obj/jfdctflt.cc_jpeg.o ./obj/jfdctfst.cc_jpeg.o ./obj/jfdctint.cc_jpeg.o ./obj/jidctflt.cc_jpeg.o ./obj/jidctfst.cc_jpeg.o ./obj/jidctint.cc_jpeg.o ./obj/jmemmgr.cc_jpeg.o ./obj/jmemnobs.cc_jpeg.o ./obj/jquant1.cc_jpeg.o ./obj/jquant2.cc_jpeg.o ./obj/jutils.cc_jpeg.o  ./obj/specfem2D_gpu_cuda_method_stubs.gpu_cc.o  ./obj/shared_par.shared_module.o ./obj/define_shape_functions.shared.o ./obj/exit_mpi.shared.o ./obj/force_ftz.cc.o ./obj/gll_library.shared.o ./obj/init_openmp.shared.o ./obj/lagrange_poly.shared.o ./obj/parallel.sharedmpi.o ./obj/read_parameter_file.shared.o ./obj/read_value_parameters.shared.o ./obj/read_material_table.shared.o ./obj/read_interfaces_file.shared.o ./obj/read_regions.shared.o ./obj/read_source_file.shared.o ./obj/param_reader.cc.o ./obj/set_color_palette.shared.o   
+

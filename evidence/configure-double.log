@@ -1,0 +1,104 @@
+## ---------------------------- ##
+## setting up compilation flags ##
+## ---------------------------- ##
+checking build system type... x86_64-unknown-linux-gnu
+checking host system type... x86_64-unknown-linux-gnu
+checking whether the Fortran compiler works... yes
+checking for Fortran compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether the compiler supports GNU Fortran... yes
+checking whether gfortran accepts -g... yes
+configure: running /bin/bash ./flags.guess
+checking how to get verbose linking output from gfortran... -v
+checking for Fortran libraries of gfortran...  -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/11/../../.. -lgfortran -lm -lquadmath
+checking for gcc... gcc
+checking whether the compiler supports GNU C... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to enable C11 features... none needed
+checking for dummy main to link with Fortran libraries... none
+checking for Fortran name-mangling scheme... lower case, underscore, no extra underscore
+checking for Fortran flag to compile .f90 files... none
+checking for Fortran flag needed to accept free-form source... none
+checking for Fortran flag to compile preprocessed .F files... none
+checking how to define symbols for preprocessed Fortran... -D
+checking for Fortran flag to compile preprocessed .F90 files... none
+checking for gcc... (cached) gcc
+checking whether the compiler supports GNU C... (cached) yes
+checking whether gcc accepts -g... (cached) yes
+checking for gcc option to enable C11 features... (cached) none needed
+## ------ ##
+## SCOTCH ##
+## ------ ##
+checking for scotchfarchinit  in -lscotch... no
+checking whether Scotch is usable... no, using bundled scotch instead
+checking for flex... no
+checking for lex... no
+checking for bison... no
+checking for byacc... no
+checking for the pthreads library -lpthreads... no
+checking whether pthreads work without any flags... yes
+checking for joinable pthread attribute... PTHREAD_CREATE_JOINABLE
+checking if more special flags are required for pthreads... no
+pthread found
+SCOTCH is not enabled
+## ----------------- ##
+## module extensions ##
+## ----------------- ##
+checking Fortran 90 module extension... mod
+checking Fortran 90 module inclusion flag... -I
+checking Fortran 90 module output flag... -J
+checking for stdio.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for strings.h... yes
+checking for sys/stat.h... yes
+checking for sys/types.h... yes
+checking for unistd.h... yes
+checking for emmintrin.h... yes
+checking for xmmintrin.h... yes
+checking for err.h... yes
+checking for g++... g++
+checking whether the compiler supports GNU C++... yes
+checking whether g++ accepts -g... yes
+checking for g++ option to enable C++11 features... none needed
+checking how to run the C++ preprocessor... g++ -E
+checking how to run the C preprocessor... gcc -E
+## ---------------- ##
+## git version info ##
+## ---------------- ##
+checking for .git/config... yes
+fatal: No names found, cannot describe anything.
+configure: building from git repository
+## ----------------------------------- ##
+## setting up default simulation setup ##
+## ----------------------------------- ##
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating setup/constants.h
+config.status: creating setup/constants_tomography.h
+config.status: creating setup/precision.h
+config.status: creating setup/config.fh
+config.status: creating setup/version.fh
+config.status: creating DATA/Par_file
+config.status: creating DATA/SOURCE
+config.status: creating setup/config.h
+config.status: setup/config.h is unchanged
+config.status: executing bin commands
+config.status: executing obj commands
+config.status: executing DATA commands
+config.status: executing OUTPUT_FILES commands
+
+## ---------------- ##
+## Specfem 2D 8.1.0 ##
+## ---------------- ##
+
+./configure has completed and set up a default configuration to build.
+
+You may wish to modify the following files before running a simulation:
+  DATA/Par_file           Set parameters affecting the simulation.
+  DATA/SOURCE             Set the source parameters before running the solver.
+

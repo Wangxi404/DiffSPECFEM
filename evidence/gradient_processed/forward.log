@@ -1,0 +1,569 @@
+
+ **********************************************
+ **** Specfem 2-D Solver - serial version  ****
+ **********************************************
+
+ Running Git version of the code corresponding to abf3196e3192af3343f2b402c82f34205577e672
+ dating 2025-12-17 21:18:43 +0100
+
+
+ NDIM =            2
+
+ NGLLX =            5
+ NGLLZ =            5
+
+ using double precision for the calculations
+
+ smallest and largest possible floating-point numbers are:    2.2250738585072014E-308   1.7976931348623157E+308
+
+ Reading the parameter file...
+
+ Title of the simulation: DiffSPECFEM two-layer SH reflecting box
+
+   using existing STATIONS file: ./DATA/STATIONS
+   file name is ./DATA/STATIONS
+   found            4  receivers
+
+ Parameter file successfully read 
+
+ Reading in SOURCE file...
+
+ Source           1
+   Position xs, zs =    650.00000000000000       -650.00000000000000     
+
+   Source type (1=force, 2=moment tensor):            1
+   Force source:
+   Angle of the source (deg) =    0.0000000000000000     
+
+   Time function type (1=Ricker, 2=First derivative, 3=Gaussian, 4=Dirac, 5=Heaviside, 6,7=ocean type, 8=Read from file, 9=burst, 10=Sinusoidal, 11=Ormsby):           1
+   Ricker wavelet (second-derivative):
+   Frequency, delay =    6.0000000000000000        0.0000000000000000     
+   Multiplying factor  =    100000000.00000000     
+
+ all sources are okay
+
+
+
+ -------------------------------------------------------------------------------
+ -------------------------------------------------------------------------------
+ Program SPECFEM2D: 
+ -------------------------------------------------------------------------------
+ -------------------------------------------------------------------------------
+ DiffSPECFEM two-layer SH reflecting box
+ -------------------------------------------------------------------------------
+ -------------------------------------------------------------------------------
+ D a t e : 07 - 11 - 2026                                 T i m e  : 00:54:18
+ -------------------------------------------------------------------------------
+ -------------------------------------------------------------------------------
+
+
+ C o n t r o l
+ =============
+
+     Number of spectral element control nodes. . .(npgeo) =      81
+     Number of space dimensions. . . . . . . . . . (NDIM) =       2
+
+
+ C o n t r o l
+ =============
+
+     Display frequency . . . (NTSTEP_BETWEEN_OUTPUT_INFO) =    600
+     Color display . . . . . . . . . . . . . . . (colors) =      1
+      == 0     black and white display              
+      == 1     color display                        
+     Numbered mesh . . . . . . . . . . . . . . .(numbers) =      0
+      == 0     do not number the mesh               
+      == 1     number the mesh                      
+
+
+ C o n t r o l
+ =============
+
+     Seismograms recording type . . . . . . .(seismotype) = 1
+     Angle for first line of receivers. . . . .(anglerec) =   0.00
+
+
+ C o n t r o l
+ =============
+
+     Read external initial field. . . . . .(initialfield) =      F
+     Add Bielak conditions (add_Bielak_conditions_bottom) =      F
+     Add Bielak conditions .(add_Bielak_conditions_right) =      F
+     Add Bielak conditions . .(add_Bielak_conditions_top) =      F
+     Add Bielak conditions. .(add_Bielak_conditions_left) =      F
+     Attenuation in solid . . .(ATTENUATION_VISCOELASTIC) =      F
+     Attenuation in fluid . . (ATTENUATION_VISCOACOUSTIC) =      F
+     Save grid in ASCII file or not . (output_grid_ASCII) =      F
+     Save a file with total energy or not.(OUTPUT_ENERGY) =      F
+
+
+ C o n t r o l
+ =============
+
+     Vector display type . . . . . . . . .(imagetype_postscript) =      1
+     Percentage of cut for vector plots. . . . . . . .(cutsnaps) =   1.00
+     Subsampling of velocity model display. (subsamp_postscript) =      1
+
+
+ I t e r a t i o n s 
+ ===================
+
+     Number of time iterations . . . . .(NSTEP) =     800
+     Time step increment. . . . . . . . . .(DT) =   1.000000E-03
+     Total simulation duration . . . . . (ttot) =   8.000000E-01
+
+
+ reading mesh databases:
+ reading nodal coordinates...
+
+ -- Spectral Elements --
+
+
+     Number of spectral elements . . . . . . . . .  (nspec) =     64
+     Number of control nodes per element . . . . . (NGNOD) =      4
+     Number of points in X-direction . . . . . . . (NGLLX) =      5
+     Number of points in Y-direction . . . . . . . (NGLLZ) =      5
+     Number of points per element. . . . . . (NGLLX*NGLLZ) =     25
+     Number of points for display . . . . . . (pointsdisp) =      6
+     Number of element material sets . . . . . . . (numat) =      2
+     Number of acoustic forcing elements (nelem_acforcing) =      0
+     Number of acoustic free surf (nelem_acoustic_surface) =      0
+
+ reading attenuation setup...
+ reading material properties..
+
+
+ M a t e r i a l   s e t s :   2 D  (p o r o) e l a s t i c i t y
+ ======================================================
+
+     Number of material sets . . . . . . (numat) =     2
+
+
+     ----------------------------------------
+     -- Elastic (solid) isotropic material --
+     ----------------------------------------
+     Material set number. . . . . . . . (jmat) =     1
+     P-wave velocity. . . . . . . . . . . (cp) = 3.00000000E+03
+     S-wave velocity. . . . . . . . . . . (cs) = 1.60000000E+03
+     Mass density. . . . . . . . . . (density) = 2.50000000E+03
+     Poisson's ratio. . . . . . . . .(poisson) = 3.01242236E-01
+     First Lame parameter Lambda. . . (lambda) = 9.70000000E+09
+     Second Lame parameter Mu. . . . . . .(mu) = 6.40000000E+09
+     Bulk modulus Kappa . . . . . . . .(kappa) = 1.61000000E+10
+     Young's modulus E. . . . . . . . .(young) = 1.69535649E+10
+     QKappa_attenuation .  . . . . . .(QKappa) = 9.99900000E+03
+     Qmu_attenuation . . . . . . . . . . (Qmu) = 9.99900000E+03
+
+
+
+     ----------------------------------------
+     -- Elastic (solid) isotropic material --
+     ----------------------------------------
+     Material set number. . . . . . . . (jmat) =     2
+     P-wave velocity. . . . . . . . . . . (cp) = 3.50000000E+03
+     S-wave velocity. . . . . . . . . . . (cs) = 1.90000000E+03
+     Mass density. . . . . . . . . . (density) = 2.80000000E+03
+     Poisson's ratio. . . . . . . . .(poisson) = 2.91087963E-01
+     First Lame parameter Lambda. . . (lambda) = 1.40840000E+10
+     Second Lame parameter Mu. . . . . . .(mu) = 1.01080000E+10
+     Bulk modulus Kappa . . . . . . . .(kappa) = 2.41920000E+10
+     Young's modulus E. . . . . . . . .(young) = 2.66169346E+10
+     QKappa_attenuation .  . . . . . .(QKappa) = 9.99900000E+03
+     Qmu_attenuation . . . . . . . . . . (Qmu) = 9.99900000E+03
+
+ reading interfaces informations...
+   number of interfaces         =            0
+
+ reading absorbing boundary...
+   Total number of absorbing elements =            0
+
+   any absorbing boundary flag        =  F
+   PML boundary flag                  =  F
+   Stacey boundary flag               =  F
+
+ reading acoustic forcing...
+   acoustic forcing                             =  F
+   number of acoustic forcing boundary elements =            0
+
+ reading free surface information...
+   number of acoustic free surface boundary elements =            0
+
+ reading coupling surfaces...
+   number of fluid-solid edges  =            0
+   number of fluid-poro  edges  =            0
+   number of solid-poro  edges  =            0
+
+ reading tangential curves...
+   number of tangential curve nodes =            0
+
+ reading axial elements...
+   number of axial elements     =            0
+
+ done reading mesh databases
+
+
+ Setting up mesh
+
+ Generating global mesh numbering (fast version)...
+
+ Mesh numbering:
+   Total number of elements:           64
+
+   Total number of acoustic elements           =            0
+   Total number of elastic/visco/poro elements =           64
+
+ Exact total number of grid points in the mesh:         1089
+ Mesh dimensions:
+   Xmin,Xmax of the whole mesh =    0.0000000000000000        2000.0000000000000     
+   Zmin,Zmax of the whole mesh =   -2000.0000000000000        0.0000000000000000     
+
+ Material properties:
+   MODEL                 : default
+   nspec                 :           64
+   assign external model :  F
+
+   setting up material arrays
+   all material arrays done
+
+ Domains:
+   total number of acoustic elements        =            0
+   total number of elastic elements         =           64
+   total number of poroelastic elements     =            0
+
+ Setting up MPI communication arrays
+
+   maximum number of MPI interfaces (for a single slice) =            0
+
+   This is a single process simulation, no need for MPI communication
+
+   number of outer elements  =            0
+   number of inner elements  =           64
+
+   percentage of outer elements    0.00000000     %
+   percentage of inner elements    100.000000     %
+
+   number of global nodes in outer elements  =            0
+   number of global nodes in inner elements  =         1089
+
+   determining communication phases:
+   elastic domains:
+   total number of outer/inner elements =            0          64
+   total percentage of outer elements    0.00000000     %
+   total percentage of inner elements    100.000000     %
+
+ All mesh setup done successfully
+
+ sources:
+   Total number of sources:            1
+
+
+   Setting parameters for source           1
+
+     Source Type. . . . . . . . . . . . . . = Collocated Force
+     X-position (meters). . . . . . . . . . =    6.5000000000E+02
+     Y-position (meters). . . . . . . . . . =   -6.5000000000E+02
+     Fundamental frequency (Hz) . . . . . . =    6.0000000000E+00
+     Time delay (s) . . . . . . . . . . . . =    0.0000000000E+00
+     Multiplying factor . . . . . . . . . . =    1.0000000000E+08
+     Angle from vertical direction (deg). . =    0.0000000000E+00
+
+
+
+     using USER_T0 . . . . . . . . . =   0.22000000000000000     
+       original t0 . . . . . . . . . =   0.19999999999999998     
+       min_tshift_src_original . . . =    0.0000000000000000     
+
+     fix new simulation start time . =  -0.22000000000000000     
+     source            1 uses tshift =    0.0000000000000000     
+
+   Source:            1
+     Onset time. . . . . . =  -0.22000000000000000     
+     Fundamental period. . =   0.16666666666666666     
+     Fundamental frequency =    6.0000000000000000     
+     The onset time is ok
+
+ Source:            1
+ *******************************
+  locating force source
+ *******************************
+
+ Force source:
+             original x:    650.000000    
+             original z:   -650.000000    
+ Closest estimate found:    0.00000000      m away
+  in rank            0
+  in element           43
+  in elastic domain
+  at xi,gamma coordinates =   0.20000000000000001      -0.20000000000000001     
+
+
+ end of force source detection
+
+
+ receivers:
+
+ Total number of receivers =            4
+
+
+ ********************
+  locating receivers
+ ********************
+
+ reading receiver information from the ./DATA/STATIONS file
+
+
+ Station #            1     XX      R01                             
+             original x:    850.000000    
+             original z:   -450.000000    
+ Closest estimate found:    0.00000000      m away
+  in rank            0
+  in element           52
+  in elastic domain
+  at xi,gamma coordinates =  -0.20000000000000095      -0.59999999999999998     
+ Distance from source:    282.842712      m
+
+
+ Station #            2     XX      R02                             
+             original x:    1150.00000    
+             original z:   -1150.00000    
+ Closest estimate found:    0.00000000      m away
+  in rank            0
+  in element           29
+  in elastic domain
+  at xi,gamma coordinates =   0.20000000000000001      -0.20000000000000001     
+ Distance from source:    707.106812      m
+
+
+ Station #            3     XX      R03                             
+             original x:    850.000000    
+             original z:   -450.000000    
+ Closest estimate found:    0.00000000      m away
+  in rank            0
+  in element           52
+  in elastic domain
+  at xi,gamma coordinates =  -0.20000000000000095      -0.59999999999999998     
+ Distance from source:    282.842712      m
+
+
+ Station #            4     XX      R04                             
+             original x:    1450.00000    
+             original z:   -550.000000    
+ Closest estimate found:    2.27373675E-13  m away
+  in rank            0
+  in element           46
+  in elastic domain
+  at xi,gamma coordinates =   0.60000000000000120       0.60000000000000031     
+ Distance from source:    806.225769      m
+
+ maximum error in location of all the receivers:    2.27373675E-13  m
+
+ end of receiver detection
+
+ found a total of            4  receivers, this is okay
+
+
+ Preparing timerun:
+
+
+ Checking mesh and stability
+
+ ********
+ Model: P (or PI) velocity min,max =    3000.0000000000000        3500.0000000000000     
+ Model: S velocity min,max         =    1600.0000000000000        1900.0000000000000     
+ Model: density min,max            =    2500.0000000000000        2800.0000000000000     
+ ********
+
+
+ *********************************************
+ *** Verification of simulation parameters ***
+ *********************************************
+
+ *** Max grid size =    250.00000000000000     
+ *** Min grid size =    250.00000000000000     
+ *** Max/min ratio =    1.0000000000000000     
+
+ *** Minimum GLL point distance  =    43.168291161502850     
+ *** Average GLL point distance  =    62.500000000000000     
+
+ *** Minimum period resolved     =   0.19531250000000000     
+ *** Maximum frequency resolved  =    5.1200000000000001      Hz
+
+ *** Maximum suggested time step                 =    6.1668987373575497E-003
+ *** Maximum suggested (Ricker) source frequency =    2.0480000000000000     
+
+ *** for DT :    1.00000005E-03
+ *** Max CFL stability condition of the time scheme based on P wave velocity (must be below about 0.50 or so) =    8.1078029864690898E-002
+
+ ----
+ Number of points per wavelength:
+ ----
+   Source            1
+   maximum dominant source frequency =    15.000000000000000      Hz
+
+   Nb pts / lambdaP_fmax min =    3.20000005    
+   Nb pts / lambdaP_fmax max =    3.73333335    
+
+   Nb pts / lambdaS_fmax min =    1.70666671    
+   Nb pts / lambdaS_fmax max =    2.02666664    
+
+ -----------------------------------------
+
+ histogram of min number of points per S wavelength in solid regions:
+
+ there are           64  elements out of           64  in solid regions
+   (i.e.,    100.000000     % of the total)
+
+ (too small = poor resolution of calculations -
+  too big = wasting memory and CPU time)
+ (threshold value is around 4.5 points per S wavelength
+  in elastic regions and 5.5 per P wavelength in fluid regions):
+
+   1.70666671      -    1.72266662              32     50.0000000      %
+   1.72266662      -    1.73866665               0     0.00000000      %
+   1.73866665      -    1.75466669               0     0.00000000      %
+   1.75466669      -    1.77066672               0     0.00000000      %
+   1.77066672      -    1.78666663               0     0.00000000      %
+   1.78666663      -    1.80266666               0     0.00000000      %
+   1.80266666      -    1.81866670               0     0.00000000      %
+   1.81866670      -    1.83466661               0     0.00000000      %
+   1.83466661      -    1.85066664               0     0.00000000      %
+   1.85066664      -    1.86666667               0     0.00000000      %
+   1.86666667      -    1.88266671               0     0.00000000      %
+   1.88266671      -    1.89866662               0     0.00000000      %
+   1.89866662      -    1.91466665               0     0.00000000      %
+   1.91466665      -    1.93066669               0     0.00000000      %
+   1.93066669      -    1.94666672               0     0.00000000      %
+   1.94666672      -    1.96266663               0     0.00000000      %
+   1.96266663      -    1.97866666               0     0.00000000      %
+   1.97866666      -    1.99466670               0     0.00000000      %
+   1.99466670      -    2.01066661               0     0.00000000      %
+   2.01066661      -    2.02666664              32     50.0000000      %
+
+ total percentage =    100.00000000000000       %
+
+
+ total number of elements in fluid and solid regions =           64
+
+ Preparing timerun constants
+
+ Preparing array allocations
+   arrays for elastic domains
+   done initialization
+
+
+ Attenuation:
+   viscoelastic  attenuation: F (shear & bulk attenuation in elastic domains)
+   viscoacoustic attenuation: F (bulk attenuation in acoustic domains)
+
+ Preparing mass matrices
+   initializing mass matrices
+   inverting mass matrices
+
+
+ Preparing source time function
+   time stepping scheme:   Newmark
+   time stepping stages:            1
+   time step size      :    1.00000005E-03
+
+   number of time steps:          800
+   number of sources   :            1
+
+   saving the source time function in a text file...
+
+
+ Elapsed time for preparing timerun in seconds =    1.7609968781471252E-003
+
+ ************
+  time loop
+ ************
+               scheme:         Newmark
+
+            time step:    1.00000005E-03  s
+ number of time steps:          800
+ total simulated time:   0.800000012      seconds
+ start time: -0.219999999      seconds
+
+
+ =========================================
+ =  T i m e  e v o l u t i o n  l o o p  =
+ =========================================
+
+
+ Starting time iteration loop ...
+
+
+ ******************************************************************
+Time step number       5   t =    0.0040 s out of     800
+ ******************************************************************
+ We have done   0.500625789     % of the total
+ Max norm of vector field in solid (elastic) =    2.5827104358144136E-011
+ Elapsed time in seconds =    9.9992752075195312E-004
+ Elapsed time in hh:mm:ss =      0 h 00 m 00 s
+ Mean elapsed time per time step in seconds =    1.9998550415039061E-004
+ Time steps remaining =          795
+ Estimated remaining time in seconds =   0.15898847579956055     
+ Estimated remaining time in hh:mm:ss =      0 h 00 m 00 s
+ Estimated total run time in seconds =   0.15998840332031250     
+ Estimated total run time in hh:mm:ss =      0 h 00 m 00 s
+ The run will finish approximately on: Sat Nov 07, 2026 00:54
+
+
+ ******************************************************************
+Time step number     600   t =    0.5990 s out of     800
+ ******************************************************************
+ We have done    74.9687119     % of the total
+ Max norm of vector field in solid (elastic) =    9.2927901938275590E-004
+ Elapsed time in seconds =    4.6000003814697266E-002
+ Elapsed time in hh:mm:ss =      0 h 00 m 00 s
+ Mean elapsed time per time step in seconds =    7.6666673024495443E-005
+ Time steps remaining =          200
+ Estimated remaining time in seconds =    1.5333334604899088E-002
+ Estimated remaining time in hh:mm:ss =      0 h 00 m 00 s
+ Estimated total run time in seconds =    6.1333338419596352E-002
+ Estimated total run time in hh:mm:ss =      0 h 00 m 00 s
+ The run will finish approximately on: Sat Nov 07, 2026 00:54
+
+
+ ******************************************************************
+Time step number     800   t =    0.7990 s out of     800
+ ******************************************************************
+ We have done    100.000000     % of the total
+ Max norm of vector field in solid (elastic) =    9.5288046387558651E-004
+ Elapsed time in seconds =    5.7999849319458008E-002
+ Elapsed time in hh:mm:ss =      0 h 00 m 00 s
+ Mean elapsed time per time step in seconds =    7.2499811649322511E-005
+ Time steps remaining =            0
+ Estimated remaining time in seconds =    0.0000000000000000     
+ Estimated remaining time in hh:mm:ss =      0 h 00 m 00 s
+ Estimated total run time in seconds =    5.7999849319458008E-002
+ Estimated total run time in hh:mm:ss =      0 h 00 m 00 s
+
+
+ Total number of time steps done:          800
+ Writing the seismograms by main proc alone took    3.71399522E-03  seconds
+
+
+ Total duration of the time loop in seconds =    6.20020032E-02  s
+ Total number of time steps =          800
+ Average duration of a time step of the time loop =    7.75025037E-05  s
+ Total number of spectral elements in the mesh =           64
+     of which           64  are regular elements
+     and            0  are PML elements.
+ Average duration of the calculation per spectral element =    1.21097662E-06  s
+
+
+ Total duration of the timeloop in seconds, measured using 
+ date and time of the system :    6.19997978E-02  s
+
+
+ -------------------------------------------------------------------------------
+ -------------------------------------------------------------------------------
+ Program SPECFEM2D: 
+ -------------------------------------------------------------------------------
+ -------------------------------------------------------------------------------
+ DiffSPECFEM two-layer SH reflecting box
+ -------------------------------------------------------------------------------
+ -------------------------------------------------------------------------------
+ D a t e : 07 - 11 - 2026                                 T i m e  : 00:54:18
+ -------------------------------------------------------------------------------
+ -------------------------------------------------------------------------------

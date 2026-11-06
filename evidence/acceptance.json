@@ -1,0 +1,46 @@
+{
+  "declared_before_validation": true,
+  "arithmetic": "native CUSTOM_REAL=SIZE_DOUBLE; ASCII trace and kernel ~16 significant digits; torch float64",
+  "native_forward": {
+    "bitwise": true,
+    "relative_l2": 0
+  },
+  "sampling_dot": {
+    "rtol": 1e-12,
+    "atol": 1e-12
+  },
+  "data_vjp": {
+    "rtol": 1e-06,
+    "atol": 1e-10,
+    "steps": [
+      0.01,
+      0.003,
+      0.001,
+      0.0003,
+      0.0001,
+      3e-05
+    ]
+  },
+  "model_dot": {
+    "rtol": 1e-05,
+    "atol": 1e-09,
+    "central_step": 1e-05
+  },
+  "model_taylor": {
+    "rtol": 1e-05,
+    "atol": 1e-09,
+    "min_order": 1.8,
+    "max_order": 2.2,
+    "steps": [
+      0.02,
+      0.01,
+      0.005,
+      0.0025,
+      0.00125,
+      0.000625,
+      0.0003125,
+      0.00015625
+    ]
+  },
+  "epsilon_extension_reason": "Attempt1 pure Vs family had observable O(h^2) and only one central-match step; append smaller epsilons to obtain consecutive central matches. Original steps and all tolerances unchanged; failed attempt retained."
+}

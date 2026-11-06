@@ -1,0 +1,118 @@
+{
+  "observations": [
+    {
+      "name": "perf_native_forward",
+      "wall_seconds": 0.48890591133385897,
+      "launched_argv": [
+        "nice",
+        "-n",
+        "10",
+        "mpirun",
+        "--bind-to",
+        "core",
+        "-np",
+        "2",
+        "/home/xiwang/DiffSPECFEM/scripts/mpi_rank_time.sh",
+        "/home/xiwang/DiffSPECFEM/evidence/mpi2/perf_native_forward",
+        "/home/xiwang/DiffSPECFEM/native-baseline-mpi-xspecfem2D"
+      ],
+      "mode": null,
+      "rank_max_rss_kib": [
+        18676,
+        18680
+      ]
+    },
+    {
+      "name": "perf_extension_nohistory",
+      "wall_seconds": 0.4798090709373355,
+      "launched_argv": [
+        "nice",
+        "-n",
+        "10",
+        "mpirun",
+        "--bind-to",
+        "core",
+        "-np",
+        "2",
+        "/home/xiwang/DiffSPECFEM/scripts/mpi_rank_time.sh",
+        "/home/xiwang/DiffSPECFEM/evidence/mpi2/perf_extension_nohistory",
+        "/home/xiwang/DiffSPECFEM/vendor/specfem2d-mpi/bin/xspecfem2D"
+      ],
+      "mode": null,
+      "rank_max_rss_kib": [
+        18688,
+        18928
+      ]
+    },
+    {
+      "name": "perf_extension_record",
+      "wall_seconds": 0.49795711878687143,
+      "launched_argv": [
+        "nice",
+        "-n",
+        "10",
+        "mpirun",
+        "--bind-to",
+        "core",
+        "-np",
+        "2",
+        "/home/xiwang/DiffSPECFEM/scripts/mpi_rank_time.sh",
+        "/home/xiwang/DiffSPECFEM/evidence/mpi2/perf_extension_record",
+        "/home/xiwang/DiffSPECFEM/vendor/specfem2d-mpi/bin/xspecfem2D"
+      ],
+      "mode": "record",
+      "rank_max_rss_kib": [
+        19192,
+        18424
+      ]
+    },
+    {
+      "name": "data_objective_vjp",
+      "wall_seconds": 0.016373127698898315,
+      "torch_dtype": "float64"
+    },
+    {
+      "name": "perf_native_adjoint",
+      "wall_seconds": 0.4676832780241966,
+      "launched_argv": [
+        "nice",
+        "-n",
+        "10",
+        "mpirun",
+        "--bind-to",
+        "core",
+        "-np",
+        "2",
+        "/home/xiwang/DiffSPECFEM/scripts/mpi_rank_time.sh",
+        "/home/xiwang/DiffSPECFEM/evidence/mpi2/perf_native_adjoint",
+        "/home/xiwang/DiffSPECFEM/vendor/specfem2d-mpi/bin/xspecfem2D"
+      ],
+      "mode": "adjoint",
+      "rank_max_rss_kib": [
+        25840,
+        25836
+      ]
+    },
+    {
+      "name": "complete_processed_gradient",
+      "wall_seconds": 1.4895426146686077,
+      "scope": "mesh + native MPI full-history forward + data torch objective/VJP + source file + native MPI adjoint + kernel read/material VJP; excludes build/imports"
+    }
+  ],
+  "history": [
+    {
+      "file": "ds_rank000000_history.bin",
+      "bytes": 7232012
+    },
+    {
+      "file": "ds_rank000001_history.bin",
+      "bytes": 7232012
+    }
+  ],
+  "history_bytes_sum": 14464024,
+  "ranks": 2,
+  "threads_per_rank": 1,
+  "gpu": "not used",
+  "rss_semantics": "independent per-rank process RSS peaks; do not add peaks and call it simultaneous RSS",
+  "contention": "shared host, no exclusive reservation; startup included; no speedup claim"
+}

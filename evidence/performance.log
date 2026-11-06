@@ -1,0 +1,48 @@
+{
+  "observations": [
+    {
+      "name": "perf_native_forward",
+      "wall_seconds": 0.13607788737863302,
+      "resource_file": "perf_native_forward.time.txt",
+      "mode": null,
+      "max_rss_kib": 5632
+    },
+    {
+      "name": "perf_extension_nohistory",
+      "wall_seconds": 0.13470295816659927,
+      "resource_file": "perf_extension_nohistory.time.txt",
+      "mode": null,
+      "max_rss_kib": 5632
+    },
+    {
+      "name": "perf_extension_record",
+      "wall_seconds": 0.16501370258629322,
+      "resource_file": "perf_extension_record.time.txt",
+      "mode": "record",
+      "max_rss_kib": 5632
+    },
+    {
+      "name": "data_objective_vjp",
+      "wall_seconds": 0.017381014302372932,
+      "torch_dtype": "float64"
+    },
+    {
+      "name": "perf_native_adjoint",
+      "wall_seconds": 0.17017315793782473,
+      "resource_file": "perf_native_adjoint.time.txt",
+      "mode": "adjoint",
+      "max_rss_kib": 18944
+    },
+    {
+      "name": "complete_processed_gradient",
+      "wall_seconds": 0.4253837214782834,
+      "scope": "mesh + native full-history forward + data torch objective/VJP + source file + native adjoint + raw kernel read/material VJP; excludes initial build and imports"
+    }
+  ],
+  "history_bytes": 13939212,
+  "ranks": 1,
+  "threads": 1,
+  "gpu": "not used",
+  "contention": "shared host, no exclusive reservation; measurements are observations",
+  "no_capacity_or_causal_skill_effort_claim": true
+}

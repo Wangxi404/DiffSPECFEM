@@ -1,0 +1,184 @@
+{
+  "application": "DiffSPECFEM",
+  "skill": {
+    "name": "differentiate-seismic-solver",
+    "version": "0.1.0",
+    "frozen_git_revision": "89d135f75f3d8521737645cab2e0c6ec49136f91",
+    "packet_sha256": "b09e0ee57324f715b80178c2a30cb26a2140b1ea3d5545ad8b15dc5680dca49f",
+    "pre_integrity": "passed; 7 files; freeze.py verify with expected hash before adaptation",
+    "post_integrity": "passed; freeze.py verify expected hash; evidence/frozen-post-integrity.json",
+    "operative_guidance": "Frozen SKILL.md, all three references, scripts/numerics.py; no packet edits"
+  },
+  "source": {
+    "url": "https://github.com/SPECFEM/specfem2d.git",
+    "revision": "abf3196e3192af3343f2b402c82f34205577e672",
+    "preexisting_changes": "none; fresh official public shallow clone",
+    "mpi_source": "clean shared Git-object clone of same official pinned source, no working-tree patch inherited",
+    "license": "GPL-3.0-or-later, upstream LICENSE retained",
+    "modifications": "Only src/specfem2D/iterate_time.F90: add native module and begin/save hooks. Unchanged numerical force/time-step kernels; exact explicit patch in native/iterate_time.patch. Generated build setup files are not source edits."
+  },
+  "execution": {
+    "host": "hpnewpc3-via-vps",
+    "user": "xiwang",
+    "prefix": "/home/xiwang/DiffSPECFEM",
+    "compiler": "GCC/Gfortran 11.4.0",
+    "configure_serial": "./configure --without-mpi --enable-double-precision FC=gfortran CC=gcc",
+    "configure_mpi": "./configure --with-mpi --enable-double-precision FC=gfortran MPIFC=mpif90 CC=gcc",
+    "build": "nice -n 10 make -j1 all",
+    "runtime": "OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1; native subprocess launched nice -n 10; two-rank launch mpirun --bind-to core -np 2",
+    "python": "/home/xiwang/anaconda3/envs/pytorch26/bin/python; Torch 2.6; NumPy 2.0.1",
+    "shared_host": true,
+    "existing_jobs_touched": false,
+    "gpu": "not used"
+  },
+  "contract": {
+    "physics": "planar isotropic lossless elastic SH; zero initial state; natural reflecting/free boundaries",
+    "active_model": "4 relative log coordinates: bottom/top density, bottom/top Vs. mu=rho*Vs^2",
+    "fixed": "Vp, geometry/mesh, source waveform and force, receivers, zero initial state, dt, nstep, boundaries, quadrature, native numerical settings",
+    "configuration": "8x8 elements, 5x5 GLL, 1089 unique nodes, 2km square, 800 steps of 0.001s, 6Hz force, USER_T0=.22s, 4 receivers including duplicate and off-grid receivers",
+    "precision": "native CUSTOM_REAL=SIZE_DOUBLE; trace/kernel/source exports float64; PyTorch objectives float64",
+    "sampling": "native displacement after each Newmark step, upstream label (n-1)*DT-USER_T0; additive Lagrange C transpose; no implicit dt/sign/reversal",
+    "mpi_coordinates": "assembled nodal adjoints replicated consistently on interfaces; only new local source/stiffness contributions assembled; local element coefficient gradients summed once by native kmato",
+    "raw_kernel": "GLL dJ/drho and dJ/dmu including quadrature/Jacobian; no filtering or fitted scale",
+    "material_vjp": "g_logrho=sum(rho*g_rho+mu*g_mu); g_logVs=sum(2*mu*g_mu)",
+    "history": "full post-step u and a, native double stream per rank; no replay; reverse loads full histories; serial 13939212 bytes, two ranks 14464024 bytes total",
+    "production_route": "native forward -> detached receiver leaf -> real PyTorch objective/VJP -> native exact discrete adjoint -> raw GLL coefficient sensitivities -> analytic 4-coordinate material VJP",
+    "production_counts": "1 mesh generation, 1 native forward, 1 native adjoint; 0 replay; 0 parameter-FD evaluations; 0 temporal-AD steps; native adjoint calls native force routine twice per step per rank",
+    "unsupported": "rank counts other than 1/2 via wrapper; GPU; P-SV; acoustics; attenuation; absorbing PML/Stacey; anisotropy; periodicity; moving/noise sources; active geometry/source/boundaries; double-backward; concurrent shared work directory",
+    "continuum_accuracy_limit": "Upstream grid diagnostic suggests f0<=2.048Hz for the coarse8x8 mesh, while chosen Rickerf0=6Hz has underresolved high-frequency tail. Gates establish exact derivatives of this fixed discrete solver, not continuum waveform convergence."
+  },
+  "development": {
+    "agent": "fresh independent application agent; no private DiffSpecfem, sibling experiment or original HybridADFWI inspected",
+    "hands_on_effort": "not measured; wall time and line count are not used as hands-on effort estimates",
+    "causal_or_universal_effort_claim": false,
+    "author_blinded": false,
+    "human_interventions": "User authorized autonomous implementation; root requested MPI gradient extension; independent reviewer identified sampling-check and record-preservation weaknesses; no manual numerical tuning or frozen-packet repairs",
+    "numerical_implementation_repairs": "None needed after first serial native adjoint compile for gradient agreement. MPI native adjoint first compile/smoke/full suite passed. Validation/test-record repairs are separately listed.",
+    "attempt_counts": {
+      "native_build_invocations": 7,
+      "native_build_failures": 0,
+      "serial_baseline_attempts": 2,
+      "serial_baseline_failures": 1,
+      "full_validation_invocations": 7,
+      "full_validation_failed": 2,
+      "full_validation_passed": 5,
+      "serial_adjoint_compile_attempts_before_first_nonzero_gradient": 1,
+      "mpi_adjoint_compile_attempts_before_first_full_gate_pass": 1,
+      "initial_native_smoke_attempts": 1,
+      "mpi_native_smoke_attempts": 1
+    }
+  },
+  "failed_attempts_and_repairs": [
+    {
+      "id": "F01",
+      "status": "failed",
+      "phase": "source acquisition",
+      "command": "git clone --depth 1 https://github.com/SPECFEM/specfem2d.git /home/xiwang/DiffSPECFEM/vendor/specfem2d (executed locally)",
+      "result": "Operation not supported creating remote-shaped local path; no source created",
+      "repair": "Execute isolated clone through ssh hpnewpc3-via-vps"
+    },
+    {
+      "id": "F02",
+      "status": "failed",
+      "phase": "source reconnaissance",
+      "command": "sed EXAMPLES/homogeneous_halfspace/DATA/Par_file; rg ... on remote",
+      "result": "Guessed example path absent; remote rg unavailable",
+      "repair": "Inspect actual EXAMPLES inventory and semi_infinite_homogeneous; use local rg after copying official source"
+    },
+    {
+      "id": "F03",
+      "status": "failed",
+      "phase": "source reconnaissance",
+      "command": "ls src/shared/*constant*; rg ... update_displacement* before actual paths available",
+      "result": "Guessed source glob/path missing, zsh no matches",
+      "repair": "Read actual setup/constants.h.in and update_displacement_Newmark.F90 / iterate_time.F90"
+    },
+    {
+      "id": "F04",
+      "status": "failed",
+      "phase": "source reconnaissance",
+      "command": "rg compute_seismograms.f90; cat interfaces.dat; rg src/shared/specfem_par.f90; rg src/specfem2D/specfem_par*",
+      "result": "Guessed source/interface names absent",
+      "repair": "Read write_seismograms.f90, compute_interpolated_dva.f90, specfem2D_par.f90, interfaces_elastic_analytic.dat"
+    },
+    {
+      "id": "F05",
+      "status": "failed",
+      "phase": "native baseline",
+      "artifact": "evidence/baseline-forward.log",
+      "result": "Native source preparation rejected USER_T0=.15 for 6Hz, requires >=.2; native STOP returned exit0",
+      "repair": "Set USER_T0=.22, NSTEP800, rerun original baseline; wrapper checks expected outputs and error log in addition to exitcode"
+    },
+    {
+      "id": "F06",
+      "status": "failed",
+      "phase": "numerical validation",
+      "artifact": "evidence/validation-attempt1.json",
+      "result": "Vs Taylor sweeps showed clean O(h^2), but only smallest epsilon gave central agreement; helper requires 2 consecutive central matches",
+      "repair": "Append .0003125 and .00015625 to epsilon list; original epsilons/tolerances retained; attempt2 all pass"
+    },
+    {
+      "id": "F07",
+      "status": "failed",
+      "phase": "provenance diagnostic",
+      "command": "sha256sum src/specfem2D/compute_forces_viscoelastic.f90 src/specfem2D/update_displacement_Newmark.f90",
+      "result": "Remote case-sensitive files use .F90",
+      "repair": "Hash exact .F90 paths; retained hashes in evidence/provenance/sha256.txt"
+    },
+    {
+      "id": "F08",
+      "status": "superseded_validation",
+      "phase": "independent audit",
+      "result": "Original sampling check built C and NumPy C.T from the same exported rows; algebra-only, did not independently exercise native sampling/scatter",
+      "repair": "Retain original result; factor production ds_scatter and execute arbitrary-state native observation/scatter dot plus native history-to-trace test; no frozen packet edits"
+    },
+    {
+      "id": "F09",
+      "status": "failed",
+      "phase": "audit-triggered test",
+      "artifact": "evidence/validation-attempt3.log",
+      "result": "Test-only C extent used max receiver-supported node893 instead of full nglob1089; history multiplication shape error",
+      "repair": "Use native probe node count for full C extent; clear validation status to running before checks to avoid stale success; attempt4 all pass"
+    },
+    {
+      "id": "F10",
+      "status": "scope_extension",
+      "phase": "root request",
+      "result": "Original verified derivative scope serial; root requested actual two-rank gradient correctness",
+      "repair": "Preserve serial checkpoint, add rank-local files/recloc selection, assemble new source and stiffness force with native MPI routine, retain local element sensitivities, validate complete MPI route"
+    },
+    {
+      "id": "F11",
+      "status": "record_repair",
+      "phase": "independent MPI audit",
+      "result": "First passing MPI test retained native_reference.npy but temporary original baseline logs/traces were deleted by subsequent prepare; logged argv omitted nice/mpirun launch prefix",
+      "repair": "Archive native_baseline immediately; log full launched_argv and ranks; reject ranks beyond1/2; rerun final MPI suite unchanged numerically"
+    },
+    {
+      "id": "F12",
+      "status": "non_gate_diagnostic",
+      "phase": "packaging",
+      "result": "git diff --check on complete staged raw evidence reports native Fortran log trailing spaces and blank patch context; exact native logs retained unchanged",
+      "repair": "No numerical/source repair needed; scope whitespace verification to authored code, preserve raw evidence"
+    }
+  ],
+  "verification": {
+    "helper": "Frozen scripts/numerics.py copied byte-for-byte to diffspecfem/numerics.py",
+    "thresholds": "evidence/acceptance.json; no tolerance relaxation",
+    "serial": "evidence/validation.json; verified serial checkpoint evidence/serial-checkpoint-validation.json",
+    "mpi": "evidence/mpi2/validation.json; first-pass evidence/mpi2/validation-attempt1.json",
+    "resources": "evidence/performance.json and evidence/mpi2/performance.json; matched native/extension no-history/record/adjoint phases and complete processed gradient",
+    "raw_artifacts": "gradient_l2/gradient_processed directories and NPZs, per-rank histories, raw kernels, native cotangent, traces, source/build/runtime logs",
+    "commands": "evidence/native_calls.jsonl (earlier entries omit launch prefix, which is specified above; final entries record full launched_argv); scripts/build_remote.sh and scripts/build_mpi.sh reproduce fresh builds",
+    "status": "passed: final serial and final MPI suites, native baseline preservation, native operator checks, data VJP/model dot/Taylor gates and matched resource observations",
+    "helper_sha256": "ad8e5ef78da730d41dbe97a8e7ea7514204b055ebc870c6ff34638317cf825f8",
+    "heavy_artifact_locations": {
+      "remote_checkpoint_archive": "/tmp/diffspec-evidence-checkpoint.tgz on hpnewpc3-via-vps",
+      "remote_complete_artifacts": "/home/xiwang/DiffSPECFEM/evidence and run/run_mpi2",
+      "local_checkpoint_archive": "/private/tmp/diffspec-evidence-checkpoint.tgz",
+      "history_hashes": "evidence/provenance/history-sha256.txt",
+      "archive_hashes": "evidence/provenance/checkpoint-archive-sha256.txt"
+    },
+    "independent_audit": "evidence/independent-review.md; release gate YES for declared serial/two-rank SH four-coordinate scope; no numerical source repair requested"
+  }
+}
