@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "native_recommended_max_f0_hz": 8.192,
+  "source_f0_hz": 6.0,
+  "native_recommended_max_dt_s": 0.0015417246843393874,
+  "actual_dt_s": 0.001,
+  "native_cfl": 0.3243121194587636,
+  "source_log": "native_baseline/native_baseline_mpi2.log",
+  "interpretation": "native guidance satisfied; no grid-convergence claim"
+}

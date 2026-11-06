@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
 """Two-rank matched native phase resources, measured only after correctness."""
-import sys,os,time,json,subprocess
+import sys,os,time,json,subprocess,argparse
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 import numpy as np,torch
 from diffspecfem import Solver,objective
-root=Path(__file__).resolve().parents[1];ev=root/'evidence/mpi2';s=Solver(root,ranks=2)
+root=Path(__file__).resolve().parents[1]
+parser=argparse.ArgumentParser();parser.add_argument('--case');parser.add_argument('--evidence',default='evidence/mpi2');args=parser.parse_args()
+ev=root/args.evidence;s=Solver(root,ranks=2,case=args.case)
 if not json.loads((ev/'validation.json').read_text())['passed']:raise SystemExit('correctness required first')
 env=os.environ.copy();env.update(OMP_NUM_THREADS='1',MKL_NUM_THREADS='1',OPENBLAS_NUM_THREADS='1')
 rows=[]
@@ -32,5 +34,5 @@ timed('perf_native_adjoint',root/'vendor/specfem2d-mpi/bin/xspecfem2D','adjoint'
 start=time.perf_counter();result=s.value_gradient(np.zeros(4),target,'processed')
 rows.append({'name':'complete_processed_gradient','wall_seconds':time.perf_counter()-start,'scope':'mesh + native MPI full-history forward + data torch objective/VJP + source file + native MPI adjoint + kernel read/material VJP; excludes build/imports'})
 history=[{'file':p.name,'bytes':p.stat().st_size} for p in sorted((s.work/'OUTPUT_FILES').glob('*history.bin'))]
-report={'observations':rows,'history':history,'history_bytes_sum':sum(p['bytes'] for p in history),'ranks':2,'threads_per_rank':1,'gpu':'not used','rss_semantics':'independent per-rank process RSS peaks; do not add peaks and call it simultaneous RSS','contention':'shared host, no exclusive reservation; startup included; no speedup claim'}
+report={'case':args.case or 'examples/sh_two_layer','observations':rows,'history':history,'history_bytes_sum':sum(p['bytes'] for p in history),'ranks':2,'threads_per_rank':1,'gpu':'not used','rss_semantics':'independent per-rank process RSS peaks; do not add peaks and call it simultaneous RSS','contention':'shared host, no exclusive reservation; startup included; no speedup claim'}
 (ev/'performance.json').write_text(json.dumps(report,indent=2)+'\n');print(json.dumps(report,indent=2))

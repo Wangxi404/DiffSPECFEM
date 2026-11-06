@@ -12,9 +12,11 @@ import torch
 BASE_RHO=np.array([2500.,2800.]); BASE_VS=np.array([1600.,1900.])
 ROOT=Path(__file__).resolve().parents[1]
 class Solver:
-    def __init__(self,root=ROOT,ranks=1):
+    def __init__(self,root=ROOT,ranks=1,case=None):
         if ranks not in (1,2):raise ValueError('Only validated ranks=1 or ranks=2 supported')
         self.root=Path(root); self.ranks=ranks; self.work=self.root/('run' if ranks==1 else f'run_mpi{ranks}'); self.vendor=self.root/('vendor/specfem2d' if ranks==1 else 'vendor/specfem2d-mpi')
+        self.case=self.root/'examples/sh_two_layer' if case is None else self.root/Path(case)
+        if case is not None:self.work=self.root/f'run_mpi{ranks}_{self.case.name}'
         self.calls=[]
     def _run(self,command,mode=None,label='native'):
         env=os.environ.copy();env.update(OMP_NUM_THREADS='1',MKL_NUM_THREADS='1',OPENBLAS_NUM_THREADS='1')
@@ -33,7 +35,7 @@ class Solver:
         m=np.asarray(m,dtype=float)
         if m.shape!=(4,):raise ValueError('Only four log material coordinates are supported')
         if self.work.exists():shutil.rmtree(self.work)
-        shutil.copytree(self.root/'examples/sh_two_layer',self.work)
+        shutil.copytree(self.case,self.work)
         (self.work/'OUTPUT_FILES').mkdir()
         p=self.work/'DATA/Par_file';s=p.read_text()
         s=re.sub(r'(?m)^(NPROC\s*=)[^\n]*',rf'\g<1> {self.ranks}',s)

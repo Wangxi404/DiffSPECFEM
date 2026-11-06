@@ -45,7 +45,23 @@
     "production_route": "native forward -> detached receiver leaf -> real PyTorch objective/VJP -> native exact discrete adjoint -> raw GLL coefficient sensitivities -> analytic 4-coordinate material VJP",
     "production_counts": "1 mesh generation, 1 native forward, 1 native adjoint; 0 replay; 0 parameter-FD evaluations; 0 temporal-AD steps; native adjoint calls native force routine twice per step per rank",
     "unsupported": "rank counts other than 1/2 via wrapper; GPU; P-SV; acoustics; attenuation; absorbing PML/Stacey; anisotropy; periodicity; moving/noise sources; active geometry/source/boundaries; double-backward; concurrent shared work directory",
-    "continuum_accuracy_limit": "Upstream grid diagnostic suggests f0<=2.048Hz for the coarse8x8 mesh, while chosen Rickerf0=6Hz has underresolved high-frequency tail. Gates establish exact derivatives of this fixed discrete solver, not continuum waveform convergence."
+    "continuum_accuracy_limit": "Upstream grid diagnostic suggests f0<=2.048Hz for the coarse8x8 mesh, while chosen Rickerf0=6Hz has underresolved high-frequency tail. Gates establish exact derivatives of this fixed discrete solver, not continuum waveform convergence.",
+    "additional_refined_case": {
+      "name": "examples/sh_two_layer_32",
+      "grid": "32x32 elements, 16641 unique nodes",
+      "unchanged": "source/receiver files bitwise identical; geometry, materials, DT=.001, NSTEP800 unchanged",
+      "changed": "nx/nz32; region element rows1..16 and17..32",
+      "native_diagnostics": {
+        "suggested_max_f0_hz": 8.192,
+        "actual_f0_hz": 6.0,
+        "suggested_max_dt_s": 0.0015417246843393874,
+        "actual_dt_s": 0.001,
+        "cfl": 0.3243121194587636
+      },
+      "history_bytes": 214860824,
+      "rank_count": 2,
+      "status": "all required correctness gates passed first attempt"
+    }
   },
   "development": {
     "agent": "fresh independent application agent; no private DiffSpecfem, sibling experiment or original HybridADFWI inspected",
@@ -59,14 +75,15 @@
       "native_build_failures": 0,
       "serial_baseline_attempts": 2,
       "serial_baseline_failures": 1,
-      "full_validation_invocations": 7,
+      "full_validation_invocations": 8,
       "full_validation_failed": 2,
-      "full_validation_passed": 5,
+      "full_validation_passed": 6,
       "serial_adjoint_compile_attempts_before_first_nonzero_gradient": 1,
       "mpi_adjoint_compile_attempts_before_first_full_gate_pass": 1,
       "initial_native_smoke_attempts": 1,
       "mpi_native_smoke_attempts": 1
-    }
+    },
+    "verified_checkpoint_commit": "468b541bc60e6eadff592513b72fc037ba94d2ea"
   },
   "failed_attempts_and_repairs": [
     {
@@ -160,6 +177,13 @@
       "phase": "packaging",
       "result": "git diff --check on complete staged raw evidence reports native Fortran log trailing spaces and blank patch context; exact native logs retained unchanged",
       "repair": "No numerical/source repair needed; scope whitespace verification to authored code, preserve raw evidence"
+    },
+    {
+      "id": "F13",
+      "status": "scope_extension_passed",
+      "phase": "root request after numerical audit",
+      "result": "Retained verified coarse checkpoint; root requested32x32 case meeting native source resolution guidance",
+      "repair": "Added optionalcase argument and32x32 preset changing onlymesh counts/regionranges; reused native binaries; full two-rank native-preservation, sampling/history, L2/processed VJP/model-dot/Taylor suite passed first attempt with unchanged tolerances; compact records+remote hardlinked histories"
     }
   ],
   "verification": {
@@ -170,15 +194,20 @@
     "resources": "evidence/performance.json and evidence/mpi2/performance.json; matched native/extension no-history/record/adjoint phases and complete processed gradient",
     "raw_artifacts": "gradient_l2/gradient_processed directories and NPZs, per-rank histories, raw kernels, native cotangent, traces, source/build/runtime logs",
     "commands": "evidence/native_calls.jsonl (earlier entries omit launch prefix, which is specified above; final entries record full launched_argv); scripts/build_remote.sh and scripts/build_mpi.sh reproduce fresh builds",
-    "status": "passed: final serial and final MPI suites, native baseline preservation, native operator checks, data VJP/model dot/Taylor gates and matched resource observations",
+    "status": "passed: all required original serial/two-rank and refined32x32 two-rank numerical gates, matched resources, independent audits and frozen packet post-integrity",
     "helper_sha256": "ad8e5ef78da730d41dbe97a8e7ea7514204b055ebc870c6ff34638317cf825f8",
     "heavy_artifact_locations": {
       "remote_checkpoint_archive": "/tmp/diffspec-evidence-checkpoint.tgz on hpnewpc3-via-vps",
       "remote_complete_artifacts": "/home/xiwang/DiffSPECFEM/evidence and run/run_mpi2",
       "local_checkpoint_archive": "/private/tmp/diffspec-evidence-checkpoint.tgz",
       "history_hashes": "evidence/provenance/history-sha256.txt",
-      "archive_hashes": "evidence/provenance/checkpoint-archive-sha256.txt"
+      "archive_hashes": "evidence/provenance/checkpoint-archive-sha256.txt",
+      "refined_remote_histories": "/home/xiwang/DiffSPECFEM/history_archive/sh_two_layer_32, hardlinks survive temporary run cleanup",
+      "refined_history_hashes": "evidence/mpi2_32/history-archive-sha256.txt and gradient*/history_manifest.json"
     },
-    "independent_audit": "evidence/independent-review.md; release gate YES for declared serial/two-rank SH four-coordinate scope; no numerical source repair requested"
+    "independent_audit": "evidence/independent-review.md; release gate YES for declared serial/two-rank SH four-coordinate scope; no numerical source repair requested",
+    "refined_mpi": "evidence/mpi2_32/validation.json",
+    "refined_resources": "evidence/mpi2_32/performance.json",
+    "refined_independent_audit": "evidence/independent-review-refined.json; release gate YES; independent analytical data VJP, raw model VJP, native baseline, remote history/145 shared-node checks, hashes and all numerical gates confirmed"
   }
 }

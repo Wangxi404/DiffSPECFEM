@@ -1,0 +1,12 @@
+{
+  "SOURCE": {
+    "coarse_sha256": "3348a415f939eb3c784af1281347322ba577c77ceebf257063a10acd291f6f3c",
+    "refined_sha256": "3348a415f939eb3c784af1281347322ba577c77ceebf257063a10acd291f6f3c",
+    "bitwise_same": true
+  },
+  "STATIONS": {
+    "coarse_sha256": "0ac56afc2b785fdf5578fa6dca7ff3d9b1278e60059e95f8691c439249114606",
+    "refined_sha256": "0ac56afc2b785fdf5578fa6dca7ff3d9b1278e60059e95f8691c439249114606",
+    "bitwise_same": true
+  }
+}

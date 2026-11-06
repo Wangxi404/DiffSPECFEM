@@ -35,3 +35,23 @@ Measured phase observations on the shared CPU host (not a speedup study):
 | 2 | 0.489 s | 0.480 s | 0.498 s | 0.468 s | 1.490 s |
 
 Serial native-adjoint maximum process RSS and two-rank independent process RSS peaks are recorded in the corresponding resource JSON/time files. The complete scope includes meshing, history writes, data objective/VJP, source conversion, native adjoint and material-gradient conversion; setup/build/imports are excluded. MPI startup is included. Per-rank RSS peaks are not simultaneous aggregate RAM.
+
+## Refined two-rank case
+
+The additional 32×32 mesh uses the identical source/receivers, physical geometry,
+materials, DT=0.001 s and NSTEP=800. Only mesh counts and region element ranges
+change (see case-config-diff.txt). Native maximum recommended source frequency is
+8.192 Hz, maximum recommended time step is 0.0015417 s, and actual CFL is 0.3243.
+The chosen 6 Hz/0.001 s therefore meet the native guidance; this does not replace
+a grid-convergence study.
+
+| Gate | L2 | Processed |
+|---|---:|---:|
+| Model-adjoint dot relative error | 1.113e-09 | 1.215e-09 |
+| rho Taylor, all8 epsilons | pass, order2.0001–2.0085 | pass, order2.0001–2.0084 |
+| vs Taylor, all8 epsilons | pass, order2.0005–2.0127 | pass, order2.0004–2.0071 |
+| mixed Taylor, all8 epsilons | pass, order2.0003–2.0152 | pass, order2.0003–2.0110 |
+
+Original-native/extension forward traces are bitwise identical. Native sampling/scatter dot relative error is 1.214e-16; history-to-trace relative error is 1.568e-16. The complete suite passed on its first attempt in146.5s, using the original acceptance tolerances.
+
+Resource observations: native forward0.694s, extension without history0.888s, full-history forward1.027s, native adjoint1.195s, complete processed gradient2.889s. Native-adjoint per-rank RSS peaks are[126796, 126608]KiB. Independent peaks are not simultaneous aggregate RAM; these are shared-host observations including MPI startup. Histories total214,860,824bytes, retained remotely with SHA256 manifests; compact raw arrays/logs are in evidence/mpi2_32.

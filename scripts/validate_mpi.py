@@ -1,25 +1,37 @@
 #!/usr/bin/env python3
 from pathlib import Path
-import sys,json,shutil,time
+import sys,json,shutil,time,argparse,hashlib
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 import numpy as np,torch
 from diffspecfem import Solver,objective
 from diffspecfem.numerics import check_adjoint,taylor_test
-root=Path(__file__).resolve().parents[1];ev=root/'evidence/mpi2';ev.mkdir(exist_ok=True)
-s=Solver(root,ranks=2);rng=np.random.default_rng(901);m=np.zeros(4)
+root=Path(__file__).resolve().parents[1]
+parser=argparse.ArgumentParser();parser.add_argument('--case');parser.add_argument('--evidence',default='evidence/mpi2');args=parser.parse_args()
+ev=root/args.evidence;ev.mkdir(parents=True,exist_ok=True)
+s=Solver(root,ranks=2,case=args.case);rng=np.random.default_rng(901);m=np.zeros(4)
 tol=json.loads((root/'evidence/acceptance.json').read_text())
-report={'ranks':2,'accepted_thresholds':tol,'gates':{},'passed':False,'status':'running'};t0=time.perf_counter()
+report={'case':args.case or 'examples/sh_two_layer','ranks':2,'accepted_thresholds':tol,'gates':{},'passed':False,'status':'running'};t0=time.perf_counter()
 (ev/'validation.json').write_text(json.dumps(report,indent=2)+'\n')
 def save():
  (ev/'validation.json').write_text(json.dumps(report,indent=2)+'\n')
 def archived(name):
  dst=ev/name
  if dst.exists():shutil.rmtree(dst)
- shutil.copytree(s.work,dst)
+ if args.case:
+  history=[{'file':str(p.relative_to(s.work)),'bytes':p.stat().st_size,'sha256':hashlib.sha256(p.read_bytes()).hexdigest()} for p in sorted((s.work/'OUTPUT_FILES').glob('*history.bin'))]
+  shutil.copytree(s.work,dst,ignore=lambda d,n:[x for x in n if x.endswith('history.bin')])
+  (dst/'history_manifest.json').write_text(json.dumps(history,indent=2)+'\n')
+ else:shutil.copytree(s.work,dst)
 # Target is physical, separately run, heterogeneous perturbation of both families.
 s.prepare(m)
 s._run([root/'native-baseline-mpi-xspecfem2D'],label='native_baseline_mpi2')
 native_reference=s.traces();np.save(ev/'native_reference.npy',native_reference);archived('native_baseline')
+if args.case:
+ import re
+ text=(s.work/'native_baseline_mpi2.log').read_text()
+ match=re.search(r'Maximum suggested \(Ricker\) source frequency =\s*([0-9.Ee+-]+)',text)
+ recommendation=float(match.group(1)) if match else None
+ report['gates']['source_resolution']={'passed':recommendation is not None and recommendation>=6.,'native_max_suggested_f0_hz':recommendation,'source_f0_hz':6.,'interpretation':'native grid/source guidance, not a continuum-convergence study'}
 target=s.forward(np.array([.025,-.02,.035,-.03]));np.save(ev/'target.npy',target)
 for kind in ['l2','processed']:
  result=s.value_gradient(m,target,kind);archived('gradient_'+kind)

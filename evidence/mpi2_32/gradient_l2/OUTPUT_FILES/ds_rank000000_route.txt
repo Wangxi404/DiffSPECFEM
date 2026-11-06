@@ -1,0 +1,3 @@
+ native exact discrete adjoint; temporal AD=0; parameter FD=0; replay=0
+ steps,nglob,receivers,history_bytes=         800        8393           3            107430412
+ native force assembly calls=        1600

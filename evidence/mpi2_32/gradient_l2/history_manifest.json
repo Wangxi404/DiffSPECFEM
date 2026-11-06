@@ -1,0 +1,12 @@
+[
+  {
+    "file": "OUTPUT_FILES/ds_rank000000_history.bin",
+    "bytes": 107430412,
+    "sha256": "cb5234f37531d63e2b6db39895cae4e5cedc89235173ccf7a5ff90cd791fab68"
+  },
+  {
+    "file": "OUTPUT_FILES/ds_rank000001_history.bin",
+    "bytes": 107430412,
+    "sha256": "0408906bed2ac2fe97e1754d15636fa5bd8bc87cef5e17f2d6e2cf292de34b5b"
+  }
+]

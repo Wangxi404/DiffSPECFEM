@@ -1,0 +1,12 @@
+DiffSPECFEM extension
+Copyright (c) 2026 Sid
+
+The new extension code is licensed under the GNU General Public License,
+version 3 or (at your option) any later version (GPL-3.0-or-later).
+See LICENSE for the complete license text.
+
+This project extends SPECFEM2D. The upstream SPECFEM2D authors' copyright
+and license notices are retained. Main historical authors include Dimitri
+Komatitsch and Jeroen Tromp; the upstream project credits its additional
+contributors. SPECFEM2D is licensed under GPL-3.0-or-later. Its source notices
+and third-party notices remain authoritative for the fetched upstream code.

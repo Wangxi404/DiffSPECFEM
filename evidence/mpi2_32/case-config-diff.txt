@@ -1,0 +1,30 @@
+--- examples/sh_two_layer/DATA/Par_file
++++ examples/sh_two_layer_32/DATA/Par_file
+@@ -291,7 +291,7 @@
+ # geometry of the model (origin lower-left corner = 0,0) and mesh description
+ xmin                            = 0.d0           # abscissa of left side of the model
+ xmax                            = 2000.d0        # abscissa of right side of the model
+-nx                              = 8
++nx                              = 32
+ 
+ # absorbing boundary parameters (see absorbing_conditions above)
+ absorbbottom                    = .true.
+@@ -302,8 +302,8 @@
+ # define the different regions of the model in the (nx,nz) spectral-element mesh
+ nbregions                       = 2
+ # format of each line: nxmin nxmax nzmin nzmax material_number
+-1 8 1 4 1
+-1 8 5 8 2
++1 32 1 16 1
++1 32 17 32 2
+ 
+ #-----------------------------------------------------------
+ #
+--- examples/sh_two_layer/DATA/interfaces_elastic_analytic.dat
++++ examples/sh_two_layer_32/DATA/interfaces_elastic_analytic.dat
+@@ -5,4 +5,4 @@
+ 2
+ 0 0
+ 2000 0
+-8
++32

@@ -5,7 +5,9 @@ A runnable differentiation extension of **official SPECFEM2D**, pinned to
 It computes a PyTorch data-objective VJP and sends that cotangent to a compiled
 native exact discrete SH/Newmark adjoint. Production gradients use **one native
 forward, one native adjoint, zero model finite differences and zero temporal AD**.
-The upstream GPL-3.0-or-later license is retained in `LICENSE`.
+The new extension is copyright 2026 Sid and licensed GPL-3.0-or-later.
+Upstream SPECFEM2D author notices are retained under GPL-3.0-or-later; see
+`NOTICE` and the complete license text in `LICENSE`.
 
 This is a deliberately bounded application of the frozen generic skill
 `differentiate-seismic-solver` v0.1.0. The original frozen packet is unchanged;
@@ -34,6 +36,15 @@ See `application_record.json`, `evidence/validation.json`,
   settings remain fixed. The density/shear-speed map is `mu=rho*Vs**2`.
 - Internal arithmetic, receiver export, native cotangent and kernels are
   double precision. Exporting float64 is not used to disguise single arithmetic.
+
+An additional `examples/sh_two_layer_32` case refines only the mesh to 32×32
+and its material element ranges. Source/receiver files, physical geometry,
+material values, time step and step count are identical. Its native diagnostics
+recommend `f0 <= 8.192 Hz` and `DT <= 0.0015417 s`; the actual 6 Hz and 0.001 s
+meet both recommendations (CFL 0.3243). The complete two-rank suite also passes
+for this case, with 16,641 unique nodes. This is a grid-guidance check, not a
+multi-grid convergence study. Full history totals 214,860,824 bytes and is kept
+outside Git with checksums. See `evidence/mpi2_32/validation.json`.
 
 Native sample `n=1…800` is displacement **after** the native predictor/force/
 corrector step. Upstream labels it `(n-1)*DT - USER_T0`, where `USER_T0=0.22 s`.
@@ -106,6 +117,8 @@ python scripts/performance.py
 bash scripts/build_mpi.sh
 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 python scripts/validate_mpi.py
 python scripts/performance_mpi.py
+python scripts/validate_mpi.py --case examples/sh_two_layer_32 --evidence evidence/mpi2_32
+python scripts/performance_mpi.py --case examples/sh_two_layer_32 --evidence evidence/mpi2_32
 ```
 
 The build scripts expect fresh, unmodified upstream source directories and pin
@@ -121,7 +134,7 @@ A minimal objective-to-model-gradient call is:
 import numpy as np
 from diffspecfem import Solver
 
-solver = Solver(ranks=2)  # or ranks=1
+solver = Solver(ranks=2, case="examples/sh_two_layer_32")  # original: omit case; ranks=1 also supported for original
 observed = solver.forward(np.array([.025, -.02, .035, -.03]))
 result = solver.value_gradient(np.zeros(4), observed, kind="processed")
 print(result["value"], result["gradient"])
@@ -140,8 +153,9 @@ concurrent independent objectives.
 
 The coarse mesh is a discrete differentiation test, not a converged waveform
 accuracy study. Upstream diagnostics recommend `f0 <= 2.048 Hz` for this mesh;
-the chosen 6 Hz Ricker source has an underresolved high-frequency tail. All
-forward/gradient checks hold this same discrete mesh/source fixed.
+the chosen 6 Hz Ricker source has an underresolved high-frequency tail. The
+additional 32×32 case above meets the native resolution recommendation. Every
+forward/gradient check holds its declared mesh/source fixed.
 
 Numerical tolerances were declared before validation. Every epsilon, objective,
 first-order remainder and centered derivative is retained, including a failed
