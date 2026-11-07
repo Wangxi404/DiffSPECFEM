@@ -22,6 +22,7 @@ Water remains acoustic and fixed; the active solid Vp/Vs/density grid stays
 | DT / steps / total duration | 0.75 ms / 8000 / 6 s | Same | 0.5 ms / 12000 / 6 s |
 | Source time offset / native data window | 1.2 s / −1.2…4.79925 s | Same | 0.6 s / −0.6…5.3995 s |
 | Initial-model smoothing | 150 m | Same arrays | Same arrays |
+| Outer boundaries | Reflecting/free native verification box | Same | Same |
 | Production route | Native forward → data AD → native adjoint | Same | Same |
 
 Source factors with the same numeric value have different physical meanings
@@ -29,6 +30,9 @@ for an elastic force and an acoustic potential source. The examples therefore
 do not compare loss values or gradient amplitudes as an improvement score.
 Squared-norm fractions refer to a single parameter coordinate system and are
 scale-invariant diagnostics, not mechanical energy or inversion accuracy.
+Late responses can include outer-boundary reflections. The new texture is a
+derivative of this declared finite-box problem, rather than an isolated image
+of true geological interfaces or an absorbing-boundary production FWI result.
 
 ## What changing the source actually did
 
