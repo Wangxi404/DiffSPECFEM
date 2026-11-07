@@ -1,0 +1,248 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-11-07T08:44:14.499737+00:00",
+  "objective": "Fresh native Marmousi-II Vp-only conditional derivative with true Vs and rho fixed, at the original sigma150m Vp start.",
+  "numerical_status": "passed",
+  "active_coordinates": [
+    "physical solid Vp at67x200 grid nodes, m/s"
+  ],
+  "fixed_coordinates": [
+    "Vs=true",
+    "rho=true=2450kg/m3 controlled convention",
+    "native acoustic water Vp/rho and Vs=0",
+    "geometry/source/dt/receivers/outer boundaries"
+  ],
+  "target": "New actual native forward using all true fields. Its full trace byte hash equals the previous2Hz truth target; the old target was not reused as input.",
+  "provenance": {
+    "upstream_commit": "abf3196e3192af3343f2b402c82f34205577e672",
+    "case": "examples/psv_marmousi2_20261107-vponly",
+    "model_private": "data/prepared/marmousi2_20261107-vponly.npz",
+    "model_sha256": "88bc4604203588b92cd0abcfb7fe33d3c98464ff470b91b6488a8e63d7287a55",
+    "runtime_source_sha256": "4cf73259d71dd65613e85749710668f19b94ea0ccd51f42a6b615f8e1a5647c3",
+    "current_source_sha256": "40a35f66ced68c78c7494806c3562bd92b5e4fa4f277299bfb4a75a683d58c76",
+    "native_binary_sha256": {
+      "vendor/specfem2d-psv/bin/xspecfem2D": "6c71b1ebd7c03f8db3ead56315be6ba088160d3f5c6abbbee1d3e7758c76b43d",
+      "psv-baseline-xspecfem2D": "705549f87e2f8427e30cf664576c49f2bbe2bde0f93997aa055229226ac2cd50"
+    },
+    "native_kernel_changes": false,
+    "native_rebuild": false
+  },
+  "material_policy": {
+    "default_unchanged": "PSVSolver still requires lambda>0 unless allow_negative_lambda=True is explicitly supplied.",
+    "opt_in": "Positive rho, Vs, mu and bulk3D required. Negative lambda/Poisson admitted without clipping; native constitutive, mass, coupling and Newmark updates unchanged.",
+    "initial": {
+      "finite": true,
+      "rho_min": 2450.0,
+      "vp_min": 1630.4600919878367,
+      "vp_max": 4351.191073724727,
+      "vs_min": 316.9134855270386,
+      "vs_max": 2751.999855041504,
+      "vp_vs_min_ratio": 1.1980304578587107,
+      "mu_min_pa": 246063685.40679643,
+      "lambda_min_pa": -9067369770.084358,
+      "negative_lambda_count": 316,
+      "kappa2D_min_pa": 6103680011.33929,
+      "bulk3D_min_pa": 1636839097.1036072,
+      "poisson_min": -0.6486938784279541,
+      "stable": true,
+      "field_sha256": {
+        "vp": "5a137134b5fa5a6dfbd97d144d85250916bc0d2fd43b641c81e1eb67d971be66",
+        "vs": "7843bddc4f19f96625e9bef2db0fc9ecb19da714cf624fa31fa8ecf9f1c3d548",
+        "rho": "83bf9868878c675d7f3d05fdab8ddd279297c4e68a137fbcd610982dae4a2d8c"
+      }
+    },
+    "actual_GLL": {
+      "passed": true,
+      "explanation": "Fresh actual native rho/mu match interpolation of fixed true grid fields; Vp alters lambda only. Independent target/perturbed SAVE_MODEL exports retained privately.",
+      "rho_relative_linf": 5.568334908813844e-16,
+      "mu_relative_linf": 1.2335263487973222e-15,
+      "actual_gll": {
+        "rho_min": 2449.999999999999,
+        "mu_min_pa": 252298894.10719195,
+        "lambda_min_pa": -8513145005.394512,
+        "bulk3D_min_pa": 2017320200.0978642,
+        "kappa2D_min_pa": 6116089462.672695
+      },
+      "water_raw_derivative_zero": true
+    }
+  },
+  "frozen_packet": {
+    "version": "0.2.0",
+    "packet_sha256": "51b19130b19625fb074f76db5165e6517d662a61079723e0381d62bfb96f947a",
+    "pre_native_manifest": "psv_marmousi2_20261107-vponly/packet_pre_native.json",
+    "post_native_manifest": "psv_marmousi2_20261107-vponly/packet_post_native.json",
+    "files_checked_each": 11,
+    "packet_edits": false,
+    "official_post_verifier": "psv_marmousi2_20261107-vponly/official_packet_post.json"
+  },
+  "route": {
+    "description": "one native recorded forward -> actual Torch data-only L2 VJP -> one exact native coupled adjoint -> physical material map transpose -> select Vp; temporal AD=0, production FD=0, replay=0",
+    "production_forward_count": 1,
+    "production_adjoint_count": 1,
+    "temporal_AD": 0,
+    "production_parameter_FD": 0,
+    "replay_count": 0,
+    "verification_forward_count": 6,
+    "data_AD_leaf_grad_fn": "None",
+    "objective_grad_fn": "MulBackward0",
+    "native_call_evidence": "psv_marmousi2_20261107-vponly/validation.json:native_calls"
+  },
+  "resource_scope": {
+    "verification_total_seconds": 913.1390392845497,
+    "scope": "Includes fresh original-native baseline, target, recorded production forward/AD/native adjoint, history hashing/archive and four check-only forward runs. Not an optimizer-iteration benchmark.",
+    "mpi_ranks": 2,
+    "OMP_MKL_OPENBLAS_threads": 1,
+    "gpu_used": false,
+    "history_bytes": 149466240024,
+    "history_limit_bytes": 160000000000,
+    "history_policy": {
+      "files": [
+        {
+          "path": "psv_rank000000_history.bin",
+          "bytes": 74733120012,
+          "sha256": "6ec52d31f1c7371d2c2c8c5a3bd8903b5a4454648ca62644149c570d644e6e76"
+        },
+        {
+          "path": "psv_rank000001_history.bin",
+          "bytes": 74733120012,
+          "sha256": "449c5a5c97dff03a69fbdd890e076c4097322c093be5d2a7871440a3c8df3ae6"
+        }
+      ],
+      "total_bytes": 149466240024,
+      "replay_count": 0,
+      "live_state": "O(nglob); six-field history streamed from disk",
+      "retention": "temporary full history; hash retained and full forward/adjoint archive excludes it; deleted by prepare only after adjoint"
+    },
+    "host_and_other_users": "Shared authorized hpnewpc3-via-vps host; nice10 launches, no other jobs stopped or settings changed."
+  },
+  "gates": {
+    "native_forward": {
+      "passed": true,
+      "absolute_linf": 0.0,
+      "trace_sha256": "f8d4e0ef8aa90e246fac22d065ff0658dc69d5d7289efeec9bcad56b6b4136df"
+    },
+    "native_guidance": {
+      "initial": {
+        "max_f0_hz": 2.2017106750043944,
+        "max_dt_s": 0.0008310071957209128
+      },
+      "target": {
+        "max_f0_hz": 2.2017106750043944,
+        "max_dt_s": 0.0007692222407432685
+      },
+      "passed": true
+    },
+    "data_VJP": {
+      "l2": {
+        "value": 1.0777421849873532e-11,
+        "numpy_vjp_relative_l2": 0.0,
+        "centered_data_directions": [
+          {
+            "epsilon": 0.0003,
+            "lhs": -1.2340960883279745e-13,
+            "rhs": -1.2340960883795758e-13,
+            "relative_error": 4.181307166551856e-11
+          },
+          {
+            "epsilon": 0.0001,
+            "lhs": -1.2340960885164595e-13,
+            "rhs": -1.2340960883795758e-13,
+            "relative_error": 1.1091814520657048e-10
+          }
+        ],
+        "passed": true,
+        "leaf_grad_fn": "None",
+        "objective_grad_fn": "MulBackward0"
+      },
+      "processed_data_only": {
+        "value": 13190.257698734475,
+        "numpy_vjp_relative_l2": 1.6359447392462178e-16,
+        "centered_data_directions": [
+          {
+            "epsilon": 0.0003,
+            "lhs": 390.99127443175047,
+            "rhs": 390.9912619946488,
+            "relative_error": 3.1809153960076545e-08
+          },
+          {
+            "epsilon": 0.0001,
+            "lhs": 390.9912633753265,
+            "rhs": 390.9912619946488,
+            "relative_error": 3.5312239205202534e-09
+          }
+        ],
+        "passed": true,
+        "leaf_grad_fn": "None",
+        "objective_grad_fn": "MulBackward0"
+      }
+    },
+    "model_dot": [
+      {
+        "passed": true,
+        "informative": true,
+        "lhs": {
+          "real": 4.407621820837495e-10,
+          "imag": 0.0
+        },
+        "rhs": {
+          "real": 4.407648095163447e-10,
+          "imag": 0.0
+        },
+        "absolute_error": 2.627432595192264e-15,
+        "relative_error": 5.961076153233218e-06,
+        "epsilon": 0.0003,
+        "taylor_remainder_plus": 1.1278047639422738e-15,
+        "taylor_remainder_minus": 1.1301305759967794e-15
+      },
+      {
+        "passed": true,
+        "informative": true,
+        "lhs": {
+          "real": 4.407645175774952e-10,
+          "imag": 0.0
+        },
+        "rhs": {
+          "real": 4.407648095163447e-10,
+          "imag": 0.0
+        },
+        "absolute_error": 2.9193884952345936e-16,
+        "relative_error": 6.623460930191013e-07,
+        "epsilon": 0.0001,
+        "taylor_remainder_plus": 1.2539817679692847e-16,
+        "taylor_remainder_minus": 1.254843183029841e-16
+      }
+    ],
+    "fixed_fields": {
+      "passed": true
+    },
+    "stable_models": {
+      "passed": true
+    }
+  },
+  "failed_attempts": [
+    {
+      "path": "psv_negative_lambda_20261107-vponly_attempt1_packet_error",
+      "status": "pre-native verifier implementation error; zero native calls; canonical manifest SHA initially confused with tar byte SHA; repaired outside frozen packet"
+    },
+    {
+      "path": "psv_negative_lambda_20261107-vponly_attempt2_coarse_epsilon",
+      "status": "retained failed summary: h1e-3 centered truncation error2.49e-5 exceeds unchanged1e-5 threshold; finer points show order2; fresh final unit uses3e-4,1e-4,3e-5 and passes"
+    }
+  ],
+  "unit": "psv_negative_lambda_20261107-vponly",
+  "main_evidence": "psv_marmousi2_20261107-vponly",
+  "comparison": {
+    "causal_boundary": "Only choosing one output coordinate cannot change gVp at the identical physical model. Here true Vs replaces the old blurred Vs in the evaluation model, changing wavefields and residuals; rho was already constant and equal in both cases.",
+    "raw_sensitivity_statistics": "Fractions of squared Euclidean input-grid gradient norm, not physical wave energy or resolution/reconstruction scores.",
+    "fraction_gVp_squared_below1km": {
+      "previous_joint": 0.09198510774148647,
+      "new_vponly": 0.0342014516768181
+    },
+    "result": "Fixing true Vs did not increase this case's relative deep Vp sensitivity. The controlled ablation is retained without an improvement claim.",
+    "gradient_processing": "none",
+    "main_color_scale": "One shared linear P99 from concatenated old/new absolute gVp at depth>=1km; every original solid-grid sample drawn; display saturation fractions manifested."
+  },
+  "public_policy": "Complete fresh Vp gradient only, model-free5-receiver241-time QA samples plus full array hashes, small numerical/provenance JSON and exact executed source. No raw model coefficients, native raw13col fields or large histories copied to the public bundle.",
+  "figure": "figures/vponly/vponly_model_and_gradient.png",
+  "visual_QA": "PASS at report export size: all six actual-PDF panels, 7pt glyph minimum, no PDF collisions and 1.5pt alignment gate; see figures/vponly/qa/visual_qa.json"
+}
