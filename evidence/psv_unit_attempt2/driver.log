@@ -1,0 +1,201 @@
+Traceback (most recent call last):
+  File "/home/xiwang/DiffSPECFEM-PSV/scripts/validate_psv.py", line 164, in <module>
+    if __name__=='__main__':raise SystemExit(main())
+  File "/home/xiwang/DiffSPECFEM-PSV/scripts/validate_psv.py", line 91, in main
+    result=s.value_gradient(initial,target,kind);results[kind]=result
+  File "/home/xiwang/DiffSPECFEM-PSV/diffspecfem/psv.py", line 142, in value_gradient
+    start=time.perf_counter();data=self.forward(model,record=True)
+  File "/home/xiwang/DiffSPECFEM-PSV/diffspecfem/psv.py", line 121, in forward
+    self._run([binary],mode='record' if record else None,label='native_baseline' if baseline else 'forward')
+  File "/home/xiwang/DiffSPECFEM-PSV/diffspecfem/psv.py", line 80, in _run
+    raise RuntimeError(content[-8000:])
+RuntimeError: otal of            4  receivers, this is okay
+
+
+ Preparing timerun:
+
+
+ Checking mesh and stability
+
+ ********
+ Model: P (or PI) velocity min,max =    1500.0000000000000        3240.0000000000000     
+ Model: S velocity min,max         =    1598.0000000000000        1802.0000000000000     
+ Model: density min,max            =    1000.0000000000000        2600.0000000000000     
+ ********
+
+
+ *********************************************
+ *** Verification of simulation parameters ***
+ *********************************************
+
+ *** Max grid size =    250.00000000000000     
+ *** Min grid size =    200.00000000000000     
+ *** Max/min ratio =    1.2500000000000000     
+
+ *** Minimum GLL point distance  =    34.534632929202282     
+ *** Average GLL point distance  =    50.000000000000000     
+
+ *** Minimum period resolved     =   0.20833333333333331     
+ *** Maximum frequency resolved  =    4.8000000000000007      Hz
+
+ *** Maximum suggested time step                 =    5.3294186619139323E-003
+ *** Maximum suggested (Ricker) source frequency =    1.9200000000000004     
+
+ *** for DT :    1.00000005E-03
+ *** Max CFL stability condition of the time scheme based on P wave velocity (must be below about 0.50 or so) =    9.3818863129142324E-002
+
+ ----
+ Number of points per wavelength:
+ ----
+   Source            1
+   maximum dominant source frequency =    3.7500000000000000      Hz
+
+   Nb pts / lambdaP_fmax min =    6.40000010    
+   Nb pts / lambdaP_fmax max =    13.6740389    
+
+   Nb pts / lambdaS_fmax min =    6.81813335    
+   Nb pts / lambdaS_fmax max =    7.62479973    
+
+ -----------------------------------------
+
+ histogram of min number of points per S wavelength in solid regions:
+
+ there are           64  elements out of           80  in solid regions
+   (i.e.,    80.0000000     % of the total)
+
+ (too small = poor resolution of calculations -
+  too big = wasting memory and CPU time)
+ (threshold value is around 4.5 points per S wavelength
+  in elastic regions and 5.5 per P wavelength in fluid regions):
+
+   6.81813335      -    6.85846663               6     9.37500000      %
+   6.85846663      -    6.89879990               2     3.12500000      %
+   6.89879990      -    6.93913317               0     0.00000000      %
+   6.93913317      -    6.97946644               8     12.5000000      %
+   6.97946644      -    7.01979971               0     0.00000000      %
+   7.01979971      -    7.06013346               2     3.12500000      %
+   7.06013346      -    7.10046673               8     12.5000000      %
+   7.10046673      -    7.14080000               4     6.25000000      %
+   7.14080000      -    7.18113327               0     0.00000000      %
+   7.18113327      -    7.22146654               2     3.12500000      %
+   7.22146654      -    7.26179981              14     21.8750000      %
+   7.26179981      -    7.30213308               0     0.00000000      %
+   7.30213308      -    7.34246635               2     3.12500000      %
+   7.34246635      -    7.38279963               4     6.25000000      %
+   7.38279963      -    7.42313337               4     6.25000000      %
+   7.42313337      -    7.46346664               0     0.00000000      %
+   7.46346664      -    7.50379992               2     3.12500000      %
+   7.50379992      -    7.54413319               4     6.25000000      %
+   7.54413319      -    7.58446646               0     0.00000000      %
+   7.58446646      -    7.62479973               2     3.12500000      %
+
+ total percentage =    100.00000000000000       %
+
+ -----------------------------------------
+
+ histogram of min number of points per P wavelength in fluid regions:
+
+ there are           16  elements out of           80  in fluid regions
+   (i.e.,    20.0000000     % of the total)
+
+ (too small = poor resolution of calculations -
+  too big = wasting memory and CPU time)
+ (threshold value is around 4.5 points per S wavelength
+  in elastic regions and 5.5 per P wavelength in fluid regions):
+
+   6.33599997      -    6.34240007               0     0.00000000      %
+   6.34240007      -    6.34880018               0     0.00000000      %
+   6.34880018      -    6.35519981               0     0.00000000      %
+   6.35519981      -    6.36159992               0     0.00000000      %
+   6.36159992      -    6.36800003               0     0.00000000      %
+   6.36800003      -    6.37440014               0     0.00000000      %
+   6.37440014      -    6.38079977               0     0.00000000      %
+   6.38079977      -    6.38719988               0     0.00000000      %
+   6.38719988      -    6.39359999               0     0.00000000      %
+   6.39359999      -    6.40000010               0     0.00000000      %
+   6.40000010      -    6.40640020              16     100.000000      %
+   6.40640020      -    6.41279984               0     0.00000000      %
+   6.41279984      -    6.41919994               0     0.00000000      %
+   6.41919994      -    6.42560005               0     0.00000000      %
+   6.42560005      -    6.43200016               0     0.00000000      %
+   6.43200016      -    6.43839979               0     0.00000000      %
+   6.43839979      -    6.44479990               0     0.00000000      %
+   6.44479990      -    6.45120001               0     0.00000000      %
+   6.45120001      -    6.45760012               0     0.00000000      %
+   6.45760012      -    6.46400023               0     0.00000000      %
+
+ total percentage =    100.00000000000000       %
+
+
+ total number of elements in fluid and solid regions =           80
+
+ Preparing timerun constants
+
+ Preparing array allocations
+   arrays for acoustic domains
+   arrays for elastic domains
+   done initialization
+
+
+ Attenuation:
+   viscoelastic  attenuation: F (shear & bulk attenuation in elastic domains)
+   viscoacoustic attenuation: F (bulk attenuation in acoustic domains)
+
+ Preparing mass matrices
+   initializing mass matrices
+   inverting mass matrices
+
+
+ Preparing source time function
+   time stepping scheme:   Newmark
+   time stepping stages:            1
+   time step size      :    1.00000005E-03
+
+   number of time steps:         2400
+   number of sources   :            1
+
+   saving the source time function in a text file...
+
+
+ Elapsed time for preparing timerun in seconds =    5.3922780000000003E-003
+
+ ************
+  time loop
+ ************
+               scheme:         Newmark
+
+            time step:    1.00000005E-03  s
+ number of time steps:         2400
+ total simulated time:    2.40000010      seconds
+ start time:  -1.00000000      seconds
+
+
+ =========================================
+ =  T i m e  e v o l u t i o n  l o o p  =
+ =========================================
+
+STOP P-SV extension requires a coupled acoustic/elastic partition on every rank
+--------------------------------------------------------------------------
+mpirun has exited due to process rank 1 with PID 0 on
+node hpnewpc3 exiting improperly. There are three reasons this could occur:
+
+1. this process did not call "init" before exiting, but others in
+the job did. This can cause a job to hang indefinitely while it waits
+for all processes to call "init". By rule, if one process calls "init",
+then ALL processes must call "init" prior to termination.
+
+2. this process called "init", but exited without calling "finalize".
+By rule, all processes that call "init" MUST call "finalize" prior to
+exiting or it will be considered an "abnormal termination"
+
+3. this process called "MPI_Abort" or "orte_abort" and the mca parameter
+orte_create_session_dirs is set to false. In this case, the run-time cannot
+detect that the abort call was an abnormal termination. Hence, the only
+error message you will receive is this one.
+
+This may have caused other processes in the application to be
+terminated by signals sent by mpirun (as reported here).
+
+You can avoid this message by specifying -quiet on the mpirun command line.
+--------------------------------------------------------------------------
+

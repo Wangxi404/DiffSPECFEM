@@ -1,0 +1,57 @@
+{
+  "backend": "python",
+  "figure_type": "quantitative grid",
+  "core_conclusion": "The complete water-bearing Marmousi-II truth and its 150 m Gaussian initial model share the same grid and water domain; their signed differences localize the geological detail removed by smoothing.",
+  "scientific_question": "Which Vp and Vs structures are retained or removed by the declared initial-model smoothing?",
+  "layout": "Vp and Vs rows; truth, initial, and initial-minus-truth columns",
+  "panel_roles": {
+    "a": "Vp reference geological structure",
+    "b": "Vp initial-model control under the same absolute color scale",
+    "c": "Signed Vp information removed or shifted by smoothing",
+    "d": "Vs reference geological structure including zero-Vs water",
+    "e": "Vs initial-model control under the same absolute color scale",
+    "f": "Signed Vs information removed or shifted by smoothing"
+  },
+  "data_integrity": {
+    "model": "Complete ADFWI-paper Marmousi-II prepared model",
+    "shape_zx": [78, 200],
+    "retained_water_samples": 2200,
+    "x_extent_km": [5, 13.955],
+    "depth_extent_km": [0, 3.465],
+    "crop": "None beyond the declared full ADFWI-paper crop",
+    "initial_smoothing_sigma_m": 150,
+    "difference": "initial minus truth",
+    "density": "Constant 2450 kg/m^3 in truth and initial, including water",
+    "not_an_inversion_result": true,
+    "raw_inputs_distributed": false
+  },
+  "geometry": {
+    "source_original_x_depth_km": [9.5, 0.54],
+    "receiver_count": 41,
+    "receiver_original_x_extent_km": [5.1, 13.855],
+    "receiver_depth_km": 0.54,
+    "seafloor_depth_km": 0.45,
+    "status": "Declared full P-SV case geometry; figures describe model inputs, not a completed inversion"
+  },
+  "export": {
+    "width_mm": 183,
+    "height_mm": 116,
+    "formats": ["PNG", "PDF", "SVG"],
+    "raster_dpi": 600,
+    "minimum_glyph_size_pt": 5,
+    "editable_text": true
+  },
+  "review_risks": [
+    "Incorrect native-z reversal could invert the geology",
+    "The former solid-only SH crop must not be substituted",
+    "Independent absolute color scales could hide smoothing effects",
+    "A clipped difference scale could hide extreme residuals",
+    "Density and zero-Vs water must not imply a positive-Vs floor",
+    "Model input figures must not be described as inverted models"
+  ],
+  "provenance": {
+    "source": "Allied Geophysical Laboratories, University of Houston; Gary S. Martin, Robert Wiley and Kurt J. Marfurt",
+    "official_url": "https://www.agl.uh.edu/downloads/downloads.htm",
+    "prepared_data_terms": "Third-party model inputs are not relicensed or redistributed by the figure bundle"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "backend": "python",
+  "source_category": "actual native coupled P-SV simulations, no synthetic illustrative wavefield",
+  "archetype": "image plate + quant",
+  "claims": {
+    "wavefields": "The existing native solver propagates both in-plane displacement components through the full water/solid Marmousi-II domain.",
+    "data": "Data AD differentiates the actual residual and processed objective, while propagation remains native.",
+    "gradients": "The native adjoint returns spatial Vp, Vs and density derivatives on the active solid input grid at the smoothed initial model.",
+    "verification": "Both objective functions pass non-vacuous multistep tests for every advertised parameter family on the declared full-domain correctness mesh."
+  },
+  "integrity": {
+    "model": "full original 78x200 prepared Marmousi-II grid; fixed water; active 67x200 solid grid",
+    "wavefield": "every exported actual frame, all element-local 5x5 GLL points, both components; Gouraud color interpolation on explicit GLL subtriangles, no fluid/solid averaging",
+    "gradient": "unmodified discrete physical-coordinate derivatives; signed-log display allowed with exact scales reported; no smoothing, illumination correction or fitted scale",
+    "taylor": "all supplied epsilons, objectives and directions, including failures in the application record",
+    "uncertainty": "deterministic numerical checks, no invented replicates or confidence intervals"
+  },
+  "exports": ["PNG", "PDF", "SVG", "native displacement GIF"],
+  "qa": {"editable_text": true, "glyph_floor_pt": 5, "alignment_tolerance_pt": 1.5, "collision_audit": true}
+}

@@ -1,0 +1,757 @@
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/shared_par.shared_module.o src/shared/shared_par.F90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -DUSE_SCOTCH -I./external_libs/scotch/include -c -o obj/meshfem2D_par.mesh_module.o src/meshfem2D/meshfem2D_par.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -DUSE_SCOTCH -I./external_libs/scotch/include -c -o obj/compute_elements_load_par.mesh.o src/meshfem2D/compute_elements_load_par.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -DUSE_SCOTCH -I./external_libs/scotch/include -c -o obj/decompose_mesh.mesh.o src/meshfem2D/decompose_mesh.F90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -DUSE_SCOTCH -I./external_libs/scotch/include -c -o obj/determine_abs_surface.mesh.o src/meshfem2D/determine_abs_surface.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -DUSE_SCOTCH -I./external_libs/scotch/include -c -o obj/determine_acoustic_surface.mesh.o src/meshfem2D/determine_acoustic_surface.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -DUSE_SCOTCH -I./external_libs/scotch/include -c -o obj/get_node_number.mesh.o src/meshfem2D/get_node_number.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -DUSE_SCOTCH -I./external_libs/scotch/include -c -o obj/metis_partitioning.mesh.o src/meshfem2D/metis_partitioning.F90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -DUSE_SCOTCH -I./external_libs/scotch/include -c -o obj/part_unstruct.mesh.o src/meshfem2D/part_unstruct.F90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -DUSE_SCOTCH -I./external_libs/scotch/include -c -o obj/read_external_mesh_files.mesh.o src/meshfem2D/read_external_mesh_files.F90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -DUSE_SCOTCH -I./external_libs/scotch/include -c -o obj/read_mesh_files.mesh.o src/meshfem2D/read_mesh_files.F90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -DUSE_SCOTCH -I./external_libs/scotch/include -c -o obj/repartition_coupling.mesh.o src/meshfem2D/repartition_coupling.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -DUSE_SCOTCH -I./external_libs/scotch/include -c -o obj/rotate_mesh.mesh.o src/meshfem2D/rotate_mesh.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -DUSE_SCOTCH -I./external_libs/scotch/include -c -o obj/save_databases.mesh.o src/meshfem2D/save_databases.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -DUSE_SCOTCH -I./external_libs/scotch/include -c -o obj/save_gnuplot_file.mesh.o src/meshfem2D/save_gnuplot_file.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -DUSE_SCOTCH -I./external_libs/scotch/include -c -o obj/save_stations_file.mesh.o src/meshfem2D/save_stations_file.f90
+Using bundled Scotch
+make -C "./external_libs/scotch/src"
+make[1]: Entering directory '/home/xiwang/DiffSPECFEM-PSV/vendor/specfem2d-psv/external_libs/scotch_5.1.12b/src'
+mkdir ../bin
+mkdir ../lib
+(cd libscotch ;      make scotch ; make install)
+make[2]: Entering directory '/home/xiwang/DiffSPECFEM-PSV/vendor/specfem2d-psv/external_libs/scotch_5.1.12b/src/libscotch'
+make CC="gcc" CCD="gcc"	\
+				scotch.h				\
+				scotchf.h				\
+				libscotch.a				\
+				libscotcherr.a			\
+				libscotcherrexit.a
+make[3]: Entering directory '/home/xiwang/DiffSPECFEM-PSV/vendor/specfem2d-psv/external_libs/scotch_5.1.12b/src/libscotch'
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict  -DSCOTCH_VERSION=5 -DSCOTCH_RELEASE=1 -DSCOTCH_PATCHLEVEL=12 dummysizes.c -o dummysizes -lz -lm 
+./dummysizes library.h scotch.h
+./dummysizes libraryf.h scotchf.h
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c arch.c -o arch.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c arch_build.c -o arch_build.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c arch_cmplt.c -o arch_cmplt.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c arch_cmpltw.c -o arch_cmpltw.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c arch_deco.c -o arch_deco.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c arch_hcub.c -o arch_hcub.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c arch_mesh.c -o arch_mesh.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c arch_tleaf.c -o arch_tleaf.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c arch_torus.c -o arch_torus.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c arch_vcmplt.c -o arch_vcmplt.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c arch_vhcub.c -o arch_vhcub.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c bgraph.c -o bgraph.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c bgraph_bipart_bd.c -o bgraph_bipart_bd.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c bgraph_bipart_df.c -o bgraph_bipart_df.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c bgraph_bipart_ex.c -o bgraph_bipart_ex.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c bgraph_bipart_fm.c -o bgraph_bipart_fm.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c bgraph_bipart_gg.c -o bgraph_bipart_gg.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c bgraph_bipart_gp.c -o bgraph_bipart_gp.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c bgraph_bipart_ml.c -o bgraph_bipart_ml.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c bgraph_bipart_st.c -o bgraph_bipart_st.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c bgraph_bipart_zr.c -o bgraph_bipart_zr.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c bgraph_check.c -o bgraph_check.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c bgraph_store.c -o bgraph_store.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c common.c -DSCOTCH_COMMON_RENAME -o common.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c common_file.c -DSCOTCH_COMMON_RENAME -o common_file.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c common_file_compress.c -DSCOTCH_COMMON_RENAME -o common_file_compress.o
+In file included from /usr/include/features.h:486,
+                 from /usr/include/ctype.h:25,
+                 from common.h:67,
+                 from common_file_compress.c:58:
+In function ‘read’,
+    inlined from ‘fileCompressGz’ at common_file_compress.c:295:20,
+    inlined from ‘fileCompress2’ at common_file_compress.c:149:7:
+/usr/include/x86_64-linux-gnu/bits/unistd.h:38:10: warning: ‘__read_alias’ writing 131072 bytes into a region of size 8 overflows the destination [-Wstringop-overflow=]
+   38 |   return __glibc_fortify (read, __nbytes, sizeof (char),
+      |          ^~~~~~~~~~~~~~~
+In file included from common_file_compress.c:60:
+/usr/include/x86_64-linux-gnu/bits/unistd.h: In function ‘fileCompress2’:
+common_file_compress.h:79:29: note: destination object ‘datatab’ of size 8
+   79 |   double                    datatab;              /*+ Start of data buffer         +*/
+      |                             ^~~~~~~
+In file included from /usr/include/features.h:486,
+                 from /usr/include/ctype.h:25,
+                 from common.h:67,
+                 from common_file_compress.c:58:
+/usr/include/x86_64-linux-gnu/bits/unistd.h:26:16: note: in a call to function ‘__read_alias’ declared with attribute ‘access (write_only, 2, 3)’
+   26 | extern ssize_t __REDIRECT (__read_alias, (int __fd, void *__buf,
+      |                ^~~~~~~~~~
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c common_file_uncompress.c -DSCOTCH_COMMON_RENAME -o common_file_uncompress.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c common_integer.c -DSCOTCH_COMMON_RENAME -o common_integer.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c common_memory.c -DSCOTCH_COMMON_RENAME -o common_memory.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c common_string.c -DSCOTCH_COMMON_RENAME -o common_string.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c common_stub.c -DSCOTCH_COMMON_RENAME -o common_stub.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c gain.c -o gain.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c geom.c -o geom.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c graph.c -o graph.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c graph_base.c -o graph_base.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c graph_check.c -o graph_check.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c graph_coarsen.c -o graph_coarsen.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c graph_induce.c -o graph_induce.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c graph_io.c -o graph_io.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c graph_io_chac.c -o graph_io_chac.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c graph_io_habo.c -o graph_io_habo.o
+In file included from graph_io_habo.c:62:
+graph_io_habo.c: In function ‘_SCOTCHgraphGeomLoadHabo’:
+common.h:116:37: warning: ‘realloc’ called on pointer ‘*grafptr.edgetax’ with nonzero offset 4 [-Wfree-nonheap-object]
+  116 | #define memRealloc(ptr,size)        realloc((ptr),((size) | 8))
+      |                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+graph_io_habo.c:340:32: note: in expansion of macro ‘memRealloc’
+  340 |   grafptr->edgetax = ((Gnum *) memRealloc (grafptr->edgetax + 1, grafptr->edgenbr * sizeof (Gnum))) - 1;
+      |                                ^~~~~~~~~~
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c graph_io_mmkt.c -o graph_io_mmkt.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c graph_io_scot.c -o graph_io_scot.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c graph_list.c -o graph_list.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c hall_order_hd.c -o hall_order_hd.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c hall_order_hf.c -o hall_order_hf.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c hall_order_hx.c -o hall_order_hx.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c hgraph.c -o hgraph.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c hgraph_check.c -o hgraph_check.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c hgraph_induce.c -o hgraph_induce.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c hgraph_order_bl.c -o hgraph_order_bl.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c hgraph_order_cp.c -o hgraph_order_cp.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c hgraph_order_gp.c -o hgraph_order_gp.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c hgraph_order_hd.c -o hgraph_order_hd.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c hgraph_order_hf.c -o hgraph_order_hf.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c hgraph_order_hx.c -o hgraph_order_hx.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c hgraph_order_nd.c -o hgraph_order_nd.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c hgraph_order_si.c -o hgraph_order_si.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c hgraph_order_st.c -o hgraph_order_st.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c hmesh.c -o hmesh.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c hmesh_check.c -o hmesh_check.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c hmesh_hgraph.c -o hmesh_hgraph.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c hmesh_induce.c -o hmesh_induce.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c hmesh_mesh.c -o hmesh_mesh.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c hmesh_order_bl.c -o hmesh_order_bl.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c hmesh_order_cp.c -o hmesh_order_cp.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c hmesh_order_gr.c -o hmesh_order_gr.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c hmesh_order_gp.c -o hmesh_order_gp.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c hmesh_order_hd.c -o hmesh_order_hd.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c hmesh_order_hf.c -o hmesh_order_hf.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c hmesh_order_hx.c -o hmesh_order_hx.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c hmesh_order_nd.c -o hmesh_order_nd.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c hmesh_order_si.c -o hmesh_order_si.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c hmesh_order_st.c -o hmesh_order_st.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c kgraph.c -o kgraph.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c kgraph_check.c -o kgraph_check.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c kgraph_map_ml.c -o kgraph_map_ml.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c kgraph_map_rb.c -o kgraph_map_rb.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c kgraph_map_rb_map.c -o kgraph_map_rb_map.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c kgraph_map_rb_part.c -o kgraph_map_rb_part.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c kgraph_map_st.c -o kgraph_map_st.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c library_arch.c -o library_arch.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c library_arch_f.c -o library_arch_f.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c library_arch_build.c -o library_arch_build.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c library_arch_build_f.c -o library_arch_build_f.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c library_geom.c -o library_geom.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c library_geom_f.c -o library_geom_f.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c library_graph.c -o library_graph.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c library_graph_f.c -o library_graph_f.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c library_graph_base.c -o library_graph_base.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c library_graph_base_f.c -o library_graph_base_f.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c library_graph_check.c -o library_graph_check.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c library_graph_check_f.c -o library_graph_check_f.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c library_graph_coarsen.c -o library_graph_coarsen.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c library_graph_coarsen_f.c -o library_graph_coarsen_f.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c library_graph_io_chac.c -o library_graph_io_chac.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c library_graph_io_chac_f.c -o library_graph_io_chac_f.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c library_graph_io_habo.c -o library_graph_io_habo.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c library_graph_io_habo_f.c -o library_graph_io_habo_f.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c library_graph_io_mmkt.c -o library_graph_io_mmkt.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c library_graph_io_mmkt_f.c -o library_graph_io_mmkt_f.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c library_graph_io_scot.c -o library_graph_io_scot.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c library_graph_io_scot_f.c -o library_graph_io_scot_f.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c library_graph_map.c -o library_graph_map.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c library_graph_map_f.c -o library_graph_map_f.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c library_graph_map_view.c -o library_graph_map_view.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c library_graph_map_view_f.c -o library_graph_map_view_f.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c library_graph_order.c -o library_graph_order.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c library_graph_order_f.c -o library_graph_order_f.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c library_mapping.c -o library_mapping.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c library_mesh.c -o library_mesh.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c library_mesh_f.c -o library_mesh_f.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c library_mesh_graph.c -o library_mesh_graph.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c library_mesh_graph_f.c -o library_mesh_graph_f.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c library_mesh_io_habo.c -o library_mesh_io_habo.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c library_mesh_io_habo_f.c -o library_mesh_io_habo_f.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c library_mesh_io_scot.c -o library_mesh_io_scot.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c library_mesh_io_scot_f.c -o library_mesh_io_scot_f.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c library_mesh_order.c -o library_mesh_order.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c library_mesh_order_f.c -o library_mesh_order_f.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c library_order.c -o library_order.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c library_parser.c -o library_parser.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c library_parser_f.c -o library_parser_f.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c library_random.c -o library_random.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c library_random_f.c -o library_random_f.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c library_strat.c -o library_strat.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c library_version.c -o library_version.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c library_version_f.c -o library_version_f.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c mapping.c -o mapping.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c mapping_io.c -o mapping_io.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c mesh.c -o mesh.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c mesh_check.c -o mesh_check.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c mesh_coarsen.c -o mesh_coarsen.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c mesh_graph.c -o mesh_graph.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c mesh_induce_sepa.c -o mesh_induce_sepa.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c mesh_io.c -o mesh_io.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c mesh_io_habo.c -o mesh_io_habo.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c mesh_io_scot.c -o mesh_io_scot.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c order.c -o order.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c order_check.c -o order_check.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c order_io.c -o order_io.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c parser.c -o parser.o
+(yacc -pscotchyy -b y -d -v parser_yy.y &&		\
+				 mv y.tab.c parser_yy.c &&		\
+				 mv y.tab.h parser_ly.h) ||		\
+				cp last_resort/parser_ly.h last_resort/parser_yy.c .
+/bin/sh: 1: yacc: not found
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c parser_yy.c -o parser_yy.o
+(: -Pscotchyy -olex.yy.c parser_ll.l &&			\
+				 mv lex.yy.c parser_ll.c) ||		\
+				cp last_resort/parser_ll.c .
+mv: cannot stat 'lex.yy.c': No such file or directory
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c parser_ll.c -o parser_ll.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c vgraph.c -o vgraph.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c vgraph_check.c -o vgraph_check.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c vgraph_separate_bd.c -o vgraph_separate_bd.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c vgraph_separate_es.c -o vgraph_separate_es.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c vgraph_separate_fm.c -o vgraph_separate_fm.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c vgraph_separate_gg.c -o vgraph_separate_gg.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c vgraph_separate_gp.c -o vgraph_separate_gp.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c vgraph_separate_ml.c -o vgraph_separate_ml.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c vgraph_separate_st.c -o vgraph_separate_st.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c vgraph_separate_th.c -o vgraph_separate_th.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c vgraph_separate_vw.c -o vgraph_separate_vw.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c vgraph_separate_zr.c -o vgraph_separate_zr.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c vgraph_store.c -o vgraph_store.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c vmesh.c -o vmesh.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c vmesh_check.c -o vmesh_check.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c vmesh_separate_fm.c -o vmesh_separate_fm.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c vmesh_separate_gg.c -o vmesh_separate_gg.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c vmesh_separate_gr.c -o vmesh_separate_gr.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c vmesh_separate_ml.c -o vmesh_separate_ml.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c vmesh_separate_zr.c -o vmesh_separate_zr.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c vmesh_separate_st.c -o vmesh_separate_st.o
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c vmesh_store.c -o vmesh_store.o
+ar -rv libscotch.a arch.o arch_build.o arch_cmplt.o arch_cmpltw.o arch_deco.o arch_hcub.o arch_mesh.o arch_tleaf.o arch_torus.o arch_vcmplt.o arch_vhcub.o bgraph.o bgraph_bipart_bd.o bgraph_bipart_df.o bgraph_bipart_ex.o bgraph_bipart_fm.o bgraph_bipart_gg.o bgraph_bipart_gp.o bgraph_bipart_ml.o bgraph_bipart_st.o bgraph_bipart_zr.o bgraph_check.o bgraph_store.o common.o common_file.o common_file_compress.o common_file_uncompress.o common_integer.o common_memory.o common_string.o common_stub.o gain.o geom.o graph.o graph_base.o graph_check.o graph_coarsen.o graph_induce.o graph_io.o graph_io_chac.o graph_io_habo.o graph_io_mmkt.o graph_io_scot.o graph_list.o hall_order_hd.o hall_order_hf.o hall_order_hx.o hgraph.o hgraph_check.o hgraph_induce.o hgraph_order_bl.o hgraph_order_cp.o hgraph_order_gp.o hgraph_order_hd.o hgraph_order_hf.o hgraph_order_hx.o hgraph_order_nd.o hgraph_order_si.o hgraph_order_st.o hmesh.o hmesh_check.o hmesh_hgraph.o hmesh_induce.o hmesh_mesh.o hmesh_order_bl.o hmesh_order_cp.o hmesh_order_gr.o hmesh_order_gp.o hmesh_order_hd.o hmesh_order_hf.o hmesh_order_hx.o hmesh_order_nd.o hmesh_order_si.o hmesh_order_st.o kgraph.o kgraph_check.o kgraph_map_ml.o kgraph_map_rb.o kgraph_map_rb_map.o kgraph_map_rb_part.o kgraph_map_st.o library_arch.o library_arch_f.o library_arch_build.o library_arch_build_f.o library_geom.o library_geom_f.o library_graph.o library_graph_f.o library_graph_base.o library_graph_base_f.o library_graph_check.o library_graph_check_f.o library_graph_coarsen.o library_graph_coarsen_f.o library_graph_io_chac.o library_graph_io_chac_f.o library_graph_io_habo.o library_graph_io_habo_f.o library_graph_io_mmkt.o library_graph_io_mmkt_f.o library_graph_io_scot.o library_graph_io_scot_f.o library_graph_map.o library_graph_map_f.o library_graph_map_view.o library_graph_map_view_f.o library_graph_order.o library_graph_order_f.o library_mapping.o library_mesh.o library_mesh_f.o library_mesh_graph.o library_mesh_graph_f.o library_mesh_io_habo.o library_mesh_io_habo_f.o library_mesh_io_scot.o library_mesh_io_scot_f.o library_mesh_order.o library_mesh_order_f.o library_order.o library_parser.o library_parser_f.o library_random.o library_random_f.o library_strat.o library_version.o library_version_f.o mapping.o mapping_io.o mesh.o mesh_check.o mesh_coarsen.o mesh_graph.o mesh_induce_sepa.o mesh_io.o mesh_io_habo.o mesh_io_scot.o order.o order_check.o order_io.o parser.o parser_ll.o parser_yy.o vgraph.o vgraph_check.o vgraph_separate_bd.o vgraph_separate_es.o vgraph_separate_fm.o vgraph_separate_gg.o vgraph_separate_gp.o vgraph_separate_ml.o vgraph_separate_st.o vgraph_separate_th.o vgraph_separate_vw.o vgraph_separate_zr.o vgraph_store.o vmesh.o vmesh_check.o vmesh_separate_fm.o vmesh_separate_gg.o vmesh_separate_gr.o vmesh_separate_ml.o vmesh_separate_zr.o vmesh_separate_st.o vmesh_store.o
+ar: creating libscotch.a
+a - arch.o
+a - arch_build.o
+a - arch_cmplt.o
+a - arch_cmpltw.o
+a - arch_deco.o
+a - arch_hcub.o
+a - arch_mesh.o
+a - arch_tleaf.o
+a - arch_torus.o
+a - arch_vcmplt.o
+a - arch_vhcub.o
+a - bgraph.o
+a - bgraph_bipart_bd.o
+a - bgraph_bipart_df.o
+a - bgraph_bipart_ex.o
+a - bgraph_bipart_fm.o
+a - bgraph_bipart_gg.o
+a - bgraph_bipart_gp.o
+a - bgraph_bipart_ml.o
+a - bgraph_bipart_st.o
+a - bgraph_bipart_zr.o
+a - bgraph_check.o
+a - bgraph_store.o
+a - common.o
+a - common_file.o
+a - common_file_compress.o
+a - common_file_uncompress.o
+a - common_integer.o
+a - common_memory.o
+a - common_string.o
+a - common_stub.o
+a - gain.o
+a - geom.o
+a - graph.o
+a - graph_base.o
+a - graph_check.o
+a - graph_coarsen.o
+a - graph_induce.o
+a - graph_io.o
+a - graph_io_chac.o
+a - graph_io_habo.o
+a - graph_io_mmkt.o
+a - graph_io_scot.o
+a - graph_list.o
+a - hall_order_hd.o
+a - hall_order_hf.o
+a - hall_order_hx.o
+a - hgraph.o
+a - hgraph_check.o
+a - hgraph_induce.o
+a - hgraph_order_bl.o
+a - hgraph_order_cp.o
+a - hgraph_order_gp.o
+a - hgraph_order_hd.o
+a - hgraph_order_hf.o
+a - hgraph_order_hx.o
+a - hgraph_order_nd.o
+a - hgraph_order_si.o
+a - hgraph_order_st.o
+a - hmesh.o
+a - hmesh_check.o
+a - hmesh_hgraph.o
+a - hmesh_induce.o
+a - hmesh_mesh.o
+a - hmesh_order_bl.o
+a - hmesh_order_cp.o
+a - hmesh_order_gr.o
+a - hmesh_order_gp.o
+a - hmesh_order_hd.o
+a - hmesh_order_hf.o
+a - hmesh_order_hx.o
+a - hmesh_order_nd.o
+a - hmesh_order_si.o
+a - hmesh_order_st.o
+a - kgraph.o
+a - kgraph_check.o
+a - kgraph_map_ml.o
+a - kgraph_map_rb.o
+a - kgraph_map_rb_map.o
+a - kgraph_map_rb_part.o
+a - kgraph_map_st.o
+a - library_arch.o
+a - library_arch_f.o
+a - library_arch_build.o
+a - library_arch_build_f.o
+a - library_geom.o
+a - library_geom_f.o
+a - library_graph.o
+a - library_graph_f.o
+a - library_graph_base.o
+a - library_graph_base_f.o
+a - library_graph_check.o
+a - library_graph_check_f.o
+a - library_graph_coarsen.o
+a - library_graph_coarsen_f.o
+a - library_graph_io_chac.o
+a - library_graph_io_chac_f.o
+a - library_graph_io_habo.o
+a - library_graph_io_habo_f.o
+a - library_graph_io_mmkt.o
+a - library_graph_io_mmkt_f.o
+a - library_graph_io_scot.o
+a - library_graph_io_scot_f.o
+a - library_graph_map.o
+a - library_graph_map_f.o
+a - library_graph_map_view.o
+a - library_graph_map_view_f.o
+a - library_graph_order.o
+a - library_graph_order_f.o
+a - library_mapping.o
+a - library_mesh.o
+a - library_mesh_f.o
+a - library_mesh_graph.o
+a - library_mesh_graph_f.o
+a - library_mesh_io_habo.o
+a - library_mesh_io_habo_f.o
+a - library_mesh_io_scot.o
+a - library_mesh_io_scot_f.o
+a - library_mesh_order.o
+a - library_mesh_order_f.o
+a - library_order.o
+a - library_parser.o
+a - library_parser_f.o
+a - library_random.o
+a - library_random_f.o
+a - library_strat.o
+a - library_version.o
+a - library_version_f.o
+a - mapping.o
+a - mapping_io.o
+a - mesh.o
+a - mesh_check.o
+a - mesh_coarsen.o
+a - mesh_graph.o
+a - mesh_induce_sepa.o
+a - mesh_io.o
+a - mesh_io_habo.o
+a - mesh_io_scot.o
+a - order.o
+a - order_check.o
+a - order_io.o
+a - parser.o
+a - parser_ll.o
+a - parser_yy.o
+a - vgraph.o
+a - vgraph_check.o
+a - vgraph_separate_bd.o
+a - vgraph_separate_es.o
+a - vgraph_separate_fm.o
+a - vgraph_separate_gg.o
+a - vgraph_separate_gp.o
+a - vgraph_separate_ml.o
+a - vgraph_separate_st.o
+a - vgraph_separate_th.o
+a - vgraph_separate_vw.o
+a - vgraph_separate_zr.o
+a - vgraph_store.o
+a - vmesh.o
+a - vmesh_check.o
+a - vmesh_separate_fm.o
+a - vmesh_separate_gg.o
+a - vmesh_separate_gr.o
+a - vmesh_separate_ml.o
+a - vmesh_separate_zr.o
+a - vmesh_separate_st.o
+a - vmesh_store.o
+ranlib libscotch.a
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c library_error.c -o library_error.o
+ar -rv libscotcherr.a library_error.o
+ar: creating libscotcherr.a
+a - library_error.o
+ranlib libscotcherr.a
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict   -c library_error_exit.c -o library_error_exit.o
+ar -rv libscotcherrexit.a library_error_exit.o
+ar: creating libscotcherrexit.a
+a - library_error_exit.o
+ranlib libscotcherrexit.a
+make[3]: Leaving directory '/home/xiwang/DiffSPECFEM-PSV/vendor/specfem2d-psv/external_libs/scotch_5.1.12b/src/libscotch'
+make[2]: Leaving directory '/home/xiwang/DiffSPECFEM-PSV/vendor/specfem2d-psv/external_libs/scotch_5.1.12b/src/libscotch'
+make[2]: Entering directory '/home/xiwang/DiffSPECFEM-PSV/vendor/specfem2d-psv/external_libs/scotch_5.1.12b/src/libscotch'
+cp scotch.h ../../include
+cp scotchf.h ../../include
+cp libscotch.a ../../lib
+cp libscotcherr.a ../../lib
+cp libscotcherrexit.a ../../lib
+make[2]: Leaving directory '/home/xiwang/DiffSPECFEM-PSV/vendor/specfem2d-psv/external_libs/scotch_5.1.12b/src/libscotch'
+(cd scotch ;         make scotch ; make install)
+make[2]: Entering directory '/home/xiwang/DiffSPECFEM-PSV/vendor/specfem2d-psv/external_libs/scotch_5.1.12b/src/scotch'
+make CC="gcc" SCOTCHLIB=scotch	\
+				acpl				\
+				amk_ccc				\
+				amk_fft2				\
+				amk_grf				\
+				amk_hy				\
+				amk_m2				\
+				amk_p2				\
+				atst				\
+				gbase				\
+				gcv				\
+				gmap				\
+				gmk_hy				\
+				gmk_m2				\
+				gmk_m3				\
+				gmk_msh				\
+				gmk_ub2				\
+				gmtst				\
+				gord				\
+				gotst				\
+				gout				\
+				gpart				\
+				gscat				\
+				gtst				\
+				mcv				\
+				mmk_m2				\
+				mmk_m3				\
+				mord				\
+				mtst
+make[3]: Entering directory '/home/xiwang/DiffSPECFEM-PSV/vendor/specfem2d-psv/external_libs/scotch_5.1.12b/src/scotch'
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict  -I../../include -I../libscotch acpl.c -o acpl -L../../lib -lscotch -lscotcherrexit -lz -lm 
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict  -I../../include -I../libscotch amk_ccc.c -o amk_ccc -L../../lib -lscotch -lscotcherrexit -lz -lm 
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict  -I../../include -I../libscotch amk_fft2.c -o amk_fft2 -L../../lib -lscotch -lscotcherrexit -lz -lm 
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict  -I../../include -I../libscotch amk_grf.c -o amk_grf -L../../lib -lscotch -lscotcherrexit -lz -lm 
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict  -I../../include -I../libscotch amk_hy.c -o amk_hy -L../../lib -lscotch -lscotcherrexit -lz -lm 
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict  -I../../include -I../libscotch amk_m2.c -o amk_m2 -L../../lib -lscotch -lscotcherrexit -lz -lm 
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict  -I../../include -I../libscotch amk_p2.c -o amk_p2 -L../../lib -lscotch -lscotcherrexit -lz -lm 
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict  -I../../include -I../libscotch atst.c -o atst -L../../lib -lscotch -lscotcherrexit -lz -lm 
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict  -I../../include -I../libscotch gbase.c -o gbase -L../../lib -lscotch -lscotcherrexit -lz -lm 
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict  -I../../include -I../libscotch gcv.c -o gcv -L../../lib -lscotch -lscotcherrexit -lz -lm 
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict  -I../../include -I../libscotch gmap.c -o gmap -L../../lib -lscotch -lscotcherrexit -lz -lm 
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict  -I../../include -I../libscotch gmk_hy.c -o gmk_hy -L../../lib -lscotch -lscotcherrexit -lz -lm 
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict  -I../../include -I../libscotch gmk_m2.c -o gmk_m2 -L../../lib -lscotch -lscotcherrexit -lz -lm 
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict  -I../../include -I../libscotch gmk_m3.c -o gmk_m3 -L../../lib -lscotch -lscotcherrexit -lz -lm 
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict  -I../../include -I../libscotch gmk_msh.c -o gmk_msh -L../../lib -lscotch -lscotcherrexit -lz -lm 
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict  -I../../include -I../libscotch gmk_ub2.c -o gmk_ub2 -L../../lib -lscotch -lscotcherrexit -lz -lm 
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict  -I../../include -I../libscotch gmtst.c -o gmtst -L../../lib -lscotch -lscotcherrexit -lz -lm 
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict  -I../../include -I../libscotch gord.c -o gord -L../../lib -lscotch -lscotcherrexit -lz -lm 
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict  -I../../include -I../libscotch gotst.c -o gotst -L../../lib -lscotch -lscotcherrexit -lz -lm 
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict  -I../libscotch -I../../include gout_c.c gout_o.c -o gout -L../../lib -lscotch -lscotcherrexit -lz -lm 
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict  -I../../include -I../libscotch gmap.c -DSCOTCH_COMPILE_PART -o gpart -L../../lib -lscotch -lscotcherrexit -lz -lm 
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict  -I../../include -I../libscotch gscat.c -o gscat -L../../lib -lscotch -lscotcherrexit -lz -lm 
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict  -I../../include -I../libscotch gtst.c -o gtst -L../../lib -lscotch -lscotcherrexit -lz -lm 
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict  -I../../include -I../libscotch mcv.c -o mcv -L../../lib -lscotch -lscotcherrexit -lz -lm 
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict  -I../../include -I../libscotch mmk_m2.c -o mmk_m2 -L../../lib -lscotch -lscotcherrexit -lz -lm 
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict  -I../../include -I../libscotch mmk_m3.c -o mmk_m3 -L../../lib -lscotch -lscotcherrexit -lz -lm 
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict  -I../../include -I../libscotch mord.c -o mord -L../../lib -lscotch -lscotcherrexit -lz -lm 
+gcc -O3 -DCOMMON_FILE_COMPRESS_GZ -DCOMMON_PTHREAD -DCOMMON_RANDOM_FIXED_SEED -DSCOTCH_RENAME -DSCOTCH_RENAME_PARSER -DSCOTCH_PTHREAD -Drestrict=__restrict  -I../../include -I../libscotch mtst.c -o mtst -L../../lib -lscotch -lscotcherrexit -lz -lm 
+make[3]: Leaving directory '/home/xiwang/DiffSPECFEM-PSV/vendor/specfem2d-psv/external_libs/scotch_5.1.12b/src/scotch'
+make[2]: Leaving directory '/home/xiwang/DiffSPECFEM-PSV/vendor/specfem2d-psv/external_libs/scotch_5.1.12b/src/scotch'
+make[2]: Entering directory '/home/xiwang/DiffSPECFEM-PSV/vendor/specfem2d-psv/external_libs/scotch_5.1.12b/src/scotch'
+cp acpl ../../bin/acpl
+cp amk_ccc ../../bin/amk_ccc
+cp amk_fft2 ../../bin/amk_fft2
+cp amk_grf ../../bin/amk_grf
+cp amk_hy ../../bin/amk_hy
+cp amk_m2 ../../bin/amk_m2
+cp amk_p2 ../../bin/amk_p2
+cp atst ../../bin/atst
+cp gbase ../../bin/gbase
+cp gcv ../../bin/gcv
+cp gmap ../../bin/gmap
+cp gmk_hy ../../bin/gmk_hy
+cp gmk_m2 ../../bin/gmk_m2
+cp gmk_m3 ../../bin/gmk_m3
+cp gmk_msh ../../bin/gmk_msh
+cp gmk_ub2 ../../bin/gmk_ub2
+cp gmtst ../../bin/gmtst
+cp gord ../../bin/gord
+cp gotst ../../bin/gotst
+cp gout ../../bin/gout
+cp gpart ../../bin/gpart
+cp gscat ../../bin/gscat
+cp gtst ../../bin/gtst
+cp mcv ../../bin/mcv
+cp mmk_m2 ../../bin/mmk_m2
+cp mmk_m3 ../../bin/mmk_m3
+cp mord ../../bin/mord
+cp mtst ../../bin/mtst
+make[2]: Leaving directory '/home/xiwang/DiffSPECFEM-PSV/vendor/specfem2d-psv/external_libs/scotch_5.1.12b/src/scotch'
+make[1]: Leaving directory '/home/xiwang/DiffSPECFEM-PSV/vendor/specfem2d-psv/external_libs/scotch_5.1.12b/src'
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -DUSE_SCOTCH -I./external_libs/scotch/include -c -o obj/scotch_partitioning.mesh.o src/meshfem2D/scotch_partitioning.F90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -DUSE_SCOTCH -I./external_libs/scotch/include -c -o obj/meshfem2D.mesh.o src/meshfem2D/meshfem2D.F90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/exit_mpi.shared.o src/shared/exit_mpi.F90
+mpif90 -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/parallel.sharedmpi.o src/shared/parallel.F90
+gcc -c -DWITH_MPI -g -O2 -DWITH_MPI -I./setup -o obj/param_reader.cc.o src/shared/param_reader.c
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/read_interfaces_file.shared.o src/shared/read_interfaces_file.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/read_material_table.shared.o src/shared/read_material_table.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/read_parameter_file.shared.o src/shared/read_parameter_file.F90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/read_regions.shared.o src/shared/read_regions.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/read_source_file.shared.o src/shared/read_source_file.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/read_value_parameters.shared.o src/shared/read_value_parameters.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/spline_routines.shared.o src/shared/spline_routines.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/write_VTK_data.shared.o src/shared/write_VTK_data.f90
+
+building xmeshfem2D
+
+mpif90 -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -o ./bin/xmeshfem2D ./obj/meshfem2D_par.mesh_module.o ./obj/compute_elements_load_par.mesh.o ./obj/decompose_mesh.mesh.o ./obj/determine_abs_surface.mesh.o ./obj/determine_acoustic_surface.mesh.o ./obj/get_node_number.mesh.o ./obj/metis_partitioning.mesh.o ./obj/part_unstruct.mesh.o ./obj/read_external_mesh_files.mesh.o ./obj/read_mesh_files.mesh.o ./obj/repartition_coupling.mesh.o ./obj/rotate_mesh.mesh.o ./obj/save_databases.mesh.o ./obj/save_gnuplot_file.mesh.o ./obj/save_stations_file.mesh.o ./obj/scotch_partitioning.mesh.o ./obj/meshfem2D.mesh.o  ./obj/shared_par.shared_module.o ./obj/exit_mpi.shared.o ./obj/parallel.sharedmpi.o ./obj/param_reader.cc.o ./obj/read_interfaces_file.shared.o ./obj/read_material_table.shared.o ./obj/read_parameter_file.shared.o ./obj/read_regions.shared.o ./obj/read_source_file.shared.o ./obj/read_value_parameters.shared.o ./obj/spline_routines.shared.o ./obj/write_VTK_data.shared.o    -L./external_libs/scotch/lib -lscotch -lscotcherr
+
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/specfem2D_par.spec_module.o src/specfem2D/specfem2D_par.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/acoustic_forcing_boundary.spec.o src/specfem2D/acoustic_forcing_boundary.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/add_acoustic_forcing.spec.o src/specfem2D/add_acoustic_forcing.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/add_manual_crack.spec.o src/specfem2D/add_manual_crack.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/assemble_MPI.spec.o src/specfem2D/assemble_MPI.F90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/attenuation_model.spec.o src/specfem2D/attenuation_model.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/axisymmetric_routines.spec.o src/specfem2D/axisymmetric_routines.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/calendar.spec.o src/specfem2D/calendar.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/check_grid.spec.o src/specfem2D/check_grid.F90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/check_stability.spec.o src/specfem2D/check_stability.F90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/comp_source_time_function.spec.o src/specfem2D/comp_source_time_function.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/moving_sources_par.spec.o src/specfem2D/moving_sources_par.F90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/compute_add_sources_acoustic.spec.o src/specfem2D/compute_add_sources_acoustic.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/compute_add_sources_poro.spec.o src/specfem2D/compute_add_sources_poro.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/compute_add_sources_viscoelastic.spec.o src/specfem2D/compute_add_sources_viscoelastic.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/compute_arrays_source.spec.o src/specfem2D/compute_arrays_source.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/compute_attenuation_poro_fluid_part.spec.o src/specfem2D/compute_attenuation_poro_fluid_part.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/compute_attenuation_viscoelastic.spec.o src/specfem2D/compute_attenuation_viscoelastic.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/compute_Bielak_conditions.spec.o src/specfem2D/compute_Bielak_conditions.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/compute_coupling_acoustic_el.spec.o src/specfem2D/compute_coupling_acoustic_el.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/compute_coupling_acoustic_po.spec.o src/specfem2D/compute_coupling_acoustic_po.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/compute_coupling_poro_ac.spec.o src/specfem2D/compute_coupling_poro_ac.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/compute_coupling_poro_viscoelastic.spec.o src/specfem2D/compute_coupling_poro_viscoelastic.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/compute_coupling_viscoelastic_ac.spec.o src/specfem2D/compute_coupling_viscoelastic_ac.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/compute_coupling_viscoelastic_po.spec.o src/specfem2D/compute_coupling_viscoelastic_po.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/compute_curl_one_element.spec.o src/specfem2D/compute_curl_one_element.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/compute_energy.spec.o src/specfem2D/compute_energy.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/compute_forces_viscoacoustic.spec.o src/specfem2D/compute_forces_viscoacoustic.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/compute_attenuation_viscoacoustic.spec.o src/specfem2D/compute_attenuation_viscoacoustic.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/compute_forces_viscoacoustic_calling_routine.spec.o src/specfem2D/compute_forces_viscoacoustic_calling_routine.F90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/compute_forces_poroelastic_calling_routine.spec.o src/specfem2D/compute_forces_poroelastic_calling_routine.F90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/compute_forces_poro_fluid.spec.o src/specfem2D/compute_forces_poro_fluid.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/compute_forces_poro_solid.spec.o src/specfem2D/compute_forces_poro_solid.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/compute_forces_poro_viscous_damping.spec.o src/specfem2D/compute_forces_poro_viscous_damping.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/compute_forces_viscoelastic.spec.o src/specfem2D/compute_forces_viscoelastic.F90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/compute_forces_viscoelastic_calling_routine.spec.o src/specfem2D/compute_forces_viscoelastic_calling_routine.F90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/compute_gpu_acoustic.spec.o src/specfem2D/compute_gpu_acoustic.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/compute_gpu_elastic.spec.o src/specfem2D/compute_gpu_elastic.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/compute_gradient_attenuation.spec.o src/specfem2D/compute_gradient_attenuation.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/compute_interpolated_dva.spec.o src/specfem2D/compute_interpolated_dva.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/compute_normal_vector.spec.o src/specfem2D/compute_normal_vector.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/compute_pressure.spec.o src/specfem2D/compute_pressure.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/compute_stacey_acoustic.spec.o src/specfem2D/compute_stacey_acoustic.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/compute_stacey_elastic.spec.o src/specfem2D/compute_stacey_elastic.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/compute_stacey_poroelastic.spec.o src/specfem2D/compute_stacey_poroelastic.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/compute_vector_field.spec.o src/specfem2D/compute_vector_field.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/construct_acoustic_surface.spec.o src/specfem2D/construct_acoustic_surface.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/convert_time.spec.o src/specfem2D/convert_time.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/create_color_image.spec.o src/specfem2D/create_color_image.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/createnum_fast.spec.o src/specfem2D/createnum_fast.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/createnum_slow.spec.o src/specfem2D/createnum_slow.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/datim.spec.o src/specfem2D/datim.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/define_derivation_matrices.spec.o src/specfem2D/define_derivation_matrices.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/define_external_model.spec.o src/specfem2D/define_external_model.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/define_external_model_from_tomo_file.spec.o src/specfem2D/define_external_model_from_tomo_file.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/define_external_model_from_marmousi.spec.o src/specfem2D/define_external_model_from_marmousi.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/enforce_acoustic_free_surface.spec.o src/specfem2D/enforce_acoustic_free_surface.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/enforce_fields.spec.o src/specfem2D/enforce_fields.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/finalize_simulation.spec.o src/specfem2D/finalize_simulation.F90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/get_coupling_edges.spec.o src/specfem2D/get_coupling_edges.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/get_MPI.spec.o src/specfem2D/get_MPI.F90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/get_global.spec.o src/specfem2D/get_global.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/get_poroelastic_velocities.spec.o src/specfem2D/get_poroelastic_velocities.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/get_simulation_domains.spec.o src/specfem2D/get_simulation_domains.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/initialize_simulation.spec.o src/specfem2D/initialize_simulation.F90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/invert_mass_matrix.spec.o src/specfem2D/invert_mass_matrix.F90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/is_in_convex_quadrilateral.spec.o src/specfem2D/is_in_convex_quadrilateral.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/iterate_time.spec.o src/specfem2D/iterate_time.F90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/iterate_time_undoatt.spec.o src/specfem2D/iterate_time_undoatt.F90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/locate_receivers.spec.o src/specfem2D/locate_receivers.F90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/locate_source.spec.o src/specfem2D/locate_source.F90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/netlib_specfun_erf.spec.o src/specfem2D/netlib_specfun_erf.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/noise_tomography.spec.o src/specfem2D/noise_tomography.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/paco_beyond_critical.spec.o src/specfem2D/paco_beyond_critical.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/paco_convolve_fft.spec.o src/specfem2D/paco_convolve_fft.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/plot_gll.spec.o src/specfem2D/plot_gll.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/plot_post.spec.o src/specfem2D/plot_post.F90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/pml_init.spec.o src/specfem2D/pml_init.F90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/pml_compute.spec.o src/specfem2D/pml_compute.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/pml_compute_accel_contribution.spec.o src/specfem2D/pml_compute_accel_contribution.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/pml_compute_memory_variables.spec.o src/specfem2D/pml_compute_memory_variables.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/prepare_absorb.spec.o src/specfem2D/prepare_absorb.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/prepare_assemble_MPI.spec.o src/specfem2D/prepare_assemble_MPI.F90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/prepare_attenuation.spec.o src/specfem2D/prepare_attenuation.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/prepare_color_image.spec.o src/specfem2D/prepare_color_image.F90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/prepare_gpu.spec.o src/specfem2D/prepare_gpu.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/prepare_initial_field.spec.o src/specfem2D/prepare_initial_field.F90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/prepare_noise.spec.o src/specfem2D/prepare_noise.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/prepare_pml.spec.o src/specfem2D/prepare_pml.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/prepare_source_time_function.spec.o src/specfem2D/prepare_source_time_function.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/prepare_timerun.spec.o src/specfem2D/prepare_timerun.F90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/prepare_wavefields.spec.o src/specfem2D/prepare_wavefields.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/read_materials.spec.o src/specfem2D/read_materials.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/read_mesh_databases.spec.o src/specfem2D/read_mesh_databases.F90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/read_external_model.spec.o src/specfem2D/read_external_model.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/read_forward_arrays.spec.o src/specfem2D/read_forward_arrays.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/read_save_binary_database.spec.o src/specfem2D/read_save_binary_database.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/recompute_jacobian.spec.o src/specfem2D/recompute_jacobian.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/save_adjoint_kernels.spec.o src/specfem2D/save_adjoint_kernels.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/save_forward_arrays.spec.o src/specfem2D/save_forward_arrays.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/save_model_files.spec.o src/specfem2D/save_model_files.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/save_openDX_jacobian.spec.o src/specfem2D/save_openDX_jacobian.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/set_source_parameters.spec.o src/specfem2D/set_source_parameters.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/setup_GLL_points.spec.o src/specfem2D/setup_GLL_points.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/setup_mesh.spec.o src/specfem2D/setup_mesh.F90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/setup_sources_receivers.spec.o src/specfem2D/setup_sources_receivers.F90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/sort_array_coordinates.spec.o src/specfem2D/sort_array_coordinates.F90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/specfem2D.spec.o src/specfem2D/specfem2D.F90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/update_displacement_LDDRK.spec.o src/specfem2D/update_displacement_LDDRK.F90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/update_displacement_Newmark.spec.o src/specfem2D/update_displacement_Newmark.F90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/update_displacement_RK.spec.o src/specfem2D/update_displacement_RK.F90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/update_displacement_symplectic.spec.o src/specfem2D/update_displacement_symplectic.F90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/compute_kernels.spec.o src/specfem2D/compute_kernels.f90
+gcc -g -O2 -DWITH_MPI -I./setup -I./external_libs/libjpeg -c -o obj/write_jpeg_image.cc.o src/specfem2D/write_jpeg_image.c
+gcc -g -O2 -DWITH_MPI -I./setup -I./external_libs/libjpeg -c -o obj/attenuation_compute_param.cc.o src/specfem2D/attenuation_compute_param.c
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/write_movie_output.spec.o src/specfem2D/write_movie_output.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/write_output_SU.spec.o src/specfem2D/write_output_SU.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/write_seismograms.spec.o src/specfem2D/write_seismograms.F90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/write_postscript_snapshot.spec.o src/specfem2D/write_postscript_snapshot.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/write_color_image_snaphot.spec.o src/specfem2D/write_color_image_snaphot.F90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/write_wavefield_dumps.spec.o src/specfem2D/write_wavefield_dumps.F90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/save_read_array_for_undoatt.spec.o src/specfem2D/save_read_array_for_undoatt.f90
+gcc -c -g -O2 -DWITH_MPI -I./setup -I./external_libs/libjpeg -o obj/jaricom.cc_jpeg.o external_libs/libjpeg/jaricom.c
+gcc -c -g -O2 -DWITH_MPI -I./setup -I./external_libs/libjpeg -o obj/jcapimin.cc_jpeg.o external_libs/libjpeg/jcapimin.c
+gcc -c -g -O2 -DWITH_MPI -I./setup -I./external_libs/libjpeg -o obj/jcapistd.cc_jpeg.o external_libs/libjpeg/jcapistd.c
+gcc -c -g -O2 -DWITH_MPI -I./setup -I./external_libs/libjpeg -o obj/jcarith.cc_jpeg.o external_libs/libjpeg/jcarith.c
+gcc -c -g -O2 -DWITH_MPI -I./setup -I./external_libs/libjpeg -o obj/jccoefct.cc_jpeg.o external_libs/libjpeg/jccoefct.c
+gcc -c -g -O2 -DWITH_MPI -I./setup -I./external_libs/libjpeg -o obj/jccolor.cc_jpeg.o external_libs/libjpeg/jccolor.c
+gcc -c -g -O2 -DWITH_MPI -I./setup -I./external_libs/libjpeg -o obj/jcdctmgr.cc_jpeg.o external_libs/libjpeg/jcdctmgr.c
+gcc -c -g -O2 -DWITH_MPI -I./setup -I./external_libs/libjpeg -o obj/jchuff.cc_jpeg.o external_libs/libjpeg/jchuff.c
+gcc -c -g -O2 -DWITH_MPI -I./setup -I./external_libs/libjpeg -o obj/jcinit.cc_jpeg.o external_libs/libjpeg/jcinit.c
+gcc -c -g -O2 -DWITH_MPI -I./setup -I./external_libs/libjpeg -o obj/jcmainct.cc_jpeg.o external_libs/libjpeg/jcmainct.c
+gcc -c -g -O2 -DWITH_MPI -I./setup -I./external_libs/libjpeg -o obj/jcmarker.cc_jpeg.o external_libs/libjpeg/jcmarker.c
+gcc -c -g -O2 -DWITH_MPI -I./setup -I./external_libs/libjpeg -o obj/jcmaster.cc_jpeg.o external_libs/libjpeg/jcmaster.c
+gcc -c -g -O2 -DWITH_MPI -I./setup -I./external_libs/libjpeg -o obj/jcomapi.cc_jpeg.o external_libs/libjpeg/jcomapi.c
+gcc -c -g -O2 -DWITH_MPI -I./setup -I./external_libs/libjpeg -o obj/jcparam.cc_jpeg.o external_libs/libjpeg/jcparam.c
+gcc -c -g -O2 -DWITH_MPI -I./setup -I./external_libs/libjpeg -o obj/jcprepct.cc_jpeg.o external_libs/libjpeg/jcprepct.c
+gcc -c -g -O2 -DWITH_MPI -I./setup -I./external_libs/libjpeg -o obj/jcsample.cc_jpeg.o external_libs/libjpeg/jcsample.c
+gcc -c -g -O2 -DWITH_MPI -I./setup -I./external_libs/libjpeg -o obj/jctrans.cc_jpeg.o external_libs/libjpeg/jctrans.c
+gcc -c -g -O2 -DWITH_MPI -I./setup -I./external_libs/libjpeg -o obj/jdapimin.cc_jpeg.o external_libs/libjpeg/jdapimin.c
+gcc -c -g -O2 -DWITH_MPI -I./setup -I./external_libs/libjpeg -o obj/jdapistd.cc_jpeg.o external_libs/libjpeg/jdapistd.c
+gcc -c -g -O2 -DWITH_MPI -I./setup -I./external_libs/libjpeg -o obj/jdarith.cc_jpeg.o external_libs/libjpeg/jdarith.c
+gcc -c -g -O2 -DWITH_MPI -I./setup -I./external_libs/libjpeg -o obj/jdatadst.cc_jpeg.o external_libs/libjpeg/jdatadst.c
+gcc -c -g -O2 -DWITH_MPI -I./setup -I./external_libs/libjpeg -o obj/jdatasrc.cc_jpeg.o external_libs/libjpeg/jdatasrc.c
+gcc -c -g -O2 -DWITH_MPI -I./setup -I./external_libs/libjpeg -o obj/jdcoefct.cc_jpeg.o external_libs/libjpeg/jdcoefct.c
+gcc -c -g -O2 -DWITH_MPI -I./setup -I./external_libs/libjpeg -o obj/jdcolor.cc_jpeg.o external_libs/libjpeg/jdcolor.c
+gcc -c -g -O2 -DWITH_MPI -I./setup -I./external_libs/libjpeg -o obj/jddctmgr.cc_jpeg.o external_libs/libjpeg/jddctmgr.c
+gcc -c -g -O2 -DWITH_MPI -I./setup -I./external_libs/libjpeg -o obj/jdhuff.cc_jpeg.o external_libs/libjpeg/jdhuff.c
+gcc -c -g -O2 -DWITH_MPI -I./setup -I./external_libs/libjpeg -o obj/jdinput.cc_jpeg.o external_libs/libjpeg/jdinput.c
+gcc -c -g -O2 -DWITH_MPI -I./setup -I./external_libs/libjpeg -o obj/jdmainct.cc_jpeg.o external_libs/libjpeg/jdmainct.c
+gcc -c -g -O2 -DWITH_MPI -I./setup -I./external_libs/libjpeg -o obj/jdmarker.cc_jpeg.o external_libs/libjpeg/jdmarker.c
+gcc -c -g -O2 -DWITH_MPI -I./setup -I./external_libs/libjpeg -o obj/jdmaster.cc_jpeg.o external_libs/libjpeg/jdmaster.c
+gcc -c -g -O2 -DWITH_MPI -I./setup -I./external_libs/libjpeg -o obj/jdmerge.cc_jpeg.o external_libs/libjpeg/jdmerge.c
+gcc -c -g -O2 -DWITH_MPI -I./setup -I./external_libs/libjpeg -o obj/jdpostct.cc_jpeg.o external_libs/libjpeg/jdpostct.c
+gcc -c -g -O2 -DWITH_MPI -I./setup -I./external_libs/libjpeg -o obj/jdsample.cc_jpeg.o external_libs/libjpeg/jdsample.c
+gcc -c -g -O2 -DWITH_MPI -I./setup -I./external_libs/libjpeg -o obj/jdtrans.cc_jpeg.o external_libs/libjpeg/jdtrans.c
+gcc -c -g -O2 -DWITH_MPI -I./setup -I./external_libs/libjpeg -o obj/jerror.cc_jpeg.o external_libs/libjpeg/jerror.c
+gcc -c -g -O2 -DWITH_MPI -I./setup -I./external_libs/libjpeg -o obj/jfdctflt.cc_jpeg.o external_libs/libjpeg/jfdctflt.c
+gcc -c -g -O2 -DWITH_MPI -I./setup -I./external_libs/libjpeg -o obj/jfdctfst.cc_jpeg.o external_libs/libjpeg/jfdctfst.c
+gcc -c -g -O2 -DWITH_MPI -I./setup -I./external_libs/libjpeg -o obj/jfdctint.cc_jpeg.o external_libs/libjpeg/jfdctint.c
+gcc -c -g -O2 -DWITH_MPI -I./setup -I./external_libs/libjpeg -o obj/jidctflt.cc_jpeg.o external_libs/libjpeg/jidctflt.c
+gcc -c -g -O2 -DWITH_MPI -I./setup -I./external_libs/libjpeg -o obj/jidctfst.cc_jpeg.o external_libs/libjpeg/jidctfst.c
+gcc -c -g -O2 -DWITH_MPI -I./setup -I./external_libs/libjpeg -o obj/jidctint.cc_jpeg.o external_libs/libjpeg/jidctint.c
+gcc -c -g -O2 -DWITH_MPI -I./setup -I./external_libs/libjpeg -o obj/jmemmgr.cc_jpeg.o external_libs/libjpeg/jmemmgr.c
+gcc -c -g -O2 -DWITH_MPI -I./setup -I./external_libs/libjpeg -o obj/jmemnobs.cc_jpeg.o external_libs/libjpeg/jmemnobs.c
+gcc -c -g -O2 -DWITH_MPI -I./setup -I./external_libs/libjpeg -o obj/jquant1.cc_jpeg.o external_libs/libjpeg/jquant1.c
+gcc -c -g -O2 -DWITH_MPI -I./setup -I./external_libs/libjpeg -o obj/jquant2.cc_jpeg.o external_libs/libjpeg/jquant2.c
+gcc -c -g -O2 -DWITH_MPI -I./setup -I./external_libs/libjpeg -o obj/jutils.cc_jpeg.o external_libs/libjpeg/jutils.c
+gcc -c -DWITH_MPI -g -O2 -DWITH_MPI -I./setup -I/usr/lib/x86_64-linux-gnu/openmpi/lib/../../fortran/gfortran-mod-15/openmpi -o obj/specfem2D_gpu_cuda_method_stubs.gpu_cc.o src/gpu/specfem2D_gpu_cuda_method_stubs.c
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/define_shape_functions.shared.o src/shared/define_shape_functions.f90
+gcc -c -DWITH_MPI -g -O2 -DWITH_MPI -I./setup -o obj/force_ftz.cc.o src/shared/force_ftz.c
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/gll_library.shared.o src/shared/gll_library.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/init_openmp.shared.o src/shared/init_openmp.F90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/lagrange_poly.shared.o src/shared/lagrange_poly.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/set_color_palette.shared.o src/shared/set_color_palette.f90
+
+building xspecfem2D without CUDA support
+
+mpif90 -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -o ./bin/xspecfem2D ./obj/specfem2D_par.spec_module.o ./obj/acoustic_forcing_boundary.spec.o ./obj/add_acoustic_forcing.spec.o ./obj/add_manual_crack.spec.o ./obj/assemble_MPI.spec.o ./obj/attenuation_model.spec.o ./obj/axisymmetric_routines.spec.o ./obj/calendar.spec.o ./obj/check_grid.spec.o ./obj/check_stability.spec.o ./obj/comp_source_time_function.spec.o ./obj/compute_add_sources_acoustic.spec.o ./obj/compute_add_sources_poro.spec.o ./obj/compute_add_sources_viscoelastic.spec.o ./obj/compute_arrays_source.spec.o ./obj/compute_attenuation_poro_fluid_part.spec.o ./obj/compute_attenuation_viscoelastic.spec.o ./obj/compute_Bielak_conditions.spec.o ./obj/compute_coupling_acoustic_el.spec.o ./obj/compute_coupling_acoustic_po.spec.o ./obj/compute_coupling_poro_ac.spec.o ./obj/compute_coupling_poro_viscoelastic.spec.o ./obj/compute_coupling_viscoelastic_ac.spec.o ./obj/compute_coupling_viscoelastic_po.spec.o ./obj/compute_curl_one_element.spec.o ./obj/compute_energy.spec.o ./obj/compute_forces_viscoacoustic.spec.o ./obj/compute_attenuation_viscoacoustic.spec.o ./obj/compute_forces_viscoacoustic_calling_routine.spec.o ./obj/compute_forces_poroelastic_calling_routine.spec.o ./obj/compute_forces_poro_fluid.spec.o ./obj/compute_forces_poro_solid.spec.o ./obj/compute_forces_poro_viscous_damping.spec.o ./obj/compute_forces_viscoelastic.spec.o ./obj/compute_forces_viscoelastic_calling_routine.spec.o ./obj/compute_gpu_acoustic.spec.o ./obj/compute_gpu_elastic.spec.o ./obj/compute_gradient_attenuation.spec.o ./obj/compute_interpolated_dva.spec.o ./obj/compute_normal_vector.spec.o ./obj/compute_pressure.spec.o ./obj/compute_stacey_acoustic.spec.o ./obj/compute_stacey_elastic.spec.o ./obj/compute_stacey_poroelastic.spec.o ./obj/compute_vector_field.spec.o ./obj/construct_acoustic_surface.spec.o ./obj/convert_time.spec.o ./obj/create_color_image.spec.o ./obj/createnum_fast.spec.o ./obj/createnum_slow.spec.o ./obj/datim.spec.o ./obj/define_derivation_matrices.spec.o ./obj/define_external_model.spec.o ./obj/define_external_model_from_tomo_file.spec.o ./obj/define_external_model_from_marmousi.spec.o ./obj/enforce_acoustic_free_surface.spec.o ./obj/enforce_fields.spec.o ./obj/finalize_simulation.spec.o ./obj/get_coupling_edges.spec.o ./obj/get_MPI.spec.o ./obj/get_global.spec.o ./obj/get_poroelastic_velocities.spec.o ./obj/get_simulation_domains.spec.o ./obj/initialize_simulation.spec.o ./obj/invert_mass_matrix.spec.o ./obj/is_in_convex_quadrilateral.spec.o ./obj/iterate_time.spec.o ./obj/iterate_time_undoatt.spec.o ./obj/locate_receivers.spec.o ./obj/locate_source.spec.o ./obj/moving_sources_par.spec.o ./obj/netlib_specfun_erf.spec.o ./obj/noise_tomography.spec.o ./obj/paco_beyond_critical.spec.o ./obj/paco_convolve_fft.spec.o ./obj/plot_gll.spec.o ./obj/plot_post.spec.o ./obj/pml_init.spec.o ./obj/pml_compute.spec.o ./obj/pml_compute_accel_contribution.spec.o ./obj/pml_compute_memory_variables.spec.o ./obj/prepare_absorb.spec.o ./obj/prepare_assemble_MPI.spec.o ./obj/prepare_attenuation.spec.o ./obj/prepare_color_image.spec.o ./obj/prepare_gpu.spec.o ./obj/prepare_initial_field.spec.o ./obj/prepare_noise.spec.o ./obj/prepare_pml.spec.o ./obj/prepare_source_time_function.spec.o ./obj/prepare_timerun.spec.o ./obj/prepare_wavefields.spec.o ./obj/read_materials.spec.o ./obj/read_mesh_databases.spec.o ./obj/read_external_model.spec.o ./obj/read_forward_arrays.spec.o ./obj/read_save_binary_database.spec.o ./obj/recompute_jacobian.spec.o ./obj/save_adjoint_kernels.spec.o ./obj/save_forward_arrays.spec.o ./obj/save_model_files.spec.o ./obj/save_openDX_jacobian.spec.o ./obj/set_source_parameters.spec.o ./obj/setup_GLL_points.spec.o ./obj/setup_mesh.spec.o ./obj/setup_sources_receivers.spec.o ./obj/sort_array_coordinates.spec.o ./obj/specfem2D.spec.o ./obj/update_displacement_LDDRK.spec.o ./obj/update_displacement_Newmark.spec.o ./obj/update_displacement_RK.spec.o ./obj/update_displacement_symplectic.spec.o ./obj/compute_kernels.spec.o ./obj/write_jpeg_image.cc.o ./obj/attenuation_compute_param.cc.o ./obj/write_movie_output.spec.o ./obj/write_output_SU.spec.o ./obj/write_seismograms.spec.o ./obj/write_postscript_snapshot.spec.o ./obj/write_color_image_snaphot.spec.o ./obj/write_wavefield_dumps.spec.o ./obj/save_read_array_for_undoatt.spec.o  ./obj/jaricom.cc_jpeg.o ./obj/jcapimin.cc_jpeg.o ./obj/jcapistd.cc_jpeg.o ./obj/jcarith.cc_jpeg.o ./obj/jccoefct.cc_jpeg.o ./obj/jccolor.cc_jpeg.o ./obj/jcdctmgr.cc_jpeg.o ./obj/jchuff.cc_jpeg.o ./obj/jcinit.cc_jpeg.o ./obj/jcmainct.cc_jpeg.o ./obj/jcmarker.cc_jpeg.o ./obj/jcmaster.cc_jpeg.o ./obj/jcomapi.cc_jpeg.o ./obj/jcparam.cc_jpeg.o ./obj/jcprepct.cc_jpeg.o ./obj/jcsample.cc_jpeg.o ./obj/jctrans.cc_jpeg.o ./obj/jdapimin.cc_jpeg.o ./obj/jdapistd.cc_jpeg.o ./obj/jdarith.cc_jpeg.o ./obj/jdatadst.cc_jpeg.o ./obj/jdatasrc.cc_jpeg.o ./obj/jdcoefct.cc_jpeg.o ./obj/jdcolor.cc_jpeg.o ./obj/jddctmgr.cc_jpeg.o ./obj/jdhuff.cc_jpeg.o ./obj/jdinput.cc_jpeg.o ./obj/jdmainct.cc_jpeg.o ./obj/jdmarker.cc_jpeg.o ./obj/jdmaster.cc_jpeg.o ./obj/jdmerge.cc_jpeg.o ./obj/jdpostct.cc_jpeg.o ./obj/jdsample.cc_jpeg.o ./obj/jdtrans.cc_jpeg.o ./obj/jerror.cc_jpeg.o ./obj/jfdctflt.cc_jpeg.o ./obj/jfdctfst.cc_jpeg.o ./obj/jfdctint.cc_jpeg.o ./obj/jidctflt.cc_jpeg.o ./obj/jidctfst.cc_jpeg.o ./obj/jidctint.cc_jpeg.o ./obj/jmemmgr.cc_jpeg.o ./obj/jmemnobs.cc_jpeg.o ./obj/jquant1.cc_jpeg.o ./obj/jquant2.cc_jpeg.o ./obj/jutils.cc_jpeg.o  ./obj/specfem2D_gpu_cuda_method_stubs.gpu_cc.o  ./obj/shared_par.shared_module.o ./obj/define_shape_functions.shared.o ./obj/exit_mpi.shared.o ./obj/force_ftz.cc.o ./obj/gll_library.shared.o ./obj/init_openmp.shared.o ./obj/lagrange_poly.shared.o ./obj/parallel.sharedmpi.o ./obj/read_parameter_file.shared.o ./obj/read_value_parameters.shared.o ./obj/read_material_table.shared.o ./obj/read_interfaces_file.shared.o ./obj/read_regions.shared.o ./obj/read_source_file.shared.o ./obj/param_reader.cc.o ./obj/set_color_palette.shared.o   
+
+mpif90 -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/adj_seismogram.aux.o src/auxiliaries/adj_seismogram.f90
+
+building xadj_seismogram
+
+mpif90 -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -o bin/xadj_seismogram obj/adj_seismogram.aux.o
+
+mpif90 -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/check_quality_external_mesh.aux.o src/auxiliaries/check_quality_external_mesh.f90
+
+building xcheck_quality_external_mesh
+
+mpif90 -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -o bin/xcheck_quality_external_mesh obj/check_quality_external_mesh.aux.o obj/shared_par.shared_module.o obj/define_shape_functions.shared.o obj/exit_mpi.shared.o obj/parallel.sharedmpi.o obj/read_interfaces_file.shared.o obj/read_parameter_file.shared.o obj/read_value_parameters.shared.o obj/read_material_table.shared.o obj/read_regions.shared.o obj/param_reader.cc.o
+
+mpif90 -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/convolve_source_timefunction.aux.o src/auxiliaries/convolve_source_timefunction.f90
+
+building xconvolve_source_timefunction
+
+mpif90 -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -o bin/xconvolve_source_timefunction obj/convolve_source_timefunction.aux.o
+
+mpif90 -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/postprocess_par.postprocess_module.o src/tomography/postprocess_sensitivity_kernels/postprocess_par.f90
+mpif90 -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/combine_sem.postprocess.o src/tomography/postprocess_sensitivity_kernels/combine_sem.F90
+mpif90 -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/parse_kernel_names.postprocess.o src/tomography/postprocess_sensitivity_kernels/parse_kernel_names.f90
+
+building xcombine_sem
+
+mpif90 -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -o bin/xcombine_sem obj/postprocess_par.postprocess_module.o obj/combine_sem.postprocess.o obj/parse_kernel_names.postprocess.o obj/specfem2D_par.spec_module.o obj/shared_par.shared_module.o obj/exit_mpi.shared.o obj/parallel.sharedmpi.o obj/read_parameter_file.shared.o obj/read_value_parameters.shared.o obj/read_material_table.shared.o obj/read_interfaces_file.shared.o obj/read_regions.shared.o obj/param_reader.cc.o
+
+mpif90 -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/smooth_sem.postprocess.o src/tomography/postprocess_sensitivity_kernels/smooth_sem.F90
+
+building xsmooth_sem without CUDA support
+
+mpif90 -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -o bin/xsmooth_sem obj/postprocess_par.postprocess_module.o obj/smooth_sem.postprocess.o obj/parse_kernel_names.postprocess.o obj/specfem2D_gpu_cuda_method_stubs.gpu_cc.o obj/specfem2D_par.spec_module.o obj/shared_par.shared_module.o obj/exit_mpi.shared.o obj/gll_library.shared.o obj/parallel.sharedmpi.o obj/read_parameter_file.shared.o obj/read_value_parameters.shared.o obj/read_material_table.shared.o obj/read_interfaces_file.shared.o obj/read_regions.shared.o obj/param_reader.cc.o  
+
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/tomography_par.tomo_module.o src/tomography/tomography_par.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/sum_kernels.tomo.o src/tomography/sum_kernels.f90
+gfortran -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -J./obj -I./obj -I.  -I./setup -c -o obj/read_model.tomo.o src/tomography/read_model.f90
+
+building xsum_kernels
+
+mpif90 -g -O2 -std=f2008 -fimplicit-none -fmax-errors=10 -pedantic -pedantic-errors -Waliasing -Wampersand -Wcharacter-truncation -Wline-truncation -Wsurprising -Wno-tabs -Wunderflow -ffpe-trap=invalid,zero,overflow -Wunused -O3 -finline-functions -DWITH_MPI -o bin/xsum_kernels obj/tomography_par.tomo_module.o obj/sum_kernels.tomo.o obj/read_model.tomo.o obj/specfem2D_par.spec_module.o obj/shared_par.shared_module.o obj/exit_mpi.shared.o obj/parallel.sharedmpi.o obj/read_interfaces_file.shared.o obj/read_parameter_file.shared.o obj/read_value_parameters.shared.o obj/read_material_table.shared.o obj/read_regions.shared.o obj/param_reader.cc.o  
+

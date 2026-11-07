@@ -1,0 +1,121 @@
+{
+  "physics": "native coupled acoustic/elastic P-SV",
+  "fine_case": "examples/psv_marmousi2_full",
+  "correctness_case": "examples/psv_marmousi2_validation64",
+  "native_timestamps": "sample_time[step_one_based - 1]",
+  "wavefield": {
+    "frames": 50,
+    "element_local_gll_occurrences": 179200,
+    "component_absolute_max_m": 0.03315133528095832,
+    "linthresh_m": 3.3151335280958326e-05,
+    "phase_averaging": false,
+    "clipping": "none",
+    "spatial_display": "Gouraud color interpolation on explicit element-local GLL subtriangles; native point values unchanged"
+  },
+  "animation_playback": "100 ms per saved frame as a screen preview; native timestamps shown exactly, final physical frame interval can be shorter",
+  "objective_units": "J denotes objective, not joules: L2 has m^2 units; processed objective is dimensionless",
+  "plotter_sha256": "7630c9ca06b3d5e798bb54bc2abcd25ba96324d77ab2129ab42f0a1a8cd8ac2f",
+  "numpy_version": "2.0.2",
+  "matplotlib_version": "3.9.4",
+  "gradients": {
+    "l2_Vp": {
+      "absolute_max": 3.754181565741148e-05,
+      "linthresh": 3.7541815657411477e-08,
+      "clipping": "none",
+      "model": "smoothed initial; observations from true"
+    },
+    "l2_Vs": {
+      "absolute_max": 0.0008055508798914061,
+      "linthresh": 8.055508798914061e-07,
+      "clipping": "none",
+      "model": "smoothed initial; observations from true"
+    },
+    "l2_Density": {
+      "absolute_max": 6.564705807553503e-05,
+      "linthresh": 6.564705807553503e-08,
+      "clipping": "none",
+      "model": "smoothed initial; observations from true"
+    },
+    "processed_Vp": {
+      "absolute_max": 0.055885450823149475,
+      "linthresh": 5.588545082314948e-05,
+      "clipping": "none",
+      "model": "smoothed initial; observations from true"
+    },
+    "processed_Vs": {
+      "absolute_max": 1.1268530066324716,
+      "linthresh": 0.0011268530066324716,
+      "clipping": "none",
+      "model": "smoothed initial; observations from true"
+    },
+    "processed_Density": {
+      "absolute_max": 0.09778210127856246,
+      "linthresh": 9.778210127856246e-05,
+      "clipping": "none",
+      "model": "smoothed initial; observations from true"
+    }
+  },
+  "data_scales": {
+    "0_0": 0.018509175670096956,
+    "0_1": 0.018509175670096956,
+    "0_2": 0.016893576010093118,
+    "0_3": 41.277723059989036,
+    "1_0": 0.032067274216155295,
+    "1_1": 0.032067274216155295,
+    "1_2": 0.03596229353159891,
+    "1_3": 59.11200375973193
+  },
+  "taylor": "all six steps and five directions, both objectives; residuals normalized by their own nonzero |g dot p| for display only",
+  "sources": [
+    {
+      "file": "evidence/psv_marmousi128/validation.json",
+      "bytes": 17112,
+      "sha256": "dbab60641a8f1ebc04915f514b9ee1d395cce7b6e492bcb254496a847b6daf09"
+    },
+    {
+      "file": "evidence/psv_marmousi64/validation.json",
+      "bytes": 56447,
+      "sha256": "6ceb5719e8894fed6cdf58cdde5c3981487c2f37c485dc9566f6b63ef95e120e"
+    },
+    {
+      "file": "evidence/psv_marmousi128/manifest.json",
+      "bytes": 34236,
+      "sha256": "217d65acb0c9914d9704e72d3fae2669ab0d813744e9476de6b0a7f9bd815973"
+    },
+    {
+      "file": "evidence/psv_marmousi128/wavefield_rank000000.npz",
+      "bytes": 48978709,
+      "sha256": "1fa83c7b28827a1cabf422c4b685111aaa983a4162deac8d81600e2e9d322a4b"
+    },
+    {
+      "file": "evidence/psv_marmousi128/wavefield_rank000001.npz",
+      "bytes": 48585947,
+      "sha256": "1c64dbb799e74dc009c2c563360a25e08fcc5edbc780913a620472c81a997725"
+    },
+    {
+      "file": "/Users/sid/seismo/ADInversion/hybridAD/DiffSPECFEM/examples/psv_marmousi2_validation64/CASE_PROVENANCE.json",
+      "bytes": 2766,
+      "sha256": "fb7b171ced06fec12f9fbe6c82351601fc3da5ad7e2b075da6e100e26ee56211"
+    },
+    {
+      "file": "evidence/psv_marmousi128/target.npy",
+      "bytes": 5248128,
+      "sha256": "322917121a84f4751f605529912102dae8e2c70c79e42d9bf1bafc088567a19a"
+    },
+    {
+      "file": "evidence/psv_marmousi128/native_reference.npy",
+      "bytes": 5248128,
+      "sha256": "593066d3aac6014de24fabd9cf3a867923ce34301b7f6f7df01349820c7a2489"
+    },
+    {
+      "file": "evidence/psv_marmousi128/gradient_l2.npz",
+      "bytes": 13938001,
+      "sha256": "d3c78c1dcbf9e73722b7cd98f12a1c74196d27bd04802520228800ae2343675f"
+    },
+    {
+      "file": "evidence/psv_marmousi128/gradient_processed.npz",
+      "bytes": 13963284,
+      "sha256": "b4d24c602bd595c770528dd3bb93ef7a2d2efe46936fb079150b38c12eff0004"
+    }
+  ]
+}

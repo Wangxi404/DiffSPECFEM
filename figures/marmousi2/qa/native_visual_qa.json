@@ -1,0 +1,1044 @@
+{
+  "status": "complete",
+  "verdict": "PASS",
+  "scope": "Final passed native coupled P-SV Marmousi-II fivePDF/PNG/SVG companions and50-frameGIF",
+  "blocking_findings": [],
+  "nonblocking_findings": [],
+  "data_semantics": {
+    "verdict": "PASS",
+    "fine_scope": {
+      "case": "examples/psv_marmousi2_full",
+      "mode": "illustration",
+      "mesh_elements": [
+        128,
+        56
+      ],
+      "source_f0_hz": 1.0,
+      "dt_s": 0.00075,
+      "NSTEP": 8000,
+      "source_relative_time_extent_s": [
+        -1.2,
+        4.79925
+      ],
+      "validation_json_sha256": "dbab60641a8f1ebc04915f514b9ee1d395cce7b6e492bcb254496a847b6daf09",
+      "native_forward_bitwise_gate": {
+        "passed": true,
+        "absolute_linf": 0.0
+      },
+      "active_solid_grid_shape": [
+        3,
+        67,
+        200
+      ]
+    },
+    "correctness_scope": {
+      "case": "examples/psv_marmousi2_validation64",
+      "mode": "full",
+      "mesh_elements": [
+        64,
+        28
+      ],
+      "source_f0_hz": 0.5,
+      "dt_s": 0.0015,
+      "NSTEP": 4000,
+      "source_relative_time_extent_s": [
+        -2.4,
+        3.5985
+      ],
+      "validation_json_sha256": "6ceb5719e8894fed6cdf58cdde5c3981487c2f37c485dc9566f6b63ef95e120e",
+      "taylor_families": [
+        {
+          "objective": "l2",
+          "direction": "vp",
+          "steps": 6,
+          "all_steps_retained": true,
+          "informative": true,
+          "passed": true
+        },
+        {
+          "objective": "l2",
+          "direction": "vs",
+          "steps": 6,
+          "all_steps_retained": true,
+          "informative": true,
+          "passed": true
+        },
+        {
+          "objective": "l2",
+          "direction": "rho",
+          "steps": 6,
+          "all_steps_retained": true,
+          "informative": true,
+          "passed": true
+        },
+        {
+          "objective": "l2",
+          "direction": "mixed",
+          "steps": 6,
+          "all_steps_retained": true,
+          "informative": true,
+          "passed": true
+        },
+        {
+          "objective": "l2",
+          "direction": "localized",
+          "steps": 6,
+          "all_steps_retained": true,
+          "informative": true,
+          "passed": true
+        },
+        {
+          "objective": "processed",
+          "direction": "vp",
+          "steps": 6,
+          "all_steps_retained": true,
+          "informative": true,
+          "passed": true
+        },
+        {
+          "objective": "processed",
+          "direction": "vs",
+          "steps": 6,
+          "all_steps_retained": true,
+          "informative": true,
+          "passed": true
+        },
+        {
+          "objective": "processed",
+          "direction": "rho",
+          "steps": 6,
+          "all_steps_retained": true,
+          "informative": true,
+          "passed": true
+        },
+        {
+          "objective": "processed",
+          "direction": "mixed",
+          "steps": 6,
+          "all_steps_retained": true,
+          "informative": true,
+          "passed": true
+        },
+        {
+          "objective": "processed",
+          "direction": "localized",
+          "steps": 6,
+          "all_steps_retained": true,
+          "informative": true,
+          "passed": true
+        }
+      ],
+      "note": "Figure05 uses full six-step sweeps on the64x28case. Figures02/03/04 andGIF use the distinct passed128x56illustration; different frequency and time window, not a grid-convergence experiment."
+    },
+    "wavefield_rank_files": [
+      {
+        "filename": "wavefield_rank000000.npz",
+        "frames": 50,
+        "element_local_GLL_occurrences": 90000,
+        "displacement_shape": [
+          50,
+          2,
+          90000
+        ],
+        "geometry_shape": [
+          90000,
+          6
+        ],
+        "bbox_x_z_m": [
+          [
+            4337.578125,
+            8955.0
+          ],
+          [
+            0.0,
+            3465.0000000000005
+          ]
+        ],
+        "sha256": "1fa83c7b28827a1cabf422c4b685111aaa983a4162deac8d81600e2e9d322a4b"
+      },
+      {
+        "filename": "wavefield_rank000001.npz",
+        "frames": 50,
+        "element_local_GLL_occurrences": 89200,
+        "displacement_shape": [
+          50,
+          2,
+          89200
+        ],
+        "geometry_shape": [
+          89200,
+          6
+        ],
+        "bbox_x_z_m": [
+          [
+            0.0,
+            4477.5
+          ],
+          [
+            0.0,
+            3465.0000000000005
+          ]
+        ],
+        "sha256": "1c64dbb799e74dc009c2c563360a25e08fcc5edbc780913a620472c81a997725"
+      }
+    ],
+    "native_element_local_GLL_counts": {
+      "fluid_occurrences": 25600,
+      "solid_occurrences": 153600
+    },
+    "shared_nodes": "Counts include element-local repeated coordinates and both sides of the fluid-solid interface; not unique global point count",
+    "saved_frames": 50,
+    "step_one_based": [
+      1,
+      167,
+      333,
+      499,
+      665,
+      831,
+      997,
+      1163,
+      1329,
+      1495,
+      1661,
+      1827,
+      1993,
+      2159,
+      2325,
+      2491,
+      2657,
+      2823,
+      2989,
+      3155,
+      3321,
+      3487,
+      3653,
+      3819,
+      3985,
+      4151,
+      4317,
+      4483,
+      4649,
+      4815,
+      4981,
+      5147,
+      5313,
+      5479,
+      5645,
+      5811,
+      5977,
+      6143,
+      6309,
+      6475,
+      6641,
+      6807,
+      6973,
+      7139,
+      7305,
+      7471,
+      7637,
+      7803,
+      7969,
+      8000
+    ],
+    "source_relative_frame_times_s": [
+      -1.2,
+      -1.0755,
+      -0.951,
+      -0.8265,
+      -0.702,
+      -0.5774999999999999,
+      -0.45299999999999996,
+      -0.3284999999999999,
+      -0.20399999999999996,
+      -0.0794999999999999,
+      0.04500000000000015,
+      0.16949999999999998,
+      0.29400000000000004,
+      0.4185000000000001,
+      0.5430000000000001,
+      0.6675,
+      0.792,
+      0.9164999999999999,
+      1.0410000000000001,
+      1.1655,
+      1.2900000000000003,
+      1.4145,
+      1.539,
+      1.6635000000000002,
+      1.788,
+      1.9125000000000003,
+      2.037,
+      2.1615,
+      2.2860000000000005,
+      2.4105,
+      2.535,
+      2.6595000000000004,
+      2.784,
+      2.9085,
+      3.0329999999999995,
+      3.1574999999999998,
+      3.282,
+      3.4065000000000003,
+      3.5309999999999997,
+      3.6555,
+      3.7800000000000002,
+      3.9044999999999996,
+      4.029,
+      4.1535,
+      4.278,
+      4.4025,
+      4.527,
+      4.6514999999999995,
+      4.776,
+      4.79925
+    ],
+    "wavefield_absmax_m": 0.03315133528095832,
+    "signed_log_linthresh_m": 3.3151335280958326e-05,
+    "phase_component_absmax_m": {
+      "fluid_UX": 0.03137810586507594,
+      "fluid_UZ": 0.0326447531502639,
+      "solid_UX": 0.013768181351462069,
+      "solid_UZ": 0.03315133528095832
+    },
+    "actual_water_response": "Both native UX andUZ are nonzero in acoustic-water elements; fixedwater model coefficients do not mean a frozen water wavefield",
+    "results": {
+      "l2": {
+        "gradient_absmax": [
+          3.754181565741148e-05,
+          0.0008055508798914061,
+          6.564705807553503e-05
+        ],
+        "data_absmax": 0.023307650981043843,
+        "cotangent_absmax": 0.03596229353159891
+      },
+      "processed": {
+        "gradient_absmax": [
+          0.055885450823149475,
+          1.1268530066324716,
+          0.09778210127856246
+        ],
+        "data_absmax": 0.023307650981043843,
+        "cotangent_absmax": 59.11200375973193
+      }
+    },
+    "package_manifest_sha256": "217d65acb0c9914d9704e72d3fae2669ab0d813744e9476de6b0a7f9bd815973",
+    "package_wavefield_hashes_match": true
+  },
+  "final_manifest_sha256": "c29e0b0a198494ad03731937e505176d4ffd25692012a3e6b2ad3c2815c38393",
+  "all_manifest_source_hashes_verified": true,
+  "manifest_scales_match_actual_arrays": true,
+  "plotting_script_sha256": "7630c9ca06b3d5e798bb54bc2abcd25ba96324d77ab2129ab42f0a1a8cd8ac2f",
+  "pdfs": {
+    "02_psv_wavefields": {
+      "verdict": "PASS",
+      "glyph_audit": {
+        "pdf": "figures/marmousi2/02_psv_wavefields.pdf",
+        "auditable": true,
+        "minimum_required_pt": 5.0,
+        "minimum_found_pt": 7.0,
+        "text_run_count": 121,
+        "below_minimum_count": 0,
+        "below_minimum": [],
+        "warnings": []
+      },
+      "collision_audit": {
+        "pdf": "figures/marmousi2/02_psv_wavefields.pdf",
+        "auditable": true,
+        "verdict": "PASS",
+        "page_count": 1,
+        "visible_text_box_count": 121,
+        "text_trace_count": 121,
+        "stroke_path_count": 184,
+        "filled_region_count": 169,
+        "image_region_count": 16,
+        "summary": {
+          "fail": 0,
+          "warn": 0,
+          "contained_fill_overlays": 0,
+          "contained_image_overlays": 0
+        },
+        "thresholds": {
+          "text_inset_pt": 0.6,
+          "min_overlap_ratio": 0.05,
+          "clipping_tolerance_pt": 0.5
+        },
+        "findings": []
+      },
+      "alignment_verdict": "PASS",
+      "alignment_summary": {
+        "fail": 0,
+        "warn": 0,
+        "comparisons": 8,
+        "exemptions": 0
+      },
+      "canvas_mm": [
+        317.5,
+        137.15999569363063
+      ],
+      "editable_pdf_and_svg_text": true,
+      "embedded_pdf_fonts": true,
+      "files": {
+        "png": {
+          "path": "figures/marmousi2/02_psv_wavefields.png",
+          "sha256": "430c083c3f6b7d5abf1171048b24f6ec36caadef37e3a78406ea79eace906638",
+          "bytes": 1716090
+        },
+        "pdf": {
+          "path": "figures/marmousi2/02_psv_wavefields.pdf",
+          "sha256": "25aba78b75d73ebd44923f574a451d8112753017e460f174de1ff3fb08f40b37",
+          "bytes": 1358817
+        },
+        "svg": {
+          "path": "figures/marmousi2/02_psv_wavefields.svg",
+          "sha256": "fbf90c6bf5e83ccfc547cb31c0bec45ced445bb840de7bb20720a414e44d80d8",
+          "bytes": 2054571
+        }
+      },
+      "visual_inspection": "Every labelled panel and complete final figure reviewed: titles, axis labels, outermost ticks, units andcolorbars remain clear, separated andunclipped",
+      "displayed_native_times_s": [
+        0.29400000000000004,
+        1.788,
+        3.282,
+        4.79925
+      ]
+    },
+    "03_psv_data_adjoint_source": {
+      "verdict": "PASS",
+      "glyph_audit": {
+        "pdf": "figures/marmousi2/03_psv_data_adjoint_source.pdf",
+        "auditable": true,
+        "minimum_required_pt": 5.0,
+        "minimum_found_pt": 7.0,
+        "text_run_count": 136,
+        "below_minimum_count": 0,
+        "below_minimum": [],
+        "warnings": []
+      },
+      "collision_audit": {
+        "pdf": "figures/marmousi2/03_psv_data_adjoint_source.pdf",
+        "auditable": true,
+        "verdict": "PASS",
+        "page_count": 1,
+        "visible_text_box_count": 136,
+        "text_trace_count": 136,
+        "stroke_path_count": 128,
+        "filled_region_count": 121,
+        "image_region_count": 16,
+        "summary": {
+          "fail": 0,
+          "warn": 0,
+          "contained_fill_overlays": 0,
+          "contained_image_overlays": 0
+        },
+        "thresholds": {
+          "text_inset_pt": 0.6,
+          "min_overlap_ratio": 0.05,
+          "clipping_tolerance_pt": 0.5
+        },
+        "findings": []
+      },
+      "alignment_verdict": "PASS",
+      "alignment_summary": {
+        "fail": 0,
+        "warn": 0,
+        "comparisons": 8,
+        "exemptions": 0
+      },
+      "canvas_mm": [
+        312.4199913872613,
+        157.4799978468153
+      ],
+      "editable_pdf_and_svg_text": true,
+      "embedded_pdf_fonts": true,
+      "files": {
+        "png": {
+          "path": "figures/marmousi2/03_psv_data_adjoint_source.png",
+          "sha256": "63d5708e8efdb3b204a466e138d45b98b59e62238829728922218ba96df82a1a",
+          "bytes": 241987
+        },
+        "pdf": {
+          "path": "figures/marmousi2/03_psv_data_adjoint_source.pdf",
+          "sha256": "58b8efca4d4ed331c263b42727eee40b18f856d6bc61610118a9a59519684daf",
+          "bytes": 107480
+        },
+        "svg": {
+          "path": "figures/marmousi2/03_psv_data_adjoint_source.svg",
+          "sha256": "6902295e9fec27e4b95480cdf3704c784b74449080d0c61d25dffd042f5ac9f5",
+          "bytes": 192569
+        }
+      },
+      "visual_inspection": "Every labelled panel and complete final figure reviewed: titles, axis labels, outermost ticks, units andcolorbars remain clear, separated andunclipped"
+    },
+    "04_psv_gradients": {
+      "verdict": "PASS",
+      "glyph_audit": {
+        "pdf": "figures/marmousi2/04_psv_gradients.pdf",
+        "auditable": true,
+        "minimum_required_pt": 5.0,
+        "minimum_found_pt": 7.0,
+        "text_run_count": 92,
+        "below_minimum_count": 0,
+        "below_minimum": [],
+        "warnings": []
+      },
+      "collision_audit": {
+        "pdf": "figures/marmousi2/04_psv_gradients.pdf",
+        "auditable": true,
+        "verdict": "PASS",
+        "page_count": 1,
+        "visible_text_box_count": 92,
+        "text_trace_count": 92,
+        "stroke_path_count": 144,
+        "filled_region_count": 139,
+        "image_region_count": 12,
+        "summary": {
+          "fail": 0,
+          "warn": 0,
+          "contained_fill_overlays": 0,
+          "contained_image_overlays": 0
+        },
+        "thresholds": {
+          "text_inset_pt": 0.6,
+          "min_overlap_ratio": 0.05,
+          "clipping_tolerance_pt": 0.5
+        },
+        "findings": []
+      },
+      "alignment_verdict": "PASS",
+      "alignment_summary": {
+        "fail": 0,
+        "warn": 0,
+        "comparisons": 7,
+        "exemptions": 0
+      },
+      "canvas_mm": [
+        299.71999138726125,
+        167.64000430636935
+      ],
+      "editable_pdf_and_svg_text": true,
+      "embedded_pdf_fonts": true,
+      "files": {
+        "png": {
+          "path": "figures/marmousi2/04_psv_gradients.png",
+          "sha256": "4c322c525d9f9ccf5ffb16915d9ea65de4bf3c6672affddf452181ade6c67e0c",
+          "bytes": 348542
+        },
+        "pdf": {
+          "path": "figures/marmousi2/04_psv_gradients.pdf",
+          "sha256": "d4fb78b6cf322de1373d0e7f5a87bae3ef01f6e67eb47f33a121d35fcd5e8378",
+          "bytes": 123296
+        },
+        "svg": {
+          "path": "figures/marmousi2/04_psv_gradients.svg",
+          "sha256": "f711003b2f3c8bafe4e21b5ac6c07052453c283f5fcf3c227a5b0553b19ca80c",
+          "bytes": 247805
+        }
+      },
+      "visual_inspection": "Every labelled panel and complete final figure reviewed: titles, axis labels, outermost ticks, units andcolorbars remain clear, separated andunclipped"
+    },
+    "05_psv_verification": {
+      "verdict": "PASS",
+      "glyph_audit": {
+        "pdf": "figures/marmousi2/05_psv_verification.pdf",
+        "auditable": true,
+        "minimum_required_pt": 5.0,
+        "minimum_found_pt": 5.6,
+        "text_run_count": 90,
+        "below_minimum_count": 0,
+        "below_minimum": [],
+        "warnings": []
+      },
+      "collision_audit": {
+        "pdf": "figures/marmousi2/05_psv_verification.pdf",
+        "auditable": true,
+        "verdict": "PASS",
+        "page_count": 1,
+        "visible_text_box_count": 54,
+        "text_trace_count": 90,
+        "stroke_path_count": 484,
+        "filled_region_count": 420,
+        "image_region_count": 0,
+        "summary": {
+          "fail": 0,
+          "warn": 0,
+          "contained_fill_overlays": 0,
+          "contained_image_overlays": 0
+        },
+        "thresholds": {
+          "text_inset_pt": 0.6,
+          "min_overlap_ratio": 0.05,
+          "clipping_tolerance_pt": 0.5
+        },
+        "findings": []
+      },
+      "alignment_verdict": "PASS",
+      "alignment_summary": {
+        "fail": 0,
+        "warn": 0,
+        "comparisons": 4,
+        "exemptions": 0
+      },
+      "canvas_mm": [
+        228.60000000000002,
+        170.17999784681533
+      ],
+      "editable_pdf_and_svg_text": true,
+      "embedded_pdf_fonts": true,
+      "files": {
+        "png": {
+          "path": "figures/marmousi2/05_psv_verification.png",
+          "sha256": "f4f86cc01c8a09ebd62747e829fbe533fe425cad8fb67755caccb547f6a74886",
+          "bytes": 420470
+        },
+        "pdf": {
+          "path": "figures/marmousi2/05_psv_verification.pdf",
+          "sha256": "d3f65a959092e1abbe3a8105fbaf3e3018f50eca5f28d1edcddaad17d2c128eb",
+          "bytes": 27945
+        },
+        "svg": {
+          "path": "figures/marmousi2/05_psv_verification.svg",
+          "sha256": "0cd0158e3f67e553d1d76b5baca90d62a4dedac4a8e0fb652292b004cd16c2d3",
+          "bytes": 110002
+        }
+      },
+      "visual_inspection": "Every labelled panel and complete final figure reviewed: titles, axis labels, outermost ticks, units andcolorbars remain clear, separated andunclipped"
+    },
+    "native_psv_animation_layout": {
+      "verdict": "PASS",
+      "glyph_audit": {
+        "pdf": "figures/marmousi2/native_psv_animation_layout.pdf",
+        "auditable": true,
+        "minimum_required_pt": 5.0,
+        "minimum_found_pt": 8.0,
+        "text_run_count": 27,
+        "below_minimum_count": 0,
+        "below_minimum": [],
+        "warnings": []
+      },
+      "collision_audit": {
+        "pdf": "figures/marmousi2/native_psv_animation_layout.pdf",
+        "auditable": true,
+        "verdict": "PASS",
+        "page_count": 1,
+        "visible_text_box_count": 27,
+        "text_trace_count": 27,
+        "stroke_path_count": 34,
+        "filled_region_count": 31,
+        "image_region_count": 3,
+        "summary": {
+          "fail": 0,
+          "warn": 0,
+          "contained_fill_overlays": 0,
+          "contained_image_overlays": 0
+        },
+        "thresholds": {
+          "text_inset_pt": 0.6,
+          "min_overlap_ratio": 0.05,
+          "clipping_tolerance_pt": 0.5
+        },
+        "findings": []
+      },
+      "alignment_verdict": "PASS",
+      "alignment_summary": {
+        "fail": 0,
+        "warn": 0,
+        "comparisons": 1,
+        "exemptions": 0
+      },
+      "canvas_mm": [
+        228.60000000000002,
+        175.25999569363063
+      ],
+      "editable_pdf_and_svg_text": true,
+      "embedded_pdf_fonts": true,
+      "files": {
+        "png": {
+          "path": "figures/marmousi2/native_psv_animation_layout.png",
+          "sha256": "b9172797f390d0381519a8cf3dc6bbc2d0e091b35c01614a28f8f3d51f3ee577",
+          "bytes": 2410638
+        },
+        "pdf": {
+          "path": "figures/marmousi2/native_psv_animation_layout.pdf",
+          "sha256": "46cf4bb37352bf4e787ec57eb78eab25ed342a188bed761fb3947f3465a1b904",
+          "bytes": 1990389
+        },
+        "svg": {
+          "path": "figures/marmousi2/native_psv_animation_layout.svg",
+          "sha256": "282054a589eb7dd251cea5bbc98da8e3a0ce8e56439f83556e7893812694ba7a",
+          "bytes": 2909904
+        }
+      },
+      "visual_inspection": "Every labelled panel and complete final figure reviewed: titles, axis labels, outermost ticks, units andcolorbars remain clear, separated andunclipped"
+    }
+  },
+  "gif": {
+    "verdict": "PASS",
+    "path": "figures/marmousi2/native_psv_wavefield.gif",
+    "sha256": "0c9b75e944d496b1020602717ec36edab19c40a29e031aecb068937c44626020",
+    "frames": 50,
+    "native_saved_frames": 50,
+    "dimensions_px": [
+      990,
+      759
+    ],
+    "frame_duration_ms": 100,
+    "preview_duration_ms": 5000,
+    "unique_plot_body_images": 50,
+    "repeated_plot_body_frame_indices": [],
+    "repeat_interpretation": "Repeated early tiny-amplitude plot-body RGB images may occur from GIF palette quantization; exactnative fields andtimestamp labels remain distinct. GIF is a screen preview, not a quantitative field archive.",
+    "fixed_signed_log_range_m": [
+      -0.03315133528095832,
+      0.03315133528095832
+    ],
+    "fixed_signed_log_linthresh_m": 3.3151335280958326e-05,
+    "source_relative_frame_times_s": [
+      -1.2,
+      -1.0755,
+      -0.951,
+      -0.8265,
+      -0.702,
+      -0.5774999999999999,
+      -0.45299999999999996,
+      -0.3284999999999999,
+      -0.20399999999999996,
+      -0.0794999999999999,
+      0.04500000000000015,
+      0.16949999999999998,
+      0.29400000000000004,
+      0.4185000000000001,
+      0.5430000000000001,
+      0.6675,
+      0.792,
+      0.9164999999999999,
+      1.0410000000000001,
+      1.1655,
+      1.2900000000000003,
+      1.4145,
+      1.539,
+      1.6635000000000002,
+      1.788,
+      1.9125000000000003,
+      2.037,
+      2.1615,
+      2.2860000000000005,
+      2.4105,
+      2.535,
+      2.6595000000000004,
+      2.784,
+      2.9085,
+      3.0329999999999995,
+      3.1574999999999998,
+      3.282,
+      3.4065000000000003,
+      3.5309999999999997,
+      3.6555,
+      3.7800000000000002,
+      3.9044999999999996,
+      4.029,
+      4.1535,
+      4.278,
+      4.4025,
+      4.527,
+      4.6514999999999995,
+      4.776,
+      4.79925
+    ],
+    "chronological_frames_inspected": [
+      0,
+      12,
+      25,
+      37,
+      49
+    ],
+    "visual_inspection": "Both UX andUZ change through water andsolid; colorbar remains fixed andseparated from rightmost axis ticks. Actualframe timestamps shown; uniform preview playback is not constant physical elapsedtime."
+  },
+  "panel_by_panel_review": [
+    {
+      "figure": "02_psv_wavefields",
+      "panel": "a",
+      "evidence": "UX firsttime",
+      "uncertainty": "Not applicable: deterministic native results or numerical checks",
+      "labels_units_geometry": "Checked",
+      "alignment_and_collision": "PASS",
+      "visual_pass": true
+    },
+    {
+      "figure": "02_psv_wavefields",
+      "panel": "b",
+      "evidence": "UX secondtime",
+      "uncertainty": "Not applicable: deterministic native results or numerical checks",
+      "labels_units_geometry": "Checked",
+      "alignment_and_collision": "PASS",
+      "visual_pass": true
+    },
+    {
+      "figure": "02_psv_wavefields",
+      "panel": "c",
+      "evidence": "UX thirdtime",
+      "uncertainty": "Not applicable: deterministic native results or numerical checks",
+      "labels_units_geometry": "Checked",
+      "alignment_and_collision": "PASS",
+      "visual_pass": true
+    },
+    {
+      "figure": "02_psv_wavefields",
+      "panel": "d",
+      "evidence": "UX lasttime",
+      "uncertainty": "Not applicable: deterministic native results or numerical checks",
+      "labels_units_geometry": "Checked",
+      "alignment_and_collision": "PASS",
+      "visual_pass": true
+    },
+    {
+      "figure": "02_psv_wavefields",
+      "panel": "e",
+      "evidence": "UZ firsttime",
+      "uncertainty": "Not applicable: deterministic native results or numerical checks",
+      "labels_units_geometry": "Checked",
+      "alignment_and_collision": "PASS",
+      "visual_pass": true
+    },
+    {
+      "figure": "02_psv_wavefields",
+      "panel": "f",
+      "evidence": "UZ secondtime",
+      "uncertainty": "Not applicable: deterministic native results or numerical checks",
+      "labels_units_geometry": "Checked",
+      "alignment_and_collision": "PASS",
+      "visual_pass": true
+    },
+    {
+      "figure": "02_psv_wavefields",
+      "panel": "g",
+      "evidence": "UZ thirdtime",
+      "uncertainty": "Not applicable: deterministic native results or numerical checks",
+      "labels_units_geometry": "Checked",
+      "alignment_and_collision": "PASS",
+      "visual_pass": true
+    },
+    {
+      "figure": "02_psv_wavefields",
+      "panel": "h",
+      "evidence": "UZ lasttime",
+      "uncertainty": "Not applicable: deterministic native results or numerical checks",
+      "labels_units_geometry": "Checked",
+      "alignment_and_collision": "PASS",
+      "visual_pass": true
+    },
+    {
+      "figure": "03_psv_data_adjoint_source",
+      "panel": "a",
+      "evidence": "UX target",
+      "uncertainty": "Not applicable: deterministic native results or numerical checks",
+      "labels_units_geometry": "Checked",
+      "alignment_and_collision": "PASS",
+      "visual_pass": true
+    },
+    {
+      "figure": "03_psv_data_adjoint_source",
+      "panel": "b",
+      "evidence": "UX initial",
+      "uncertainty": "Not applicable: deterministic native results or numerical checks",
+      "labels_units_geometry": "Checked",
+      "alignment_and_collision": "PASS",
+      "visual_pass": true
+    },
+    {
+      "figure": "03_psv_data_adjoint_source",
+      "panel": "c",
+      "evidence": "UX residual",
+      "uncertainty": "Not applicable: deterministic native results or numerical checks",
+      "labels_units_geometry": "Checked",
+      "alignment_and_collision": "PASS",
+      "visual_pass": true
+    },
+    {
+      "figure": "03_psv_data_adjoint_source",
+      "panel": "d",
+      "evidence": "UX processed datacotangent",
+      "uncertainty": "Not applicable: deterministic native results or numerical checks",
+      "labels_units_geometry": "Checked",
+      "alignment_and_collision": "PASS",
+      "visual_pass": true
+    },
+    {
+      "figure": "03_psv_data_adjoint_source",
+      "panel": "e",
+      "evidence": "UZ target",
+      "uncertainty": "Not applicable: deterministic native results or numerical checks",
+      "labels_units_geometry": "Checked",
+      "alignment_and_collision": "PASS",
+      "visual_pass": true
+    },
+    {
+      "figure": "03_psv_data_adjoint_source",
+      "panel": "f",
+      "evidence": "UZ initial",
+      "uncertainty": "Not applicable: deterministic native results or numerical checks",
+      "labels_units_geometry": "Checked",
+      "alignment_and_collision": "PASS",
+      "visual_pass": true
+    },
+    {
+      "figure": "03_psv_data_adjoint_source",
+      "panel": "g",
+      "evidence": "UZ residual",
+      "uncertainty": "Not applicable: deterministic native results or numerical checks",
+      "labels_units_geometry": "Checked",
+      "alignment_and_collision": "PASS",
+      "visual_pass": true
+    },
+    {
+      "figure": "03_psv_data_adjoint_source",
+      "panel": "h",
+      "evidence": "UZ processed datacotangent",
+      "uncertainty": "Not applicable: deterministic native results or numerical checks",
+      "labels_units_geometry": "Checked",
+      "alignment_and_collision": "PASS",
+      "visual_pass": true
+    },
+    {
+      "figure": "04_psv_gradients",
+      "panel": "a",
+      "evidence": "L2Vp",
+      "uncertainty": "Not applicable: deterministic native results or numerical checks",
+      "labels_units_geometry": "Checked",
+      "alignment_and_collision": "PASS",
+      "visual_pass": true
+    },
+    {
+      "figure": "04_psv_gradients",
+      "panel": "b",
+      "evidence": "L2Vs",
+      "uncertainty": "Not applicable: deterministic native results or numerical checks",
+      "labels_units_geometry": "Checked",
+      "alignment_and_collision": "PASS",
+      "visual_pass": true
+    },
+    {
+      "figure": "04_psv_gradients",
+      "panel": "c",
+      "evidence": "L2rho",
+      "uncertainty": "Not applicable: deterministic native results or numerical checks",
+      "labels_units_geometry": "Checked",
+      "alignment_and_collision": "PASS",
+      "visual_pass": true
+    },
+    {
+      "figure": "04_psv_gradients",
+      "panel": "d",
+      "evidence": "ProcessedVp",
+      "uncertainty": "Not applicable: deterministic native results or numerical checks",
+      "labels_units_geometry": "Checked",
+      "alignment_and_collision": "PASS",
+      "visual_pass": true
+    },
+    {
+      "figure": "04_psv_gradients",
+      "panel": "e",
+      "evidence": "ProcessedVs",
+      "uncertainty": "Not applicable: deterministic native results or numerical checks",
+      "labels_units_geometry": "Checked",
+      "alignment_and_collision": "PASS",
+      "visual_pass": true
+    },
+    {
+      "figure": "04_psv_gradients",
+      "panel": "f",
+      "evidence": "Processedrho",
+      "uncertainty": "Not applicable: deterministic native results or numerical checks",
+      "labels_units_geometry": "Checked",
+      "alignment_and_collision": "PASS",
+      "visual_pass": true
+    },
+    {
+      "figure": "05_psv_verification",
+      "panel": "a",
+      "evidence": "L2 remainder",
+      "uncertainty": "Not applicable: deterministic native results or numerical checks",
+      "labels_units_geometry": "Checked",
+      "alignment_and_collision": "PASS",
+      "visual_pass": true
+    },
+    {
+      "figure": "05_psv_verification",
+      "panel": "b",
+      "evidence": "L2 central error",
+      "uncertainty": "Not applicable: deterministic native results or numerical checks",
+      "labels_units_geometry": "Checked",
+      "alignment_and_collision": "PASS",
+      "visual_pass": true
+    },
+    {
+      "figure": "05_psv_verification",
+      "panel": "c",
+      "evidence": "Processed remainder",
+      "uncertainty": "Not applicable: deterministic native results or numerical checks",
+      "labels_units_geometry": "Checked",
+      "alignment_and_collision": "PASS",
+      "visual_pass": true
+    },
+    {
+      "figure": "05_psv_verification",
+      "panel": "d",
+      "evidence": "Processed central error",
+      "uncertainty": "Not applicable: deterministic native results or numerical checks",
+      "labels_units_geometry": "Checked",
+      "alignment_and_collision": "PASS",
+      "visual_pass": true
+    },
+    {
+      "figure": "native_psv_animation_layout",
+      "panel": "a",
+      "evidence": "UX layout",
+      "uncertainty": "Not applicable: deterministic native results or numerical checks",
+      "labels_units_geometry": "Checked",
+      "alignment_and_collision": "PASS",
+      "visual_pass": true
+    },
+    {
+      "figure": "native_psv_animation_layout",
+      "panel": "b",
+      "evidence": "UZ layout",
+      "uncertainty": "Not applicable: deterministic native results or numerical checks",
+      "labels_units_geometry": "Checked",
+      "alignment_and_collision": "PASS",
+      "visual_pass": true
+    }
+  ],
+  "summary": {
+    "pdf_count": 5,
+    "labelled_panels_inspected": 28,
+    "minimum_rendered_glyph_pt": 5.6,
+    "glyph_runs_below5pt": 0,
+    "collision_failures": 0,
+    "collision_warnings": 0,
+    "alignment_verdicts": {
+      "02_psv_wavefields": "PASS",
+      "03_psv_data_adjoint_source": "PASS",
+      "04_psv_gradients": "PASS",
+      "05_psv_verification": "PASS",
+      "native_psv_animation_layout": "PASS"
+    },
+    "raw_input_model_arrays_in_figure_delivery": false,
+    "backend_modified_by_qa": false,
+    "simulation_run_by_qa": false
+  },
+  "scope_boundaries": [
+    "02/03/04 andGIF use the passed128x56illustration:1Hz,.75ms,\u22121.2..4.79925s",
+    "05 uses full six-step Taylorfamilies from distinct64x28correctness:0.5Hz,1.5ms,\u22122.4..3.5985s; not a grid-convergence comparison",
+    "Watercoefficients fixed; actual native water displacement propagates. Active derivatives use67x200solidinput coordinates",
+    "Gouraud color interpolation stays within explicit element-local GLLtriangles; no fluid-solid averaging",
+    "Gradients use independent raw-unit signed-log displays with linthresh=.001panelmax; no gradient smoothing, illumination correction or fitted scaling",
+    "Prepared model input-sample cells are not native GLLfields: water samples through450m, firstsolid495m, nativeinterface450m withone-sidedsolidextension495\u2192450m"
+  ],
+  "resolved_rehearsal_findings": [
+    "Independent cax removes xlabel/colorbar overlap",
+    "Right margin protects 13.955 ticks",
+    "Explicit animation cax clears right tick labels",
+    "Gradient signed-log transform now explicit in title",
+    "Taylor title human-readable64x28elements,0.5Hz,1.5ms"
+  ],
+  "qa_tools": "Nature-figure glyph/collision/alignment audits, PyMuPDF1.26.5",
+  "pending": []
+}

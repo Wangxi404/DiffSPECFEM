@@ -1,0 +1,179 @@
+{
+  "schema_version": 1,
+  "application": "native coupled acoustic/P-SV dense Marmousi-II",
+  "status": "complete: native P-SV unit, full-water Marmousi-II correctness and finer demonstration, public artifact integrity and final visualization QA passed",
+  "skill": {
+    "name": "differentiate-seismic-solver",
+    "version": "0.2.0",
+    "packet_sha256": "51b19130b19625fb074f76db5165e6517d662a61079723e0381d62bfb96f947a",
+    "installed_path": "/Users/sid/.codex/skills/differentiate-seismic-solver",
+    "resolved_packet": "SeismicDiffSkill/releases/v0.2.0/skill",
+    "pre_integrity_check": "not separately executed before P-SV implementation; process omission disclosed, no strict pre/post pair claimed",
+    "first_executed_integrity_check": "evidence/psv_integrity/current_after_unit.json",
+    "post_integrity_check": "evidence/psv_integrity/post_native_validation.json",
+    "packet_edits": false,
+    "local_v020_tag_object": "e7b138ef41a08911e6321e336b83fbd58ef55ec3",
+    "tag_manifest_packet_sha256": "51b19130b19625fb074f76db5165e6517d662a61079723e0381d62bfb96f947a",
+    "v020_tag_commit": "b91cab269b4bd73a1a7bd2a42ee17634a5e173c0"
+  },
+  "upstream": {
+    "url": "https://github.com/SPECFEM/specfem2d",
+    "revision": "abf3196e3192af3343f2b402c82f34205577e672",
+    "build_provenance": "evidence/psv_build/provenance.json",
+    "baseline": "fresh clean official-source MPI/double build saved before independent P-SV hooks",
+    "instrumentation_patch": "native/psv_iterate_time.patch",
+    "unchanged_kernels": [
+      "compute_forces_viscoelastic",
+      "compute_forces_viscoacoustic",
+      "compute_coupling_acoustic_el",
+      "compute_coupling_viscoelastic_ac",
+      "native Newmark forward updates",
+      "compute_vector_one_element"
+    ],
+    "source_changes": "recording and optional exact reverse route injected into iterate_time.F90; no native forward mathematical update changes"
+  },
+  "physics": {
+    "supported": "2D planar isotropic coupled acoustic and P-SV elasticity, CPU/MPI Newmark, zero initial state, free/reflecting boundaries",
+    "unsupported": [
+      "PML",
+      "Stacey absorbing conditions",
+      "attenuation",
+      "anisotropy",
+      "axisymmetry",
+      "poroelasticity",
+      "moving sources",
+      "active water parameters",
+      "acoustic receivers",
+      "rotated receiver axes"
+    ],
+    "active": "three physical solid-grid arrays Vp[m/s], Vs[m/s], rho[kg/m^3]",
+    "fixed": "water Vp and rho fixed; water Vs=0; source, receiver geometry, dt, mesh and boundary conditions fixed",
+    "native_water_rho_kg_m3": 2450,
+    "native_water_vp_m_s": 1500,
+    "native_water_vs_m_s": 0,
+    "marmousi_geometry": "full prepared x=5000..13955m and depth=0..3465m retained; fixed water depth0..450m, solid depth450..3465m; native x=x_AGL-5000,z=3465-depth",
+    "interface_map": "native bilinear interpolation of all67x200 solid rows (firstdepth495m) with native constant border extension through45m to the seafloor450m; no water replaced by rock and no Vs floor"
+  },
+  "derivative_contract": {
+    "data_layout": "float64 [STATIONS order, UX/UZ Cartesian component, full native NSTEP]",
+    "cotangent_serialization": "Python transpose(2,1,0) little-endian float64 -> Fortran(nrec,2,NSTEP)",
+    "raw_columns": [
+      "element",
+      "i",
+      "j",
+      "node",
+      "x",
+      "z",
+      "rho",
+      "lambda",
+      "mu",
+      "dJ_drho_at_fixed_lambda_mu",
+      "dJ_dlambda",
+      "dJ_dmu_at_fixed_lambda",
+      "elastic_flag"
+    ],
+    "coefficient_map": "lambda=rho*(Vp^2-2Vs^2), mu=rho*Vs^2; rho,Vp,Vs interpolated separately with native P",
+    "dense_vjp": "P^T[2rho Vp gl, 2rho Vs (gm-2gl), gr+(Vp^2-2Vs^2)gl+Vs^2gm]",
+    "kernel_semantics": "raw discrete Euclidean coefficient derivatives already include SEM quadrature; sum all element-local GLL occurrences across ranks; no MPI multiplicity division for model kernels",
+    "production_route": "one unchanged native forward, Torch AD on detached receiver leaf only, one exact native coupled adjoint, static tomography transpose; no temporal AD, parameter FD or replay",
+    "history": "six native post-step arrays to disk; single-frame reverse stream, O(nglob) live wave states; absent local domains explicitly padded only in history",
+    "snapshots": "approximately50 actual selected post-step snapshots (49 for the unit;50 for Marmousi) call unchanged compute_vector_one_element on every element; actual water displacement=(1/rho)grad chi and solid ux/uz; no interface/phase averaging",
+    "history_minimality": "Declared full native six-array disk history is not claimed minimal; acoustic fields also retain original-state/pressure provenance in this fixed-water interface.",
+    "history_retention": "Full six-array history exists throughout each gradient, is hashed and sampled for archive, then is removed when the next forward reuses the work directory. Compact native states, original vector snapshots, raw derivative checks and history manifests remain in the private evidence."
+  },
+  "attempts": [
+    {
+      "case": "psv_unit_attempt1",
+      "status": "failed before gradient",
+      "cause": "template f0=3Hz exceeds native1.92Hz source guidance",
+      "repair": "f0=1.5Hz, USER_T0=1s, NSTEP2400; retain old attempt; no tolerance changes",
+      "evidence": "evidence/psv_unit_attempt1"
+    },
+    {
+      "case": "psv_unit_attempt2",
+      "status": "failed guard before gradient",
+      "cause": "conservative per-rank coupled guard rejected Scotch partition with no local acoustic domain",
+      "repair": "pad absent-domain histories and use conditional native assignments/full scratch arrays, preserving official native allocations and execution",
+      "evidence": "evidence/psv_unit_attempt2",
+      "patch_before": "evidence/psv_build/attempt2.patch"
+    },
+    {
+      "case": "psv_unit_attempt3",
+      "status": "passed",
+      "evidence": "evidence/psv_unit_attempt3",
+      "scope": "bitwise clean native forward; true native sampling/coupling probes; full interface measure; raw material map; L2+processed data VJPs; Vp/Vs/rho/mixed/localized six-epsilon Taylor sweeps; model dot identities"
+    },
+    {
+      "case": "psv_marmousi64_attempt1",
+      "status": "passed",
+      "evidence": "evidence/psv_marmousi64_attempt1",
+      "scope": "fullwater64x28mesh, dense67x200physical solid parameters, f0=.5Hz/dt=.0015s/t0=2.4s/6sduration; all family Taylor sweeps",
+      "public_evidence": "evidence/psv_marmousi64",
+      "total_validation_seconds": 376.3973362920806,
+      "model_dot_relative_error": {
+        "l2": 1.3635684159057422e-08,
+        "processed": 1.721156650647802e-08
+      },
+      "complete_gradient_seconds": {
+        "l2": 21.308150731027126,
+        "processed": 21.704126206226647
+      }
+    },
+    {
+      "case": "psv_marmousi128_illustration",
+      "status": "passed",
+      "scope": "fullwater128x56mesh, same denseinput, f0=1Hz/dt=.00075s/t0=1.2s/6sduration; matched native baseline, bothobjectives, mixed/localized multi-epsilon dotchecks",
+      "evidence": "remote /home/xiwang/DiffSPECFEM-PSV/evidence/psv_marmousi128_illustration",
+      "public_evidence": "evidence/psv_marmousi128",
+      "total_validation_seconds": 785.7500846721232,
+      "model_dot_relative_error": {
+        "l2": 4.0774136643535024e-08,
+        "processed": 5.087259158321332e-08
+      },
+      "complete_gradient_seconds": {
+        "l2": 166.3995532253757,
+        "processed": 157.5490588657558
+      },
+      "history_bytes_sum": 44412672024
+    }
+  ],
+  "resources": {
+    "host": "hpnewpc3-via-vps",
+    "remote_isolated_root": "/home/xiwang/DiffSPECFEM-PSV",
+    "max_mpi_ranks": 2,
+    "threads_per_process": 1,
+    "nice": 10,
+    "build_jobs": 1,
+    "gpu": "not used",
+    "before_large_run_memory_and_disk": "remote evidence/psv_pre_marmousi_{memory,disk}.txt",
+    "performance_claim": "no benchmark speedup or blind skill-effectiveness claim; exact measured native launch and completegradient times retained",
+    "historical_SH_evidence": "unchanged and separately named; unrun SH dense Marmousi drafts excluded from public entry points",
+    "live_process_snapshot": "Fine check-only forward: native MPI ranks about47MB RSS each, Python driver about753MiB, host49GiB available; snapshot only, not peakRSS or benchmark claim."
+  },
+  "commands": [
+    "bash scripts/build_psv.sh",
+    "python scripts/validate_psv.py --model examples/psv_coupled_unit/DATA/unit_model.npz --case examples/psv_coupled_unit --par-file Par_file_tomography --evidence evidence/psv_unit_attempt3",
+    "python scripts/validate_psv.py --model data/prepared/marmousi2_full_psv_solid_domain.npz --case examples/psv_marmousi2_validation64 --evidence evidence/psv_marmousi64_attempt1",
+    "python scripts/validate_psv.py --model data/prepared/marmousi2_full_psv_solid_domain.npz --case examples/psv_marmousi2_full --evidence evidence/psv_marmousi128_illustration --mode illustration --directions mixed localized"
+  ],
+  "publication": "input model arrays, physical perturbation arrays and raw model coefficient columns remain private/ignored; scripts/package_psv_evidence.py exports actual derivative/trace/native field outputs only",
+  "prior_familiarity": "agent inherited an existing SH adapter; P-SV exact transpose independently derived against official pinned forward kernels, with independent source and raw evidence audit; not a blinded generic-skill study",
+  "recorded_utc": "2026-11-07T02:13:09.514568+00:00",
+  "scope_correction": "Sid clarified that the primary demonstration must be P-SV. The earlier SH application remains a regression; the proposed dense SH Marmousi crop was stopped before any native Marmousi simulation. This follow-up implements the full water-coupled P-SV path.",
+  "public_evidence": {
+    "unit": "evidence/psv_unit",
+    "coarse": "evidence/psv_marmousi64",
+    "fine": "evidence/psv_marmousi128",
+    "source_archive_names": "Attempt namespaces below refer to remote private execution archives; public outputs are the whitelist exports linked here."
+  },
+  "delivery_verification": {
+    "public_manifest_files_checked": 234,
+    "missing_files": 0,
+    "sha256_mismatches": 0,
+    "independent_numerical_audit": "evidence/psv_independent_audit.md",
+    "final_visual_qa": "figures/marmousi2/qa/native_visual_qa.json",
+    "visual_status": "complete / PASS, no pending items",
+    "minimum_pdf_glyph_pt": 5.6,
+    "pdf_collision_failures": 0
+  }
+}

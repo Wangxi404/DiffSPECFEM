@@ -1,0 +1,899 @@
+{
+  "scope": "actual native coupled P-SV results; no input material arrays",
+  "source_case": "examples/psv_marmousi2_validation64",
+  "source_validation_sha256": "6ceb5719e8894fed6cdf58cdde5c3981487c2f37c485dc9566f6b63ef95e120e",
+  "excluded": [
+    "tomography and prepared material arrays",
+    "native databases",
+    "full six-field history",
+    "physical perturbation directions (model times known patterns)",
+    "rho/lambda/mu columns from native derivative tables"
+  ],
+  "sources": [
+    {
+      "source": "validation.json",
+      "bytes": 56447,
+      "sha256": "6ceb5719e8894fed6cdf58cdde5c3981487c2f37c485dc9566f6b63ef95e120e",
+      "output": "validation.json"
+    },
+    {
+      "source": "native_calls.jsonl",
+      "bytes": 49082,
+      "sha256": "2d960d65e7e6daa25778c31cf4fbdef4900f9f9503b23d3687df07eb6384defa",
+      "output": "native_calls.jsonl"
+    },
+    {
+      "source": "target.npy",
+      "bytes": 2624128,
+      "sha256": "053a746db58d6d9ed6989d1c69b6bca61217fe2a80bf1b3be7c033631d06e671",
+      "output": "target.npy"
+    },
+    {
+      "source": "native_reference.npy",
+      "bytes": 2624128,
+      "sha256": "611c5144425ec925e2ac51f92ff39d0b1e370dd36996ebb2397b7e8b01295e92",
+      "output": "native_reference.npy"
+    },
+    {
+      "source": "gradient_l2.npz",
+      "bytes": 7119471,
+      "sha256": "ffb025c493884c92fc1c27b94cc9542ca41019f60ab56c84f32742dea15d9c2c",
+      "output": "gradient_l2.npz"
+    },
+    {
+      "source": "gradient_processed.npz",
+      "bytes": 7157440,
+      "sha256": "c7e3aa863385851b8922cefd2f9177c1a85ef6ee85d583a1e2c40e038203ff1a",
+      "output": "gradient_processed.npz"
+    },
+    {
+      "source": "native_baseline/native_baseline.log",
+      "bytes": 41856,
+      "sha256": "44ade957a0c6c5d07af2fcb5a02db37cb0acbab60b524675ebff5ada2d00f780",
+      "output": "native_baseline/native_baseline.log"
+    },
+    {
+      "source": "native_baseline/mesh.log",
+      "bytes": 5741,
+      "sha256": "ec1c805ae5521d1b70b426fc9c5f557af1710b61b11f1e1b2d6df82184f36c6d",
+      "output": "native_baseline/mesh.log"
+    },
+    {
+      "source": "native_baseline/mesh.resources.txt",
+      "bytes": 799,
+      "sha256": "88be195abfd1e064a2efaf0b9cb2fd953fa3a5876aa0ea058518ed7304634249",
+      "output": "native_baseline/mesh.resources.txt"
+    },
+    {
+      "source": "native_baseline/native_baseline.resources.txt",
+      "bytes": 819,
+      "sha256": "ae149a5a402ad033b6789b146ca0efb07e44dc656dfb083db704cb07eac4757d",
+      "output": "native_baseline/native_baseline.resources.txt"
+    },
+    {
+      "source": "native_baseline/DATA/Par_file",
+      "bytes": 24812,
+      "sha256": "81dc6b526f623515f713b88c2e636511da5e1112f3bb95633d46e638db5aed4d",
+      "output": "native_baseline/DATA/Par_file"
+    },
+    {
+      "source": "native_baseline/DATA/SOURCE",
+      "bytes": 3419,
+      "sha256": "71447b766c436a787ec8e5dac0a068e10d301ba0885f936a47754bb69cd6929f",
+      "output": "native_baseline/DATA/SOURCE"
+    },
+    {
+      "source": "native_baseline/DATA/STATIONS",
+      "bytes": 1017,
+      "sha256": "1dcb43364f924c6f86121fecdc5c821176b5495c5f4e34b7f210edfe585ea69b",
+      "output": "native_baseline/DATA/STATIONS"
+    },
+    {
+      "source": "native_baseline/DATA/interfaces_elastic_analytic.dat",
+      "bytes": 58,
+      "sha256": "a56629784965df506c729d9933f60ee4932b02597ea480ccf6d1e223721557c3",
+      "output": "native_baseline/DATA/interfaces_elastic_analytic.dat"
+    },
+    {
+      "source": "target_native/mesh.log",
+      "bytes": 5741,
+      "sha256": "ec1c805ae5521d1b70b426fc9c5f557af1710b61b11f1e1b2d6df82184f36c6d",
+      "output": "target_native/mesh.log"
+    },
+    {
+      "source": "target_native/forward.log",
+      "bytes": 41856,
+      "sha256": "8e2feb413311214d6fd84d4080b15adfcebc2e5f02631de81f696f2f2ab4b77d",
+      "output": "target_native/forward.log"
+    },
+    {
+      "source": "target_native/mesh.resources.txt",
+      "bytes": 797,
+      "sha256": "5ce874c13b6b597b394674834d6773c1b34acfe9037ddfd9915ba10849b7fc47",
+      "output": "target_native/mesh.resources.txt"
+    },
+    {
+      "source": "target_native/forward.resources.txt",
+      "bytes": 833,
+      "sha256": "c0e7a9c35277d5f6046d80c9fed8cf94b96bdf4b796752c325b49f3d269b7f55",
+      "output": "target_native/forward.resources.txt"
+    },
+    {
+      "source": "target_native/DATA/Par_file",
+      "bytes": 24812,
+      "sha256": "81dc6b526f623515f713b88c2e636511da5e1112f3bb95633d46e638db5aed4d",
+      "output": "target_native/DATA/Par_file"
+    },
+    {
+      "source": "target_native/DATA/SOURCE",
+      "bytes": 3419,
+      "sha256": "71447b766c436a787ec8e5dac0a068e10d301ba0885f936a47754bb69cd6929f",
+      "output": "target_native/DATA/SOURCE"
+    },
+    {
+      "source": "target_native/DATA/STATIONS",
+      "bytes": 1017,
+      "sha256": "1dcb43364f924c6f86121fecdc5c821176b5495c5f4e34b7f210edfe585ea69b",
+      "output": "target_native/DATA/STATIONS"
+    },
+    {
+      "source": "target_native/DATA/interfaces_elastic_analytic.dat",
+      "bytes": 58,
+      "sha256": "a56629784965df506c729d9933f60ee4932b02597ea480ccf6d1e223721557c3",
+      "output": "target_native/DATA/interfaces_elastic_analytic.dat"
+    },
+    {
+      "source": "gradient_l2/adjoint.log",
+      "bytes": 36601,
+      "sha256": "04f5b5499fcdd64b79e2cf566bfcfd078be7b42b7255409446cea888c8a69ac9",
+      "output": "gradient_l2/adjoint.log"
+    },
+    {
+      "source": "gradient_l2/mesh.log",
+      "bytes": 5741,
+      "sha256": "ec1c805ae5521d1b70b426fc9c5f557af1710b61b11f1e1b2d6df82184f36c6d",
+      "output": "gradient_l2/mesh.log"
+    },
+    {
+      "source": "gradient_l2/forward.log",
+      "bytes": 41856,
+      "sha256": "71b2f55168305b55051036e57a2e601dfe7c05438db9d0ba83dbbaa879c7e204",
+      "output": "gradient_l2/forward.log"
+    },
+    {
+      "source": "gradient_l2/mesh.resources.txt",
+      "bytes": 797,
+      "sha256": "6ef5c7ba2e76b00760c8aaf529420746b814d2fbf6a0ed4d396e2b2f8c612fd6",
+      "output": "gradient_l2/mesh.resources.txt"
+    },
+    {
+      "source": "gradient_l2/forward.resources.txt",
+      "bytes": 836,
+      "sha256": "e03c1607be2ee65a6aa2104b450d3ed897c4fce57dc388ddc5cd64161718a658",
+      "output": "gradient_l2/forward.resources.txt"
+    },
+    {
+      "source": "gradient_l2/adjoint.resources.txt",
+      "bytes": 836,
+      "sha256": "0504e0bf3db543b8ac1bad7caf80c7383f974126fb9930d69ad58e922a73f1fe",
+      "output": "gradient_l2/adjoint.resources.txt"
+    },
+    {
+      "source": "gradient_l2/DATA/Par_file",
+      "bytes": 24812,
+      "sha256": "81dc6b526f623515f713b88c2e636511da5e1112f3bb95633d46e638db5aed4d",
+      "output": "gradient_l2/DATA/Par_file"
+    },
+    {
+      "source": "gradient_l2/DATA/SOURCE",
+      "bytes": 3419,
+      "sha256": "71447b766c436a787ec8e5dac0a068e10d301ba0885f936a47754bb69cd6929f",
+      "output": "gradient_l2/DATA/SOURCE"
+    },
+    {
+      "source": "gradient_l2/DATA/STATIONS",
+      "bytes": 1017,
+      "sha256": "1dcb43364f924c6f86121fecdc5c821176b5495c5f4e34b7f210edfe585ea69b",
+      "output": "gradient_l2/DATA/STATIONS"
+    },
+    {
+      "source": "gradient_l2/DATA/interfaces_elastic_analytic.dat",
+      "bytes": 58,
+      "sha256": "a56629784965df506c729d9933f60ee4932b02597ea480ccf6d1e223721557c3",
+      "output": "gradient_l2/DATA/interfaces_elastic_analytic.dat"
+    },
+    {
+      "source": "gradient_l2/history_manifest.json",
+      "bytes": 571,
+      "sha256": "a65acf3cf542ab7d023c9ece010cf12b3d3ccb319d3e46851a644b82d1ed83d6",
+      "output": "gradient_l2/history_manifest.json"
+    },
+    {
+      "source": "gradient_l2/OUTPUT_FILES/psv_rank000000_coupling_probe.txt",
+      "bytes": 3075747,
+      "sha256": "220c2e039497cdbcd788b8402a2229223be0849f037a86e103f4cd9d8b23cecc",
+      "output": "gradient_l2/OUTPUT_FILES/psv_rank000000_coupling_probe.txt"
+    },
+    {
+      "source": "gradient_l2/OUTPUT_FILES/psv_rank000000_coupling_geometry.txt",
+      "bytes": 39,
+      "sha256": "7af421e42c6428bcc8281ea4358123046106cc85baa39ebf01554033bd1f5d13",
+      "output": "gradient_l2/OUTPUT_FILES/psv_rank000000_coupling_geometry.txt"
+    },
+    {
+      "source": "gradient_l2/OUTPUT_FILES/psv_rank000000_sampling.txt",
+      "bytes": 24150,
+      "sha256": "17270a1473401f75e877b0aea3c3cc2e00de5b7a694a148b652d7368eb9e927d",
+      "output": "gradient_l2/OUTPUT_FILES/psv_rank000000_sampling.txt"
+    },
+    {
+      "source": "gradient_l2/OUTPUT_FILES/psv_rank000000_sampling_native_nodes.txt",
+      "bytes": 2711322,
+      "sha256": "5c19592921324ff90d199e85d76dd036752594643827cec8029581355975ab10",
+      "output": "gradient_l2/OUTPUT_FILES/psv_rank000000_sampling_native_nodes.txt"
+    },
+    {
+      "source": "gradient_l2/OUTPUT_FILES/psv_rank000000_sampling_native_receivers.txt",
+      "bytes": 2331,
+      "sha256": "9567159fda124aafe985ad3a453a92d2a41b28e0f5bc370e3afc536e7d198b45",
+      "output": "gradient_l2/OUTPUT_FILES/psv_rank000000_sampling_native_receivers.txt"
+    },
+    {
+      "source": "gradient_l2/OUTPUT_FILES/psv_rank000000_gll_geometry.txt",
+      "bytes": 1769600,
+      "sha256": "d0b24517eee5b057027bcd54a6a754619dd97f6f00a85d89bc08361729693995",
+      "output": "gradient_l2/OUTPUT_FILES/psv_rank000000_gll_geometry.txt"
+    },
+    {
+      "source": "gradient_l2/OUTPUT_FILES/psv_rank000000_nodes.txt",
+      "bytes": 889197,
+      "sha256": "c398cf9dd615654fb1e24f7c1df3b095be4d200c0401d2cef613591e2c846b34",
+      "output": "gradient_l2/OUTPUT_FILES/psv_rank000000_nodes.txt"
+    },
+    {
+      "source": "gradient_l2/OUTPUT_FILES/psv_rank000000_route.txt",
+      "bytes": 392,
+      "sha256": "81537a4fbb9121998ee9f0e24ebc56b609e72f7d4a1c5f023d2a9edc7b3653f9",
+      "output": "gradient_l2/OUTPUT_FILES/psv_rank000000_route.txt"
+    },
+    {
+      "source": "gradient_l2/OUTPUT_FILES/psv_rank000001_coupling_probe.txt",
+      "bytes": 3075747,
+      "sha256": "d6e9e6fdc7048adc6387a7fdf73139187ff8c66009be0347ad1680297b473bff",
+      "output": "gradient_l2/OUTPUT_FILES/psv_rank000001_coupling_probe.txt"
+    },
+    {
+      "source": "gradient_l2/OUTPUT_FILES/psv_rank000001_coupling_geometry.txt",
+      "bytes": 39,
+      "sha256": "7af421e42c6428bcc8281ea4358123046106cc85baa39ebf01554033bd1f5d13",
+      "output": "gradient_l2/OUTPUT_FILES/psv_rank000001_coupling_geometry.txt"
+    },
+    {
+      "source": "gradient_l2/OUTPUT_FILES/psv_rank000001_sampling.txt",
+      "bytes": 23000,
+      "sha256": "2f614992326f3599ed3e92986505413ea479e9dc8d89aedf2ea40352ae142c7c",
+      "output": "gradient_l2/OUTPUT_FILES/psv_rank000001_sampling.txt"
+    },
+    {
+      "source": "gradient_l2/OUTPUT_FILES/psv_rank000001_sampling_native_nodes.txt",
+      "bytes": 2711322,
+      "sha256": "0c48c30bbcd6ca24f9473240dd7048bf54c26cef6ec98eb2269912c3571b1914",
+      "output": "gradient_l2/OUTPUT_FILES/psv_rank000001_sampling_native_nodes.txt"
+    },
+    {
+      "source": "gradient_l2/OUTPUT_FILES/psv_rank000001_sampling_native_receivers.txt",
+      "bytes": 2220,
+      "sha256": "a815d131aadcce01d188cb780ac2b80f681ccdc1b003dd8746f349bd985bc5e5",
+      "output": "gradient_l2/OUTPUT_FILES/psv_rank000001_sampling_native_receivers.txt"
+    },
+    {
+      "source": "gradient_l2/OUTPUT_FILES/psv_rank000001_gll_geometry.txt",
+      "bytes": 1769600,
+      "sha256": "37da53a1c4e280bbf59bb147b22907e444cb7fe429ef46dcf9ad643923e00874",
+      "output": "gradient_l2/OUTPUT_FILES/psv_rank000001_gll_geometry.txt"
+    },
+    {
+      "source": "gradient_l2/OUTPUT_FILES/psv_rank000001_nodes.txt",
+      "bytes": 889197,
+      "sha256": "31711d6dae66cb7c96577ee81948a9e7ce68a7f26970ca371946fd44fd24b916",
+      "output": "gradient_l2/OUTPUT_FILES/psv_rank000001_nodes.txt"
+    },
+    {
+      "source": "gradient_l2/OUTPUT_FILES/psv_rank000001_route.txt",
+      "bytes": 392,
+      "sha256": "25dffd27e8cd50a98b038c97948e5e8f9f2df4752bce72fe8095271f0aea7bc6",
+      "output": "gradient_l2/OUTPUT_FILES/psv_rank000001_route.txt"
+    },
+    {
+      "source": "gradient_processed/adjoint.log",
+      "bytes": 36601,
+      "sha256": "a342aed514402d8d3a63738b38e9a1d976d1fc778f0ead54560f0e9fec836265",
+      "output": "gradient_processed/adjoint.log"
+    },
+    {
+      "source": "gradient_processed/mesh.log",
+      "bytes": 5741,
+      "sha256": "ec1c805ae5521d1b70b426fc9c5f557af1710b61b11f1e1b2d6df82184f36c6d",
+      "output": "gradient_processed/mesh.log"
+    },
+    {
+      "source": "gradient_processed/forward.log",
+      "bytes": 41856,
+      "sha256": "434dcbfe06685d704aaa86b5d4916b9c39f820896c3484b4525c8ae19056db57",
+      "output": "gradient_processed/forward.log"
+    },
+    {
+      "source": "gradient_processed/mesh.resources.txt",
+      "bytes": 797,
+      "sha256": "5d7f0a3566173283f58b4418c5d62a0e4eea6d6c988b9b302550e29957cc662b",
+      "output": "gradient_processed/mesh.resources.txt"
+    },
+    {
+      "source": "gradient_processed/forward.resources.txt",
+      "bytes": 833,
+      "sha256": "92264685118825cecb0d919d7308385d2965407bbeb14f5d180f5afff6d78443",
+      "output": "gradient_processed/forward.resources.txt"
+    },
+    {
+      "source": "gradient_processed/adjoint.resources.txt",
+      "bytes": 835,
+      "sha256": "cca5165db3fb63101e849853a1b6b650d197795de79f5d91c653f77d36b5edf9",
+      "output": "gradient_processed/adjoint.resources.txt"
+    },
+    {
+      "source": "gradient_processed/DATA/Par_file",
+      "bytes": 24812,
+      "sha256": "81dc6b526f623515f713b88c2e636511da5e1112f3bb95633d46e638db5aed4d",
+      "output": "gradient_processed/DATA/Par_file"
+    },
+    {
+      "source": "gradient_processed/DATA/SOURCE",
+      "bytes": 3419,
+      "sha256": "71447b766c436a787ec8e5dac0a068e10d301ba0885f936a47754bb69cd6929f",
+      "output": "gradient_processed/DATA/SOURCE"
+    },
+    {
+      "source": "gradient_processed/DATA/STATIONS",
+      "bytes": 1017,
+      "sha256": "1dcb43364f924c6f86121fecdc5c821176b5495c5f4e34b7f210edfe585ea69b",
+      "output": "gradient_processed/DATA/STATIONS"
+    },
+    {
+      "source": "gradient_processed/DATA/interfaces_elastic_analytic.dat",
+      "bytes": 58,
+      "sha256": "a56629784965df506c729d9933f60ee4932b02597ea480ccf6d1e223721557c3",
+      "output": "gradient_processed/DATA/interfaces_elastic_analytic.dat"
+    },
+    {
+      "source": "gradient_processed/history_manifest.json",
+      "bytes": 571,
+      "sha256": "a65acf3cf542ab7d023c9ece010cf12b3d3ccb319d3e46851a644b82d1ed83d6",
+      "output": "gradient_processed/history_manifest.json"
+    },
+    {
+      "source": "gradient_processed/OUTPUT_FILES/psv_rank000000_coupling_probe.txt",
+      "bytes": 3075747,
+      "sha256": "220c2e039497cdbcd788b8402a2229223be0849f037a86e103f4cd9d8b23cecc",
+      "output": "gradient_processed/OUTPUT_FILES/psv_rank000000_coupling_probe.txt"
+    },
+    {
+      "source": "gradient_processed/OUTPUT_FILES/psv_rank000000_coupling_geometry.txt",
+      "bytes": 39,
+      "sha256": "7af421e42c6428bcc8281ea4358123046106cc85baa39ebf01554033bd1f5d13",
+      "output": "gradient_processed/OUTPUT_FILES/psv_rank000000_coupling_geometry.txt"
+    },
+    {
+      "source": "gradient_processed/OUTPUT_FILES/psv_rank000000_sampling.txt",
+      "bytes": 24150,
+      "sha256": "17270a1473401f75e877b0aea3c3cc2e00de5b7a694a148b652d7368eb9e927d",
+      "output": "gradient_processed/OUTPUT_FILES/psv_rank000000_sampling.txt"
+    },
+    {
+      "source": "gradient_processed/OUTPUT_FILES/psv_rank000000_sampling_native_nodes.txt",
+      "bytes": 2711322,
+      "sha256": "5c19592921324ff90d199e85d76dd036752594643827cec8029581355975ab10",
+      "output": "gradient_processed/OUTPUT_FILES/psv_rank000000_sampling_native_nodes.txt"
+    },
+    {
+      "source": "gradient_processed/OUTPUT_FILES/psv_rank000000_sampling_native_receivers.txt",
+      "bytes": 2331,
+      "sha256": "9567159fda124aafe985ad3a453a92d2a41b28e0f5bc370e3afc536e7d198b45",
+      "output": "gradient_processed/OUTPUT_FILES/psv_rank000000_sampling_native_receivers.txt"
+    },
+    {
+      "source": "gradient_processed/OUTPUT_FILES/psv_rank000000_gll_geometry.txt",
+      "bytes": 1769600,
+      "sha256": "d0b24517eee5b057027bcd54a6a754619dd97f6f00a85d89bc08361729693995",
+      "output": "gradient_processed/OUTPUT_FILES/psv_rank000000_gll_geometry.txt"
+    },
+    {
+      "source": "gradient_processed/OUTPUT_FILES/psv_rank000000_nodes.txt",
+      "bytes": 889197,
+      "sha256": "c398cf9dd615654fb1e24f7c1df3b095be4d200c0401d2cef613591e2c846b34",
+      "output": "gradient_processed/OUTPUT_FILES/psv_rank000000_nodes.txt"
+    },
+    {
+      "source": "gradient_processed/OUTPUT_FILES/psv_rank000000_route.txt",
+      "bytes": 392,
+      "sha256": "81537a4fbb9121998ee9f0e24ebc56b609e72f7d4a1c5f023d2a9edc7b3653f9",
+      "output": "gradient_processed/OUTPUT_FILES/psv_rank000000_route.txt"
+    },
+    {
+      "source": "gradient_processed/OUTPUT_FILES/psv_rank000001_coupling_probe.txt",
+      "bytes": 3075747,
+      "sha256": "d6e9e6fdc7048adc6387a7fdf73139187ff8c66009be0347ad1680297b473bff",
+      "output": "gradient_processed/OUTPUT_FILES/psv_rank000001_coupling_probe.txt"
+    },
+    {
+      "source": "gradient_processed/OUTPUT_FILES/psv_rank000001_coupling_geometry.txt",
+      "bytes": 39,
+      "sha256": "7af421e42c6428bcc8281ea4358123046106cc85baa39ebf01554033bd1f5d13",
+      "output": "gradient_processed/OUTPUT_FILES/psv_rank000001_coupling_geometry.txt"
+    },
+    {
+      "source": "gradient_processed/OUTPUT_FILES/psv_rank000001_sampling.txt",
+      "bytes": 23000,
+      "sha256": "2f614992326f3599ed3e92986505413ea479e9dc8d89aedf2ea40352ae142c7c",
+      "output": "gradient_processed/OUTPUT_FILES/psv_rank000001_sampling.txt"
+    },
+    {
+      "source": "gradient_processed/OUTPUT_FILES/psv_rank000001_sampling_native_nodes.txt",
+      "bytes": 2711322,
+      "sha256": "0c48c30bbcd6ca24f9473240dd7048bf54c26cef6ec98eb2269912c3571b1914",
+      "output": "gradient_processed/OUTPUT_FILES/psv_rank000001_sampling_native_nodes.txt"
+    },
+    {
+      "source": "gradient_processed/OUTPUT_FILES/psv_rank000001_sampling_native_receivers.txt",
+      "bytes": 2220,
+      "sha256": "a815d131aadcce01d188cb780ac2b80f681ccdc1b003dd8746f349bd985bc5e5",
+      "output": "gradient_processed/OUTPUT_FILES/psv_rank000001_sampling_native_receivers.txt"
+    },
+    {
+      "source": "gradient_processed/OUTPUT_FILES/psv_rank000001_gll_geometry.txt",
+      "bytes": 1769600,
+      "sha256": "37da53a1c4e280bbf59bb147b22907e444cb7fe429ef46dcf9ad643923e00874",
+      "output": "gradient_processed/OUTPUT_FILES/psv_rank000001_gll_geometry.txt"
+    },
+    {
+      "source": "gradient_processed/OUTPUT_FILES/psv_rank000001_nodes.txt",
+      "bytes": 889197,
+      "sha256": "31711d6dae66cb7c96577ee81948a9e7ce68a7f26970ca371946fd44fd24b916",
+      "output": "gradient_processed/OUTPUT_FILES/psv_rank000001_nodes.txt"
+    },
+    {
+      "source": "gradient_processed/OUTPUT_FILES/psv_rank000001_route.txt",
+      "bytes": 392,
+      "sha256": "25dffd27e8cd50a98b038c97948e5e8f9f2df4752bce72fe8095271f0aea7bc6",
+      "output": "gradient_processed/OUTPUT_FILES/psv_rank000001_route.txt"
+    },
+    {
+      "source": "gradient_l2/OUTPUT_FILES/psv_rank000000_displacement_snapshots.bin",
+      "bytes": 17920220,
+      "sha256": "517a70db18b5c17a319abf99042d67d3b056b5ec1aeea0717704e894a137d278",
+      "output": "wavefield_rank000000.npz"
+    },
+    {
+      "source": "gradient_l2/OUTPUT_FILES/psv_rank000000_gll_geometry.txt",
+      "bytes": 1769600,
+      "sha256": "d0b24517eee5b057027bcd54a6a754619dd97f6f00a85d89bc08361729693995",
+      "output": "wavefield_rank000000.npz"
+    },
+    {
+      "source": "gradient_l2/OUTPUT_FILES/psv_rank000001_displacement_snapshots.bin",
+      "bytes": 17920220,
+      "sha256": "1508dd99df2accb3552603d417565a8d889010f6502504764194e62e976cc4c6",
+      "output": "wavefield_rank000001.npz"
+    },
+    {
+      "source": "gradient_l2/OUTPUT_FILES/psv_rank000001_gll_geometry.txt",
+      "bytes": 1769600,
+      "sha256": "37da53a1c4e280bbf59bb147b22907e444cb7fe429ef46dcf9ad643923e00874",
+      "output": "wavefield_rank000001.npz"
+    }
+  ],
+  "raw_derivative_columns": [
+    "element",
+    "i",
+    "j",
+    "node",
+    "x_m",
+    "z_m",
+    "dJ_drho",
+    "dJ_dlambda",
+    "dJ_dmu",
+    "solid_flag"
+  ],
+  "wavefield": "unchanged native compute_vector_one_element, UX/UZ in both phases; element-local values, no phase averaging",
+  "outputs": [
+    {
+      "path": "gradient_l2/DATA/Par_file",
+      "bytes": 24812,
+      "sha256": "81dc6b526f623515f713b88c2e636511da5e1112f3bb95633d46e638db5aed4d"
+    },
+    {
+      "path": "gradient_l2/DATA/SOURCE",
+      "bytes": 3419,
+      "sha256": "71447b766c436a787ec8e5dac0a068e10d301ba0885f936a47754bb69cd6929f"
+    },
+    {
+      "path": "gradient_l2/DATA/STATIONS",
+      "bytes": 1017,
+      "sha256": "1dcb43364f924c6f86121fecdc5c821176b5495c5f4e34b7f210edfe585ea69b"
+    },
+    {
+      "path": "gradient_l2/DATA/interfaces_elastic_analytic.dat",
+      "bytes": 58,
+      "sha256": "a56629784965df506c729d9933f60ee4932b02597ea480ccf6d1e223721557c3"
+    },
+    {
+      "path": "gradient_l2/OUTPUT_FILES/psv_rank000000_coupling_geometry.txt",
+      "bytes": 39,
+      "sha256": "7af421e42c6428bcc8281ea4358123046106cc85baa39ebf01554033bd1f5d13"
+    },
+    {
+      "path": "gradient_l2/OUTPUT_FILES/psv_rank000000_coupling_probe.txt",
+      "bytes": 3075747,
+      "sha256": "220c2e039497cdbcd788b8402a2229223be0849f037a86e103f4cd9d8b23cecc"
+    },
+    {
+      "path": "gradient_l2/OUTPUT_FILES/psv_rank000000_gll_geometry.txt",
+      "bytes": 1769600,
+      "sha256": "d0b24517eee5b057027bcd54a6a754619dd97f6f00a85d89bc08361729693995"
+    },
+    {
+      "path": "gradient_l2/OUTPUT_FILES/psv_rank000000_nodes.txt",
+      "bytes": 889197,
+      "sha256": "c398cf9dd615654fb1e24f7c1df3b095be4d200c0401d2cef613591e2c846b34"
+    },
+    {
+      "path": "gradient_l2/OUTPUT_FILES/psv_rank000000_route.txt",
+      "bytes": 392,
+      "sha256": "81537a4fbb9121998ee9f0e24ebc56b609e72f7d4a1c5f023d2a9edc7b3653f9"
+    },
+    {
+      "path": "gradient_l2/OUTPUT_FILES/psv_rank000000_sampling.txt",
+      "bytes": 24150,
+      "sha256": "17270a1473401f75e877b0aea3c3cc2e00de5b7a694a148b652d7368eb9e927d"
+    },
+    {
+      "path": "gradient_l2/OUTPUT_FILES/psv_rank000000_sampling_native_nodes.txt",
+      "bytes": 2711322,
+      "sha256": "5c19592921324ff90d199e85d76dd036752594643827cec8029581355975ab10"
+    },
+    {
+      "path": "gradient_l2/OUTPUT_FILES/psv_rank000000_sampling_native_receivers.txt",
+      "bytes": 2331,
+      "sha256": "9567159fda124aafe985ad3a453a92d2a41b28e0f5bc370e3afc536e7d198b45"
+    },
+    {
+      "path": "gradient_l2/OUTPUT_FILES/psv_rank000001_coupling_geometry.txt",
+      "bytes": 39,
+      "sha256": "7af421e42c6428bcc8281ea4358123046106cc85baa39ebf01554033bd1f5d13"
+    },
+    {
+      "path": "gradient_l2/OUTPUT_FILES/psv_rank000001_coupling_probe.txt",
+      "bytes": 3075747,
+      "sha256": "d6e9e6fdc7048adc6387a7fdf73139187ff8c66009be0347ad1680297b473bff"
+    },
+    {
+      "path": "gradient_l2/OUTPUT_FILES/psv_rank000001_gll_geometry.txt",
+      "bytes": 1769600,
+      "sha256": "37da53a1c4e280bbf59bb147b22907e444cb7fe429ef46dcf9ad643923e00874"
+    },
+    {
+      "path": "gradient_l2/OUTPUT_FILES/psv_rank000001_nodes.txt",
+      "bytes": 889197,
+      "sha256": "31711d6dae66cb7c96577ee81948a9e7ce68a7f26970ca371946fd44fd24b916"
+    },
+    {
+      "path": "gradient_l2/OUTPUT_FILES/psv_rank000001_route.txt",
+      "bytes": 392,
+      "sha256": "25dffd27e8cd50a98b038c97948e5e8f9f2df4752bce72fe8095271f0aea7bc6"
+    },
+    {
+      "path": "gradient_l2/OUTPUT_FILES/psv_rank000001_sampling.txt",
+      "bytes": 23000,
+      "sha256": "2f614992326f3599ed3e92986505413ea479e9dc8d89aedf2ea40352ae142c7c"
+    },
+    {
+      "path": "gradient_l2/OUTPUT_FILES/psv_rank000001_sampling_native_nodes.txt",
+      "bytes": 2711322,
+      "sha256": "0c48c30bbcd6ca24f9473240dd7048bf54c26cef6ec98eb2269912c3571b1914"
+    },
+    {
+      "path": "gradient_l2/OUTPUT_FILES/psv_rank000001_sampling_native_receivers.txt",
+      "bytes": 2220,
+      "sha256": "a815d131aadcce01d188cb780ac2b80f681ccdc1b003dd8746f349bd985bc5e5"
+    },
+    {
+      "path": "gradient_l2/adjoint.log",
+      "bytes": 36601,
+      "sha256": "04f5b5499fcdd64b79e2cf566bfcfd078be7b42b7255409446cea888c8a69ac9"
+    },
+    {
+      "path": "gradient_l2/adjoint.resources.txt",
+      "bytes": 836,
+      "sha256": "0504e0bf3db543b8ac1bad7caf80c7383f974126fb9930d69ad58e922a73f1fe"
+    },
+    {
+      "path": "gradient_l2/forward.log",
+      "bytes": 41856,
+      "sha256": "71b2f55168305b55051036e57a2e601dfe7c05438db9d0ba83dbbaa879c7e204"
+    },
+    {
+      "path": "gradient_l2/forward.resources.txt",
+      "bytes": 836,
+      "sha256": "e03c1607be2ee65a6aa2104b450d3ed897c4fce57dc388ddc5cd64161718a658"
+    },
+    {
+      "path": "gradient_l2/history_manifest.json",
+      "bytes": 571,
+      "sha256": "a65acf3cf542ab7d023c9ece010cf12b3d3ccb319d3e46851a644b82d1ed83d6"
+    },
+    {
+      "path": "gradient_l2/mesh.log",
+      "bytes": 5741,
+      "sha256": "ec1c805ae5521d1b70b426fc9c5f557af1710b61b11f1e1b2d6df82184f36c6d"
+    },
+    {
+      "path": "gradient_l2/mesh.resources.txt",
+      "bytes": 797,
+      "sha256": "6ef5c7ba2e76b00760c8aaf529420746b814d2fbf6a0ed4d396e2b2f8c612fd6"
+    },
+    {
+      "path": "gradient_l2.npz",
+      "bytes": 6241635,
+      "sha256": "80d2cd20b42069a19c1d3b2cb8f44f72060bba5ccb1cbe32cd7fa79cce9c258a"
+    },
+    {
+      "path": "gradient_processed/DATA/Par_file",
+      "bytes": 24812,
+      "sha256": "81dc6b526f623515f713b88c2e636511da5e1112f3bb95633d46e638db5aed4d"
+    },
+    {
+      "path": "gradient_processed/DATA/SOURCE",
+      "bytes": 3419,
+      "sha256": "71447b766c436a787ec8e5dac0a068e10d301ba0885f936a47754bb69cd6929f"
+    },
+    {
+      "path": "gradient_processed/DATA/STATIONS",
+      "bytes": 1017,
+      "sha256": "1dcb43364f924c6f86121fecdc5c821176b5495c5f4e34b7f210edfe585ea69b"
+    },
+    {
+      "path": "gradient_processed/DATA/interfaces_elastic_analytic.dat",
+      "bytes": 58,
+      "sha256": "a56629784965df506c729d9933f60ee4932b02597ea480ccf6d1e223721557c3"
+    },
+    {
+      "path": "gradient_processed/OUTPUT_FILES/psv_rank000000_coupling_geometry.txt",
+      "bytes": 39,
+      "sha256": "7af421e42c6428bcc8281ea4358123046106cc85baa39ebf01554033bd1f5d13"
+    },
+    {
+      "path": "gradient_processed/OUTPUT_FILES/psv_rank000000_coupling_probe.txt",
+      "bytes": 3075747,
+      "sha256": "220c2e039497cdbcd788b8402a2229223be0849f037a86e103f4cd9d8b23cecc"
+    },
+    {
+      "path": "gradient_processed/OUTPUT_FILES/psv_rank000000_gll_geometry.txt",
+      "bytes": 1769600,
+      "sha256": "d0b24517eee5b057027bcd54a6a754619dd97f6f00a85d89bc08361729693995"
+    },
+    {
+      "path": "gradient_processed/OUTPUT_FILES/psv_rank000000_nodes.txt",
+      "bytes": 889197,
+      "sha256": "c398cf9dd615654fb1e24f7c1df3b095be4d200c0401d2cef613591e2c846b34"
+    },
+    {
+      "path": "gradient_processed/OUTPUT_FILES/psv_rank000000_route.txt",
+      "bytes": 392,
+      "sha256": "81537a4fbb9121998ee9f0e24ebc56b609e72f7d4a1c5f023d2a9edc7b3653f9"
+    },
+    {
+      "path": "gradient_processed/OUTPUT_FILES/psv_rank000000_sampling.txt",
+      "bytes": 24150,
+      "sha256": "17270a1473401f75e877b0aea3c3cc2e00de5b7a694a148b652d7368eb9e927d"
+    },
+    {
+      "path": "gradient_processed/OUTPUT_FILES/psv_rank000000_sampling_native_nodes.txt",
+      "bytes": 2711322,
+      "sha256": "5c19592921324ff90d199e85d76dd036752594643827cec8029581355975ab10"
+    },
+    {
+      "path": "gradient_processed/OUTPUT_FILES/psv_rank000000_sampling_native_receivers.txt",
+      "bytes": 2331,
+      "sha256": "9567159fda124aafe985ad3a453a92d2a41b28e0f5bc370e3afc536e7d198b45"
+    },
+    {
+      "path": "gradient_processed/OUTPUT_FILES/psv_rank000001_coupling_geometry.txt",
+      "bytes": 39,
+      "sha256": "7af421e42c6428bcc8281ea4358123046106cc85baa39ebf01554033bd1f5d13"
+    },
+    {
+      "path": "gradient_processed/OUTPUT_FILES/psv_rank000001_coupling_probe.txt",
+      "bytes": 3075747,
+      "sha256": "d6e9e6fdc7048adc6387a7fdf73139187ff8c66009be0347ad1680297b473bff"
+    },
+    {
+      "path": "gradient_processed/OUTPUT_FILES/psv_rank000001_gll_geometry.txt",
+      "bytes": 1769600,
+      "sha256": "37da53a1c4e280bbf59bb147b22907e444cb7fe429ef46dcf9ad643923e00874"
+    },
+    {
+      "path": "gradient_processed/OUTPUT_FILES/psv_rank000001_nodes.txt",
+      "bytes": 889197,
+      "sha256": "31711d6dae66cb7c96577ee81948a9e7ce68a7f26970ca371946fd44fd24b916"
+    },
+    {
+      "path": "gradient_processed/OUTPUT_FILES/psv_rank000001_route.txt",
+      "bytes": 392,
+      "sha256": "25dffd27e8cd50a98b038c97948e5e8f9f2df4752bce72fe8095271f0aea7bc6"
+    },
+    {
+      "path": "gradient_processed/OUTPUT_FILES/psv_rank000001_sampling.txt",
+      "bytes": 23000,
+      "sha256": "2f614992326f3599ed3e92986505413ea479e9dc8d89aedf2ea40352ae142c7c"
+    },
+    {
+      "path": "gradient_processed/OUTPUT_FILES/psv_rank000001_sampling_native_nodes.txt",
+      "bytes": 2711322,
+      "sha256": "0c48c30bbcd6ca24f9473240dd7048bf54c26cef6ec98eb2269912c3571b1914"
+    },
+    {
+      "path": "gradient_processed/OUTPUT_FILES/psv_rank000001_sampling_native_receivers.txt",
+      "bytes": 2220,
+      "sha256": "a815d131aadcce01d188cb780ac2b80f681ccdc1b003dd8746f349bd985bc5e5"
+    },
+    {
+      "path": "gradient_processed/adjoint.log",
+      "bytes": 36601,
+      "sha256": "a342aed514402d8d3a63738b38e9a1d976d1fc778f0ead54560f0e9fec836265"
+    },
+    {
+      "path": "gradient_processed/adjoint.resources.txt",
+      "bytes": 835,
+      "sha256": "cca5165db3fb63101e849853a1b6b650d197795de79f5d91c653f77d36b5edf9"
+    },
+    {
+      "path": "gradient_processed/forward.log",
+      "bytes": 41856,
+      "sha256": "434dcbfe06685d704aaa86b5d4916b9c39f820896c3484b4525c8ae19056db57"
+    },
+    {
+      "path": "gradient_processed/forward.resources.txt",
+      "bytes": 833,
+      "sha256": "92264685118825cecb0d919d7308385d2965407bbeb14f5d180f5afff6d78443"
+    },
+    {
+      "path": "gradient_processed/history_manifest.json",
+      "bytes": 571,
+      "sha256": "a65acf3cf542ab7d023c9ece010cf12b3d3ccb319d3e46851a644b82d1ed83d6"
+    },
+    {
+      "path": "gradient_processed/mesh.log",
+      "bytes": 5741,
+      "sha256": "ec1c805ae5521d1b70b426fc9c5f557af1710b61b11f1e1b2d6df82184f36c6d"
+    },
+    {
+      "path": "gradient_processed/mesh.resources.txt",
+      "bytes": 797,
+      "sha256": "5d7f0a3566173283f58b4418c5d62a0e4eea6d6c988b9b302550e29957cc662b"
+    },
+    {
+      "path": "gradient_processed.npz",
+      "bytes": 6278622,
+      "sha256": "91e35f69ae756fa89fae0d7e8e16a178f10e9ed51e69e62487c38a898c25f674"
+    },
+    {
+      "path": "native_baseline/DATA/Par_file",
+      "bytes": 24812,
+      "sha256": "81dc6b526f623515f713b88c2e636511da5e1112f3bb95633d46e638db5aed4d"
+    },
+    {
+      "path": "native_baseline/DATA/SOURCE",
+      "bytes": 3419,
+      "sha256": "71447b766c436a787ec8e5dac0a068e10d301ba0885f936a47754bb69cd6929f"
+    },
+    {
+      "path": "native_baseline/DATA/STATIONS",
+      "bytes": 1017,
+      "sha256": "1dcb43364f924c6f86121fecdc5c821176b5495c5f4e34b7f210edfe585ea69b"
+    },
+    {
+      "path": "native_baseline/DATA/interfaces_elastic_analytic.dat",
+      "bytes": 58,
+      "sha256": "a56629784965df506c729d9933f60ee4932b02597ea480ccf6d1e223721557c3"
+    },
+    {
+      "path": "native_baseline/mesh.log",
+      "bytes": 5741,
+      "sha256": "ec1c805ae5521d1b70b426fc9c5f557af1710b61b11f1e1b2d6df82184f36c6d"
+    },
+    {
+      "path": "native_baseline/mesh.resources.txt",
+      "bytes": 799,
+      "sha256": "88be195abfd1e064a2efaf0b9cb2fd953fa3a5876aa0ea058518ed7304634249"
+    },
+    {
+      "path": "native_baseline/native_baseline.log",
+      "bytes": 41856,
+      "sha256": "44ade957a0c6c5d07af2fcb5a02db37cb0acbab60b524675ebff5ada2d00f780"
+    },
+    {
+      "path": "native_baseline/native_baseline.resources.txt",
+      "bytes": 819,
+      "sha256": "ae149a5a402ad033b6789b146ca0efb07e44dc656dfb083db704cb07eac4757d"
+    },
+    {
+      "path": "native_calls.jsonl",
+      "bytes": 49082,
+      "sha256": "2d960d65e7e6daa25778c31cf4fbdef4900f9f9503b23d3687df07eb6384defa"
+    },
+    {
+      "path": "native_reference.npy",
+      "bytes": 2624128,
+      "sha256": "611c5144425ec925e2ac51f92ff39d0b1e370dd36996ebb2397b7e8b01295e92"
+    },
+    {
+      "path": "target.npy",
+      "bytes": 2624128,
+      "sha256": "053a746db58d6d9ed6989d1c69b6bca61217fe2a80bf1b3be7c033631d06e671"
+    },
+    {
+      "path": "target_native/DATA/Par_file",
+      "bytes": 24812,
+      "sha256": "81dc6b526f623515f713b88c2e636511da5e1112f3bb95633d46e638db5aed4d"
+    },
+    {
+      "path": "target_native/DATA/SOURCE",
+      "bytes": 3419,
+      "sha256": "71447b766c436a787ec8e5dac0a068e10d301ba0885f936a47754bb69cd6929f"
+    },
+    {
+      "path": "target_native/DATA/STATIONS",
+      "bytes": 1017,
+      "sha256": "1dcb43364f924c6f86121fecdc5c821176b5495c5f4e34b7f210edfe585ea69b"
+    },
+    {
+      "path": "target_native/DATA/interfaces_elastic_analytic.dat",
+      "bytes": 58,
+      "sha256": "a56629784965df506c729d9933f60ee4932b02597ea480ccf6d1e223721557c3"
+    },
+    {
+      "path": "target_native/forward.log",
+      "bytes": 41856,
+      "sha256": "8e2feb413311214d6fd84d4080b15adfcebc2e5f02631de81f696f2f2ab4b77d"
+    },
+    {
+      "path": "target_native/forward.resources.txt",
+      "bytes": 833,
+      "sha256": "c0e7a9c35277d5f6046d80c9fed8cf94b96bdf4b796752c325b49f3d269b7f55"
+    },
+    {
+      "path": "target_native/mesh.log",
+      "bytes": 5741,
+      "sha256": "ec1c805ae5521d1b70b426fc9c5f557af1710b61b11f1e1b2d6df82184f36c6d"
+    },
+    {
+      "path": "target_native/mesh.resources.txt",
+      "bytes": 797,
+      "sha256": "5ce874c13b6b597b394674834d6773c1b34acfe9037ddfd9915ba10849b7fc47"
+    },
+    {
+      "path": "validation.json",
+      "bytes": 56447,
+      "sha256": "6ceb5719e8894fed6cdf58cdde5c3981487c2f37c485dc9566f6b63ef95e120e"
+    },
+    {
+      "path": "wavefield_rank000000.npz",
+      "bytes": 12224980,
+      "sha256": "9c4f73b6a9af15ab9d49561dc2a0a636e45d00a6c0f18eb176ca01469fd9cc27"
+    },
+    {
+      "path": "wavefield_rank000001.npz",
+      "bytes": 12200398,
+      "sha256": "d3e07bdb52f319c71ce216025d65f3ed9f7a3a90077455a7a1d67baac7487cdd"
+    }
+  ]
+}

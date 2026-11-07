@@ -1,0 +1,10 @@
+{
+  "pdf": "figures/marmousi2/models_full_psv.pdf",
+  "auditable": true,
+  "minimum_required_pt": 5.0,
+  "minimum_found_pt": 5.7,
+  "text_run_count": 83,
+  "below_minimum_count": 0,
+  "below_minimum": [],
+  "warnings": []
+}

@@ -21,3 +21,16 @@ __pycache__/
 /evidence/**/OUTPUT_FILES/Database*.bin
 /evidence/gradient_l2_attempt1/
 /evidence/gradient_processed_attempt1/
+/data/
+/examples/sh_marmousi2_solid/DATA/tomo_file.xyz
+/examples/psv_marmousi2_full/DATA/tomo_file.xyz
+/examples/psv_marmousi2_validation64/DATA/tomo_file.xyz
+/examples/psv_coupled_unit/DATA/unit_model.npz
+/examples/psv_coupled_unit/DATA/tomo_file.xyz
+/psv-baseline-*
+/run_psv*/
+/run_*/
+/evidence/**/psv_rank*_history.bin
+/evidence/**/DATA/tomo_file.xyz
+/evidence/**/direction_*.npy
+/.local-development/

@@ -1,0 +1,41 @@
+{
+  "recorded_utc": "2026-11-07T01:50:51.738486+00:00",
+  "source_url": "https://github.com/SPECFEM/specfem2d",
+  "source_revision": "abf3196e3192af3343f2b402c82f34205577e672",
+  "source_tree": "fe42896b23e4111933ba0c1d335dc7f57ec8737c",
+  "clone_transport": "local no-hardlinks clone of official pinned source repository; clean tracked tree before new P-SV instrumentation",
+  "compiler": "GNU Fortran (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0",
+  "mpi": "mpirun (Open MPI) 4.1.2",
+  "native_precision": "configure --enable-double-precision; CUSTOM_REAL=8 bytes",
+  "build_parallelism": 1,
+  "thread_environment": {
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1"
+  },
+  "ranks_max": 2,
+  "launch_nice": 10,
+  "file_hashes": [
+    {
+      "file": "psv-baseline-xspecfem2D",
+      "bytes": 5326208,
+      "sha256": "705549f87e2f8427e30cf664576c49f2bbe2bde0f93997aa055229226ac2cd50"
+    },
+    {
+      "file": "psv-baseline-xmeshfem2D",
+      "bytes": 815992,
+      "sha256": "08869671bc9f33a251d330bb598d2c28c8a2bb51dec1cbaa0b009f0aa276df69"
+    },
+    {
+      "file": "vendor/specfem2d-psv/bin/xspecfem2D",
+      "bytes": 5417584,
+      "sha256": "6c71b1ebd7c03f8db3ead56315be6ba088160d3f5c6abbbee1d3e7758c76b43d"
+    },
+    {
+      "file": "native/psv_adjoint.f90",
+      "bytes": 15420,
+      "sha256": "18133011241336e7ff0114c9cd6f8866bbd46107d94562f04190ee2c4c38892f"
+    }
+  ],
+  "tracked_diff_stat": " src/specfem2D/iterate_time.F90 | 370 +++++++++++++++++++++++++++++++++++++++++\n 1 file changed, 370 insertions(+)\n"
+}

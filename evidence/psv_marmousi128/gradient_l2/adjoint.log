@@ -1,0 +1,995 @@
+hwloc/linux: Ignoring PCI device with non-16bit domain.
+Pass --enable-32bits-pci-domain to configure to support such devices
+(warning: it would break the library ABI, don't enable unless really needed).
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+
+ **********************************************
+ **** Specfem 2-D Solver - MPI version     ****
+ **********************************************
+
+ Running Git version of the code corresponding to abf3196e3192af3343f2b402c82f34205577e672
+ dating 2025-12-17 21:18:43 +0100
+
+ There are            2  MPI processes
+ Processes are numbered from 0 to            1
+
+ There is a total of            2  slices
+
+
+ NDIM =            2
+
+ NGLLX =            5
+ NGLLZ =            5
+
+ using double precision for the calculations
+
+ smallest and largest possible floating-point numbers are:    2.2250738585072014E-308   1.7976931348623157E+308
+
+ Reading the parameter file...
+
+ Title of the simulation: DiffSPECFEM full Marmousi-II coupled acoustic-elastic P-SV
+
+   using existing STATIONS file: ./DATA/STATIONS
+   file name is ./DATA/STATIONS
+   found           41  receivers
+
+ Parameter file successfully read 
+
+ Reading in SOURCE file...
+
+ Source           1
+   Position xs, zs =    4500.0000000000000        2925.0000000000000     
+
+   Source type (1=force, 2=moment tensor):            1
+   Force source:
+   Angle of the source (deg) =    0.0000000000000000     
+
+   Time function type (1=Ricker, 2=First derivative, 3=Gaussian, 4=Dirac, 5=Heaviside, 6,7=ocean type, 8=Read from file, 9=burst, 10=Sinusoidal, 11=Ormsby):           1
+   Ricker wavelet (second-derivative):
+   Frequency, delay =    1.0000000000000000        0.0000000000000000     
+   Multiplying factor  =    100000000.00000000     
+
+ all sources are okay
+
+
+
+ -------------------------------------------------------------------------------
+ -------------------------------------------------------------------------------
+ Program SPECFEM2D: 
+ -------------------------------------------------------------------------------
+ -------------------------------------------------------------------------------
+ DiffSPECFEM full Marmousi-II coupled acoustic-elastic P-SV
+ -------------------------------------------------------------------------------
+ -------------------------------------------------------------------------------
+ D a t e : 07 - 11 - 2026                                 T i m e  : 09:59:20
+ -------------------------------------------------------------------------------
+ -------------------------------------------------------------------------------
+
+
+ C o n t r o l
+ =============
+
+     Number of spectral element control nodes. . .(npgeo) =    7412
+     Number of space dimensions. . . . . . . . . . (NDIM) =       2
+
+
+ C o n t r o l
+ =============
+
+     Display frequency . . . (NTSTEP_BETWEEN_OUTPUT_INFO) =   1000
+     Color display . . . . . . . . . . . . . . . (colors) =      1
+      == 0     black and white display              
+      == 1     color display                        
+     Numbered mesh . . . . . . . . . . . . . . .(numbers) =      0
+      == 0     do not number the mesh               
+      == 1     number the mesh                      
+
+
+ C o n t r o l
+ =============
+
+     Seismograms recording type . . . . . . .(seismotype) = 1
+     Angle for first line of receivers. . . . .(anglerec) =   0.00
+
+
+ C o n t r o l
+ =============
+
+     Read external initial field. . . . . .(initialfield) =      F
+     Add Bielak conditions (add_Bielak_conditions_bottom) =      F
+     Add Bielak conditions .(add_Bielak_conditions_right) =      F
+     Add Bielak conditions . .(add_Bielak_conditions_top) =      F
+     Add Bielak conditions. .(add_Bielak_conditions_left) =      F
+     Attenuation in solid . . .(ATTENUATION_VISCOELASTIC) =      F
+     Attenuation in fluid . . (ATTENUATION_VISCOACOUSTIC) =      F
+     Save grid in ASCII file or not . (output_grid_ASCII) =      F
+     Save a file with total energy or not.(OUTPUT_ENERGY) =      F
+
+
+ C o n t r o l
+ =============
+
+     Vector display type . . . . . . . . .(imagetype_postscript) =      1
+     Percentage of cut for vector plots. . . . . . . .(cutsnaps) =   1.00
+     Subsampling of velocity model display. (subsamp_postscript) =      1
+
+
+ I t e r a t i o n s 
+ ===================
+
+     Number of time iterations . . . . .(NSTEP) =    8000
+     Time step increment. . . . . . . . . .(DT) =   7.500000E-04
+     Total simulation duration . . . . . (ttot) =   6.000000E+00
+
+
+ reading mesh databases:
+ reading nodal coordinates...
+
+ -- Spectral Elements --
+
+
+     Number of spectral elements . . . . . . . . .  (nspec) =   7168
+     Number of control nodes per element . . . . . (NGNOD) =      4
+     Number of points in X-direction . . . . . . . (NGLLX) =      5
+     Number of points in Y-direction . . . . . . . (NGLLZ) =      5
+     Number of points per element. . . . . . (NGLLX*NGLLZ) =     25
+     Number of points for display . . . . . . (pointsdisp) =      6
+     Number of element material sets . . . . . . . (numat) =      2
+     Number of acoustic forcing elements (nelem_acforcing) =      0
+     Number of acoustic free surf (nelem_acoustic_surface) =    144
+
+ reading attenuation setup...
+ reading material properties..
+
+
+ M a t e r i a l   s e t s :   2 D  (p o r o) e l a s t i c i t y
+ ======================================================
+
+     Number of material sets . . . . . . (numat) =     2
+
+
+     -------------------------------
+     -- Acoustic (fluid) material --
+     -------------------------------
+     Material set number. . . . . . . . (jmat) =     1
+     P-wave velocity. . . . . . . . . . . (cp) = 1.50000000E+03
+     Mass density. . . . . . . . . . (density) = 2.45000000E+03
+     Bulk modulus Kappa . . . . . . . .(kappa) = 5.51250000E+09
+     QKappa_attenuation. . . . . . . .(QKappa) = 9.99900000E+03
+     Qmu_attenuation. . . . . . . . . . .(Qmu) = 9.99900000E+03
+
+
+
+     ----------------------------------------------------
+     -- Material described by external tomography file --
+     ----------------------------------------------------
+     Material set number. . . . . . . . (jmat) =     2
+
+
+ reading interfaces informations...
+   number of interfaces         =            1
+
+ reading absorbing boundary...
+   Total number of absorbing elements =            0
+
+   any absorbing boundary flag        =  F
+   PML boundary flag                  =  F
+   Stacey boundary flag               =  F
+
+ reading acoustic forcing...
+   acoustic forcing                             =  F
+   number of acoustic forcing boundary elements =            0
+
+ reading free surface information...
+   number of acoustic free surface boundary elements =           74
+
+   Total number of acoustic free surface elements:          144
+
+ reading coupling surfaces...
+   number of fluid-solid edges  =          128
+   number of fluid-poro  edges  =            0
+   number of solid-poro  edges  =            0
+
+ reading tangential curves...
+   number of tangential curve nodes =            0
+
+ reading axial elements...
+   number of axial elements     =            0
+
+ done reading mesh databases
+
+
+ Setting up mesh
+
+ Generating global mesh numbering (fast version)...
+
+ Mesh numbering:
+   Total number of elements:         7168
+
+   Total number of acoustic elements           =         1024
+   Total number of elastic/visco/poro elements =         6144
+
+ Approximate total number of grid points in the mesh
+ (with a few duplicates coming from MPI buffers):       115658
+
+ Approximate number of acoustic degrees of freedom in the mesh:        16523
+ Approximate number of elastic degrees of freedom in the mesh:       198271
+   (there are 2 degrees of freedom per point for elastic elements)
+
+ Approximate total number of degrees of freedom in the mesh
+ (sum of the two values above):       214794
+
+  (for simplicity viscoelastic or poroelastic elements, if any,
+   are counted as elastic in the above three estimates;
+   in reality they have more degrees of freedom)
+
+ Mesh dimensions:
+   Xmin,Xmax of the whole mesh =    0.0000000000000000        8955.0000000000000     
+   Zmin,Zmax of the whole mesh =    0.0000000000000000        3465.0000000000005     
+
+ Material properties:
+   MODEL                 : tomo
+   nspec                 :         7168
+   assign external model :  T
+
+   assigning an external tomography velocity and density model
+   model selected             : tomo
+   setup with binary database :            0
+
+   tomographic model file: ./DATA/tomo_file.xyz
+      Number of grid points = NX*NZ:       13400
+
+      read model vp : min/max =    1630.46008      /    4351.19092    
+                 vs : min/max =    388.886261      /    2476.36523    
+                 rho: min/max =    2450.00000      /    2450.00000    
+
+   number of GLL points with tomographic model values:        90000
+
+   done reading external model
+
+   setting up material arrays
+   setting up anisotropic arrays
+   all material arrays done
+
+ Domains:
+   total number of acoustic elements        =         1024
+   total number of elastic elements         =         6144
+   total number of poroelastic elements     =            0
+
+ Mixed acoustic/elastic simulation
+
+   Beginning of fluid/solid edge detection
+   Checking fluid/solid edge topology...
+   End of fluid/solid edge detection
+
+
+ Setting up MPI communication arrays
+
+   maximum number of MPI interfaces (for a single slice) =            1
+
+   total MPI interface points:          468
+
+   checking acoustic interfaces:
+   total number of global acoustic interface points:           74
+   total number of global points assembled by acoustic MPI interfaces:          74
+   interfaces okay
+
+   main process:
+   number of MPI interfaces in acoustic domain    =            1
+   number of MPI interfaces in elastic domain     =            1
+   number of MPI interfaces in poroelastic domain =            0
+
+   number of outer elements  =           58
+   number of inner elements  =         3542
+
+   percentage of outer elements    1.61111450     %
+   percentage of inner elements    98.3888855     %
+
+   number of global nodes in outer elements  =         1165
+   number of global nodes in inner elements  =        57157
+
+   determining communication phases:
+   elastic domains:
+   total number of outer/inner elements =           98        6046
+   total percentage of outer elements    1.59505463     %
+   total percentage of inner elements    98.4049454     %
+
+   acoustic domains:
+   total number of outer/inner elements =           18        1006
+   total percentage of outer elements    1.75781250     %
+   total percentage of inner elements    98.2421875     %
+
+ All mesh setup done successfully
+
+ sources:
+   Total number of sources:            1
+
+
+   Setting parameters for source           1
+
+     Source Type. . . . . . . . . . . . . . = Collocated Force
+     X-position (meters). . . . . . . . . . =    4.5000000000E+03
+     Y-position (meters). . . . . . . . . . =    2.9250000000E+03
+     Fundamental frequency (Hz) . . . . . . =    1.0000000000E+00
+     Time delay (s) . . . . . . . . . . . . =    0.0000000000E+00
+     Multiplying factor . . . . . . . . . . =    1.0000000000E+08
+     Angle from vertical direction (deg). . =    0.0000000000E+00
+
+
+
+     using USER_T0 . . . . . . . . . =    1.2000000000000000     
+       original t0 . . . . . . . . . =    1.2000000000000000     
+       min_tshift_src_original . . . =    0.0000000000000000     
+
+     fix new simulation start time . =   -1.2000000000000000     
+     source            1 uses tshift =    0.0000000000000000     
+
+   Source:            1
+     Onset time. . . . . . =   -1.2000000000000000     
+     Fundamental period. . =    1.0000000000000000     
+     Fundamental frequency =    1.0000000000000000     
+     The onset time is ok
+
+ Source:            1
+ *******************************
+  locating force source
+ *******************************
+
+ Force source:
+             original x:    4500.00000    
+             original z:    2925.00000    
+ Closest estimate found:    0.00000000      m away
+  in rank            0
+  in element         2949
+  in elastic domain
+  at xi,gamma coordinates =  -0.35678391959800643       0.13432835820895622     
+
+
+ end of force source detection
+
+
+ receivers:
+
+ Total number of receivers =           41
+
+
+ ********************
+  locating receivers
+ ********************
+
+ reading receiver information from the ./DATA/STATIONS file
+
+
+ Station #            1     XX      R001                            
+             original x:    100.000000    
+             original z:    2925.00000    
+ Closest estimate found:    0.00000000      m away
+  in rank            1
+  in element         2943
+  in elastic domain
+  at xi,gamma coordinates =  -0.14126186487995532       0.13432835820895522     
+ Distance from source:    4400.00000      m
+
+
+ Station #            2     XX      R002                            
+             original x:    318.875000    
+             original z:    2925.00000    
+ Closest estimate found:    0.00000000      m away
+  in rank            1
+  in element         2946
+  in elastic domain
+  at xi,gamma coordinates =   0.11580122836404243       0.13432835820895522     
+ Distance from source:    4181.12500      m
+
+
+ Station #            3     XX      R003                            
+             original x:    537.750000    
+             original z:    2925.00000    
+ Closest estimate found:    0.00000000      m away
+  in rank            1
+  in element         2949
+  in elastic domain
+  at xi,gamma coordinates =   0.37286432160804117       0.13432835820895569     
+ Distance from source:    3962.25000      m
+
+
+ Station #            4     XX      R004                            
+             original x:    756.625000    
+             original z:    2925.00000    
+ Closest estimate found:    0.00000000      m away
+  in rank            1
+  in element         2952
+  in elastic domain
+  at xi,gamma coordinates =   0.62992741485203885       0.13432835820895569     
+ Distance from source:    3743.37500      m
+
+
+ Station #            5     XX      R005                            
+             original x:    975.500000    
+             original z:    2925.00000    
+ Closest estimate found:    0.00000000      m away
+  in rank            1
+  in element         2955
+  in elastic domain
+  at xi,gamma coordinates =   0.88699050809603575       0.13432835820895522     
+ Distance from source:    3524.50000      m
+
+
+ Station #            6     XX      R006                            
+             original x:    1194.37500    
+             original z:    2925.00000    
+ Closest estimate found:    0.00000000      m away
+  in rank            1
+  in element         2959
+  in elastic domain
+  at xi,gamma coordinates =  -0.85594639865996314       0.13432835820895211     
+ Distance from source:    3305.62500      m
+
+
+ Station #            7     XX      R007                            
+             original x:    1413.25000    
+             original z:    2925.00000    
+ Closest estimate found:    0.00000000      m away
+  in rank            1
+  in element         2962
+  in elastic domain
+  at xi,gamma coordinates =  -0.59888330541597312       0.13432835820895622     
+ Distance from source:    3086.75000      m
+
+
+ Station #            8     XX      R008                            
+             original x:    1632.12500    
+             original z:    2925.00000    
+ Closest estimate found:    0.00000000      m away
+  in rank            1
+  in element         2965
+  in elastic domain
+  at xi,gamma coordinates =  -0.34182021217197534       0.13432835820895622     
+ Distance from source:    2867.87500      m
+
+
+ Station #            9     XX      R009                            
+             original x:    1851.00000    
+             original z:    2925.00000    
+ Closest estimate found:    0.00000000      m away
+  in rank            1
+  in element         2968
+  in elastic domain
+  at xi,gamma coordinates =   -8.4757118927973191E-002  0.13432835820895522     
+ Distance from source:    2649.00000      m
+
+
+ Station #           10     XX      R010                            
+             original x:    2069.87500    
+             original z:    2925.00000    
+ Closest estimate found:    4.54747351E-13  m away
+  in rank            1
+  in element         2971
+  in elastic domain
+  at xi,gamma coordinates =   0.17230597431602457       0.13432835820895522     
+ Distance from source:    2430.12500      m
+
+
+ Station #           11     XX      R011                            
+             original x:    2288.75000    
+             original z:    2925.00000    
+ Closest estimate found:    0.00000000      m away
+  in rank            1
+  in element         2974
+  in elastic domain
+  at xi,gamma coordinates =   0.42936906756002646       0.13432835820897018     
+ Distance from source:    2211.25000      m
+
+
+ Station #           12     XX      R012                            
+             original x:    2507.62500    
+             original z:    2925.00000    
+ Closest estimate found:    0.00000000      m away
+  in rank            1
+  in element         2977
+  in elastic domain
+  at xi,gamma coordinates =   0.68643216080402458       0.13432835820894123     
+ Distance from source:    1992.37500      m
+
+
+ Station #           13     XX      R013                            
+             original x:    2726.50000    
+             original z:    2925.00000    
+ Closest estimate found:    0.00000000      m away
+  in rank            1
+  in element         2980
+  in elastic domain
+  at xi,gamma coordinates =   0.94349525404801782       0.13432835820896971     
+ Distance from source:    1773.50000      m
+
+
+ Station #           14     XX      R014                            
+             original x:    2945.37500    
+             original z:    2925.00000    
+ Closest estimate found:    0.00000000      m away
+  in rank            1
+  in element         2984
+  in elastic domain
+  at xi,gamma coordinates =  -0.79944165270798873       0.13432835820895622     
+ Distance from source:    1554.62500      m
+
+
+ Station #           15     XX      R015                            
+             original x:    3164.25000    
+             original z:    2925.00000    
+ Closest estimate found:    0.00000000      m away
+  in rank            1
+  in element         2987
+  in elastic domain
+  at xi,gamma coordinates =  -0.54237855946399094       0.13432835820895622     
+ Distance from source:    1335.75000      m
+
+
+ Station #           16     XX      R016                            
+             original x:    3383.12500    
+             original z:    2925.00000    
+ Closest estimate found:    0.00000000      m away
+  in rank            1
+  in element         2990
+  in elastic domain
+  at xi,gamma coordinates =  -0.28531546621998882       0.13432835820895522     
+ Distance from source:    1116.87500      m
+
+
+ Station #           17     XX      R017                            
+             original x:    3602.00000    
+             original z:    2925.00000    
+ Closest estimate found:    0.00000000      m away
+  in rank            1
+  in element         2993
+  in elastic domain
+  at xi,gamma coordinates =   -2.8252372975991067E-002  0.13432835820895522     
+ Distance from source:    898.000000      m
+
+
+ Station #           18     XX      R018                            
+             original x:    3820.87500    
+             original z:    2925.00000    
+ Closest estimate found:    0.00000000      m away
+  in rank            1
+  in element         2996
+  in elastic domain
+  at xi,gamma coordinates =   0.22881072026800670       0.13432835820895522     
+ Distance from source:    679.125000      m
+
+
+ Station #           19     XX      R019                            
+             original x:    4039.75000    
+             original z:    2925.00000    
+ Closest estimate found:    4.54747351E-13  m away
+  in rank            1
+  in element         2999
+  in elastic domain
+  at xi,gamma coordinates =   0.48587381351202213       0.13432835820895569     
+ Distance from source:    460.250000      m
+
+
+ Station #           20     XX      R020                            
+             original x:    4258.62500    
+             original z:    2925.00000    
+ Closest estimate found:    0.00000000      m away
+  in rank            1
+  in element         3002
+  in elastic domain
+  at xi,gamma coordinates =   0.74293690675599389       0.13432835820895569     
+ Distance from source:    241.375000      m
+
+
+ Station #           21     XX      R021                            
+             original x:    4477.50000    
+             original z:    2925.00000    
+ Closest estimate found:    0.00000000      m away
+  in rank            0
+  in element         2948
+  in elastic domain
+  at xi,gamma coordinates =    1.0000000000000000       0.13432835820895522     
+ Distance from source:    22.5000000      m
+
+
+ Station #           22     XX      R022                            
+             original x:    4696.37500    
+             original z:    2925.00000    
+ Closest estimate found:    0.00000000      m away
+  in rank            0
+  in element         2952
+  in elastic domain
+  at xi,gamma coordinates =  -0.74293690675601876       0.13432835820895622     
+ Distance from source:    196.375000      m
+
+
+ Station #           23     XX      R023                            
+             original x:    4915.25000    
+             original z:    2925.00000    
+ Closest estimate found:    4.54747351E-13  m away
+  in rank            0
+  in element         2955
+  in elastic domain
+  at xi,gamma coordinates =  -0.48587381351202097       0.13432835820895622     
+ Distance from source:    415.250000      m
+
+
+ Station #           24     XX      R024                            
+             original x:    5134.12500    
+             original z:    2925.00000    
+ Closest estimate found:    0.00000000      m away
+  in rank            0
+  in element         2958
+  in elastic domain
+  at xi,gamma coordinates =  -0.22881072026800670       0.13432835820895522     
+ Distance from source:    634.125000      m
+
+
+ Station #           25     XX      R025                            
+             original x:    5353.00000    
+             original z:    2925.00000    
+ Closest estimate found:    0.00000000      m away
+  in rank            0
+  in element         2961
+  in elastic domain
+  at xi,gamma coordinates =    2.8252372975991067E-002  0.13432835820895522     
+ Distance from source:    853.000000      m
+
+
+ Station #           26     XX      R026                            
+             original x:    5571.87500    
+             original z:    2925.00000    
+ Closest estimate found:    0.00000000      m away
+  in rank            0
+  in element         2964
+  in elastic domain
+  at xi,gamma coordinates =   0.28531546621998882       0.13432835820895522     
+ Distance from source:    1071.87500      m
+
+
+ Station #           27     XX      R027                            
+             original x:    5790.75000    
+             original z:    2925.00000    
+ Closest estimate found:    0.00000000      m away
+  in rank            0
+  in element         2967
+  in elastic domain
+  at xi,gamma coordinates =   0.54237855946400448       0.13432835820895569     
+ Distance from source:    1290.75000      m
+
+
+ Station #           28     XX      R028                            
+             original x:    6009.62500    
+             original z:    2925.00000    
+ Closest estimate found:    1.01684600E-12  m away
+  in rank            0
+  in element         2970
+  in elastic domain
+  at xi,gamma coordinates =   0.79944165270797596       0.13432835820894123     
+ Distance from source:    1509.62500      m
+
+
+ Station #           29     XX      R029                            
+             original x:    6228.50000    
+             original z:    2925.00000    
+ Closest estimate found:    0.00000000      m away
+  in rank            0
+  in element         2974
+  in elastic domain
+  at xi,gamma coordinates =  -0.94349525404803802       0.13432835820895200     
+ Distance from source:    1728.50000      m
+
+
+ Station #           30     XX      R030                            
+             original x:    6447.37500    
+             original z:    2925.00000    
+ Closest estimate found:    0.00000000      m away
+  in rank            0
+  in element         2977
+  in elastic domain
+  at xi,gamma coordinates =  -0.68643216080403746       0.13432835820895622     
+ Distance from source:    1947.37500      m
+
+
+ Station #           31     XX      R031                            
+             original x:    6666.25000    
+             original z:    2925.00000    
+ Closest estimate found:    1.81898940E-12  m away
+  in rank            0
+  in element         2980
+  in elastic domain
+  at xi,gamma coordinates =  -0.42936906756003967       0.13432835820895622     
+ Distance from source:    2166.25000      m
+
+
+ Station #           32     XX      R032                            
+             original x:    6885.12500    
+             original z:    2925.00000    
+ Closest estimate found:    4.54747351E-13  m away
+  in rank            0
+  in element         2983
+  in elastic domain
+  at xi,gamma coordinates =  -0.17230597431602457       0.13432835820895522     
+ Distance from source:    2385.12500      m
+
+
+ Station #           33     XX      R033                            
+             original x:    7104.00000    
+             original z:    2925.00000    
+ Closest estimate found:    0.00000000      m away
+  in rank            0
+  in element         2986
+  in elastic domain
+  at xi,gamma coordinates =    8.4757118927973191E-002  0.13432835820895522     
+ Distance from source:    2604.00000      m
+
+
+ Station #           34     XX      R034                            
+             original x:    7322.87500    
+             original z:    2925.00000    
+ Closest estimate found:    9.09494702E-13  m away
+  in rank            0
+  in element         2989
+  in elastic domain
+  at xi,gamma coordinates =   0.34182021217196229       0.13432835820894121     
+ Distance from source:    2822.87500      m
+
+
+ Station #           35     XX      R035                            
+             original x:    7541.75000    
+             original z:    2925.00000    
+ Closest estimate found:    1.87497132E-12  m away
+  in rank            0
+  in element         2992
+  in elastic domain
+  at xi,gamma coordinates =   0.59888330541601198       0.13432835820897018     
+ Distance from source:    3041.75000      m
+
+
+ Station #           36     XX      R036                            
+             original x:    7760.62500    
+             original z:    2925.00000    
+ Closest estimate found:    1.81898940E-12  m away
+  in rank            0
+  in element         2995
+  in elastic domain
+  at xi,gamma coordinates =   0.85594639865994049       0.13432835820895522     
+ Distance from source:    3260.62500      m
+
+
+ Station #           37     XX      R037                            
+             original x:    7979.50000    
+             original z:    2925.00000    
+ Closest estimate found:    0.00000000      m away
+  in rank            0
+  in element         2999
+  in elastic domain
+  at xi,gamma coordinates =  -0.88699050809602931       0.13432835820895200     
+ Distance from source:    3479.50000      m
+
+
+ Station #           38     XX      R038                            
+             original x:    8198.37500    
+             original z:    2925.00000    
+ Closest estimate found:    0.00000000      m away
+  in rank            0
+  in element         3002
+  in elastic domain
+  at xi,gamma coordinates =  -0.62992741485205528       0.13432835820895622     
+ Distance from source:    3698.37500      m
+
+
+ Station #           39     XX      R039                            
+             original x:    8417.25000    
+             original z:    2925.00000    
+ Closest estimate found:    0.00000000      m away
+  in rank            0
+  in element         3005
+  in elastic domain
+  at xi,gamma coordinates =  -0.37286432160805755       0.13432835820895622     
+ Distance from source:    3917.25000      m
+
+
+ Station #           40     XX      R040                            
+             original x:    8636.12500    
+             original z:    2925.00000    
+ Closest estimate found:    0.00000000      m away
+  in rank            0
+  in element         3008
+  in elastic domain
+  at xi,gamma coordinates =  -0.11580122836404243       0.13432835820895522     
+ Distance from source:    4136.12500      m
+
+
+ Station #           41     XX      R041                            
+             original x:    8855.00000    
+             original z:    2925.00000    
+ Closest estimate found:    0.00000000      m away
+  in rank            0
+  in element         3011
+  in elastic domain
+  at xi,gamma coordinates =   0.14126186487995532       0.13432835820895522     
+ Distance from source:    4355.00000      m
+
+ maximum error in location of all the receivers:    1.87497132E-12  m
+
+ end of receiver detection
+
+ found a total of           41  receivers, this is okay
+
+
+ Preparing timerun:
+
+
+ Checking mesh and stability
+
+ ********
+ Model: P (or PI) velocity min,max =    1500.0000000000000        4350.2876320961659     
+ Model: S velocity min,max         =    388.90593782761573        2475.8610418752010     
+ Model: density min,max            =    2449.9999999999991        2450.0000000000009     
+ ********
+
+
+ *********************************************
+ *** Verification of simulation parameters ***
+ *********************************************
+
+ *** Max grid size =    69.960937500000000     
+ *** Min grid size =    56.250000000000000     
+ *** Max/min ratio =    1.2437499999999999     
+
+ *** Minimum GLL point distance  =    9.7128655113381406     
+ *** Average GLL point distance  =    14.062500000000000     
+
+ *** Minimum period resolved     =   0.22486458387211128     
+ *** Maximum frequency resolved  =    4.4471209417697217      Hz
+
+ *** Maximum suggested time step                 =    1.2465880502137603E-003
+ *** Maximum suggested (Ricker) source frequency =    1.7788483767078889     
+
+ *** for DT :    7.50000007E-04
+ *** Max CFL stability condition of the time scheme based on P wave velocity (must be below about 0.50 or so) =   0.30082110921542721     
+
+ ----
+ Number of points per wavelength:
+ ----
+   Source            1
+   maximum dominant source frequency =    2.5000000000000000      Hz
+
+   Nb pts / lambdaP_fmax min =    34.3048592    
+   Nb pts / lambdaP_fmax max =    97.5513840    
+
+   Nb pts / lambdaS_fmax min =    8.89424229    
+   Nb pts / lambdaS_fmax max =    55.5872955    
+
+ -----------------------------------------
+
+ histogram of min number of points per S wavelength in solid regions:
+
+ there are         6144  elements out of         7168  in solid regions
+   (i.e.,    85.7142868     % of the total)
+
+ (too small = poor resolution of calculations -
+  too big = wasting memory and CPU time)
+ (threshold value is around 4.5 points per S wavelength
+  in elastic regions and 5.5 per P wavelength in fluid regions):
+
+   8.89424229      -    11.2288942             667     10.8561201      %
+   11.2288942      -    13.5635471             367     5.97330713      %
+   13.5635471      -    15.8982000             255     4.15039062      %
+   15.8982000      -    18.2328529             272     4.42708349      %
+   18.2328529      -    20.5675049             292     4.75260401      %
+   20.5675049      -    22.9021587             337     5.48502588      %
+   22.9021587      -    25.2368107             239     3.88997388      %
+   25.2368107      -    27.5714645             211     3.43424487      %
+   27.5714645      -    29.9061165             309     5.02929688      %
+   29.9061165      -    32.2407684             419     6.81966162      %
+   32.2407684      -    34.5754204             431     7.01497412      %
+   34.5754204      -    36.9100761             366     5.95703125      %
+   36.9100761      -    39.2447281             193     3.14127612      %
+   39.2447281      -    41.5793800             199     3.23893237      %
+   41.5793800      -    43.9140320             251     4.08528662      %
+   43.9140320      -    46.2486877             276     4.49218750      %
+   46.2486877      -    48.5833397             364     5.92447901      %
+   48.5833397      -    50.9179916             340     5.53385401      %
+   50.9179916      -    53.2526436             313     5.09440088      %
+   53.2526436      -    55.5872955              43    0.699869812      %
+
+ total percentage =    100.00000000000003       %
+
+ -----------------------------------------
+
+ histogram of min number of points per P wavelength in fluid regions:
+
+ there are         1024  elements out of         7168  in fluid regions
+   (i.e.,    14.2857141     % of the total)
+
+ (too small = poor resolution of calculations -
+  too big = wasting memory and CPU time)
+ (threshold value is around 4.5 points per S wavelength
+  in elastic regions and 5.5 per P wavelength in fluid regions):
+
+   33.9618073      -    33.9961128               0     0.00000000      %
+   33.9961128      -    34.0304184               0     0.00000000      %
+   34.0304184      -    34.0647240               0     0.00000000      %
+   34.0647240      -    34.0990295               0     0.00000000      %
+   34.0990295      -    34.1333351               0     0.00000000      %
+   34.1333351      -    34.1676369               0     0.00000000      %
+   34.1676369      -    34.2019424               0     0.00000000      %
+   34.2019424      -    34.2362480               0     0.00000000      %
+   34.2362480      -    34.2705536               0     0.00000000      %
+   34.2705536      -    34.3048592               0     0.00000000      %
+   34.3048592      -    34.3391609            1024     100.000000      %
+   34.3391609      -    34.3734665               0     0.00000000      %
+   34.3734665      -    34.4077721               0     0.00000000      %
+   34.4077721      -    34.4420776               0     0.00000000      %
+   34.4420776      -    34.4763832               0     0.00000000      %
+   34.4763832      -    34.5106850               0     0.00000000      %
+   34.5106850      -    34.5449905               0     0.00000000      %
+   34.5449905      -    34.5792961               0     0.00000000      %
+   34.5792961      -    34.6136017               0     0.00000000      %
+   34.6136017      -    34.6479073               0     0.00000000      %
+
+ total percentage =    100.00000000000000       %
+
+
+ total number of elements in fluid and solid regions =         7168
+
+ Preparing timerun constants
+
+ Preparing array allocations
+   arrays for acoustic domains
+   arrays for elastic domains
+   done initialization
+
+
+ Attenuation:
+   viscoelastic  attenuation: F (shear & bulk attenuation in elastic domains)
+   viscoacoustic attenuation: F (bulk attenuation in acoustic domains)
+
+ Preparing mass matrices
+   initializing mass matrices
+   inverting mass matrices
+
+
+ Preparing source time function
+   time stepping scheme:   Newmark
+   time stepping stages:            1
+   time step size      :    7.50000007E-04
+
+   number of time steps:         8000
+   number of sources   :            1
+
+   saving the source time function in a text file...
+
+
+ Elapsed time for preparing timerun in seconds =    2.1961550000000000E-002
+
+ ************
+  time loop
+ ************
+               scheme:         Newmark
+
+            time step:    7.50000007E-04  s
+ number of time steps:         8000
+ total simulated time:    6.00000000      seconds
+ start time:  -1.20000005      seconds
+
+
+ =========================================
+ =  T i m e  e v o l u t i o n  l o o p  =
+ =========================================
+
+
+
+ -------------------------------------------------------------------------------
+ -------------------------------------------------------------------------------
+ Program SPECFEM2D: 
+ -------------------------------------------------------------------------------
+ -------------------------------------------------------------------------------
+ DiffSPECFEM full Marmousi-II coupled acoustic-elastic P-SV
+ -------------------------------------------------------------------------------
+ -------------------------------------------------------------------------------
+ D a t e : 07 - 11 - 2026                                 T i m e  : 10:00:57
+ -------------------------------------------------------------------------------
+ -------------------------------------------------------------------------------

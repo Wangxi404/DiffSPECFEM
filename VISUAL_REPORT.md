@@ -1,184 +1,161 @@
-# Native SH visual evidence
+# Coupled P–SV on Marmousi-II
 
-**Scope clarification:** these archived figures are SH regression evidence,
-not P–SV. A full water-bearing P–SV Marmousi-II example is under development;
-no P–SV correctness or wavefield result is claimed by this report yet.
+The main demonstration now uses **P–SV with acoustic water and elastic solid**
+from the official SPECFEM2D source. Both native displacement components are
+recorded. The older SH-only gallery belongs to the v0.2.0 regression and is
+preserved in [SH_VISUAL_REPORT.md](SH_VISUAL_REPORT.md).
 
-Five figure plates and a wavefield animation make the numerical contract
-inspectable. They use the accepted 32×32-element, two-rank SH validation case,
-with 16,641 unique physical GLL nodes, four displacement receivers, 800 native
-steps at 0.001 s and a 6 Hz force source. The original numerical evidence and
-solver code are unchanged. The [figure contract](figures/FIGURE_CONTRACT.md)
-states the claim and role of each panel before plotting.
+## Full model inputs
 
-## Actual starting and target models
+![True, smoothed initial and signed difference](figures/marmousi2/models_full_psv.png)
 
-![Native two-region starting, target and difference maps](figures/01_models.png)
+The complete 78×200, 45 m prepared Marmousi-II arrays match the HybridADFWI
+comparison inputs byte-for-byte. Vp and Vs true/initial pairs share color
+scales; the third column is **initial minus true**. The initial model uses
+sigma = 150 m smoothing within solid, with all 11 water sample rows restored.
+Density is 2450 kg/m³ everywhere in both models, including the water. These
+are target and starting models; no recovered inversion model is shown.
 
-**Figure 1.** The starting model is the actual heterogeneous two-layer reference.
-The target uses relative log coordinates `[.025, −.02, .035, −.03]`, ordered as
-bottom/top log density followed by bottom/top log Vs. Reference and target share
-color limits within each physical variable; differences use symmetric limits.
-The maps show all 1,024 native elements across the full physical square.
+Source and receiver positions come from the actual native case files. The
+native interface is at 450 m depth. This image displays input samples as
+nearest-sample cells, whose water color band ends at the 472.5 m midpoint;
+the dashed 450 m line specifies the physical SEM interface. In the native
+solid reader, the first positive-Vs sample at 495 m is extended one-sided to
+450 m. Input samples are unchanged. This is an explicit FD/SEM representation
+difference, not a water-to-rock replacement.
 
-| Region; physical z | Starting ρ (kg/m³) | Target ρ (kg/m³) | Starting Vs (m/s) | Target Vs (m/s) |
-|---|---:|---:|---:|---:|
-| Bottom; −2 to −1 km | 2500 | 2563.288 | 1600 | 1656.992 |
-| Top; −1 to 0 km | 2800 | 2744.556 | 1900 | 1843.847 |
+[PDF](figures/marmousi2/models_full_psv.pdf) · [SVG](figures/marmousi2/models_full_psv.svg) ·
+[Metadata](figures/marmousi2/models_full_psv_metadata.json) ·
+[Preparation and exact-input checks](evidence/marmousi2_full_psv_preparation.json)
 
-These are exact regional parameter maps, without smoothing. A Gaussian-blurred
-full-field starting model would require a different supported parameter map;
-the advertised interface has four regional coordinates.
+## Actual native wavefields
 
-## Actual native wave propagation
+![Native UX and UZ through water and solid](figures/marmousi2/native_psv_wavefield.gif)
 
-![Four original native post-step displacement snapshots](figures/02_native_wavefield.png)
+![Four actual frames for both components](figures/marmousi2/02_psv_wavefields.png)
 
-![Animation of actual saved native SH displacement](figures/native_sh_wavefield.gif)
+These are actual native displacement fields at the **smoothed initial model**
+on the 128×56 element case. The official `compute_vector_one_element` exports
+elastic UX/UZ and water displacement `(1/rho) grad(chi)`. An independent small
+case check reconstructs the water displacement from the saved acoustic
+potential and agrees to relative error 5.13×10⁻¹⁵.
 
-**Figure 2 and animation.** These are displacement states saved by the compiled
-native solver at the reference/starting model used for the L2 and processed
-gradient evaluations. The star marks `(650, −650) m`; the circles mark all
-receiver positions, with R01 and R03 coincident. The material interface is at
-`z = −1000 m`. All natural reflecting/free boundaries and the complete domain
-remain visible. Every panel and animation frame uses ±3.671960 mm, the maximum
-absolute displacement over the extracted states; there is no amplitude clipping
-or framewise normalization.
+All 50 exported post-step frames, both components and all element-local
+5×5 GLL points are retained. The two phases keep their own interface values;
+there is no averaging across the fluid/solid interface. The fixed signed-log
+color scale uses the largest absolute displacement over the **entire record
+and both components**, with a linear threshold of 0.001 times that maximum.
+No frame-wise normalization or saturation is applied. Gouraud color
+interpolation occurs only within explicit GLL subtriangles for display.
 
-| Snapshot native n | Elapsed native time n·DT (s) | Upstream trace time label (s) |
+The timestamp is the original native trace label:
+`(step - 1) * DT - USER_T0`. Full post-step elapsed time is `step * DT`.
+The GIF plays each saved frame for 100 ms as a screen preview; labels retain
+the actual times, including the shorter last physical sampling interval.
+Positive UZ is the native upward-z component; plot depth increases downward.
+
+[Wavefield PDF](figures/marmousi2/02_psv_wavefields.pdf) ·
+[Animation layout PDF](figures/marmousi2/native_psv_animation_layout.pdf) ·
+[Native frame/result provenance](figures/marmousi2/native_visual_manifest.json)
+
+## Data-domain AD
+
+![Both data components, target, initial, residual and processed AD source](figures/marmousi2/03_psv_data_adjoint_source.png)
+
+Rows are UX and UZ; columns show target data, initial-model data, residual and
+the AD cotangent of the processed objective. Every receiver and every native
+time sample is included. Target/initial panels share the same scale within
+each component; residual and cotangent scales are explicit and separate.
+The processed objective includes an FIR filter, `tanh`, receiver and component
+mixing, and time-dependent weights. Its cotangent is the native adjoint source
+after the actual sampling transpose. For the unprocessed L2 objective, the
+data cotangent equals the residual exactly.
+
+[PDF](figures/marmousi2/03_psv_data_adjoint_source.pdf) ·
+[SVG](figures/marmousi2/03_psv_data_adjoint_source.svg)
+
+## Spatial material derivatives
+
+![Raw Vp, Vs and density derivatives at the initial model](figures/marmousi2/04_psv_gradients.png)
+
+Each panel is the **raw discrete derivative** on the 67×200 active solid input
+grid, after the physical Vp/Vs/density chain rule and native interpolation
+transpose. Rows show L2 and processed objectives. These are gradients at the
+smoothed initial model, using observations from the true model. Water is fixed
+and hatched; it is outside the active model coordinates. The top solid sample
+is at 495 m; its derivative includes the native 450…495 m border extension.
+The plotted values are input-coordinate derivatives, not a continuum kernel
+density with identical units at every spatial sampling density.
+
+Signed-log display uses a linear threshold of 0.001 times each panel's raw
+absolute maximum. Scales are independent and labeled per parameter/objective.
+There is **no gradient smoothing, illumination division, normalization,
+clipping or fitted scale**. In unit labels, J means the objective, not joules:
+L2 has displacement-squared units; the processed objective is dimensionless.
+
+[PDF](figures/marmousi2/04_psv_gradients.pdf) ·
+[SVG](figures/marmousi2/04_psv_gradients.svg)
+
+## Verification and configuration
+
+![Complete six-step model checks](figures/marmousi2/05_psv_verification.png)
+
+The full six-epsilon Taylor figure comes from the **64×28 full-domain
+correctness case**, with f0 = 0.5 Hz and DT = 1.5 ms. All five parameter
+families—Vp, Vs, density, mixed and localized—and both objectives are shown.
+The first-order remainders and centered derivative errors are divided by
+their own nonzero `|g · p|` for display only. Every epsilon remains in the
+plot and raw report. Acceptance requires observable second-order intervals,
+nonzero directional slopes and consecutive centered-derivative agreement.
+
+The finer **128×56** demonstration uses the same prepared model inputs with
+f0 = 1 Hz and DT = 0.75 ms. It separately checks the native forward, material
+map, sampling, coupling, data VJP and mixed/localized model directions.
+Its directional checks do not replace or masquerade as the full six-step
+suite. The configurations differ in both mesh and source/time window; this
+is not a grid-convergence experiment.
+
+| Quantity | Correctness case | Finer demonstration |
 |---|---:|---:|
-| 200 | 0.200 | −0.021 |
-| 400 | 0.400 | 0.179 |
-| 600 | 0.600 | 0.379 |
-| 800 | 0.800 | 0.579 |
+| Elements, solid + water rows | 64×(24+4) | 128×(48+8) |
+| Native steps / DT | 4000 / 1.5 ms | 8000 / 0.75 ms |
+| Elapsed step duration | 6 s | 6 s |
+| Source f0 / USER_T0 | 0.5 Hz / 2.4 s | 1 Hz / 1.2 s |
+| Native trace-label window | −2.4…3.5985 s | −1.2…4.79925 s |
+| MPI ranks / threads | 2 / 1 | 2 / 1 |
+| Native source guidance, initial / true | 0.88954 / 0.74085 Hz | 1.77885 / 1.45340 Hz |
+| Original-native vs extension data | Bitwise equal | Bitwise identical |
+| Model-dot relative error, L2 / processed | 1.36×10⁻⁸ / 1.72×10⁻⁸ | 4.08×10⁻⁸ / 5.09×10⁻⁸ |
+| Interface edges / total length | 64 / 8955 m | 128 edges, 8955 m |
 
-The animation retains zero-based native indices
-`union(range(0,800,20), [199,399,599,799])`: 44 actual states, shown at ten display
-frames per second. Playback speed is illustrative and the spacing is not exactly
-uniform after adding the four snapshots. Each title gives the real native step
-and time. Both displacement and acceleration are retained in the compact source
-NPZ; only displacement is visualized. No new propagation was run.
+[64×28 raw validation](evidence/psv_marmousi64/validation.json) ·
+[128×56 raw validation](evidence/psv_marmousi128/validation.json) ·
+[Small coupled fixture](evidence/psv_unit/validation.json) ·
+[Independent audits](evidence/psv_independent_audit.md)
 
-The two full histories total 214,860,824 bytes. Their SHA256 values exactly match
-the previously recorded validation manifests. The extraction retains all 8,393
-local nodes per rank. There are 145 duplicated MPI interface nodes; copies merge
-only after exact coordinate matching, bitwise agreement of all 44 displacement
-and acceleration states and verification of native interface multiplicities.
-The final display uses all 129×129 unique physical nodes with nearest-cell
-coloring, without interpolation or spatial subsampling. Display coordinates
-are rounded by at most 6.83×10⁻¹³ m to remove native rectilinear-axis roundoff;
-this does not merge any additional nodes or change field amplitudes.
+The native numerical kernels and forward updates are unchanged; the exact
+source patch is [native/psv_iterate_time.patch](native/psv_iterate_time.patch).
+Full history is written to disk and read one frame at a time in reverse.
+The 128×56 six-field history totals **44,412,672,024 bytes** across both ranks.
+This is a declared full-history policy, not a minimum-storage or speedup
+claim. Actual launch/resource logs include recording and adjoint phases;
+history hashing, evidence packaging and figure rendering are separate work.
+The full history is temporary: validation retains hashes and selected native
+states before a subsequent forward evaluation replaces the work directory.
 
-Reapplying the saved native receiver interpolation weights to the selected
-states reproduces the saved traces exactly in this extraction. The independent
-full-history validation previously reported relative L2 error 1.568×10⁻¹⁶.
-
-## Native data and the AD adjoint source
-
-![Native target and prediction, residual, L2 cotangent and processed cotangent](figures/03_data_and_adjoint_source.png)
-
-**Figure 3.** Target and reference predictions share one displacement scale;
-the residual and L2 cotangent share one scaled numerical range. Every heatmap
-contains all four receivers and all 800 samples. R01 and R03 deliberately remain
-duplicated. The trace detail shows R04 over the complete record rather than a
-selected arrival window. The native source of the adjoint is the transpose
-receiver interpolation applied to the data cotangent at that same post-step
-state, with no implicit `dt`, sign reversal, array reversal or force scaling.
-
-| Objective | Definition / data processing | J units | Data cotangent units |
-|---|---|---|---|
-| L2 | `0.5·sum((d−target)²)` | m² | m |
-| Processed | Fixed FIR → `tanh(d/0.02 m)` → receiver mixing → weighted L2 | Dimensionless | m⁻¹ |
-
-The processed objective includes the FIR, nonlinearity, mixing and time weights
-defined in `diffspecfem/adapter.py`; the plotted cotangent comes directly from
-its PyTorch data VJP. The L2 cotangent is asserted to equal the raw residual.
-The wavefield histories are native Fortran output, not an AD wave solver.
-
-## Native spatial coefficient gradients
-
-![Raw density, shear-modulus and analytically mapped log-coordinate sensitivities](figures/04_spatial_gradients.png)
-
-**Figure 4.** For the processed objective, each cell is the sum of that spectral
-element’s 25 raw GLL coefficient contributions. The upper maps differentiate
-the native density and shear-modulus coefficients; the lower maps apply the
-exact chain rule for `μ = ρ·Vs²`. They are already discrete derivatives including
-SEM spatial quadrature and geometric Jacobian. They are not continuous kernel
-densities or unweighted nodal point values. No smoothing, normalization,
-illumination correction, clipping or fitted scale is applied. Each distinct
-variable uses its own symmetric color range, with its units shown.
-
-| Regional processed coordinate | Sum of the mapped native elements |
-|---|---:|
-| Bottom log ρ | 0.00431406502728369 |
-| Top log ρ | −0.0000339590872904250 |
-| Bottom log Vs | 0.0372220584151394 |
-| Top log Vs | 0.793774548291274 |
-
-The spatial maps sum to the independently saved four-coordinate gradient with
-maximum absolute difference 2.22×10⁻¹⁶. Element boundaries retain the regional
-material discontinuity; no overlapping interface GLL values are averaged into a
-false pointwise gradient field.
-
-## Independent derivative evidence and its limits
-
-![All declared native model Taylor checks and acceptance thresholds](figures/05_taylor_evidence.png)
-
-**Figure 5.** Both objectives use all eight declared epsilons, separately for
-density, Vs and a mixed direction. The first-order objective remainder is
-`|J(m+εp) − J(m) − ε g·p|`. The centered error is
-`|(J(m+εp) − J(m−εp))/(2ε) − g·p|`. The ε² guide is explicitly scaled only as a
-visual order reference, never fitted into the gradient. Dotted thresholds are
-the actual `10⁻⁹ + 10⁻⁵ |g·p|` central-derivative tolerance. Larger epsilons that
-do not meet that threshold remain visible.
-
-| Evidence | 8×8, 2 ranks | 32×32, 2 ranks |
-|---|---:|---:|
-| Unique physical nodes | 1,089 | 16,641 |
-| Actual source f0 | 6 Hz | 6 Hz |
-| Native recommended maximum f0 | 2.048 Hz | 8.192 Hz |
-| Native recommendation met | No | Yes |
-| L2 model-dot relative error | 6.436×10⁻¹⁰ | 1.113×10⁻⁹ |
-| Processed model-dot relative error | 7.183×10⁻¹⁰ | 1.215×10⁻⁹ |
-| L2 / processed model Taylor checks | Pass | Pass |
-| Original-native / extension traces | Bitwise identical | Bitwise identical |
-
-The coarse case establishes differentiation of its fixed discrete solver but
-underresolves the high-frequency tail under native source guidance. Refinement
-does not make this a grid-convergence study. The original failed serial Taylor
-sweep remains in `evidence/validation-attempt1.json`: its first epsilon range
-gave only one central match. Smaller epsilons were appended, with no discarded
-points and no tolerance relaxation. The strengthened native sampling probe and
-test-only history comparison repair remain in `REPORT.md` and the application
-record. The visual additions do not alter those records.
-
-## Reproduce and audit
+## Redraw and audit
 
 ```bash
-python scripts/visualize_evidence.py
+python -m pip install -r requirements-visualization.txt
+python scripts/visualize_psv_marmousi.py \
+  --evidence evidence/psv_marmousi128 \
+  --correctness evidence/psv_marmousi64/validation.json
+python scripts/visualize_marmousi_models.py  # requires locally prepared inputs
 ```
 
-The renderer needs NumPy, matplotlib and Pillow. Its mandatory alignment gate
-uses the [bundled helper](scripts/figure_qa/README.md), with its original Apache
-license and upstream attribution, so no installed skill is required. The source
-NPZ is included, so local rendering needs no remote machine, native build or
-benchmark run. `extract_native_frames.py` documents how the source frames were
-obtained and verifies original hashes. `--qa-scripts` or `NATURE_FIGURE_QA` can
-override the renderer's bundled helper directory.
-
-The independent source, final-PDF glyph and collision tools remain optional
-post-export audits. Their final results are already committed. To rerun them
-with an installed nature-figure scripts directory and PyMuPDF, use:
-
-```bash
-python scripts/audit_visual_evidence.py --qa-scripts /path/to/nature-figure/scripts
-```
-
-The [source manifest](evidence/visuals/manifest.json) records every input hash,
-coordinates, times, extraction rule, unit convention and numerical closure.
-The [source arrays](evidence/visuals/figure_source_data.npz) and
-[complete Taylor rows](evidence/visuals/taylor_source_data.json) support
-independent inspection. Editable PDF/SVG companions sit beside every PNG.
-The [QA summary](figures/qa/summary.json) and
-[panel-by-panel review](figures/qa/VISUAL_QA.md) keep audit evidence separate
-from the scientific plates.
+All plates have PNG, editable-text PDF and SVG companions. Figure contracts,
+source hashes, rendered alignment and independent glyph/collision checks are
+under [figures/marmousi2](figures/marmousi2). Public result bundles retain the
+actual wavefields/gradients/data but omit input model arrays and physical
+perturbations that directly reconstruct those inputs. The downloadable AGL
+inputs and checksum-verified preparation remain available for reproduction.

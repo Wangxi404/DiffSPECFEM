@@ -1,0 +1,5 @@
+# Optional model preparation dependencies; the native adapters only need
+# requirements.txt after the local Marmousi inputs have been prepared.
+-r requirements.txt
+scipy>=1.10,<2
+obspy>=1.4,<2

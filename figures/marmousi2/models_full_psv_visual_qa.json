@@ -1,0 +1,119 @@
+{
+  "verdict": "PASS",
+  "scope": "Model-input figure only; not a native GLL output, wavefield or inversion result",
+  "input_integrity": {
+    "all_samples_retained": true,
+    "samples_per_panel": 15600,
+    "excluded_samples": 0,
+    "water_samples_each_state": 2200,
+    "vs_water_true_and_initial": 0,
+    "rho_constant_kg_per_m3": 2450,
+    "initial_smoothing_sigma_m": 150,
+    "difference": "initial minus truth",
+    "inversion_result": false
+  },
+  "complete_figure_visual_inspection": "Read all six panels at the final183mm canvas and inspected the complete exported PNG: geologic orientation, water layer, row/column roles, color scales, labels and footer are clear",
+  "panel_review": [
+    {
+      "panel": "a",
+      "unique_evidence": "Vp truth",
+      "visual_inspection": "Sharp velocity layers and faults retained; water and geometry visible",
+      "display": "raw deterministic prepared samples or their exact signed difference; no replicate uncertainty applicable",
+      "labels_and_legend": "Original x and depth coordinates, km/s colorbar, source/receiver/seafloor symbols checked",
+      "alignment": "PASS; shared rows and columns within1.5pt, no exemptions",
+      "collision": "PASS; zero FAIL and zero WARN",
+      "pass": true
+    },
+    {
+      "panel": "b",
+      "unique_evidence": "Vp initial",
+      "visual_inspection": "Declared Gaussian blur visible with the identical truth color limits",
+      "display": "raw deterministic prepared samples or their exact signed difference; no replicate uncertainty applicable",
+      "labels_and_legend": "Original x and depth coordinates, km/s colorbar, source/receiver/seafloor symbols checked",
+      "alignment": "PASS; shared rows and columns within1.5pt, no exemptions",
+      "collision": "PASS; zero FAIL and zero WARN",
+      "pass": true
+    },
+    {
+      "panel": "c",
+      "unique_evidence": "Vp initial-minus-truth",
+      "visual_inspection": "Signed fine structure visible; symmetric zero-centered scale contains every residual",
+      "display": "raw deterministic prepared samples or their exact signed difference; no replicate uncertainty applicable",
+      "labels_and_legend": "Original x and depth coordinates, km/s colorbar, source/receiver/seafloor symbols checked",
+      "alignment": "PASS; shared rows and columns within1.5pt, no exemptions",
+      "collision": "PASS; zero FAIL and zero WARN",
+      "pass": true
+    },
+    {
+      "panel": "d",
+      "unique_evidence": "Vs truth",
+      "visual_inspection": "Zero-Vs water retained, with the complete full-depth geology",
+      "display": "raw deterministic prepared samples or their exact signed difference; no replicate uncertainty applicable",
+      "labels_and_legend": "Original x and depth coordinates, km/s colorbar, source/receiver/seafloor symbols checked",
+      "alignment": "PASS; shared rows and columns within1.5pt, no exemptions",
+      "collision": "PASS; zero FAIL and zero WARN",
+      "pass": true
+    },
+    {
+      "panel": "e",
+      "unique_evidence": "Vs initial",
+      "visual_inspection": "Water remains exactly zero and solid structure is smoothed",
+      "display": "raw deterministic prepared samples or their exact signed difference; no replicate uncertainty applicable",
+      "labels_and_legend": "Original x and depth coordinates, km/s colorbar, source/receiver/seafloor symbols checked",
+      "alignment": "PASS; shared rows and columns within1.5pt, no exemptions",
+      "collision": "PASS; zero FAIL and zero WARN",
+      "pass": true
+    },
+    {
+      "panel": "f",
+      "unique_evidence": "Vs initial-minus-truth",
+      "visual_inspection": "Water is zero in the residual; solid residuals retain sign and extremes",
+      "display": "raw deterministic prepared samples or their exact signed difference; no replicate uncertainty applicable",
+      "labels_and_legend": "Original x and depth coordinates, km/s colorbar, source/receiver/seafloor symbols checked",
+      "alignment": "PASS; shared rows and columns within1.5pt, no exemptions",
+      "collision": "PASS; zero FAIL and zero WARN",
+      "pass": true
+    }
+  ],
+  "source_preflight": {
+    "ready": true,
+    "strict": false,
+    "counts": {
+      "PASS": 20,
+      "WARN": 1,
+      "FAIL": 0
+    }
+  },
+  "reviewed_warning": {
+    "check": "EXPORT-RASTER",
+    "decision": "Accepted",
+    "reason": "The requested delivery is PNG/PDF/SVG. PNG is a600dpi preview; editable PDF andSVG are supplied. No journal-specific TIFF submission was requested."
+  },
+  "rendered_pdf_text_minimum_pt": 5.7,
+  "rendered_pdf_size_mm": [
+    183.00000559488933,
+    116.00000389946831
+  ],
+  "editable_pdf_text_extracted": true,
+  "embedded_pdf_fonts": true,
+  "editable_svg_text": true,
+  "alignment_summary": {
+    "fail": 0,
+    "warn": 0,
+    "comparisons": 7,
+    "exemptions": 0
+  },
+  "collision_summary": {
+    "fail": 0,
+    "warn": 0,
+    "contained_fill_overlays": 0,
+    "contained_image_overlays": 0
+  },
+  "figure_output_hashes_match_metadata": true,
+  "raw_model_arrays_in_delivery": false,
+  "source_and_initial_model_scope": "All78\u00d7200samples including2200zero-Vs water samples retained; rho2450 throughout, sigma150m; allmodel fieldhashesverifiedagainstpreparation metadata",
+  "qa_tool": "Nature-figure source,alignment,PDFtextandcollision audits; PyMuPDF1.26.5",
+  "native_simulation_run_for_this_task": false,
+  "input_sample_vs_native_interface_note": "Water zero samples extend through depth450m; midpoint-cell coloring extends to472.5m. Native SEM interface is450m with positive-Vs first solid sample495m extended one-sided to450m. Figure displays prepared input samples, not actual native GLL coefficients.",
+  "metadata_only_revision": "Clarified sample-cell versus native-interface representation. No raster/vector figure geometry, data, colors or text changed; existing rendered audits remain applicable."
+}

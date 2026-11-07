@@ -1,0 +1,323 @@
+{
+  "name": "Marmousi-II, complete ADFWI-paper model for coupled P-SV",
+  "physics_scope": "Full acoustic water plus isotropic elastic solid P-SV",
+  "execution_status": "Model preparation verified; native coupled P-SV adjoint validation is separate",
+  "upstream_example": "https://github.com/liufeng2317/ADFWI/blob/bv1.1/examples/elastic/Iso-elastic-Marmousi2-shotTop-recTop/01_forward.ipynb",
+  "sources": {
+    "vp_marmousi-ii.segy.gz": {
+      "url": "https://www.agl.uh.edu/downloads/vp_marmousi-ii.segy.gz",
+      "sha256": "2c7a0c4170c95a15620c2146573711c61a4cef8dc27338ef6c211a81ffa68920",
+      "bytes": 1766045
+    },
+    "vs_marmousi-ii.segy.gz": {
+      "url": "https://www.agl.uh.edu/downloads/vs_marmousi-ii.segy.gz",
+      "sha256": "c88bec68fc4bd7c6e624737a20ecd3241c90e10512103e28e61b344fb5baed7d",
+      "bytes": 1768606
+    },
+    "density_marmousi-ii.segy.gz": {
+      "url": "https://www.agl.uh.edu/downloads/density_marmousi-ii.segy.gz",
+      "sha256": "9832e20ce1f79470fa8c100e79d66566cf8c1c162baa4289f37e7ee0b96f1e67",
+      "bytes": 1732687
+    }
+  },
+  "source_shapes_xz": {
+    "vp": [
+      13601,
+      2801
+    ],
+    "vs": [
+      13601,
+      2801
+    ],
+    "rho": [
+      13601,
+      2801
+    ]
+  },
+  "source_array_axes": "x,depth",
+  "source_extent_m": {
+    "x": [
+      0,
+      17000
+    ],
+    "depth": [
+      0,
+      3500
+    ]
+  },
+  "source_units": {
+    "vp": "km/s",
+    "vs": "km/s",
+    "rho": "g/cm^3"
+  },
+  "source_to_SI_multiplier": 1000.0,
+  "units": {
+    "vp": "m/s",
+    "vs": "m/s",
+    "rho": "kg/m^3"
+  },
+  "full_paper_grid": {
+    "nx": 200,
+    "nz": 78,
+    "dx": 45.0,
+    "dz": 45.0,
+    "ox": 5000.0,
+    "oz": 0.0
+  },
+  "full_paper_shape_zx": [
+    78,
+    200
+  ],
+  "full_paper_x_extent_m": [
+    5000.0,
+    13955.0
+  ],
+  "full_paper_depth_extent_m": [
+    0.0,
+    3465.0
+  ],
+  "resampling": "bilinear on exact nominal 45 m grid, no extrapolation",
+  "adfwi_coordinate_note": "ADFWI notebook uses linspace over nx*dx; the common HybridADFWI paper arrays use (nx-1)*dx to match the solver spacing exactly.",
+  "density_mode": "constant2450",
+  "initial_smoothing_sigma_m": 150.0,
+  "smoothing": "Gaussian normalized within solid, mode nearest; restore all true water samples; complete paper grid",
+  "water_cells": 2200,
+  "water_rows_original": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "water_sample_depth_extent_m": [
+    0.0,
+    450.0
+  ],
+  "first_all_solid_sample_depth_m": 495.0,
+  "water_cells_removed": 0,
+  "water_rows_removed": [],
+  "native_shape_zx": [
+    78,
+    200
+  ],
+  "native_array_axes": "z_up,x",
+  "native_water_mask_axes": "z_up,x",
+  "native_x_extent_m": [
+    0.0,
+    8955.0
+  ],
+  "native_z_extent_m": [
+    0.0,
+    3465.0
+  ],
+  "native_coordinate_transform": "x_native=x_AGL-5000; z_native=3465-depth_AGL; native arrays=flipud(full_paper_array)",
+  "dtype": "float64",
+  "model_values_modified": false,
+  "vs_floor_applied": false,
+  "interface_note": "The paper grid has Vs=0 at depth450 m and Vs>0 at depth495 m. Native acoustic/elastic element classification and shared interface values require an explicit coupled-domain representation; these prepared arrays do not silently alter that transition.",
+  "native_coupled_domain_mapping": {
+    "water": {
+      "physical_depth_extent_m": [
+        0.0,
+        450.0
+      ],
+      "native_z_extent_m": [
+        3015.0,
+        3465.0
+      ],
+      "material_type": "fixed acoustic",
+      "vp_m_per_s": 1500.0,
+      "vs_m_per_s": 0.0,
+      "rho_kg_per_m3": 2450.0,
+      "active_inversion_parameters": []
+    },
+    "solid": {
+      "purpose": "Solid material input domain of the complete water-coupled P-SV model",
+      "full_model_filename": "marmousi2_full_psv.npz",
+      "native_array_axes": "z_up,x",
+      "native_x_extent_m": [
+        0.0,
+        8955.0
+      ],
+      "native_z_sample_extent_m": [
+        0.0,
+        2970.0
+      ],
+      "original_depth_sample_extent_m": [
+        495.0,
+        3465.0
+      ],
+      "physical_solid_depth_extent_m": [
+        450.0,
+        3465.0
+      ],
+      "interface_interpolation": "Native constant border extension of the first solid sample at depth495 m to the seafloor at depth450 m; no blending with water zeros and no Vs floor",
+      "solid_field_sha256_le_f64": {
+        "vp_true": "edf854892fa534d3b2b239bb3e4a01e6c0ab97218969cd375fc3b6e1553accde",
+        "vp_initial": "5a137134b5fa5a6dfbd97d144d85250916bc0d2fd43b641c81e1eb67d971be66",
+        "vs_true": "7843bddc4f19f96625e9bef2db0fc9ecb19da714cf624fa31fa8ecf9f1c3d548",
+        "vs_initial": "c29f0264d2295d4adbfbc0f434e12bc1d937b778ceadfcd0e0d8eb9a5d7ba699",
+        "rho_true": "83bf9868878c675d7f3d05fdab8ddd279297c4e68a137fbcd610982dae4a2d8c",
+        "rho_initial": "83bf9868878c675d7f3d05fdab8ddd279297c4e68a137fbcd610982dae4a2d8c"
+      },
+      "filename": "marmousi2_full_psv_solid_domain.npz",
+      "sha256": "8f720845c46628e3803d7433d6832d669ff496caf14fef63e6a8c6e80ab8a683",
+      "material_type": "tomography isotropic elastic; positive numeric A=1 for initial native domain classification",
+      "active_inversion_parameters": [
+        "vp",
+        "vs",
+        "rho"
+      ],
+      "tomography_files": {
+        "true": {
+          "filename": "marmousi2_full_psv_solid_true.xyz",
+          "sha256": "94570188181bef8d5bdebf5a475dcac5bd245c885fd3de2d6f1e1963636a789f",
+          "rows": 13400,
+          "columns": [
+            "x_native_m",
+            "z_native_m",
+            "vp_m_per_s",
+            "vs_m_per_s",
+            "rho_kg_per_m3"
+          ],
+          "serialization_exact_numeric_roundtrip": true
+        },
+        "initial": {
+          "filename": "marmousi2_full_psv_solid_initial.xyz",
+          "sha256": "c57751307bb2f55f4e5dff683a37754a7bf4fd3541ee7600397681466ae64279",
+          "rows": 13400,
+          "columns": [
+            "x_native_m",
+            "z_native_m",
+            "vp_m_per_s",
+            "vs_m_per_s",
+            "rho_kg_per_m3"
+          ],
+          "serialization_exact_numeric_roundtrip": true
+        }
+      }
+    },
+    "difference_from_finite_difference_grid_representation": "Full prepared arrays remain exactly unchanged. The native SEM has a conforming interface at depth450 m and a one-sided solid extension across the 45 m interval before the first positive-Vs sample at depth495 m; the finite-difference sample grid instead keeps its adjacent water and solid nodal samples."
+  },
+  "full_paper_field_sha256_le_f64": {
+    "vp_true": "23c9ea4b4721e1f90d66f9d90d8ca9ecda3eeeaaf8e49883be1ee00cd3b77da2",
+    "vp_initial": "0c053b2451b82497c02f230788c4ade60faade71f655b48edc5a7c8fbbbf1bb1",
+    "vs_true": "4c7f2d4ff1936f39c9e520f5a9d7c0bbd27f3f4da352e4225ae735dc156674fc",
+    "vs_initial": "04fc75c8ed427af11b880eb1185baad48a6b01fdc37bb10d099ddc013b14d86c",
+    "rho_true": "ca8c6381f61e0a0677d08f8629afa98ca3a2859e4d4b21d4dd61c5ac39c6d814",
+    "rho_initial": "ca8c6381f61e0a0677d08f8629afa98ca3a2859e4d4b21d4dd61c5ac39c6d814"
+  },
+  "native_field_sha256_le_f64": {
+    "vp_true": "f2e0f393495d03403452cea324c6d7c4bc59de47b3a0c5400f4b645db2620b9b",
+    "vp_initial": "b619d846a06e4cdca155bb838151d4d37021a5e3b1ca0a4bc471578790229324",
+    "vs_true": "de57cb878d6290a2ae894e849dbc717880a2f44dc3b42d551b2336e2d633c122",
+    "vs_initial": "a7c1d6113ee34a687b45c72ed13b6aea57895722a7f905dcb6d28dc927d8ece7",
+    "rho_true": "ca8c6381f61e0a0677d08f8629afa98ca3a2859e4d4b21d4dd61c5ac39c6d814",
+    "rho_initial": "ca8c6381f61e0a0677d08f8629afa98ca3a2859e4d4b21d4dd61c5ac39c6d814"
+  },
+  "native_field_ranges_SI": {
+    "vp_true": [
+      1500.0,
+      4699.999809265137
+    ],
+    "vp_initial": [
+      1500.0,
+      4351.191073724727
+    ],
+    "vs_true": [
+      0.0,
+      2751.999855041504
+    ],
+    "vs_initial": [
+      0.0,
+      2476.365198157714
+    ],
+    "rho_true": [
+      2450.0,
+      2450.0
+    ],
+    "rho_initial": [
+      2450.0,
+      2450.0
+    ]
+  },
+  "data_source": "Allied Geophysical Laboratories, University of Houston; Gary S. Martin, Robert Wiley and Kurt J. Marfurt",
+  "official_download_page": "https://www.agl.uh.edu/downloads/downloads.htm",
+  "data_terms_page": "https://www.agl.uh.edu/resources-data.php",
+  "data_distribution": "Third-party input data are not relicensed by this repository. Raw SEG-Y, prepared NPZ and native tomography inputs are local ignored files; regenerate from the official sources.",
+  "reference_prepared_verification": {
+    "reference_archive_sha256": "f68effb1e917ef6356d50b403b2993b1c2155362c1ab669ac4fa3a5c4a83982d",
+    "comparisons": {
+      "vp_true": {
+        "same_shape": true,
+        "same_dtype": true,
+        "exact_numeric_equality": true,
+        "same_array_bytes": true,
+        "max_absolute_difference": 0.0
+      },
+      "vp_initial": {
+        "same_shape": true,
+        "same_dtype": true,
+        "exact_numeric_equality": true,
+        "same_array_bytes": true,
+        "max_absolute_difference": 0.0
+      },
+      "vs_true": {
+        "same_shape": true,
+        "same_dtype": true,
+        "exact_numeric_equality": true,
+        "same_array_bytes": true,
+        "max_absolute_difference": 0.0
+      },
+      "vs_initial": {
+        "same_shape": true,
+        "same_dtype": true,
+        "exact_numeric_equality": true,
+        "same_array_bytes": true,
+        "max_absolute_difference": 0.0
+      },
+      "rho_true": {
+        "same_shape": true,
+        "same_dtype": true,
+        "exact_numeric_equality": true,
+        "same_array_bytes": true,
+        "max_absolute_difference": 0.0
+      },
+      "rho_initial": {
+        "same_shape": true,
+        "same_dtype": true,
+        "exact_numeric_equality": true,
+        "same_array_bytes": true,
+        "max_absolute_difference": 0.0
+      },
+      "water_mask": {
+        "same_shape": true,
+        "same_dtype": true,
+        "exact_numeric_equality": true,
+        "same_array_bytes": true,
+        "max_absolute_difference": 0.0
+      },
+      "x": {
+        "same_shape": true,
+        "same_dtype": true,
+        "exact_numeric_equality": true,
+        "same_array_bytes": true,
+        "max_absolute_difference": 0.0
+      },
+      "z": {
+        "same_shape": true,
+        "same_dtype": true,
+        "exact_numeric_equality": true,
+        "same_array_bytes": true,
+        "max_absolute_difference": 0.0
+      }
+    }
+  },
+  "native_archive_sha256": "47dc493db754eac86fcd5cbddf9fea50a943c7d1a869f06d549b00478bdef93c"
+}

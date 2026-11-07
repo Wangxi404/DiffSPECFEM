@@ -1,0 +1,5 @@
+ coupled native P-SV discrete adjoint; temporal AD=0; parameter FD=0; replay=0
+ fixed acoustic coefficients; elastic rho lambda mu coefficient gradients
+ history policy: six native arrays/step on disk, reverse stream reads; O(nglob) live state
+ steps,nglob,receivers,history_bytes=        8000       58089          21          22306176012
+ native force assembly calls per domain=       16000

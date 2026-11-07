@@ -1,0 +1,176 @@
+hwloc/linux: Ignoring PCI device with non-16bit domain.
+Pass --enable-32bits-pci-domain to configure to support such devices
+(warning: it would break the library ABI, don't enable unless really needed).
+Authorization required, but no authorization protocol specified
+Authorization required, but no authorization protocol specified
+hwloc/linux: Ignoring PCI device with non-16bit domain.
+Pass --enable-32bits-pci-domain to configure to support such devices
+(warning: it would break the library ABI, don't enable unless really needed).
+Authorization required, but no authorization protocol specified
+
+ **********************************************
+ *** Specfem 2-D Mesher - MPI version       ***
+ **********************************************
+
+ Running Git version of the code corresponding to abf3196e3192af3343f2b402c82f34205577e672
+ dating 2025-12-17 21:18:43 +0100
+
+ Reading the parameter file...
+
+ Title of the simulation: DiffSPECFEM full Marmousi-II coupled acoustic-elastic P-SV
+
+ Receiver lines:
+   Nb of line sets =            1
+
+   using existing STATIONS file: ./DATA/STATIONS
+   file name is ./DATA/STATIONS
+   found           41  receivers
+
+ Materials:
+   Nb of solid, fluid or porous materials =            2
+
+ --------
+ Material #           1  isotropic
+ rho,cp,cs   =    2450.0000000000000        1500.0000000000000        0.0000000000000000     
+ Qkappa, Qmu =    9999.0000000000000        9999.0000000000000     
+ Material is fluid
+ --------
+ Material #           2  will be read in an external tomography file (TOMOGRAPHY_FILE in Par_file)
+ --------
+
+
+ Mesh from internal meshing:
+
+ Reading interface data from file: ./DATA/interfaces_elastic_analytic.dat
+ Reading            2  points for interface            1
+ Reading            2  points for interface            2
+ Reading            2  points for interface            3
+
+ Total number of layers in z direction =            2
+ There are           48  spectral elements along Z in layer            1
+ There are            8  spectral elements along Z in layer            2
+
+ Total number of spectral elements along X =          128
+ Total number of spectral elements along Z =           56
+
+ Regions:
+   Nb of regions in the mesh =            2
+
+ ------
+ Region            1
+ IX from            1  to          128
+ IZ from            1  to           48
+ Material #            2  isotropic
+ Material is solid
+ vp     =   -1.00000000    
+ vs     =    1.00000000    
+ rho    =   -1.00000000    
+ tomographic material =           -1
+ ------
+ Region            2
+ IX from            1  to          128
+ IZ from           49  to           56
+ Material #            1  isotropic
+ Material is fluid
+ vp     =    1500.00000    
+ vs     =    0.00000000    
+ rho    =    2450.00000    
+ Poisson's ratio =   0.500000000    
+ QKappa =    9999.00000    
+ Qmu    =    9999.00000    
+ ------
+
+ Parameter file successfully read 
+
+
+ Mesh from internal meshing:
+   Total number of spectral elements         =         7168
+
+ PML mesh elements:
+   Total number of PML elements =            0
+
+ The mesh contains         7168  elements
+
+ Control elements have            4  nodes
+
+ Reading in SOURCE file...
+
+ Source           1
+   Position xs, zs =    4500.0000000000000        2925.0000000000000     
+
+   Source type (1=force, 2=moment tensor):            1
+   Force source:
+   Angle of the source (deg) =    0.0000000000000000     
+
+   Time function type (1=Ricker, 2=First derivative, 3=Gaussian, 4=Dirac, 5=Heaviside, 6,7=ocean type, 8=Read from file, 9=burst, 10=Sinusoidal, 11=Ormsby):           1
+   Ricker wavelet (second-derivative):
+   Frequency, delay =    1.0000000000000000        0.0000000000000000     
+   Multiplying factor  =    100000000.00000000     
+
+ all sources are okay
+
+ Normals to surface not needed
+
+ Node coordinates:
+
+ reading node coordinates from interfaces...
+
+ Mesh surfaces:
+   determining acoustic free surface...
+   number of acoustic elements with free surface =          144
+
+   determining absorbing boundary surfaces...
+   number of elements with absorbing boundaries =            0
+
+
+ Mesh dimensions: 
+   Min and max value of X in the grid =    0.0000000000000000        8955.0000000000000     
+   Min and max value of Z in the grid =    0.0000000000000000        3465.0000000000000     
+
+ Mesh partitioning:
+   decomposing mesh using NPROC =            2
+
+ Graph construction:
+   graph adjacency done
+
+ ************ Computing elements load ************
+ Number of elastic elements :        6144
+ Number of acoustic elements :        1024
+ Number of viscoelastic elements :           0
+ Number of viscoacoustic elements :           0
+ Number of elastic PML elements :           0
+ Number of acoustic PML elements :           0
+ Number of viscoelastic PML elements :           0
+ Number of viscoacoustic PML elements :           0
+ *************************************************
+
+
+ Partitioning type: SCOTCH
+
+ Coupled interfaces:
+ nedges_coupled (acoustic/elastic)     =          128
+   after iteration            1 repartitioning of all coupled elements done
+ nedges_coupled (acoustic/poroelastic) =            0
+ nedges_coupled (poroelastic/elastic)  =            0
+
+ Local numbering:
+   NPROC:            2
+   number of elements:         7168
+
+ decompose mesh all done
+
+ Saving databases:
+   database file: ./OUTPUT_FILES/Database00000.bin
+   slice            0  has number of spectral elements =        3600
+
+   database file: ./OUTPUT_FILES/Database00001.bin
+   slice            1  has number of spectral elements =        3568
+
+   VTK mesh files:
+   written file: ./OUTPUT_FILES//mesh_materials.vtk
+   written file: ./OUTPUT_FILES//mesh_partition_number.vtk
+   done
+
+
+ This will be a parallel simulation on            2  processor cores
+

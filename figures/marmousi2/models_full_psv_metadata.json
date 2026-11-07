@@ -1,0 +1,229 @@
+{
+  "figure": "Full water-bearing Marmousi-II model inputs: truth, initial and signed difference",
+  "source": "University of Houston / AGL; Gary S. Martin, Robert Wiley and Kurt J. Marfurt",
+  "official_source_url": "https://www.agl.uh.edu/downloads/downloads.htm",
+  "adfwi_example_url": "https://github.com/liufeng2317/ADFWI/blob/bv1.1/examples/elastic/Iso-elastic-Marmousi2-shotTop-recTop/01_forward.ipynb",
+  "source_archives": {
+    "density_marmousi-ii.segy.gz": {
+      "bytes": 1732687,
+      "sha256": "9832e20ce1f79470fa8c100e79d66566cf8c1c162baa4289f37e7ee0b96f1e67",
+      "url": "https://www.agl.uh.edu/downloads/density_marmousi-ii.segy.gz"
+    },
+    "vp_marmousi-ii.segy.gz": {
+      "bytes": 1766045,
+      "sha256": "2c7a0c4170c95a15620c2146573711c61a4cef8dc27338ef6c211a81ffa68920",
+      "url": "https://www.agl.uh.edu/downloads/vp_marmousi-ii.segy.gz"
+    },
+    "vs_marmousi-ii.segy.gz": {
+      "bytes": 1768606,
+      "sha256": "c88bec68fc4bd7c6e624737a20ecd3241c90e10512103e28e61b344fb5baed7d",
+      "url": "https://www.agl.uh.edu/downloads/vs_marmousi-ii.segy.gz"
+    }
+  },
+  "prepared_model_archive_sha256": "47dc493db754eac86fcd5cbddf9fea50a943c7d1a869f06d549b00478bdef93c",
+  "full_paper_field_sha256_le_f64": {
+    "rho_initial": "ca8c6381f61e0a0677d08f8629afa98ca3a2859e4d4b21d4dd61c5ac39c6d814",
+    "rho_true": "ca8c6381f61e0a0677d08f8629afa98ca3a2859e4d4b21d4dd61c5ac39c6d814",
+    "vp_initial": "0c053b2451b82497c02f230788c4ade60faade71f655b48edc5a7c8fbbbf1bb1",
+    "vp_true": "23c9ea4b4721e1f90d66f9d90d8ca9ecda3eeeaaf8e49883be1ee00cd3b77da2",
+    "vs_initial": "04fc75c8ed427af11b880eb1185baad48a6b01fdc37bb10d099ddc013b14d86c",
+    "vs_true": "4c7f2d4ff1936f39c9e520f5a9d7c0bbd27f3f4da352e4225ae735dc156674fc"
+  },
+  "source_data_distribution": "Model arrays are local preparation inputs and are not included in this public figure bundle",
+  "panel_metadata": [
+    {
+      "panel": "a",
+      "field": "vp",
+      "state": "Truth",
+      "shape_zx": [
+        78,
+        200
+      ],
+      "display_units": "km/s",
+      "display_range": [
+        1.5,
+        4.699999809265137
+      ],
+      "color_limits": [
+        1.5,
+        4.699999809265137
+      ],
+      "colormap": "viridis",
+      "clipping": false,
+      "display_value_sha256_le_f64": "93e6fd236554ce2ca8d2bc88ea4633dcd877a5c91cafb202313bfebea5bb930d"
+    },
+    {
+      "panel": "b",
+      "field": "vp",
+      "state": "Initial",
+      "shape_zx": [
+        78,
+        200
+      ],
+      "display_units": "km/s",
+      "display_range": [
+        1.5,
+        4.351191073724727
+      ],
+      "color_limits": [
+        1.5,
+        4.699999809265137
+      ],
+      "colormap": "viridis",
+      "clipping": false,
+      "display_value_sha256_le_f64": "ed73a62044be8439e627766a321513e2cc147ee99a96eedb2e4cf71fc3f21788"
+    },
+    {
+      "panel": "c",
+      "field": "vp",
+      "state": "Initial \u2212 truth",
+      "shape_zx": [
+        78,
+        200
+      ],
+      "display_units": "km/s",
+      "display_range": [
+        -1.3830424769641292,
+        1.4169203776787254
+      ],
+      "color_limits": [
+        -1.4169203776787254,
+        1.4169203776787254
+      ],
+      "colormap": "RdBu_r",
+      "clipping": false,
+      "display_value_sha256_le_f64": "5842911595a722a90bb660d493b11e08c8d391490a2609926ce085b1f828cfc6"
+    },
+    {
+      "panel": "d",
+      "field": "vs",
+      "state": "Truth",
+      "shape_zx": [
+        78,
+        200
+      ],
+      "display_units": "km/s",
+      "display_range": [
+        0.0,
+        2.751999855041504
+      ],
+      "color_limits": [
+        0.0,
+        2.751999855041504
+      ],
+      "colormap": "viridis",
+      "clipping": false,
+      "display_value_sha256_le_f64": "69f87421a3bdd33c6fc0b621b59ff1fc7ae74f24a130a525892e7c815951c035"
+    },
+    {
+      "panel": "e",
+      "field": "vs",
+      "state": "Initial",
+      "shape_zx": [
+        78,
+        200
+      ],
+      "display_units": "km/s",
+      "display_range": [
+        0.0,
+        2.476365198157714
+      ],
+      "color_limits": [
+        0.0,
+        2.751999855041504
+      ],
+      "colormap": "viridis",
+      "clipping": false,
+      "display_value_sha256_le_f64": "f32dbfb7732a711da687c3007be544c375bb5f261e462e256d13df7fe19f554b"
+    },
+    {
+      "panel": "f",
+      "field": "vs",
+      "state": "Initial \u2212 truth",
+      "shape_zx": [
+        78,
+        200
+      ],
+      "display_units": "km/s",
+      "display_range": [
+        -1.0474799169616322,
+        1.1016710458151993
+      ],
+      "color_limits": [
+        -1.1016710458151993,
+        1.1016710458151993
+      ],
+      "colormap": "RdBu_r",
+      "clipping": false,
+      "display_value_sha256_le_f64": "a558b42ac40a482c3b8cd332457f0fbaa7f128335cba63c461bf77f043e1a770"
+    }
+  ],
+  "integrity": {
+    "all_samples_retained": true,
+    "samples_per_panel": 15600,
+    "excluded_samples": 0,
+    "water_samples_each_state": 2200,
+    "vs_water_true_and_initial": 0,
+    "rho_constant_kg_per_m3": 2450,
+    "initial_smoothing_sigma_m": 150,
+    "difference": "initial minus truth",
+    "inversion_result": false
+  },
+  "coordinate_transform": "native field[::-1,:] restores original increasing depth; velocities divided by1000 only",
+  "display_sampling": "Input-sample grid, not a native GLL coefficient field. Nearest sample cells use midpoint edges; the last zero-Vs sample at depth450m has a display cell ending at472.5m. Axes are limited to original first/last sample coordinates; all samples are drawn, with no display resampling, smoothing, clipping or gamma adjustment",
+  "original_extent_km": {
+    "x": [
+      5,
+      13.955
+    ],
+    "depth": [
+      0,
+      3.465
+    ]
+  },
+  "geometry": {
+    "source_original_x_depth_km": [
+      9.5,
+      0.54
+    ],
+    "receiver_count": 41,
+    "receiver_x_extent_km": [
+      5.1,
+      13.855
+    ],
+    "receiver_depth_km": 0.54,
+    "seafloor_depth_km": 0.45,
+    "source_and_receivers": "Read from the declared full P-SV case, not from a completed inversion"
+  },
+  "statistics": "Not applicable: deterministic model fields, no replicate estimates or statistical tests",
+  "backend": "Python/matplotlib",
+  "matplotlib_version": "3.9.4",
+  "numpy_version": "2.0.2",
+  "canvas_mm": [
+    183.0,
+    116.0
+  ],
+  "png_dpi": 600,
+  "editable_pdf_svg_text": true,
+  "alignment_verdict": "PASS",
+  "figure_contract_sha256": "2d7700106a38fa5807367110ff9ed1e51d629a358460d530a9ebb03b83f4fb2c",
+  "plotting_script_sha256": "d91a4be108f84dc0582ecc3ae2b5175f92ed6c2ea0d2a7b0e4e17ebe6d0a1d2d",
+  "outputs": {
+    "png": {
+      "filename": "models_full_psv.png",
+      "sha256": "32c1aa24a8f172ea628127dda9330cf03fd9dad25c55b762ee6e54edfb1fa1ff",
+      "bytes": 505219
+    },
+    "pdf": {
+      "filename": "models_full_psv.pdf",
+      "sha256": "9810736e6878a29c4e018275d88212e9db1f3db5b399e419ec3aacc749a6ff7c",
+      "bytes": 150938
+    },
+    "svg": {
+      "filename": "models_full_psv.svg",
+      "sha256": "a902d2089647fcb9b8af93edb1a8748e4adf1532dd6ce4e67d58fd4afa9ea7ba",
+      "bytes": 262446
+    }
+  },
+  "native_sem_representation": "The coupled native SEM has a conforming interface at depth450m. Its first positive-Vs solid input sample is at495m and is extended one-sided by constant border clamping from495m to450m. This differs from the input-sample cell coloring and does not alter or remove any original prepared sample. The dashed450m line indicates the native physical interface, not the edge of the nearest-sample water color band."
+}

@@ -1,0 +1,205 @@
+{
+  "source_validation_sha256": "dbab60641a8f1ebc04915f514b9ee1d395cce7b6e492bcb254496a847b6daf09",
+  "method": "Independent numeric SHA256 of accepted private native arrays versus sanitized public output arrays; no input model arrays exported",
+  "checks": [
+    {
+      "file": "gradient_l2.npz",
+      "key": "gradient",
+      "shape": [
+        3,
+        67,
+        200
+      ],
+      "dtype": "float64",
+      "public_numeric_sha256": "fa65be17b8817b88ad90bd93637887f88bf22807fde50183341afd7572ad6e45",
+      "private_native_numeric_sha256": "fa65be17b8817b88ad90bd93637887f88bf22807fde50183341afd7572ad6e45",
+      "matches_private_native_source": true
+    },
+    {
+      "file": "gradient_l2.npz",
+      "key": "data",
+      "shape": [
+        41,
+        2,
+        8000
+      ],
+      "dtype": "float64",
+      "public_numeric_sha256": "6d8cf87f9d9037f8f94cfae62f39e58c79082b5f5b9382f9f14bc246c70337e4",
+      "private_native_numeric_sha256": "6d8cf87f9d9037f8f94cfae62f39e58c79082b5f5b9382f9f14bc246c70337e4",
+      "matches_private_native_source": true
+    },
+    {
+      "file": "gradient_l2.npz",
+      "key": "cotangent",
+      "shape": [
+        41,
+        2,
+        8000
+      ],
+      "dtype": "float64",
+      "public_numeric_sha256": "783dfc60db37da3045b20617cc0ecb653b56e1e35f751c3f7b9dd9f182e7ea40",
+      "private_native_numeric_sha256": "783dfc60db37da3045b20617cc0ecb653b56e1e35f751c3f7b9dd9f182e7ea40",
+      "matches_private_native_source": true
+    },
+    {
+      "file": "gradient_l2.npz",
+      "key": "sample_time",
+      "shape": [
+        8000
+      ],
+      "dtype": "float64",
+      "public_numeric_sha256": "395dee69724d0ef6989bf2ce5e38623c82b54bf9fafecaf315cd9c8e49863192",
+      "private_native_numeric_sha256": "395dee69724d0ef6989bf2ce5e38623c82b54bf9fafecaf315cd9c8e49863192",
+      "matches_private_native_source": true
+    },
+    {
+      "file": "gradient_l2.npz",
+      "key": "raw_derivatives",
+      "shape": [
+        179200,
+        10
+      ],
+      "dtype": "float64",
+      "public_numeric_sha256": "81a1be0d836d28f1780d2d2bfef540d03f61bc18443e484d95f7f6bb2a630ba0",
+      "private_native_numeric_sha256": "81a1be0d836d28f1780d2d2bfef540d03f61bc18443e484d95f7f6bb2a630ba0",
+      "matches_private_native_source": true
+    },
+    {
+      "file": "gradient_processed.npz",
+      "key": "gradient",
+      "shape": [
+        3,
+        67,
+        200
+      ],
+      "dtype": "float64",
+      "public_numeric_sha256": "b1894e914b929d5fa1269e6272ef66c4661c0a7aa16606d34a4f0f61b215ac14",
+      "private_native_numeric_sha256": "b1894e914b929d5fa1269e6272ef66c4661c0a7aa16606d34a4f0f61b215ac14",
+      "matches_private_native_source": true
+    },
+    {
+      "file": "gradient_processed.npz",
+      "key": "data",
+      "shape": [
+        41,
+        2,
+        8000
+      ],
+      "dtype": "float64",
+      "public_numeric_sha256": "6d8cf87f9d9037f8f94cfae62f39e58c79082b5f5b9382f9f14bc246c70337e4",
+      "private_native_numeric_sha256": "6d8cf87f9d9037f8f94cfae62f39e58c79082b5f5b9382f9f14bc246c70337e4",
+      "matches_private_native_source": true
+    },
+    {
+      "file": "gradient_processed.npz",
+      "key": "cotangent",
+      "shape": [
+        41,
+        2,
+        8000
+      ],
+      "dtype": "float64",
+      "public_numeric_sha256": "fcafa5b685f2184eddc36c958ae911bed1d73ec0188dea02365dda3797c93e1e",
+      "private_native_numeric_sha256": "fcafa5b685f2184eddc36c958ae911bed1d73ec0188dea02365dda3797c93e1e",
+      "matches_private_native_source": true
+    },
+    {
+      "file": "gradient_processed.npz",
+      "key": "sample_time",
+      "shape": [
+        8000
+      ],
+      "dtype": "float64",
+      "public_numeric_sha256": "395dee69724d0ef6989bf2ce5e38623c82b54bf9fafecaf315cd9c8e49863192",
+      "private_native_numeric_sha256": "395dee69724d0ef6989bf2ce5e38623c82b54bf9fafecaf315cd9c8e49863192",
+      "matches_private_native_source": true
+    },
+    {
+      "file": "gradient_processed.npz",
+      "key": "raw_derivatives",
+      "shape": [
+        179200,
+        10
+      ],
+      "dtype": "float64",
+      "public_numeric_sha256": "4323add5e72b3fdc5699da777935ace9f8809406e2a30bb2a447e38796c1ab39",
+      "private_native_numeric_sha256": "4323add5e72b3fdc5699da777935ace9f8809406e2a30bb2a447e38796c1ab39",
+      "matches_private_native_source": true
+    },
+    {
+      "file": "wavefield_rank000000.npz",
+      "key": "step_one_based",
+      "shape": [
+        50
+      ],
+      "dtype": "int32",
+      "public_numeric_sha256": "7bbc44f561056ddcbabc68a023ef1da6713b8fef6a8812c48c1854087f4a822d",
+      "private_native_numeric_sha256": "7bbc44f561056ddcbabc68a023ef1da6713b8fef6a8812c48c1854087f4a822d",
+      "matches_private_native_source": true
+    },
+    {
+      "file": "wavefield_rank000000.npz",
+      "key": "displacement",
+      "shape": [
+        50,
+        2,
+        90000
+      ],
+      "dtype": "float64",
+      "public_numeric_sha256": "b422b88694b24ee1763f223ce96b66938aba343a8367ec784009f2542db8de99",
+      "private_native_numeric_sha256": "b422b88694b24ee1763f223ce96b66938aba343a8367ec784009f2542db8de99",
+      "matches_private_native_source": true
+    },
+    {
+      "file": "wavefield_rank000000.npz",
+      "key": "geometry",
+      "shape": [
+        90000,
+        6
+      ],
+      "dtype": "float64",
+      "public_numeric_sha256": "c0053e2d40f194f83489995647fbbadadefe405cb97024097cb75d3dd73e6b36",
+      "private_native_numeric_sha256": "c0053e2d40f194f83489995647fbbadadefe405cb97024097cb75d3dd73e6b36",
+      "matches_private_native_source": true
+    },
+    {
+      "file": "wavefield_rank000001.npz",
+      "key": "step_one_based",
+      "shape": [
+        50
+      ],
+      "dtype": "int32",
+      "public_numeric_sha256": "7bbc44f561056ddcbabc68a023ef1da6713b8fef6a8812c48c1854087f4a822d",
+      "private_native_numeric_sha256": "7bbc44f561056ddcbabc68a023ef1da6713b8fef6a8812c48c1854087f4a822d",
+      "matches_private_native_source": true
+    },
+    {
+      "file": "wavefield_rank000001.npz",
+      "key": "displacement",
+      "shape": [
+        50,
+        2,
+        89200
+      ],
+      "dtype": "float64",
+      "public_numeric_sha256": "067f74fb2e734b89fe95de9965a1f18f49df302a722631d450c5d15be4217cbb",
+      "private_native_numeric_sha256": "067f74fb2e734b89fe95de9965a1f18f49df302a722631d450c5d15be4217cbb",
+      "matches_private_native_source": true
+    },
+    {
+      "file": "wavefield_rank000001.npz",
+      "key": "geometry",
+      "shape": [
+        89200,
+        6
+      ],
+      "dtype": "float64",
+      "public_numeric_sha256": "c142fbac1a1f14f2353acfed5670dd73f677745771cd1df8b2e5a25c23d243c2",
+      "private_native_numeric_sha256": "c142fbac1a1f14f2353acfed5670dd73f677745771cd1df8b2e5a25c23d243c2",
+      "matches_private_native_source": true
+    }
+  ],
+  "validation_source_matches": true,
+  "unexpected_model_files": [],
+  "passed": true
+}

@@ -1,0 +1,91 @@
+{
+  "case": "psv_marmousi2_full",
+  "status": "passed: actual native full-water P-SV six-second illustration, standard/processed data objectives, mixed/localized two-epsilon model adjoint checks",
+  "full_prepared_input": "data/prepared/marmousi2_full_psv.npz",
+  "native_solid_input": "data/prepared/marmousi2_full_psv_solid_domain.npz",
+  "tomography_template": "copy the locally generated data/prepared/marmousi2_full_psv_solid_{true,initial}.xyz to DATA/tomo_file.xyz",
+  "full_model_shape_zx": [
+    78,
+    200
+  ],
+  "water_samples_retained": 2200,
+  "water_sample_depth_range_m": [
+    0,
+    450
+  ],
+  "solid_sample_depth_range_m": [
+    495,
+    3465
+  ],
+  "native_coordinate_map": "x=x_AGL-5000; z=3465-depth_AGL",
+  "physical_extent_m": {
+    "x": [
+      5000,
+      13955
+    ],
+    "depth": [
+      0,
+      3465
+    ]
+  },
+  "domain_mapping": {
+    "water": {
+      "material": 1,
+      "native_z_extent_m": [
+        3015,
+        3465
+      ],
+      "vp": 1500,
+      "vs": 0,
+      "rho": 2450,
+      "active_parameters": []
+    },
+    "solid": {
+      "material": 2,
+      "native_z_extent_m": [
+        0,
+        3015
+      ],
+      "sample_z_extent_m": [
+        0,
+        2970
+      ],
+      "interpolation": "Native bilinear interpolation within solid samples, constant border extension of first solid row at depth495m to seafloor450m; no additional native smoothing or Vs floor. Initial fields were prepared with Gaussian sigma150m on the full model before solid-grid extraction."
+    }
+  },
+  "mesh_elements": {
+    "nx": 128,
+    "nz_solid": 48,
+    "nz_water": 8,
+    "total": 7168
+  },
+  "source_native_m": [
+    4500,
+    2925
+  ],
+  "source_original_m": [
+    9500,
+    540
+  ],
+  "source_type": "fixed elastic force",
+  "frequency_hz": 1.0,
+  "source_t0_s": 1.2,
+  "record_steps": 8000,
+  "dt_s": 0.00075,
+  "receiver_count": 41,
+  "receiver_native_x_extent_m": [
+    100,
+    8855
+  ],
+  "receiver_original_depth_m": 540,
+  "receiver_components": "both native in-plane displacement components",
+  "boundaries": "reflecting/free, native coupled interface; acoustic pressure-free water surface",
+  "requires_before_production": [
+    "Pass native coefficient/interpolation/domain classification checks",
+    "Pass native true and initial model stability and dispersion diagnostics",
+    "Validate coupled acoustic-elastic discrete transpose and physical parameter chain rules on small cases"
+  ],
+  "scope_note": "Same full prepared Marmousi-II material arrays used by ADFWI; native acoustic/P-SV discretization, fixed water, source and boundary conventions are declared separately, with no cross-solver gradient-error claim.",
+  "record_duration_s": 6.0,
+  "validation": "evidence/psv_marmousi128/validation.json"
+}

@@ -1,0 +1,49 @@
+{
+  "status": "running",
+  "passed": false,
+  "case": "examples/psv_coupled_unit",
+  "mode": "full",
+  "model_sha256": "f0eb2130cb91695d22daf9fa5ae24e74159c4ecb59ba776b8653d5874d8d8c6c",
+  "model_shape": [
+    3,
+    9,
+    9
+  ],
+  "ranks": 2,
+  "active_coordinates": "physical solid [Vp(m/s),Vs(m/s),rho(kg/m^3)] on increasing native(z,x)",
+  "fixed": "acoustic water coefficients, source, receiver geometry, mesh, dt, reflecting/free boundaries",
+  "history_policy": "six native post-step arrays on disk; O(nglob) live reverse state, no replay",
+  "accepted_thresholds": {
+    "declared_before_run": true,
+    "native_forward": "bitwise",
+    "interpolation_rtol": 2e-13,
+    "sampling_rtol": 1e-12,
+    "coupling_rtol": 1e-12,
+    "data_vjp_rtol": 1e-06,
+    "model_rtol": 1e-05,
+    "model_atol": 1e-09,
+    "steps": [
+      0.02,
+      0.006,
+      0.002,
+      0.0006,
+      0.0002,
+      6e-05
+    ],
+    "min_taylor_order": 1.8,
+    "max_taylor_order": 2.2
+  },
+  "gates": {
+    "source_resolution": {
+      "passed": true,
+      "source_f0_hz": 1.5
+    }
+  },
+  "elapsed_seconds": 2.320266273804009,
+  "initial_diagnostics": {
+    "max_suggested_f0_hz": 1.9200000000000004
+  },
+  "true_diagnostics": {
+    "max_suggested_f0_hz": 1.9200000000000004
+  }
+}

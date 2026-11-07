@@ -1,0 +1,104 @@
+{
+  "public_candidate_file_count": 1005,
+  "scope": "tracked plus unignored candidate files; AGL base model arrays and direct material tables excluded",
+  "unexpected_source_model_files": [],
+  "marmousi_npz_schemas": [
+    {
+      "file": "evidence/psv_marmousi128/gradient_l2.npz",
+      "keys": [
+        "cotangent",
+        "data",
+        "gradient",
+        "raw_derivatives",
+        "sample_time"
+      ],
+      "expected_public_schema": true
+    },
+    {
+      "file": "evidence/psv_marmousi128/gradient_processed.npz",
+      "keys": [
+        "cotangent",
+        "data",
+        "gradient",
+        "raw_derivatives",
+        "sample_time"
+      ],
+      "expected_public_schema": true
+    },
+    {
+      "file": "evidence/psv_marmousi128/wavefield_rank000000.npz",
+      "keys": [
+        "component_names",
+        "displacement",
+        "geometry",
+        "nstep",
+        "step_one_based"
+      ],
+      "expected_public_schema": true
+    },
+    {
+      "file": "evidence/psv_marmousi128/wavefield_rank000001.npz",
+      "keys": [
+        "component_names",
+        "displacement",
+        "geometry",
+        "nstep",
+        "step_one_based"
+      ],
+      "expected_public_schema": true
+    },
+    {
+      "file": "evidence/psv_marmousi64/gradient_l2.npz",
+      "keys": [
+        "cotangent",
+        "data",
+        "gradient",
+        "raw_derivatives",
+        "sample_time"
+      ],
+      "expected_public_schema": true
+    },
+    {
+      "file": "evidence/psv_marmousi64/gradient_processed.npz",
+      "keys": [
+        "cotangent",
+        "data",
+        "gradient",
+        "raw_derivatives",
+        "sample_time"
+      ],
+      "expected_public_schema": true
+    },
+    {
+      "file": "evidence/psv_marmousi64/wavefield_rank000000.npz",
+      "keys": [
+        "component_names",
+        "displacement",
+        "geometry",
+        "nstep",
+        "step_one_based"
+      ],
+      "expected_public_schema": true
+    },
+    {
+      "file": "evidence/psv_marmousi64/wavefield_rank000001.npz",
+      "keys": [
+        "component_names",
+        "displacement",
+        "geometry",
+        "nstep",
+        "step_one_based"
+      ],
+      "expected_public_schema": true
+    }
+  ],
+  "private_inputs_git_ignored": {
+    "data/prepared/marmousi2_full_psv.npz": true,
+    "data/prepared/marmousi2_full_psv_solid_domain.npz": true,
+    "data/prepared/marmousi2_full_psv_solid_initial.xyz": true
+  },
+  "final_visual_qa_file": "figures/marmousi2/qa/native_visual_qa.json",
+  "final_visual_qa_sha256": "02c097ebbeadeac47551f71b274bf66d49f41ee3b78040fed42c3bbf1e8a9504",
+  "final_visual_pending": [],
+  "passed": true
+}

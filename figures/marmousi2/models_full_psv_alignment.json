@@ -1,0 +1,155 @@
+{
+  "schema_version": 1,
+  "applicable": true,
+  "auditable": true,
+  "verdict": "PASS",
+  "backend": "python-matplotlib",
+  "summary": {
+    "fail": 0,
+    "warn": 0,
+    "comparisons": 7,
+    "exemptions": 0
+  },
+  "tolerances": {
+    "alignment_pt": 1.5,
+    "gutter_pt": 1.5
+  },
+  "layout": {
+    "schema_version": 1,
+    "backend": "python-matplotlib",
+    "figure": {
+      "width_pt": 518.740157480315,
+      "height_pt": 328.81889763779526
+    },
+    "panels": [
+      {
+        "id": "a",
+        "bbox_pt": [
+          34.01574803149607,
+          204.57405135912143,
+          171.9685039371024,
+          257.95275590551176
+        ],
+        "panel_label": "a",
+        "panel_label_anchor_pt": [
+          34.01574803149607,
+          262.9527559055118
+        ]
+      },
+      {
+        "id": "b",
+        "bbox_pt": [
+          201.73228346466144,
+          204.57405135912143,
+          339.6850393702677,
+          257.95275590551176
+        ],
+        "panel_label": "b",
+        "panel_label_anchor_pt": [
+          201.7322834646614,
+          262.9527559055118
+        ]
+      },
+      {
+        "id": "c",
+        "bbox_pt": [
+          369.44881889782675,
+          204.57405135912143,
+          507.40157480343305,
+          257.95275590551176
+        ],
+        "panel_label": "c",
+        "panel_label_anchor_pt": [
+          369.44881889782675,
+          262.9527559055118
+        ]
+      },
+      {
+        "id": "d",
+        "bbox_pt": [
+          34.01574803149607,
+          85.51893324888522,
+          171.9685039371024,
+          138.89763779527559
+        ],
+        "panel_label": "d",
+        "panel_label_anchor_pt": [
+          34.01574803149607,
+          143.8976377952756
+        ]
+      },
+      {
+        "id": "e",
+        "bbox_pt": [
+          201.73228346466144,
+          85.51893324888522,
+          339.6850393702677,
+          138.89763779527559
+        ],
+        "panel_label": "e",
+        "panel_label_anchor_pt": [
+          201.7322834646614,
+          143.8976377952756
+        ]
+      },
+      {
+        "id": "f",
+        "bbox_pt": [
+          369.44881889782675,
+          85.5189332488852,
+          507.4015748034331,
+          138.89763779527559
+        ],
+        "panel_label": "f",
+        "panel_label_anchor_pt": [
+          369.44881889782675,
+          143.8976377952756
+        ]
+      }
+    ],
+    "row_groups": [
+      {
+        "id": "row-1",
+        "panels": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "id": "row-2",
+        "panels": [
+          "d",
+          "e",
+          "f"
+        ]
+      }
+    ],
+    "column_groups": [
+      {
+        "id": "column-1",
+        "panels": [
+          "a",
+          "d"
+        ]
+      },
+      {
+        "id": "column-2",
+        "panels": [
+          "b",
+          "e"
+        ]
+      },
+      {
+        "id": "column-3",
+        "panels": [
+          "c",
+          "f"
+        ]
+      }
+    ],
+    "boundary_groups": [],
+    "exemptions": []
+  },
+  "findings": []
+}

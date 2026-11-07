@@ -1,228 +1,106 @@
 # DiffSPECFEM
 
-**Validation status:** the released v0.2.0 derivative interface and gallery below
-cover **SH only**, not P–SV. Native SPECFEM2D itself supports both modes.
-The intended **P–SV Marmousi-II case, including the water layer and fluid–solid
-coupling, is now being implemented and is not yet validated**. The SH examples
-remain regression tests; they must not be presented as P–SV results.
+**Native SPECFEM2D → differentiable inversion, demonstrated with coupled P–SV
+on the full water-bearing Marmousi-II model.** By Sid.
 
-The original extension was built from a clean pinned official SPECFEM2D source
-using a frozen generic skill. It did not copy or use an earlier private
-DiffSpecfem implementation. Source revision, explicit patches and application
-records below document that path.
+PyTorch differentiates the data objective to obtain an adjoint source. The
+existing compiled solver propagates the forward and adjoint wavefields;
+its numerical kernels and MPI execution remain native. Production gradients
+use **one native forward, one native adjoint, zero temporal AD and zero model
+finite differences**.
 
-A runnable differentiation extension of **official SPECFEM2D**, pinned to
-[`abf3196e3192af3343f2b402c82f34205577e672`](https://github.com/SPECFEM/specfem2d/tree/abf3196e3192af3343f2b402c82f34205577e672).
-It computes a PyTorch data-objective VJP and sends that cotangent to a compiled
-native exact discrete SH/Newmark adjoint. Production gradients use **one native
-forward, one native adjoint, zero model finite differences and zero temporal AD**.
-The new extension is copyright 2026 Sid and licensed GPL-3.0-or-later.
-Upstream SPECFEM2D author notices are retained under GPL-3.0-or-later; see
-`NOTICE` and the complete license text in `LICENSE`.
+This extension starts from a clean **official SPECFEM2D** checkout, pinned to
+[`abf3196`](https://github.com/SPECFEM/specfem2d/tree/abf3196e3192af3343f2b402c82f34205577e672),
+using the frozen generic
+[differentiate-seismic-solver skill](https://github.com/Wangxi404/SeismicDiffSkill).
+It did **not** use an earlier private DiffSpecfem implementation. Source,
+patches, original-binary hashes, failures and repairs are recorded in
+[the P–SV application record](psv_application_record.json).
 
-## See the native evidence
+## Models, wavefields and gradients
 
-The animation is extracted from the **actual validated 32×32, two-rank native
-SH histories**, with a fixed displacement scale and the complete 2 km square.
-It uses the heterogeneous reference/starting model. All plots below use real
-native arrays; the target changes four regional log parameters.
+The main example is **P–SV, including native water–solid coupling**, and records
+both UX and UZ. The animation uses actual native displacement in both phases
+at the **smoothed initial model**, with a fixed color scale.
 
-![Actual native SH wavefield, 44 saved post-step states](figures/native_sh_wavefield.gif)
+![Actual native coupled P–SV wavefield](figures/marmousi2/native_psv_wavefield.gif)
 
-| Physical contrast | Spatial native gradient |
+| True model → smoothed initial model | Spatial Vp / Vs / density gradients |
 |---|---|
-| [![Starting and target density/Vs maps](figures/01_models.png)](figures/01_models.pdf) | [![Raw native coefficient and log-coordinate gradients](figures/04_spatial_gradients.png)](figures/04_spatial_gradients.pdf) |
-| Exact two-layer starting/target models and differences; shared scales. | Raw SEM coefficient derivatives summed within each element; no smoothing. |
-| **Data → AD cotangent** | **Independent native perturbation checks** |
-| [![Target, starting, residual and AD data source](figures/03_data_and_adjoint_source.png)](figures/03_data_and_adjoint_source.pdf) | [![Every declared Taylor epsilon and centered derivative error](figures/05_taylor_evidence.png)](figures/05_taylor_evidence.pdf) |
-| All four receivers and 800 native samples, including the duplicate station. | Both objectives, three parameter directions and all eight epsilons. |
+| [![Full Marmousi-II model inputs](figures/marmousi2/models_full_psv.png)](figures/marmousi2/models_full_psv.pdf) | [![Actual native P–SV gradients](figures/marmousi2/04_psv_gradients.png)](figures/marmousi2/04_psv_gradients.pdf) |
+| Full 78×200 input grid; all water samples retained; sigma = 150 m. | Raw derivatives at the initial model; fixed water hatched; no gradient smoothing. |
+| **Data → AD adjoint source** | **Numerical verification** |
+| [![Both data components, residuals and AD cotangents](figures/marmousi2/03_psv_data_adjoint_source.png)](figures/marmousi2/03_psv_data_adjoint_source.pdf) | [![Complete Taylor sweeps](figures/marmousi2/05_psv_verification.png)](figures/marmousi2/05_psv_verification.pdf) |
+| Both in-plane components, all 41 receivers and native time samples. | Both objectives, five perturbation families and all six step sizes on the separately declared correctness case. |
 
-Full-size plates, legends, exact sampling rules and QA are in the
-[visual report](VISUAL_REPORT.md). Each PNG has an editable PDF/SVG companion;
-[native snapshots](figures/02_native_wavefield.pdf),
-[source data and hashes](evidence/visuals/manifest.json) and
-[rendering code](scripts/visualize_evidence.py) are included.
-Rebuild with `python scripts/visualize_evidence.py`; the alignment helper and
-its [upstream attribution/license](scripts/figure_qa/README.md) are bundled,
-so rendering requires only NumPy, matplotlib and Pillow, with no installed skill.
+[Full visual report](VISUAL_REPORT.md) · [Native wavefield plate](figures/marmousi2/02_psv_wavefields.pdf) ·
+[Method and reproduction](PSV_REPORT.md) · [Legacy SH regressions](SH_REGRESSION.md)
 
-| Validated quantity | 32×32 native SH case |
-|---|---:|
-| Native MPI ranks / unique physical nodes | 2 / 16,641 |
-| Time steps / DT / source peak frequency | 800 / 0.001 s / 6 Hz |
-| Native source-frequency recommendation | ≤ 8.192 Hz |
-| Original-native vs extension forward traces | Bitwise identical |
-| L2 / processed model-dot relative error | 1.113×10⁻⁹ / 1.215×10⁻⁹ |
-| Native sampling/scatter dot relative error | 1.214×10⁻¹⁶ |
-| Full-history sampling-to-trace relative error | 1.568×10⁻¹⁶ |
-| Selected plotted histories → saved traces | Exact in the visualization check |
-| Production propagation per gradient | 1 native forward + 1 native adjoint |
+## What is verified
 
-This is a fixed discrete differentiation test with four regional coordinates.
-The reference is a real two-layer model, not a Gaussian-blurred full-field
-starting model. The 32×32 case meets native grid/source guidance; this is not a
-continuum-convergence or full-field inversion claim. The original coarse and
-failed validation attempts remain documented below and in `REPORT.md`.
+| Configuration | Full-domain correctness | Finer native demonstration |
+|---|---:|---:|
+| Spectral elements | 64×28 | 128×56 |
+| Prepared material inputs | 78×200, 45 m | Same arrays |
+| Active solid input coordinates | 3×67×200 | Same coordinates |
+| MPI ranks / threads per rank | 2 / 1 | 2 / 1 |
+| Native steps / DT | 4000 / 1.5 ms | 8000 / 0.75 ms |
+| Total step duration / source f0 | 6 s / 0.5 Hz | 6 s / 1 Hz |
+| Original-native vs extended traces | Bitwise identical | Bitwise identical |
+| Complete six-epsilon Taylor sweeps | Vp, Vs, density, mixed, localized; both objectives | Separately bounded directional checks |
+| Model-dot relative error, L2 / processed | 1.36×10⁻⁸ / 1.72×10⁻⁸ | 4.08×10⁻⁸ / 5.09×10⁻⁸ |
+| Complete fluid–solid interface | 64 edges, 8955 m | 128 edges, 8955 m |
 
-This is a deliberately bounded application of the frozen generic skill
-`differentiate-seismic-solver` v0.1.0. The original frozen packet is unchanged;
-its SHA256 is `b09e0ee57324f715b80178c2a30cb26a2140b1ea3d5545ad8b15dc5680dca49f`
-and its frozen Git source revision is `89d135f75f3d8521737645cab2e0c6ec49136f91`.
-See `application_record.json`, `evidence/validation.json`,
-`evidence/mpi2/validation.json`, `evidence/acceptance.json`, and `REPORT.md`.
+The finer case uses a different source frequency and time window. These are
+two fixed-discretization derivative examples, not a mesh-convergence study or
+an FD-versus-SEM waveform comparison. Water coefficients, sources, geometry,
+time steps and free/reflecting boundaries are fixed; the three **solid** material
+fields are active. Attenuation, PML/Stacey absorption, anisotropy, GPU,
+active water/source/geometry and acoustic receivers are outside this interface.
 
-## Supported numerical contract
+Production storage is the declared full six-field native history on disk,
+read one frame at a time during reversal. It is not an optimal-storage claim;
+disk I/O and visualization capture have overhead. Exact phase timings and
+history sizes are retained without claiming a speedup against temporal AD.
 
-- Planar, isotropic, lossless elastic **SH** waves, zero initial state,
-  fixed point-force source and fixed off-grid displacement receivers.
-- Native quadrilateral spectral elements, five GLL points per direction,
-  native Newmark stepping, native natural reflecting/free boundaries.
-- Native CPU execution with **one or two MPI ranks**, one thread per rank.
-  The Python interface rejects other rank counts. GPU, P–SV, acoustic,
-  attenuation, PML/Stacey absorption, anisotropy, periodicity, moving/noise
-  sources and higher-order derivatives are outside this interface.
-- The example is a heterogeneous 2 km square with 8×8 elements, 1089 unique
-  nodes, two material regions, 800 time steps at 0.001 s, a 6 Hz force source,
-  and four receivers including a duplicate and off-grid interpolation.
-- The four active coordinates are relative log density in the bottom/top
-  regions, then relative log shear speed in the bottom/top regions. Reference
-  densities are `[2500,2800] kg/m³`, shear speeds `[1600,1900] m/s`. Compressional
-  speed, mesh, time step, source, receiver positions, boundaries and all other
-  settings remain fixed. The density/shear-speed map is `mu=rho*Vs**2`.
-- Internal arithmetic, receiver export, native cotangent and kernels are
-  double precision. Exporting float64 is not used to disguise single arithmetic.
+The earlier v0.2.0 release covered **SH only**. SPECFEM2D itself supports both
+SH and P–SV; the current P–SV extension has its own native module, explicit
+patch and validation. Original SH results and tags remain available in
+[SH_REGRESSION.md](SH_REGRESSION.md) and [SH_VISUAL_REPORT.md](SH_VISUAL_REPORT.md).
 
-An additional `examples/sh_two_layer_32` case refines only the mesh to 32×32
-and its material element ranges. Source/receiver files, physical geometry,
-material values, time step and step count are identical. Its native diagnostics
-recommend `f0 <= 8.192 Hz` and `DT <= 0.0015417 s`; the actual 6 Hz and 0.001 s
-meet both recommendations (CFL 0.3243). The complete two-rank suite also passes
-for this case, with 16,641 unique nodes. This is a grid-guidance check, not a
-multi-grid convergence study. Full history totals 214,860,824 bytes and is kept
-outside Git with checksums. See `evidence/mpi2_32/validation.json`.
+## Run it
 
-Native sample `n=1…800` is displacement **after** the native predictor/force/
-corrector step. Upstream labels it `(n-1)*DT - USER_T0`, where `USER_T0=0.22 s`.
-Receiver files are sorted by station name by Python. Native local receiver
-ownership is `recloc`; each MPI rank selects its cotangent rows accordingly.
-The native data source is the additive Lagrange interpolation transpose applied
-to the AD cotangent at that same post-step state. There is no implicit `dt`,
-force normalization, sign reversal, or array reversal at the file boundary.
-
-## Exact discrete native adjoint
-
-The numerical forward updates and force assembly are unchanged. A module and
-three hooks are inserted into `src/specfem2D/iterate_time.F90`; the explicit patch
-is `native/iterate_time.patch`, applied by `scripts/patch_native.py`.
-The original native solver is built and copied **before** patching.
-
-For the supported configuration, the native step is
-
-```
-u_n = u_old + dt*v_old + dt²/2*a_old
-v_half = v_old + dt/2*a_old
-a_n = M⁻¹(-K*u_n + f_n)
-v_n = v_half + dt/2*a_n
-```
-
-The native module reverses these actual operations. With accumulated state
-cotangents it first adds `dt/2*bar_v` to `bar_a`, forms
-`w=M⁻¹*bar_a`, adds `-K*w` and `Cᵀ*bar_d_n` to `bar_u`, then reverses the
-predictor. `-K*w` calls the **unchanged native elastic force routine**, rather
-than a Python/AD wave solver. Local density and shear-modulus sensitivities are
-accumulated as
-
-```
-dJ/drho_GLL -= W*Jgeo*w*a_n
-dJ/dmu_GLL  -= W*Jgeo*(grad(u_n)·grad(w))
-```
-
-These are already discrete GLL coefficient derivatives including spatial
-quadrature/Jacobian, rather than unweighted continuous kernel densities.
-The raw rows contain `element,i,j,node,x,z,rho,mu,dJ/drho,dJ/dmu,material_id`.
-No smoothing, illumination division, clipping or fitted scaling is applied.
-The region map gives `g_logrho=sum(rho*g_rho+mu*g_mu)` and
-`g_logVs=sum(2*mu*g_mu)` over unique local elements.
-
-On two ranks, adjoint nodal states represent globally assembled quantities and
-are replicated consistently at shared nodes. Only each **new** local receiver
-source and each local stiffness force are summed with the native
-`assemble_MPI_vector_el_blocking` routine. Existing replicated state cotangents
-are not summed again. Element-local coefficient sensitivities are written once
-per element and summed in Python by native material ID. The native sampling dot
-probe uses inverse interface multiplicities to count each nodal product once.
-
-Full post-step displacement and acceleration histories are written to disk and
-loaded for reverse traversal. The adjoint reads both fields, uses no replay and
-retains only its live adjoint state in addition. The serial history is
-13,939,212 bytes including a 12-byte shape header. MPI ranks write disjoint
-history files; shared interface nodes are stored on each participating rank.
-Memory/storage grows with `NSTEP`; this implementation makes no checkpoint
-scaling claim.
-
-## Reproduction
-
-On Linux with GCC/Gfortran and, for two ranks, OpenMPI:
+Linux, GCC/Gfortran and OpenMPI are required for native propagation:
 
 ```bash
-python -m pip install -r requirements.txt
-bash scripts/build_remote.sh
-OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 python scripts/validate.py
-python scripts/performance.py
-bash scripts/build_mpi.sh
-OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 python scripts/validate_mpi.py
-python scripts/performance_mpi.py
-python scripts/validate_mpi.py --case examples/sh_two_layer_32 --evidence evidence/mpi2_32
-python scripts/performance_mpi.py --case examples/sh_two_layer_32 --evidence evidence/mpi2_32
+python -m pip install -r requirements-marmousi.txt
+bash scripts/build_psv.sh
+python scripts/prepare_marmousi.py --mode full-psv
+OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 python scripts/validate_psv.py \
+  --model data/prepared/marmousi2_full_psv_solid_domain.npz \
+  --case examples/psv_marmousi2_validation64 --evidence evidence/my_marmousi64
 ```
 
-The build scripts expect fresh, unmodified upstream source directories and pin
-them explicitly. On the recorded host use
-`/home/xiwang/anaconda3/envs/pytorch26/bin/python`; builds run `nice -n 10 make -j1`.
-All propagation is native compiled Fortran. `scripts/validate*.py` uses model
-finite differences **only as independent correctness checks**, never to return
-production gradients.
+A small analytic coupled fixture requires no third-party model. The complete
+commands, arbitrary differentiable objective example and parameter VJP are in
+[PSV_REPORT.md](PSV_REPORT.md). Numerical tests use native model perturbations
+only as independent checks; they never supply production gradients.
 
-A minimal objective-to-model-gradient call is:
+To redraw the published native plots without running propagation:
 
-```python
-import numpy as np
-from diffspecfem import Solver
-
-solver = Solver(ranks=2, case="examples/sh_two_layer_32")  # original: omit case; ranks=1 also supported for original
-observed = solver.forward(np.array([.025, -.02, .035, -.03]))
-result = solver.value_gradient(np.zeros(4), observed, kind="processed")
-print(result["value"], result["gradient"])
+```bash
+python -m pip install -r requirements-visualization.txt
+python scripts/visualize_psv_marmousi.py \
+  --evidence evidence/psv_marmousi128 \
+  --correctness evidence/psv_marmousi64/validation.json
+# Model-input plate additionally requires the locally prepared AGL inputs:
+python scripts/visualize_marmousi_models.py
 ```
 
-For another differentiable objective, call `forward(model, record=True)`, make
-its data a float64 PyTorch leaf, obtain `torch.autograd.grad(loss, leaf)`, and
-pass that cotangent to `adjoint`. The example processed objective contains a
-fixed FIR convolution, `tanh`, receiver mixing (including the duplicated
-receiver), and time-dependent weights. The returned model gradient is an
-explicit NumPy vector; this wrapper does not claim PyTorch model double-backward
-or batched concurrent solver contexts. Use separate work directories for
-concurrent independent objectives.
-
-## Evidence and limits
-
-The coarse mesh is a discrete differentiation test, not a converged waveform
-accuracy study. Upstream diagnostics recommend `f0 <= 2.048 Hz` for this mesh;
-the chosen 6 Hz Ricker source has an underresolved high-frequency tail. The
-additional 32×32 case above meets the native resolution recommendation. Every
-forward/gradient check holds its declared mesh/source fixed.
-
-Numerical tolerances were declared before validation. Every epsilon, objective,
-first-order remainder and centered derivative is retained, including a failed
-initial sweep that needed smaller epsilons to obtain two consecutive central
-matches. Tolerances were not relaxed. Independent review identified an
-algebra-only sampling probe; this was retained and superseded by actual compiled
-native observation/scatter and history-to-trace tests. The source kernel hashes,
-compiler output, native call commands, failed attempts, MPI scope extension and
-review interventions are recorded outside the frozen skill packet.
-
-Runtime/resource figures are observations on a shared host for this small
-supported case. Host RSS is reported separately from history bytes; no GPU was
-used. One successful application is not evidence of universal adaptation effort
-or a causal benefit over a no-skill baseline. The application agent was fresh
-with respect to private adapters, but the study is not author-blinded.
+Marmousi-II inputs are obtained from the
+[University of Houston / AGL](https://www.agl.uh.edu/downloads/downloads.htm).
+The preparation recipe verifies source hashes and preserves attribution.
+Third-party model arrays are not redistributed or relicensed here; public
+bundles contain numerical results and their provenance. New extension code
+is copyright 2026 Sid, **GPL-3.0-or-later**; upstream SPECFEM2D notices and the
+bundled figure helper's Apache-2.0 license are retained in [NOTICE](NOTICE).
