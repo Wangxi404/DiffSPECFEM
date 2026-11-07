@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "scope": "All Engine methods have identical AST in v1/v2; optimizer scaling and preparation metadata alone differ.",
+  "old_source_sha256": "28eed616dacde81f48eb1d470b927f7969166fe1a74468be88e6dd3ac01716c6",
+  "new_source_sha256": "3b71ba1c8b5cd2fd30038b287ee8f120f9f3c23e4083b4c483736f9193843439",
+  "unchanged_engine_methods": {
+    "__init__": true,
+    "runtime_signature": true,
+    "bind_targets": true,
+    "fingerprint": true,
+    "event": true,
+    "case": true,
+    "native": true,
+    "observation": true,
+    "observe": true,
+    "batch": true
+  }
+}

@@ -1,0 +1,160 @@
+{
+  "passed": true,
+  "scope": "Analytic three-shot controller fixture; no native solver or target model used",
+  "source_sha256": {
+    "invert_vponly_psv.py": "28eed616dacde81f48eb1d470b927f7969166fe1a74468be88e6dd3ac01716c6",
+    "invert_vponly_psv_v2.py": "3b71ba1c8b5cd2fd30038b287ee8f120f9f3c23e4083b4c483736f9193843439",
+    "check_v2_optimizer.py": "8b9b4521168a6114b9c59c6b0aa7d783ec16954c0c72806b3f307f3a6abb7cb9"
+  },
+  "natural_quasi_newton_step_m_s": 0.125,
+  "v1": {
+    "state": {
+      "stage_index": 0,
+      "epoch_index": 1,
+      "updates": 1,
+      "status": "line_search_stalled",
+      "initial_gradient_norm": 1.0,
+      "recent": [],
+      "version": 0,
+      "array_path": "states/state_00000.npz",
+      "array_sha256": "49a1acb218ee87a2cd0f5d808bbf0474600ea7e8115bf8dd81c7966e7d40f25a",
+      "model_sha256": "736d8bb0519e1f627e1be55c063218b7529f973de0047f7dbb80b7832808a80a",
+      "runtime_signature_sha256": "529fc132800fe77a62b3d729ca61be0e4f6d7efe7ce2fbebf81181c5f05b91b6",
+      "protocol_sha256": "6e081830d9470095db5d7047bef4bf532f87c802cb7be993494ae575cad3befc"
+    },
+    "accepted": false,
+    "step_m_s": null,
+    "loss_after": null,
+    "evaluations": [
+      {
+        "model_sha256": "736d8bb0519e1f627e1be55c063218b7529f973de0047f7dbb80b7832808a80a",
+        "shot_ids": [
+          0,
+          1,
+          2
+        ],
+        "gradient": true,
+        "loss": 0.0078125,
+        "all_shots_same_model": true
+      },
+      {
+        "model_sha256": "cb0d391c6dfc17d077f6b4347196750e0764a3cfb5be766c8ac9d1e25842c7ca",
+        "shot_ids": [
+          0,
+          1,
+          2
+        ],
+        "gradient": false,
+        "loss": 1792.5078125,
+        "all_shots_same_model": true
+      },
+      {
+        "model_sha256": "7ad8bc9272943b28c8b89244f7c2f3d5817e43bb6bef97658d3bea710b18eff2",
+        "shot_ids": [
+          0,
+          1,
+          2
+        ],
+        "gradient": false,
+        "loss": 446.2578125,
+        "all_shots_same_model": true
+      },
+      {
+        "model_sha256": "25db21f73c0ee13257468133eada0fe6113883299ec726e0eb8eac749aa5b2c2",
+        "shot_ids": [
+          0,
+          1,
+          2
+        ],
+        "gradient": false,
+        "loss": 110.6328125,
+        "all_shots_same_model": true
+      },
+      {
+        "model_sha256": "1d9d649ab9bb17abf90f5613835ab660fd0aed0a94f425552501b7fa6e81f870",
+        "shot_ids": [
+          0,
+          1,
+          2
+        ],
+        "gradient": false,
+        "loss": 27.1953125,
+        "all_shots_same_model": true
+      },
+      {
+        "model_sha256": "80eba6065df2b0e8e0c8818c0cce9d1aff82d01f828648a3830f85415165a9cc",
+        "shot_ids": [
+          0,
+          1,
+          2
+        ],
+        "gradient": false,
+        "loss": 6.5703125,
+        "all_shots_same_model": true
+      }
+    ]
+  },
+  "v2": {
+    "state": {
+      "stage_index": 1,
+      "epoch_index": 0,
+      "updates": 2,
+      "status": "epoch_cap",
+      "initial_gradient_norm": null,
+      "recent": [],
+      "version": 1,
+      "array_path": "states/state_00001.npz",
+      "array_sha256": "7402e1c6da8cd86802ff07d661cedbf785301a3fb8f0f13927f503145a2fa130",
+      "model_sha256": "56d38811c0643f0d95b97feb59c6a7ddde143d5abf64f1550e2db8d994adb563",
+      "runtime_signature_sha256": "529fc132800fe77a62b3d729ca61be0e4f6d7efe7ce2fbebf81181c5f05b91b6",
+      "protocol_sha256": "6e081830d9470095db5d7047bef4bf532f87c802cb7be993494ae575cad3befc"
+    },
+    "accepted": true,
+    "step_m_s": 0.125,
+    "loss_after": 0.0,
+    "evaluations": [
+      {
+        "model_sha256": "736d8bb0519e1f627e1be55c063218b7529f973de0047f7dbb80b7832808a80a",
+        "shot_ids": [
+          0,
+          1,
+          2
+        ],
+        "gradient": true,
+        "loss": 0.0078125,
+        "all_shots_same_model": true
+      },
+      {
+        "model_sha256": "56d38811c0643f0d95b97feb59c6a7ddde143d5abf64f1550e2db8d994adb563",
+        "shot_ids": [
+          0,
+          1,
+          2
+        ],
+        "gradient": false,
+        "loss": 0.0,
+        "all_shots_same_model": true
+      }
+    ]
+  },
+  "policies": {
+    "no_history": {
+      "natural_peak_m_s": 0.125,
+      "scale_factor": 480.0,
+      "curvature_history_used": false,
+      "scaled_peak_m_s": 60.0
+    },
+    "small_history": {
+      "natural_peak_m_s": 0.125,
+      "scale_factor": 1.0,
+      "curvature_history_used": true,
+      "scaled_peak_m_s": 0.125
+    },
+    "large_history": {
+      "natural_peak_m_s": 120.0,
+      "scale_factor": 0.5,
+      "curvature_history_used": true,
+      "scaled_peak_m_s": 60.0
+    }
+  }
+}

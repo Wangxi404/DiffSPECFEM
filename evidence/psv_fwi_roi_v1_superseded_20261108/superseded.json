@@ -1,0 +1,16 @@
+{
+  "status": "superseded_optimizer_step_floor",
+  "completed_inversion": false,
+  "accepted_updates": 9,
+  "coarse_accepted": 8,
+  "fine_accepted": 1,
+  "first_fine_loss_before": 0.005096474614834828,
+  "first_fine_loss_after": 0.00455346248201865,
+  "first_fine_actual_step_m_s": 30.0,
+  "original_state_preserved_sha256": "5fbd8e6998a18e5c549c7d22b2d60f95f2ab5958643d8b53e8419a3035763093",
+  "driver_sha256": "28eed616dacde81f48eb1d470b927f7969166fe1a74468be88e6dd3ac01716c6",
+  "packet_post_sha256": "f991e4118a47659815f18f962b4eba3b87eb904bf8edf2ba642cf0eb81e460e0",
+  "reason": "A history-based natural L-BFGS step smaller than60m/s was always amplified; independent v2 fresh-run policy retains it. Native kernels, objective and gradient are unchanged.",
+  "new_canonical_namespace": "psv_fwi_roi_v2_20261108",
+  "own_driver_terminated_after_no_children": true
+}

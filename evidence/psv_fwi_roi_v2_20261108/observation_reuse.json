@@ -1,0 +1,57 @@
+{
+  "method": "Verified immutable hardlinks, no gradient/model cache reuse",
+  "source_protocol_sha256": "5dbeb98b9855a2b6cf82d39c2524fa12f4d0572d4a4843492c384fbf63a6b633",
+  "new_protocol_sha256": "f0c98cbe250886662204692949625704be50ac8976f4ff1b0617bc6d73d60f0c",
+  "files": [
+    {
+      "stage": "coarse",
+      "shot_id": 0,
+      "sha256": "66d5f535fa0d78a4e63f3330f69ddce2eefcdf2c78ffe6c3d0e7c57ff525eaf0"
+    },
+    {
+      "stage": "coarse",
+      "shot_id": 1,
+      "sha256": "5a6bd3118a769eeabf46740313f10cd508495ac6d801e0124d11a3a3ca9a8f45"
+    },
+    {
+      "stage": "coarse",
+      "shot_id": 2,
+      "sha256": "09987d3b81b3b0053f0e4fbb9d4c88f074bd4f6c2fcbbc4dbee563d1f92c8458"
+    },
+    {
+      "stage": "coarse",
+      "shot_id": 3,
+      "sha256": "614568c7b046fa97ab847328e2042a886ec1ea3d3868ccad1827e0759d465d82"
+    },
+    {
+      "stage": "coarse",
+      "shot_id": 4,
+      "sha256": "3e5ec2a38a3ee7b6e08c0efde10c29f4898b0ad70132f6562c34e22e49248545"
+    },
+    {
+      "stage": "fine",
+      "shot_id": 0,
+      "sha256": "820f6a83bb29a5b17f0b97768c33412b5c9f37820bb7210aa9f63604184c6f58"
+    },
+    {
+      "stage": "fine",
+      "shot_id": 1,
+      "sha256": "34944d072a79448f39374602214b9c1036d70c1e26b47098aa44628a5d9666c5"
+    },
+    {
+      "stage": "fine",
+      "shot_id": 2,
+      "sha256": "8c46520fcfbc4e3187d5ad8cf40d809191ea0e34a3a4029710b4aa84da10006b"
+    },
+    {
+      "stage": "fine",
+      "shot_id": 3,
+      "sha256": "707d2e468ad6f9d7d8c93f2036b88bb3ff0fdb8feb6ebad4fecd690b8e14a7cd"
+    },
+    {
+      "stage": "fine",
+      "shot_id": 4,
+      "sha256": "a94ae744a8b64124c4a1fcc5e2b2cf4254cb5af43d6a0c8180d0031e8854e493"
+    }
+  ]
+}

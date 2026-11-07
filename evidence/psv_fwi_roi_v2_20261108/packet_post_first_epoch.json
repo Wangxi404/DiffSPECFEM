@@ -1,0 +1,72 @@
+{
+  "passed": true,
+  "version": "0.3.0",
+  "packet_sha256": "f991e4118a47659815f18f962b4eba3b87eb904bf8edf2ba642cf0eb81e460e0",
+  "files": [
+    {
+      "path": "LICENSE",
+      "bytes": 1060,
+      "sha256": "8dccc2ed406daefaa2cbf6747c0dc1f70596a918c220722a87618c35827d6585"
+    },
+    {
+      "path": "SKILL.md",
+      "bytes": 9182,
+      "sha256": "9f8e165ae0e77cca52cfc44429499b8299b6b341ec31ccd2163c4ea909f22996"
+    },
+    {
+      "path": "agents/openai.yaml",
+      "bytes": 280,
+      "sha256": "68a9548b4fac66cd86cb761393a3258bcb88a7db26e30c05cb252c1e7b5606e8"
+    },
+    {
+      "path": "assets/visual-example.json",
+      "bytes": 5042,
+      "sha256": "63f3f7e02672a1e6512d1f768cb80b6a09ded4d4b9dba6bf56f0ffd45a32208f"
+    },
+    {
+      "path": "assets/visual-example.png",
+      "bytes": 249786,
+      "sha256": "3fc8e6e71b776f5316b42d77863a908cbb61c90d013db08877b7b2d0e5a215a1"
+    },
+    {
+      "path": "references/application-record.md",
+      "bytes": 2354,
+      "sha256": "aa48e57e8a8570513f41657795784c0e8068d4bb83da325efe1485a8662d9b17"
+    },
+    {
+      "path": "references/derivative-contract.md",
+      "bytes": 3984,
+      "sha256": "405c3e0d94c8d80ad5327bc11a6e8b1c6f8674c19407556ceebe2dab8a5d768a"
+    },
+    {
+      "path": "references/full-shot-inversion.md",
+      "bytes": 6784,
+      "sha256": "585d2ad1068a0097223d176faccd109f1febca5f6755fec717875682659d6b26"
+    },
+    {
+      "path": "references/numerical-acceptance.md",
+      "bytes": 4797,
+      "sha256": "fb0bae0745221b2f29fb2d0adde326accb833588dbd9323e01757754011d3f49"
+    },
+    {
+      "path": "references/visualization-deliverables.md",
+      "bytes": 6993,
+      "sha256": "9e40441d9dcc9d8de3bb62654bc3c2b39ae3f216771d499876cf48bde17447ee"
+    },
+    {
+      "path": "scripts/check_iterations.py",
+      "bytes": 8084,
+      "sha256": "8a8bad44a3a2def9960f887620e4150e7de6c77eef4af41e0fbffbd47f059c6a"
+    },
+    {
+      "path": "scripts/numerics.py",
+      "bytes": 12155,
+      "sha256": "ad8e5ef78da730d41dbe97a8e7ea7514204b055ebc870c6ff34638317cf825f8"
+    },
+    {
+      "path": "scripts/visualize.py",
+      "bytes": 12790,
+      "sha256": "5ebe85aec93aa7c905d6b74e5d999b0fb642972bd48a1f0193581e40f090e8cd"
+    }
+  ]
+}

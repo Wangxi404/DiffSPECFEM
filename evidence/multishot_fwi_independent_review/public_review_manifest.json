@@ -44,12 +44,6 @@
       "original_private_file_sha256": "5b4d481ca0d1c4d2c665fb2a1e8192fa5c032e3d3523d4d95f0efc963dea815d"
     },
     {
-      "path": "plotter_actual_native_wave_qa.json",
-      "bytes": 18174,
-      "sha256": "fe3d8b2e2961c1391f5aeb376094d230d553d48ba74f08e5be5154f45767e54f",
-      "original_private_file_sha256": "4e85efda42b1e3460090938761436e2094cce1564d08b63aae6ac31c8bdba335"
-    },
-    {
       "path": "plotter_source_review.json",
       "bytes": 5988,
       "sha256": "256d84f8150c9fa567f88adb6500b00d42331c8a2604987d2c055cd6d86eb8c6",
@@ -69,8 +63,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 3206,
-      "sha256": "db46da853b15ea1b17baf41730599a542afdab5a12851c7b3784d8a9145cadc1",
+      "bytes": 3698,
+      "sha256": "70600aed55cdbbab5373fb0356836bf52871ad78ba2b3d706e30b1d6a7f6a35b",
       "original_private_file_sha256": null
     },
     {
@@ -84,13 +78,32 @@
       "bytes": 12241,
       "sha256": "2610cd143dcea44990c9931cf7006133ba01cf820194b9affcbd99500bae8236",
       "original_private_file_sha256": "9fcacd9899ad69fbc52e0e48630f88a00993ddc0a96dc883fe0c93b5ce8217a6"
+    },
+    {
+      "path": "audit_transition_bindings.py",
+      "bytes": 12361,
+      "sha256": "aafbbd96cd72fd1f513567afc5eaba1d5d701aec3e4628e78ed01c5f2744bc26",
+      "original_private_file_sha256": "aafbbd96cd72fd1f513567afc5eaba1d5d701aec3e4628e78ed01c5f2744bc26"
+    },
+    {
+      "path": "native_v2_controller_review.json",
+      "bytes": 11696,
+      "sha256": "a7b83305e44e697144fd133e6544ef1bed886b40694a5e80cb71aea8246c8b7e",
+      "original_private_file_sha256": "2a415c92352a4ae54250dd7980df1251006566abc8dc18c87199ec66bf10d952"
+    },
+    {
+      "path": "native_v2_initial_anchor_audit.json",
+      "bytes": 7138,
+      "sha256": "2f3402b0a37dff71396e0e49649fd61db5a39cb9024305fe1f9ab849e314f644",
+      "original_private_file_sha256": "795bd0aeb2d6477e2be3b18a987541e84757ea2d0a2b22e503efc95f1a1edf2c"
     }
   ],
-  "original_private_archive_manifest_sha256": "899ddd6759ea19d4ef04096aa6139705cc561611db0abbbfe333a54b4268dd3d",
+  "original_private_archive_manifest_sha256": "2bddcf1604052a79ee823b6f1061a3b845a88417b2474f63ab0163f1c6babdb5",
   "original_numeric_values_and_solver_source_hashes_preserved": true,
   "private_originals_ignored_by_git": true,
   "root_owned_plotter_QA_excluded": [
-    "plotter_actual_cpu_wave_qa.json"
+    "plotter_actual_cpu_wave_qa.json",
+    "plotter_actual_native_wave_qa.json"
   ],
   "portability_syntax_and_help_checked": true,
   "new_actual_process_group_policy_test": null

@@ -1,0 +1,374 @@
+{
+  "passed": true,
+  "scope": "Independent two-dimensional SPD three-shot actual-controller exercise, direction boundary checks, operator AST comparison and observation-reuse negatives; no wave solver/GPU run.",
+  "old_source_sha256": "28eed616dacde81f48eb1d470b927f7969166fe1a74468be88e6dd3ac01716c6",
+  "new_source_sha256": "3b71ba1c8b5cd2fd30038b287ee8f120f9f3c23e4083b4c483736f9193843439",
+  "changed_existing_function_ASTs": [
+    "prepare",
+    "optimize",
+    "main"
+  ],
+  "all_other_functions_AST_equal": {
+    "jsave": "bda86d1583f3e59c5335a10bdc0bbb4a8d16a62e94350bfd9a7627134c75f899",
+    "nsave": "5371fd3e91d923d4fcadca898331bf1dc60dddae77d5cea1f0a07d0b83426335",
+    "read": "165365da25c105273b069e139db74406526caba3b4ae1c2885a35919c4ebf7fe",
+    "packet_check": "45f27ed0a1e80d5c28ab9e94041212639873408378dac3abc009fb8644422da3",
+    "parameters": "e5c0ea87b172d019b2e3a72bfd7ddad28ac1bf4b756353eb0f63478e32893b3c",
+    "guide": "f83bf7ce1fb0694d7daf69a699360bf76e23ae9bbaba539758255a067eaf7877",
+    "Engine.__init__": "0def7ed31a284cadc5efdde756d5557b10bfa5181adad75c5b36013a832acaae",
+    "Engine.runtime_signature": "d046196c74643c04d3de76bc64f006ec7cd7570c8b55b155f068cdde28bbbb54",
+    "Engine.bind_targets": "2d7837deca1131ed6750d8de078a92f2f91a539909b982751c16b14eccc65240",
+    "Engine.fingerprint": "69df6aba934b046fbb45762bae68410438a4f07fa89cd1cbb468a1e4cc1d5c87",
+    "Engine.event": "16a370fb89a7e615673c8605bd8964c2e5922c3aa1e39660d6825cb36f14778a",
+    "Engine.case": "e51490b89e102f8c9840d8b2506ca1bfe9691133a421f32eca16c19a7457aaeb",
+    "Engine.native": "6d95607fff27b443a6d089f6c1c426c4fc24bcf8989aecbb73de172cd4590247",
+    "Engine.observation": "66eda77719f49245609311f3c06c7617d9f53e7f4454abb92e6a865a294de8f2",
+    "Engine.observe": "8b597d3e2d47ccca4da3596d54fed67118770dfd376b708b965b325b48394c5d",
+    "Engine.batch": "bee0e5f6cb72898c620aba2a3d8e5043c4a844092c22d01e70b6b036e8dc5ced",
+    "lbfgs_direction": "5d7b2bfce0b3fbbe0124183b48ab7939218d1fcbeec2b381ce2de05a656b8e53",
+    "save_state": "5de7b90c2d4e86af4f08bd0f197cc11418abcdab1851d983d6f16dfb0aed81a0",
+    "unit_check": "a0f36b4b47150d0a6f8185a808f06932bd3fcc781563350e7cd334a282e2f6aa"
+  },
+  "SPD_v1": {
+    "accepted": false,
+    "state_status": "line_search_stalled",
+    "step": null,
+    "loss_after": null,
+    "calls": [
+      {
+        "gradient": true,
+        "same_model_sha256": "3d46dafb69c9617d6ce4b5366b61c644cb5374bdfd5964759f9ce24702aff58b",
+        "shot_ids": [
+          0,
+          1,
+          2
+        ],
+        "J": 0.013749999999997728
+      },
+      {
+        "gradient": false,
+        "same_model_sha256": "2b0a917fffc268ee4fe2a9ddd8ce33d3adcd130fd2411199fa4e013610a2f2cb",
+        "shot_ids": [
+          0,
+          1,
+          2
+        ],
+        "J": 3154.8137499994787
+      },
+      {
+        "gradient": false,
+        "same_model_sha256": "c488ac800d23818c0930d5bb32751a078532398ac22ac64231272114450d8f0c",
+        "shot_ids": [
+          0,
+          1,
+          2
+        ],
+        "J": 785.4137499998701
+      },
+      {
+        "gradient": false,
+        "same_model_sha256": "1345d9972479449f67ea4951d393f6633e5ee66d0f03fd0839f1b35680cb0a8f",
+        "shot_ids": [
+          0,
+          1,
+          2
+        ],
+        "J": 194.7137499999678
+      },
+      {
+        "gradient": false,
+        "same_model_sha256": "d214be67ef7bc1804f06edfc42b990a27ed934215d01e4d0cbe064bf54413d7b",
+        "shot_ids": [
+          0,
+          1,
+          2
+        ],
+        "J": 47.86374999999208
+      },
+      {
+        "gradient": false,
+        "same_model_sha256": "18361864154b876ccede16e018069f9ebe34d212d382ae2a5baeb4f2ba769f11",
+        "shot_ids": [
+          0,
+          1,
+          2
+        ],
+        "J": 11.563749999998088
+      }
+    ]
+  },
+  "SPD_v2": {
+    "accepted": true,
+    "state_status": "epoch_cap",
+    "step": 0.125,
+    "loss_after": 0.0,
+    "calls": [
+      {
+        "gradient": true,
+        "same_model_sha256": "3d46dafb69c9617d6ce4b5366b61c644cb5374bdfd5964759f9ce24702aff58b",
+        "shot_ids": [
+          0,
+          1,
+          2
+        ],
+        "J": 0.013749999999997728
+      },
+      {
+        "gradient": false,
+        "same_model_sha256": "afeafe1915134e70a734ec2f50c417107157eba9ed4ba2b050cd51ca4bd252e7",
+        "shot_ids": [
+          0,
+          1,
+          2
+        ],
+        "J": 0.0
+      }
+    ]
+  },
+  "scaling_policy": [
+    {
+      "natural": 0.001,
+      "history": true,
+      "natural_peak_m_s": 0.001,
+      "scale_factor": 1.0,
+      "curvature_history_used": true,
+      "scaled_peak_m_s": 0.001
+    },
+    {
+      "natural": 0.125,
+      "history": true,
+      "natural_peak_m_s": 0.125,
+      "scale_factor": 1.0,
+      "curvature_history_used": true,
+      "scaled_peak_m_s": 0.125
+    },
+    {
+      "natural": 59.9,
+      "history": true,
+      "natural_peak_m_s": 59.9,
+      "scale_factor": 1.0,
+      "curvature_history_used": true,
+      "scaled_peak_m_s": 59.9
+    },
+    {
+      "natural": 60.0,
+      "history": true,
+      "natural_peak_m_s": 60.0,
+      "scale_factor": 1.0,
+      "curvature_history_used": true,
+      "scaled_peak_m_s": 60.0
+    },
+    {
+      "natural": 120.0,
+      "history": true,
+      "natural_peak_m_s": 120.0,
+      "scale_factor": 0.5,
+      "curvature_history_used": true,
+      "scaled_peak_m_s": 60.0
+    },
+    {
+      "natural": 0.125,
+      "history": false,
+      "natural_peak_m_s": 0.125,
+      "scale_factor": 480.0,
+      "curvature_history_used": false,
+      "scaled_peak_m_s": 60.0
+    }
+  ],
+  "accepted_nonunit_absent_null_only": true,
+  "negative_reuse_cases": [
+    {
+      "case": "unit-null-not-normalized",
+      "rejected": true,
+      "reason": "Observation reuse requires identical physical inputs and acquisition"
+    },
+    {
+      "case": "nonunit-nonnull",
+      "rejected": true,
+      "reason": "Observation reuse requires identical physical inputs and acquisition"
+    },
+    {
+      "case": "time-step",
+      "rejected": true,
+      "reason": "Observation reuse requires identical physical inputs and acquisition"
+    },
+    {
+      "case": "source",
+      "rejected": true,
+      "reason": "Observation reuse requires identical physical inputs and acquisition"
+    },
+    {
+      "case": "model-bytes",
+      "rejected": true,
+      "reason": "Observation role/input bytes differ"
+    },
+    {
+      "case": "target-bytes",
+      "rejected": true,
+      "reason": "Old observed data/source hash mismatch"
+    }
+  ],
+  "directory": "<TEMP>/native-v2-freeze-lnj_44xa",
+  "full_resume_and_cache_regression": {
+    "passed": true,
+    "scope": "Actual optimize/batch/Armijo/L-BFGS/stage/cache/checkpoint/ledger control flow with an analytic tiny CPU observation engine. No native wave solver, MPI or GPU process launched; derivative physics remains separately qualified.",
+    "source_sha256": "3b71ba1c8b5cd2fd30038b287ee8f120f9f3c23e4083b4c483736f9193843439",
+    "directory": "<TEMP>/native_real_loop_cpu_qpf_nq6e",
+    "uninterrupted_vs_two_interruption_resume_final_Vp_uint64_equal": true,
+    "checks": {
+      "uninterrupted": {
+        "ledger": {
+          "passed": true,
+          "status": "PASS",
+          "complete": true,
+          "iterations": 4,
+          "accepted_updates": 4,
+          "shot_count": 3,
+          "iteration_statuses": {
+            "accepted": 4,
+            "converged": 0,
+            "rejected": 0,
+            "failed": 0,
+            "interrupted": 0
+          },
+          "scope": "Orchestration metadata only; not a numerical-gradient or inversion-convergence certificate"
+        },
+        "status": "epoch_cap",
+        "stage_first_history_counts": {
+          "s0": 0,
+          "s1": 0
+        },
+        "accepted_actual_delta_slopes": [
+          -0.0803693528427554,
+          -0.0442888588361245,
+          -0.0016362488744384339,
+          -0.00038232972912193773
+        ]
+      },
+      "resumed": {
+        "ledger": {
+          "passed": true,
+          "status": "PASS",
+          "complete": true,
+          "iterations": 4,
+          "accepted_updates": 4,
+          "shot_count": 3,
+          "iteration_statuses": {
+            "accepted": 4,
+            "converged": 0,
+            "rejected": 0,
+            "failed": 0,
+            "interrupted": 0
+          },
+          "scope": "Orchestration metadata only; not a numerical-gradient or inversion-convergence certificate"
+        },
+        "status": "epoch_cap",
+        "stage_first_history_counts": {
+          "s0": 0,
+          "s1": 0
+        },
+        "accepted_actual_delta_slopes": [
+          -0.0803693528427554,
+          -0.0442888588361245,
+          -0.0016362488744384339,
+          -0.00038232972912193773
+        ]
+      }
+    },
+    "immutable_target_rejection": {
+      "rejected": true,
+      "message": "Frozen stage observations changed"
+    },
+    "immutable_source_rejection": {
+      "rejected": true,
+      "message": "Immutable source/case changed"
+    },
+    "immutable_runtime_rejection": {
+      "rejected": true,
+      "message": "Runtime/API/native binary signature changed"
+    },
+    "actual_analytic_forward_calls": 72,
+    "zero_gradient_no_update": {
+      "status": "data_gradient_stationarity",
+      "ledger": {
+        "passed": true,
+        "status": "PASS",
+        "complete": true,
+        "iterations": 2,
+        "accepted_updates": 0,
+        "shot_count": 3,
+        "iteration_statuses": {
+          "accepted": 0,
+          "converged": 2,
+          "rejected": 0,
+          "failed": 0,
+          "interrupted": 0
+        },
+        "scope": "Orchestration metadata only; not a numerical-gradient or inversion-convergence certificate"
+      }
+    },
+    "projected_stationarity_no_update": {
+      "status": "data_gradient_stationarity",
+      "ledger": {
+        "passed": true,
+        "status": "PASS",
+        "complete": true,
+        "iterations": 2,
+        "accepted_updates": 0,
+        "shot_count": 3,
+        "iteration_statuses": {
+          "accepted": 0,
+          "converged": 2,
+          "rejected": 0,
+          "failed": 0,
+          "interrupted": 0
+        },
+        "scope": "Orchestration metadata only; not a numerical-gradient or inversion-convergence certificate"
+      }
+    },
+    "limitation": "Native forward/gradient and binary-file availability are mocked solely for surrounding control flow. This does not substitute for actual native unit and directional checks."
+  },
+  "freeze_verdict": "PASS for fresh canonical v2 controller; actual initial-anchor binding is in a separate report",
+  "independent_replay_method": "A temporary copy of independent_native_full_loop.py changed only its SOURCE from v1 to v2; original public review and v1 numerical files were not edited.",
+  "two_dimensional_fixture_spec": {
+    "H": [
+      [
+        2.0,
+        0.5
+      ],
+      [
+        0.5,
+        1.0
+      ]
+    ],
+    "shot_weights": [
+      0.3,
+      1.2,
+      1.5
+    ],
+    "target_Vp": [
+      2500.125,
+      2499.95
+    ],
+    "initial_Vp": [
+      2500.0,
+      2500.0
+    ],
+    "seed_H_conjugate_s_pairs": [
+      [
+        1.0,
+        0.0
+      ],
+      [
+        -0.25,
+        1.0
+      ]
+    ],
+    "scope": "Tiny analytic observation oracle, no Marmousi truth or native wave solver."
+  },
+  "original_private_report_sha256": "2a415c92352a4ae54250dd7980df1251006566abc8dc18c87199ec66bf10d952",
+  "sanitization": {
+    "scope": "Only private path identifiers redacted; all original numbers, source hashes, outcomes and limitations retained.",
+    "private_archive_relative_path": ".cache/private-review/multishot_fwi_independent_review/native_v2_controller_review.json"
+  }
+}

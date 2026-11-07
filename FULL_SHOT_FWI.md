@@ -34,6 +34,13 @@ preparation and offline true-model evaluation are separate actions. True-model
 error cannot choose an epoch count, step length or stopping decision. The
 strong known-Vs prior must remain visible when interpreting recovered detail.
 
+The canonical entry point is `scripts/invert_vponly_psv_v2.py`. With curvature
+history, it preserves the natural L-BFGS step and caps its maximum physical
+change at 60 m/s. Initial or fallback steepest directions use the declared
+initial scaling. `direction_scaling.json` records the applied scale. The V1
+entry point and its completed diagnostic checks remain archived; V2 uses the
+same native/data operator and starts a fresh model trajectory.
+
 ## Verification before a long run
 
 The native three-shot qualification uses actual original and extended
@@ -77,9 +84,10 @@ the fine-stage temporary history is substantial and is not a RAM-saving claim.
 ## Entry points and outputs
 
 ```bash
-python scripts/invert_vponly_psv.py prepare --name MY_NEW_EXPERIMENT
-python scripts/invert_vponly_psv.py observe --name MY_NEW_EXPERIMENT
-python scripts/invert_vponly_psv.py invert --name MY_NEW_EXPERIMENT
+python scripts/experiment_vponly_psv.py prepare
+python scripts/invert_vponly_psv_v2.py prepare --name MY_NEW_EXPERIMENT
+python scripts/invert_vponly_psv_v2.py observe --name MY_NEW_EXPERIMENT
+python scripts/invert_vponly_psv_v2.py invert --name MY_NEW_EXPERIMENT
 ```
 
 Use a fresh namespace for changed physics or optimization settings. The

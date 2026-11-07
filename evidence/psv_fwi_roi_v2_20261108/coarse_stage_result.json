@@ -1,0 +1,29 @@
+{
+  "inversion_status": "running_fine_stage",
+  "completed_inversion": false,
+  "completed_coarse_accepted_epochs": 8,
+  "completed_fine_accepted_epochs_at_receipt": 0,
+  "initial_coarse_loss": 0.01080503001695703,
+  "last_coarse_loss": 0.00039206266365522543,
+  "last_coarse_model_sha256": "0e1e8a982b8762600e822f40070f8ce657c8603d468d10fc944f1ccbc8ed19c2",
+  "last_coarse_step": {
+    "natural_peak_m_s": 35.42392052588991,
+    "curvature_history_used": true,
+    "scale_factor": 1.0,
+    "actual_step_linf_m_s": 35.4239205258898,
+    "alpha": 1.0,
+    "loss_before": 0.0005189450120315763,
+    "loss_after": 0.00039206266365522543,
+    "armijo_rhs": 0.0005189216023066567
+  },
+  "fine_warmstart_actual_native_guide": {
+    "model_sha256": "0e1e8a982b8762600e822f40070f8ce657c8603d468d10fc944f1ccbc8ed19c2",
+    "diagnostic_native_steps": 10,
+    "max_f0_hz": 4.708734569271267,
+    "max_dt_s": 0.000587086328861399,
+    "requested_f0_hz": 4.0,
+    "requested_dt_s": 0.00025,
+    "passed": true
+  },
+  "scope": "Actual fresh v2 coarse stage only. Fine stage continues at this accepted model, with curvature history reset and no Vp reset. Data loss reduction is not a post-hoc true-model recovery measurement."
+}

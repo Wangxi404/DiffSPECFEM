@@ -1,0 +1,7 @@
+{
+  "status": "rejected_before_native_call",
+  "native_calls": 0,
+  "reason": "Old non-unit ROI protocol omitted unit_actual_receiver_depths_m; new protocol explicitly used null. Exact physical/case/input fields matched; strict dictionary equality rejected harmless metadata difference.",
+  "source_sha256": "c61f33bb29dde87a978f50ae5b2056078713613ea61746ced0401a14762460f9",
+  "preserved_attempt": "psv_fwi_roi_v2_20261108_prepare_attempt1"
+}

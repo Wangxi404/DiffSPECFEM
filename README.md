@@ -22,7 +22,9 @@ patches, original-binary hashes, failures and repairs are recorded in
 **Full-shot Vp inversion is now runnable.** Each iteration evaluates all five
 independent shots at one current model, accumulates their derivatives and
 accepts one update after full-shot line search. The new Marmousi-II ROI has
-separate 2/4 Hz stages and known Vs/density priors. See the
+separate 2/4 Hz stages and known Vs/density priors. The canonical V2 optimizer
+preserves small natural L-BFGS steps while capping large physical changes.
+See the
 [protocol and output table](FULL_SHOT_FWI.md),
 [figure contract](FULL_SHOT_FIGURES.md) and
 [independent numerical/control-flow audits](evidence/multishot_fwi_independent_review/).
