@@ -1,0 +1,243 @@
+{
+  "reviewer_only": true,
+  "native_solver_runs": 0,
+  "model_arrays_included": false,
+  "objectives": {
+    "l2": {
+      "data_vjp": {
+        "exact_equal": true,
+        "absolute_linf": 0.0,
+        "relative_l2": 0.0
+      },
+      "native_cotangent_binary": {
+        "exact_equal": true,
+        "absolute_linf": 0.0,
+        "relative_l2": 0.0
+      },
+      "raw_native_vs_saved": {
+        "exact_equal": true,
+        "absolute_linf": 0.0,
+        "relative_l2": 0.0
+      },
+      "raw_to_grid_chainrule": {
+        "exact_equal": false,
+        "absolute_linf": 4.733165431326071e-30,
+        "relative_l2": 1.150013271242171e-16
+      },
+      "native_rho_map": {
+        "exact_equal": false,
+        "absolute_linf": 1.3642420526593924e-12,
+        "relative_l2": 8.305780925063174e-17
+      },
+      "native_lambda_map": {
+        "exact_equal": false,
+        "absolute_linf": 5.91278076171875e-05,
+        "relative_l2": 6.318519620152597e-16
+      },
+      "native_mu_map": {
+        "exact_equal": false,
+        "absolute_linf": 1.71661376953125e-05,
+        "relative_l2": 2.944792426240783e-16
+      },
+      "native_rows": 179200,
+      "solid_rows": 153600,
+      "water_rows": 25600,
+      "water_native_cotangents_exact_zero": true,
+      "value_independent": 1.2677336029522484e-10,
+      "value_reported": 1.2677336029522479e-10,
+      "independent_modeldot_rhs": 2.1006473047909343e-09,
+      "reported_modeldot_rhs": [
+        2.1006473047909347e-09,
+        2.1006473047909347e-09
+      ],
+      "modeldot_absolute_errors": [
+        2.901326955791288e-15,
+        3.223696100098448e-16
+      ],
+      "modeldot_relative_errors": [
+        1.3811585358352391e-06,
+        1.534620349044879e-07
+      ],
+      "centered_difference_order": 2.0000001461058656,
+      "source_array_sha256": {
+        "gradient": "b1cc764130ed14f6188b3fec253acc55048b1e92bef00e557d55ccc469864b83",
+        "data": "4f604287c8b3abde0b60ed78b267de9ec38917d7182641fc97ac03e1793ff4e3",
+        "cotangent": "b30660409b15268802e2abc14acb75362639f03f1a52e8fa6d4c2c7a417a4ed1",
+        "sample_time": "395dee69724d0ef6989bf2ce5e38623c82b54bf9fafecaf315cd9c8e49863192"
+      },
+      "raw_gradient_is_finite": true,
+      "local_public_arrays_match_private_source": {
+        "gradient": true,
+        "data": true,
+        "cotangent": true,
+        "sample_time": true
+      }
+    },
+    "reflection_window_l2": {
+      "data_vjp": {
+        "exact_equal": true,
+        "absolute_linf": 0.0,
+        "relative_l2": 0.0
+      },
+      "native_cotangent_binary": {
+        "exact_equal": true,
+        "absolute_linf": 0.0,
+        "relative_l2": 0.0
+      },
+      "raw_native_vs_saved": {
+        "exact_equal": true,
+        "absolute_linf": 0.0,
+        "relative_l2": 0.0
+      },
+      "raw_to_grid_chainrule": {
+        "exact_equal": false,
+        "absolute_linf": 1.5777218104420236e-30,
+        "relative_l2": 1.3323548776358446e-16
+      },
+      "native_rho_map": {
+        "exact_equal": false,
+        "absolute_linf": 1.3642420526593924e-12,
+        "relative_l2": 8.305780925063174e-17
+      },
+      "native_lambda_map": {
+        "exact_equal": false,
+        "absolute_linf": 5.91278076171875e-05,
+        "relative_l2": 6.318519620152597e-16
+      },
+      "native_mu_map": {
+        "exact_equal": false,
+        "absolute_linf": 1.71661376953125e-05,
+        "relative_l2": 2.944792426240783e-16
+      },
+      "native_rows": 179200,
+      "solid_rows": 153600,
+      "water_rows": 25600,
+      "water_native_cotangents_exact_zero": true,
+      "value_independent": 1.7529609349826966e-11,
+      "value_reported": 1.7529609349826963e-11,
+      "independent_modeldot_rhs": 2.2202348112174999e-10,
+      "reported_modeldot_rhs": [
+        2.2202348112174999e-10,
+        2.2202348112174999e-10
+      ],
+      "modeldot_absolute_errors": [
+        1.467683894422573e-16,
+        1.630752867453393e-17
+      ],
+      "modeldot_relative_errors": [
+        6.610489516727044e-07,
+        7.344956755088191e-08
+      ],
+      "centered_difference_order": 2.0000039156953378,
+      "source_array_sha256": {
+        "gradient": "758bf12d8c8a04e330b3c5e5f15d95beca304b5fb9293a2320f402dbcb83d29b",
+        "data": "4f604287c8b3abde0b60ed78b267de9ec38917d7182641fc97ac03e1793ff4e3",
+        "cotangent": "2ccf5f9728258c41eb1ccf8b9ee28b43f4e98d31a9f998295f21c19019fc0121",
+        "sample_time": "395dee69724d0ef6989bf2ce5e38623c82b54bf9fafecaf315cd9c8e49863192"
+      },
+      "raw_gradient_is_finite": true,
+      "local_public_arrays_match_private_source": {
+        "gradient": true,
+        "data": true,
+        "cotangent": true,
+        "sample_time": true
+      }
+    }
+  },
+  "source_runtime_hash_matches": true,
+  "runtime_script_sha256": "d8720d3464e23fc5e109d1f334e804aad97dfb7aca7c88abed9e4d0a4a713a90",
+  "native_baseline_vs_record": {
+    "exact_equal": true,
+    "absolute_linf": 0.0,
+    "relative_l2": 0.0
+  },
+  "native_record_vs_saved": {
+    "exact_equal": true,
+    "absolute_linf": 0.0,
+    "relative_l2": 0.0
+  },
+  "native_target_vs_saved": {
+    "exact_equal": true,
+    "absolute_linf": 0.0,
+    "relative_l2": 0.0
+  },
+  "modeldot_limit": "Independent static RHS recomputed; FD LHS taken from saved runtime JSON because plus/minus full traces were not retained. No solver rerun.",
+  "local_public_manifest": [
+    {
+      "path": "Par_file",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "SOURCE",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "STATIONS",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "data_and_fixed_window.npz",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "gradient_l2.npz",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "gradient_reflection_window_l2.npz",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "grid_gradients.npz",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "interfaces_elastic_analytic.dat",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "pilot.json",
+      "present": true,
+      "match": true
+    }
+  ],
+  "local_public_complete": true,
+  "status": "numerical and public source review passed for water-source 1Hz two-objective pilot; new 2Hz case and visual review are separate",
+  "native_sampling_coupling_geometry": {
+    "path": "/home/xiwang/DiffSPECFEM-PSV/evidence/psv_gradient_detail_water1/gradient_l2/OUTPUT_FILES",
+    "exists": true,
+    "ranks": [
+      "psv_rank000000_",
+      "psv_rank000001_"
+    ],
+    "native_sampling_lhs": -9.691650434581902,
+    "native_sampling_rhs": -9.691650434581904,
+    "native_sampling_relative_error": 1.8328734113870073e-16,
+    "native_coupling_lhs": -2350.7728265510823,
+    "native_coupling_rhs": -2350.7728265510827,
+    "native_coupling_relative_error": 1.9344589394188422e-16,
+    "interface_edges": 128,
+    "interface_length_m": 8955.0,
+    "expected_edges": 128,
+    "expected_length_m": 8955.0,
+    "passed": true,
+    "source_files_sha256": {
+      "psv_rank000000_sampling_native_nodes.txt": "7c44cdb5c577ae573ad6358fef4fd1ee935a3f4a87016522f84b510962424d7d",
+      "psv_rank000000_sampling_native_receivers.txt": "3dabf05f155407e5c5303f033caf7c5992b2ef8d50f968122f23e449cabbe339",
+      "psv_rank000000_coupling_probe.txt": "63ef7b99d48d4ea369bcffe6b25507a7cada22ade657231c729a2b3ff57a4b68",
+      "psv_rank000000_coupling_geometry.txt": "477a5882f4a20711a5472513fe2992d9221589d0c43836400fbe3b89a2463737",
+      "psv_rank000001_sampling_native_nodes.txt": "eb9fbb0279227d0ab5e3562d93593586d4ac9ecf92b2978e79485d6ff84bd888",
+      "psv_rank000001_sampling_native_receivers.txt": "ed927298a767d2e5b627081c0ea24bced342b8a940c9b0a9193981e7718241ee",
+      "psv_rank000001_coupling_probe.txt": "259b28e3501757e37f77ca549b4c6805d101b5b412b83942d12f2838e3018e2d",
+      "psv_rank000001_coupling_geometry.txt": "a79ea7bfc792b915bbb0bc06754e939671e72cdbf9654ce74ffc977f989e9669"
+    }
+  }
+}

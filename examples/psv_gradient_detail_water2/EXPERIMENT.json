@@ -1,0 +1,23 @@
+{
+  "case": "psv_gradient_detail_water2",
+  "physics": "native coupled acoustic/P-SV, fixed water, active solid Vp/Vs/rho",
+  "parent_case": "psv_marmousi2_full",
+  "changed": {
+    "source_depth_m": 150.0,
+    "source_native_z_m": 3315.0,
+    "source_function": "Gaussian potential chi, native time_function_type3",
+    "source_factor": 100000000.0
+  },
+  "unchanged": "prepared true/initial sigma150m material arrays, 41 solid two-component displacement receivers, reflecting/free outer boundaries",
+  "native_numerics": {
+    "frequency_hz": 2.0,
+    "dt_s": 0.0005,
+    "nstep": 12000,
+    "duration_s": 6.0,
+    "nx": 192,
+    "nz_solid": 72,
+    "nz_water": 12,
+    "source_t0_s": 0.6
+  },
+  "source_units": "Acoustic and elastic force source factors have different physical meaning; equal numeric factors do not assert equal source energy."
+}

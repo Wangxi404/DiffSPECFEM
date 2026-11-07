@@ -1,0 +1,9 @@
+{
+  "claim": "Moving the fixed source into water and increasing bandwidth within native mesh guidance changes real subsurface objective sensitivity; raw gradients are retained.",
+  "backend": "python",
+  "archetype": "image plate + quant",
+  "input_identity": "Same full Marmousi-II prepared fields and sigma150m initial model; source/mesh/frequency changes explicitly separated.",
+  "integrity": "No derivative filtering, illumination correction, depth gain or inserted model texture; all samples retained with declared display saturation.",
+  "main_panels": "true/initial inputs and old/best actual derivatives",
+  "ablation_panels": "solid source, water source, water source plus fixed data window; no claim that window always improves depth sensitivity"
+}

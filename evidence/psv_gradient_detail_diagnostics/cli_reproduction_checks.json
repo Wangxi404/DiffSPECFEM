@@ -1,0 +1,65 @@
+{
+  "passed": true,
+  "scope": "CLI parsing, syntax via py_compile, declared reproduction paths/inputs and fresh-name collision checks only; NO solver executed",
+  "script_sha256": "97d64e6a81bafbea0fc413c0fba468285f4b91715e3424add616932666c45ccc",
+  "commands": [
+    {
+      "command": "analyze",
+      "existing": "evidence/psv_marmousi128",
+      "model": "data/prepared/marmousi2_full_psv_solid_domain.npz",
+      "output": "evidence/psv_gradient_detail_diagnostics"
+    },
+    {
+      "command": "pilot",
+      "model": "data/prepared/marmousi2_full_psv_solid_domain.npz",
+      "output": "evidence/my_water1",
+      "case_name": "my_water1",
+      "factor": 100000000.0,
+      "frequency": 1.0,
+      "nx": 128,
+      "nz_solid": 48,
+      "nz_water": 8,
+      "dt": 0.00075,
+      "duration": 6.0,
+      "max_history_gb": 160.0,
+      "losses": [
+        "l2",
+        "reflection_window_l2"
+      ]
+    },
+    {
+      "command": "pilot",
+      "model": "data/prepared/marmousi2_full_psv_solid_domain.npz",
+      "output": "evidence/my_water2",
+      "case_name": "my_water2",
+      "factor": 100000000.0,
+      "frequency": 2.0,
+      "nx": 192,
+      "nz_solid": 72,
+      "nz_water": 12,
+      "dt": 0.0005,
+      "duration": 6.0,
+      "max_history_gb": 160.0,
+      "losses": [
+        "l2"
+      ]
+    }
+  ],
+  "source_template_exists": true,
+  "prepared_model_exists": true,
+  "model_shape": [
+    3,
+    67,
+    200
+  ],
+  "reproduction_public_layer": "Pilots write compact evidence under OUTPUT/public; a new plotter invocation must use that public child directory, or a flat published evidence directory.",
+  "runtime_prerequisites": "Linux native MPI baseline/extension from build_psv.sh and prepared Marmousi input are required for actual simulation; this check does not claim a new native run.",
+  "input_model_sha256": "8f720845c46628e3803d7433d6832d669ff496caf14fef63e6a8c6e80ab8a683",
+  "existing_namespace_guard": {
+    "passed": true,
+    "error": "Use a new namespace, preserving every prior attempt",
+    "existing_report_unchanged": true,
+    "native_solver_called": false
+  },
+  "postrun_packaging_change": "The current script additionally copies its exact runtime snapshot into fresh OUTPUT/public and declares it in the manifest. Archived water1/water2 executed sources remain unchanged."
+}

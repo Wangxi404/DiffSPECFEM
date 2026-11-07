@@ -1,0 +1,103 @@
+{
+  "status": "rendered; independent report-size PDF and visual QA passed; see qa/visual_qa.json",
+  "gradient_postprocessing": "none",
+  "comparison": "Physical source units and energy differ; no gradient-amplitude effect size or inversion-recovery claim.",
+  "best_frequency_hz": 2.0,
+  "display_scales": {
+    "old_vp": {
+      "absolute_limit": 6.355628482471507e-08,
+      "percentile": 99.0,
+      "scale_region": "solid input samples at depth>=1000m; display limit only, no samples removed",
+      "saturated_fraction_all_solid": 0.07388059701492537,
+      "derivative_modified": false
+    },
+    "best_vp": {
+      "absolute_limit": 1.502348429391719e-16,
+      "percentile": 99.0,
+      "scale_region": "solid input samples at depth>=1000m; display limit only, no samples removed",
+      "saturated_fraction_all_solid": 0.1058955223880597,
+      "derivative_modified": false
+    },
+    "old_vs": {
+      "absolute_limit": 1.4253769163536907e-06,
+      "percentile": 99.0,
+      "scale_region": "solid input samples at depth>=1000m; display limit only, no samples removed",
+      "saturated_fraction_all_solid": 0.08343283582089553,
+      "derivative_modified": false
+    },
+    "best_vs": {
+      "absolute_limit": 5.848322096820265e-16,
+      "percentile": 99.0,
+      "scale_region": "solid input samples at depth>=1000m; display limit only, no samples removed",
+      "saturated_fraction_all_solid": 0.0708955223880597,
+      "derivative_modified": false
+    },
+    "solid_vp": {
+      "absolute_limit": 6.355628482471507e-08,
+      "percentile": 99.0,
+      "scale_region": "solid input samples at depth>=1000m; display limit only, no samples removed",
+      "saturated_fraction_all_solid": 0.07388059701492537,
+      "derivative_modified": false
+    },
+    "water_vp": {
+      "absolute_limit": 1.1721969863755719e-16,
+      "percentile": 99.0,
+      "scale_region": "solid input samples at depth>=1000m; display limit only, no samples removed",
+      "saturated_fraction_all_solid": 0.10820895522388059,
+      "derivative_modified": false
+    },
+    "window_vp": {
+      "absolute_limit": 1.6358718814680285e-17,
+      "percentile": 99.0,
+      "scale_region": "solid input samples at depth>=1000m; display limit only, no samples removed",
+      "saturated_fraction_all_solid": 0.07059701492537314,
+      "derivative_modified": false
+    },
+    "solid_vs": {
+      "absolute_limit": 1.4253769163536907e-06,
+      "percentile": 99.0,
+      "scale_region": "solid input samples at depth>=1000m; display limit only, no samples removed",
+      "saturated_fraction_all_solid": 0.08343283582089553,
+      "derivative_modified": false
+    },
+    "water_vs": {
+      "absolute_limit": 5.404136566119484e-16,
+      "percentile": 99.0,
+      "scale_region": "solid input samples at depth>=1000m; display limit only, no samples removed",
+      "saturated_fraction_all_solid": 0.09880597014925373,
+      "derivative_modified": false
+    },
+    "window_vs": {
+      "absolute_limit": 6.531540121608684e-17,
+      "percentile": 99.0,
+      "scale_region": "solid input samples at depth>=1000m; display limit only, no samples removed",
+      "saturated_fraction_all_solid": 0.05970149253731343,
+      "derivative_modified": false
+    }
+  },
+  "plotter_sha256": "349cf93c0bd7eff5b8119be108dd9c04bf455c166c0373247724dee9655045db",
+  "local_model_sha256": "47dc493db754eac86fcd5cbddf9fea50a943c7d1a869f06d549b00478bdef93c",
+  "inputs": [
+    {
+      "path": "/Users/sid/seismo/ADInversion/hybridAD/DiffSPECFEM/evidence/psv_marmousi128/gradient_l2.npz",
+      "sha256": "d3c78c1dcbf9e73722b7cd98f12a1c74196d27bd04802520228800ae2343675f"
+    },
+    {
+      "path": "evidence/psv_gradient_detail_water1/grid_gradients.npz",
+      "sha256": "09f85b9924ab416dc1f70a7342043b073fd026346c678386c5925c3d06faf81b"
+    },
+    {
+      "path": "evidence/psv_gradient_detail_water2/grid_gradients.npz",
+      "sha256": "a1adff9eaec16f1d0d58b4ab3fefbba89117147751c1091bea71446def2e4676"
+    },
+    {
+      "path": "evidence/psv_gradient_detail_water2/pilot.json",
+      "sha256": "f6115523db10bd6322f5efb8b3715983c33ffcec6640852747b10bb5e9a683ca"
+    }
+  ],
+  "source_case_reports": {
+    "water_1Hz": "examples/psv_gradient_detail_water1",
+    "best": "examples/psv_gradient_detail_water2"
+  },
+  "density_note": "True and initial density are constant; density sensitivity is not a density reconstruction and is retained in the numerical bundles."
+}

@@ -1,0 +1,7 @@
+{
+  "declared_utc": "2026-11-07T05:30:18.409804+00:00",
+  "phase": "before pilot model-difference checks; native forward/adjoints underway",
+  "requirement": "all informative model-dot relative_error<1e-5, independent of helper absolute tolerance",
+  "raw_production_gradient": "unchanged physical objective scale",
+  "validation_if_near_zero": "fixed target RMS squared normalization may be used only in the numerical dot comparison; no fitted gradient scaling"
+}

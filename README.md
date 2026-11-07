@@ -19,6 +19,16 @@ patches, original-binary hashes, failures and repairs are recorded in
 
 ## Models, wavefields and gradients
 
+**New: gradient-detail experiments.** Moving the source into fixed water and
+using 2 Hz on a 192×84 mesh increases deeper sensitivity while retaining the
+same Marmousi-II inputs and sigma = 150 m starting model. The linear display
+and its saturation limits are explicit; no gradient sharpening is used.
+
+[![Actual gradient-detail experiments](figures/gradient_detail/models_and_gradient_detail.png)](GRADIENT_DETAIL.md)
+
+[Read the parameter choices, negative window result and numerical checks](GRADIENT_DETAIL.md).
+The original 1 Hz verification gallery and its separate configuration follow.
+
 The main example is **P–SV, including native water–solid coupling**, and records
 both UX and UZ. The animation uses actual native displacement in both phases
 at the **smoothed initial model**, with a fixed color scale.

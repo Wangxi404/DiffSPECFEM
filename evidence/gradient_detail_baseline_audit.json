@@ -1,0 +1,1028 @@
+{
+  "created_utc": "2026-11-07T05:30:18.013246+00:00",
+  "review_scope": "read-only baseline diagnostics, not a new solver run or correctness acceptance",
+  "native_solver_runs": 0,
+  "model_arrays_included": false,
+  "gradient_coordinates": "raw Euclidean discrete derivative with respect to physical SI grid parameters, no smoothing or illumination correction",
+  "squared_gradient_definition": "sum(g**2) per parameter family separately; not mechanical energy and not cross-parameter amplitude comparison",
+  "solid_mask": "original depth >=495 m; water samples are 0..450 m",
+  "central_deep_roi": "5500 <= original x <=13455 m and 900 <= depth <=3200 m",
+  "side_mask": "solid and (x<=5200 m or x>=13755 m)",
+  "source_radius_definition": "minimum Euclidean distance to any physical source, inclusive radius, intersected with solid mask",
+  "top_cell_definition": "sort solid g**2 descending; take ceil(n_solid*pct/100) cells",
+  "effective_cell_definition": "(sum(g**2)**2 / sum(g**4)) / n_solid *100",
+  "temporal_spectrum_definition": "per trace subtract temporal mean, multiply Hann window, rFFT with no padding, sum squared magnitudes across all receivers/components/shots; cumulative power quantiles",
+  "interpretation_limits": [
+    "Concentration is coordinate/parameterization dependent; masks and display changes are not new raw gradients.",
+    "Small displayed gradient values do not establish absence of physical structures; bandwidth/illumination and objective affect sensitivity.",
+    "New pilot correctness must be checked in its exact fixed PML/geometry/active map; these diagnostics are not its acceptance."
+  ],
+  "repository": "DiffSPECFEM",
+  "sources": [
+    {
+      "path": "evidence/psv_marmousi64/gradient_l2.npz",
+      "role": "unaltered public native gradient/data/cotangent result",
+      "bytes": 6241635,
+      "sha256": "80d2cd20b42069a19c1d3b2cb8f44f72060bba5ccb1cbe32cd7fa79cce9c258a"
+    },
+    {
+      "path": "evidence/psv_marmousi64/gradient_processed.npz",
+      "role": "unaltered public native gradient/data/cotangent result",
+      "bytes": 6278622,
+      "sha256": "91e35f69ae756fa89fae0d7e8e16a178f10e9ed51e69e62487c38a898c25f674"
+    },
+    {
+      "path": "evidence/psv_marmousi64/gradient_l2/forward.log",
+      "role": "original native stability/dispersion guidance",
+      "bytes": 41856,
+      "sha256": "71b2f55168305b55051036e57a2e601dfe7c05438db9d0ba83dbbaa879c7e204"
+    },
+    {
+      "path": "evidence/psv_marmousi64/target_native/forward.log",
+      "role": "original native stability/dispersion guidance",
+      "bytes": 41856,
+      "sha256": "8e2feb413311214d6fd84d4080b15adfcebc2e5f02631de81f696f2f2ab4b77d"
+    },
+    {
+      "path": "evidence/psv_marmousi64/target.npy",
+      "role": "actual native true-model receiver output",
+      "bytes": 2624128,
+      "sha256": "053a746db58d6d9ed6989d1c69b6bca61217fe2a80bf1b3be7c033631d06e671"
+    },
+    {
+      "path": "evidence/psv_marmousi64/validation.json",
+      "role": "baseline correctness scope and result",
+      "bytes": 56447,
+      "sha256": "6ceb5719e8894fed6cdf58cdde5c3981487c2f37c485dc9566f6b63ef95e120e"
+    },
+    {
+      "path": "evidence/psv_marmousi64/gradient_l2/DATA/Par_file",
+      "role": "actual archived numerical settings",
+      "bytes": 24812,
+      "sha256": "81dc6b526f623515f713b88c2e636511da5e1112f3bb95633d46e638db5aed4d"
+    },
+    {
+      "path": "evidence/psv_marmousi64/gradient_l2/DATA/SOURCE",
+      "role": "actual archived source definition",
+      "bytes": 3419,
+      "sha256": "71447b766c436a787ec8e5dac0a068e10d301ba0885f936a47754bb69cd6929f"
+    },
+    {
+      "path": "evidence/psv_marmousi64/gradient_l2/DATA/STATIONS",
+      "role": "actual archived receiver geometry",
+      "bytes": 1017,
+      "sha256": "1dcb43364f924c6f86121fecdc5c821176b5495c5f4e34b7f210edfe585ea69b"
+    },
+    {
+      "path": "evidence/psv_marmousi128/gradient_l2.npz",
+      "role": "unaltered public native gradient/data/cotangent result",
+      "bytes": 13938001,
+      "sha256": "d3c78c1dcbf9e73722b7cd98f12a1c74196d27bd04802520228800ae2343675f"
+    },
+    {
+      "path": "evidence/psv_marmousi128/gradient_processed.npz",
+      "role": "unaltered public native gradient/data/cotangent result",
+      "bytes": 13963284,
+      "sha256": "b4d24c602bd595c770528dd3bb93ef7a2d2efe46936fb079150b38c12eff0004"
+    },
+    {
+      "path": "evidence/psv_marmousi128/gradient_l2/forward.log",
+      "role": "original native stability/dispersion guidance",
+      "bytes": 45681,
+      "sha256": "5db31050cbfa10d0d1a8fa98f8324b9b22834fa99711efbc9a780cd4b1771393"
+    },
+    {
+      "path": "evidence/psv_marmousi128/target_native/forward.log",
+      "role": "original native stability/dispersion guidance",
+      "bytes": 45681,
+      "sha256": "602ad9b092bed2e3df9ea45ff238b1044a024849d455f9a6ceebd52fad1e5421"
+    },
+    {
+      "path": "evidence/psv_marmousi128/target.npy",
+      "role": "actual native true-model receiver output",
+      "bytes": 5248128,
+      "sha256": "322917121a84f4751f605529912102dae8e2c70c79e42d9bf1bafc088567a19a"
+    },
+    {
+      "path": "evidence/psv_marmousi128/validation.json",
+      "role": "baseline correctness scope and result",
+      "bytes": 17112,
+      "sha256": "dbab60641a8f1ebc04915f514b9ee1d395cce7b6e492bcb254496a847b6daf09"
+    },
+    {
+      "path": "evidence/psv_marmousi128/gradient_l2/DATA/Par_file",
+      "role": "actual archived numerical settings",
+      "bytes": 24816,
+      "sha256": "818461f8e303e9730869d48557d70a6521c9dc03483093ccc8979417736abf17"
+    },
+    {
+      "path": "evidence/psv_marmousi128/gradient_l2/DATA/SOURCE",
+      "role": "actual archived source definition",
+      "bytes": 3419,
+      "sha256": "5f269530583633a0b42a08a90d48aa6f8fba8905193a174b8c90fb902910a253"
+    },
+    {
+      "path": "evidence/psv_marmousi128/gradient_l2/DATA/STATIONS",
+      "role": "actual archived receiver geometry",
+      "bytes": 1017,
+      "sha256": "1dcb43364f924c6f86121fecdc5c821176b5495c5f4e34b7f210edfe585ea69b"
+    },
+    {
+      "path": "diffspecfem/psv.py",
+      "role": "inspected current implementation/display source; not a substitute for archived build provenance",
+      "bytes": 8389,
+      "sha256": "3a7d3bc0be55ac6812ed3df3a8706da1948db614f7c9aec3f225e10105f1531a"
+    },
+    {
+      "path": "scripts/visualize_psv_marmousi.py",
+      "role": "inspected current implementation/display source; not a substitute for archived build provenance",
+      "bytes": 17923,
+      "sha256": "7630c9ca06b3d5e798bb54bc2abcd25ba96324d77ab2129ab42f0a1a8cd8ac2f"
+    }
+  ],
+  "cases": {
+    "psv_marmousi64": {
+      "configuration": {
+        "nproc": 2,
+        "nstep": 4000,
+        "dt_s": 0.0015,
+        "record_duration_s": 6.0,
+        "f0_hz": 0.5,
+        "source_t0_s": 2.4,
+        "source_type": "one fixed vertical force in active solid",
+        "source_original_xy_m": [
+          [
+            9500.0,
+            540.0
+          ]
+        ],
+        "receivers": "41 solid Cartesian displacement receivers",
+        "boundaries": "native reflecting/free; no PML/Stacey/attenuation",
+        "water_parameters": "fixed; excluded from 67x200 active solid coordinates"
+      },
+      "coordinate_grid": {
+        "shape": [
+          67,
+          200
+        ],
+        "dx_m": 45,
+        "dz_m": 45,
+        "x_first_last_m": [
+          5000,
+          13955
+        ],
+        "depth_first_last_m": [
+          495,
+          3465
+        ],
+        "file_to_depth_orientation": "gradient[:,::-1,:] (native z-up to original depth-down)"
+      },
+      "gradient_statistics": {
+        "l2": {
+          "vp": {
+            "array_shape_depth_x": [
+              67,
+              200
+            ],
+            "all_l2": 3.486822669453904e-05,
+            "solid_l2": 3.486822669453904e-05,
+            "water_fraction_of_all_squared_gradient_pct": 0.0,
+            "peak_all": {
+              "x_m": 9500.0,
+              "depth_m": 495.0,
+              "value": 9.97712160504336e-06,
+              "absolute_value": 9.97712160504336e-06
+            },
+            "peak_solid": {
+              "x_m": 9500.0,
+              "depth_m": 495.0,
+              "value": 9.97712160504336e-06,
+              "absolute_value": 9.97712160504336e-06
+            },
+            "solid_squared_gradient_fraction_pct": {
+              "near_any_source_100m": 21.659150755405985,
+              "near_any_source_200m": 38.28083617396685,
+              "near_any_source_400m": 61.486915192132116,
+              "near_any_source_600m": 81.88742432513622,
+              "near_any_source_800m": 91.1821777174682,
+              "depth_le1000m": 99.96595932739365,
+              "depth_ge2000m": 0.00046053378998926433,
+              "bottom_last200m": 2.7166597873377864e-05,
+              "sides_each200m": 4.6258580112847603e-07,
+              "central_deep_roi": 0.11704738470783088
+            },
+            "top_solid_cells_squared_gradient_fraction_pct": {
+              "0.1": {
+                "selected_cells": 14,
+                "fraction_pct": 63.76901506753127
+              },
+              "1": {
+                "selected_cells": 134,
+                "fraction_pct": 98.09480370172993
+              },
+              "5": {
+                "selected_cells": 670,
+                "fraction_pct": 99.98298215148488
+              }
+            },
+            "effective_solid_cell_fraction_pct": 0.21570266036692434,
+            "solid_p995_abs_over_solid_absmax": 0.1465480969562094,
+            "central_deep_roi_absmax_over_all_absmax": 0.028341328803803044,
+            "zero_solid_fraction_pct": 0.0
+          },
+          "vs": {
+            "array_shape_depth_x": [
+              67,
+              200
+            ],
+            "all_l2": 0.0018515684584373916,
+            "solid_l2": 0.0018515684584373916,
+            "water_fraction_of_all_squared_gradient_pct": 0.0,
+            "peak_all": {
+              "x_m": 9140.0,
+              "depth_m": 585.0,
+              "value": 0.0003205210640394285,
+              "absolute_value": 0.0003205210640394285
+            },
+            "peak_solid": {
+              "x_m": 9140.0,
+              "depth_m": 585.0,
+              "value": 0.0003205210640394285,
+              "absolute_value": 0.0003205210640394285
+            },
+            "solid_squared_gradient_fraction_pct": {
+              "near_any_source_100m": 2.0107514505441597,
+              "near_any_source_200m": 9.95451312615659,
+              "near_any_source_400m": 42.998739949981044,
+              "near_any_source_600m": 77.97323469898592,
+              "near_any_source_800m": 91.81028042425663,
+              "depth_le1000m": 99.95723498785485,
+              "depth_ge2000m": 7.666458489959746e-06,
+              "bottom_last200m": 2.6978526617785344e-08,
+              "sides_each200m": 4.5002666357307953e-08,
+              "central_deep_roi": 0.28740359729525056
+            },
+            "top_solid_cells_squared_gradient_fraction_pct": {
+              "0.1": {
+                "selected_cells": 14,
+                "fraction_pct": 31.66531370191033
+              },
+              "1": {
+                "selected_cells": 134,
+                "fraction_pct": 93.92866243429441
+              },
+              "5": {
+                "selected_cells": 670,
+                "fraction_pct": 99.93383692822232
+              }
+            },
+            "effective_solid_cell_fraction_pct": 0.5900907036398463,
+            "solid_p995_abs_over_solid_absmax": 0.376244718670603,
+            "central_deep_roi_absmax_over_all_absmax": 0.055228484871719365,
+            "zero_solid_fraction_pct": 0.0
+          },
+          "rho": {
+            "array_shape_depth_x": [
+              67,
+              200
+            ],
+            "all_l2": 0.00012719896067252598,
+            "solid_l2": 0.00012719896067252598,
+            "water_fraction_of_all_squared_gradient_pct": 0.0,
+            "peak_all": {
+              "x_m": 9005.0,
+              "depth_m": 495.0,
+              "value": -2.340989524585859e-05,
+              "absolute_value": 2.340989524585859e-05
+            },
+            "peak_solid": {
+              "x_m": 9005.0,
+              "depth_m": 495.0,
+              "value": -2.340989524585859e-05,
+              "absolute_value": 2.340989524585859e-05
+            },
+            "solid_squared_gradient_fraction_pct": {
+              "near_any_source_100m": 5.917369621829485,
+              "near_any_source_200m": 13.753949069076256,
+              "near_any_source_400m": 45.82260216466177,
+              "near_any_source_600m": 78.51829202034763,
+              "near_any_source_800m": 92.13105865937533,
+              "depth_le1000m": 99.78761064291221,
+              "depth_ge2000m": 0.0005108727295524513,
+              "bottom_last200m": 1.656342799117373e-05,
+              "sides_each200m": 1.0916774975565407e-06,
+              "central_deep_roi": 1.0427555145312304
+            },
+            "top_solid_cells_squared_gradient_fraction_pct": {
+              "0.1": {
+                "selected_cells": 14,
+                "fraction_pct": 29.31345477751412
+              },
+              "1": {
+                "selected_cells": 134,
+                "fraction_pct": 91.5863054121137
+              },
+              "5": {
+                "selected_cells": 670,
+                "fraction_pct": 99.80597108753882
+              }
+            },
+            "effective_solid_cell_fraction_pct": 0.6482007803262174,
+            "solid_p995_abs_over_solid_absmax": 0.35081577881138615,
+            "central_deep_roi_absmax_over_all_absmax": 0.09665805019037335,
+            "zero_solid_fraction_pct": 0.0
+          }
+        },
+        "processed": {
+          "vp": {
+            "array_shape_depth_x": [
+              67,
+              200
+            ],
+            "all_l2": 0.04209408694688219,
+            "solid_l2": 0.04209408694688219,
+            "water_fraction_of_all_squared_gradient_pct": 0.0,
+            "peak_all": {
+              "x_m": 9500.0,
+              "depth_m": 495.0,
+              "value": 0.01103387994958527,
+              "absolute_value": 0.01103387994958527
+            },
+            "peak_solid": {
+              "x_m": 9500.0,
+              "depth_m": 495.0,
+              "value": 0.01103387994958527,
+              "absolute_value": 0.01103387994958527
+            },
+            "solid_squared_gradient_fraction_pct": {
+              "near_any_source_100m": 18.643894333239267,
+              "near_any_source_200m": 32.33126022467045,
+              "near_any_source_400m": 53.9824650062462,
+              "near_any_source_600m": 75.33633960361728,
+              "near_any_source_800m": 86.05547581523129,
+              "depth_le1000m": 99.87586378544532,
+              "depth_ge2000m": 0.003479054850643759,
+              "bottom_last200m": 0.0001521780897060535,
+              "sides_each200m": 3.1107285603973097e-06,
+              "central_deep_roi": 0.30459446590120814
+            },
+            "top_solid_cells_squared_gradient_fraction_pct": {
+              "0.1": {
+                "selected_cells": 14,
+                "fraction_pct": 55.95858894796168
+              },
+              "1": {
+                "selected_cells": 134,
+                "fraction_pct": 96.50461989086112
+              },
+              "5": {
+                "selected_cells": 670,
+                "fraction_pct": 99.92034865419133
+              }
+            },
+            "effective_solid_cell_fraction_pct": 0.27045079383119386,
+            "solid_p995_abs_over_solid_absmax": 0.16643342808741324,
+            "central_deep_roi_absmax_over_all_absmax": 0.041270788485636895,
+            "zero_solid_fraction_pct": 0.0
+          },
+          "vs": {
+            "array_shape_depth_x": [
+              67,
+              200
+            ],
+            "all_l2": 2.1641982132194886,
+            "solid_l2": 2.1641982132194886,
+            "water_fraction_of_all_squared_gradient_pct": 0.0,
+            "peak_all": {
+              "x_m": 9140.0,
+              "depth_m": 585.0,
+              "value": 0.36374522126057374,
+              "absolute_value": 0.36374522126057374
+            },
+            "peak_solid": {
+              "x_m": 9140.0,
+              "depth_m": 585.0,
+              "value": 0.36374522126057374,
+              "absolute_value": 0.36374522126057374
+            },
+            "solid_squared_gradient_fraction_pct": {
+              "near_any_source_100m": 1.370730971340675,
+              "near_any_source_200m": 7.814446277120811,
+              "near_any_source_400m": 39.03836194946237,
+              "near_any_source_600m": 73.91424667498363,
+              "near_any_source_800m": 88.67038493289395,
+              "depth_le1000m": 99.90274650148933,
+              "depth_ge2000m": 4.1126900207143473e-05,
+              "bottom_last200m": 1.4414552340239083e-07,
+              "sides_each200m": 2.6886778145607525e-07,
+              "central_deep_roi": 0.49720607576678055
+            },
+            "top_solid_cells_squared_gradient_fraction_pct": {
+              "0.1": {
+                "selected_cells": 14,
+                "fraction_pct": 29.642535266598312
+              },
+              "1": {
+                "selected_cells": 134,
+                "fraction_pct": 90.72164913743627
+              },
+              "5": {
+                "selected_cells": 670,
+                "fraction_pct": 99.85455191092863
+              }
+            },
+            "effective_solid_cell_fraction_pct": 0.6593782658412596,
+            "solid_p995_abs_over_solid_absmax": 0.38754955852852585,
+            "central_deep_roi_absmax_over_all_absmax": 0.06893078065829711,
+            "zero_solid_fraction_pct": 0.0
+          },
+          "rho": {
+            "array_shape_depth_x": [
+              67,
+              200
+            ],
+            "all_l2": 0.1522072412001047,
+            "solid_l2": 0.1522072412001047,
+            "water_fraction_of_all_squared_gradient_pct": 0.0,
+            "peak_all": {
+              "x_m": 9005.0,
+              "depth_m": 495.0,
+              "value": -0.02581019448259254,
+              "absolute_value": 0.02581019448259254
+            },
+            "peak_solid": {
+              "x_m": 9005.0,
+              "depth_m": 495.0,
+              "value": -0.02581019448259254,
+              "absolute_value": 0.02581019448259254
+            },
+            "solid_squared_gradient_fraction_pct": {
+              "near_any_source_100m": 5.669494442182107,
+              "near_any_source_200m": 11.438067471104091,
+              "near_any_source_400m": 41.096290029768056,
+              "near_any_source_600m": 75.53360880970267,
+              "near_any_source_800m": 90.1096568063614,
+              "depth_le1000m": 99.57241898528122,
+              "depth_ge2000m": 0.003035537345778471,
+              "bottom_last200m": 0.00011181741611456455,
+              "sides_each200m": 1.0356378106513378e-05,
+              "central_deep_roi": 1.6930019798215892
+            },
+            "top_solid_cells_squared_gradient_fraction_pct": {
+              "0.1": {
+                "selected_cells": 14,
+                "fraction_pct": 27.035495891337455
+              },
+              "1": {
+                "selected_cells": 134,
+                "fraction_pct": 88.85209326552587
+              },
+              "5": {
+                "selected_cells": 670,
+                "fraction_pct": 99.67360768388068
+              }
+            },
+            "effective_solid_cell_fraction_pct": 0.7273960330912268,
+            "solid_p995_abs_over_solid_absmax": 0.39999100642850755,
+            "central_deep_roi_absmax_over_all_absmax": 0.14459334903198678,
+            "zero_solid_fraction_pct": 0.0
+          }
+        }
+      },
+      "temporal_spectrum": {
+        "target_displacement": {
+          "peak_hz": 0.5,
+          "f50_hz": 0.5,
+          "f90_hz": 0.8333333333333333,
+          "f95_hz": 0.8333333333333333,
+          "energy_ge2Hz_pct": 1.7207968691090937e-05,
+          "energy_ge5Hz_pct": 5.889743701843289e-08,
+          "fft_bin_spacing_hz": 0.16666666666666666,
+          "fft_time_samples": 4000
+        },
+        "residual_displacement": {
+          "peak_hz": 0.6666666666666666,
+          "f50_hz": 0.6666666666666666,
+          "f90_hz": 0.8333333333333333,
+          "f95_hz": 1.0,
+          "energy_ge2Hz_pct": 9.05453243597027e-05,
+          "energy_ge5Hz_pct": 2.4904976656849746e-07,
+          "fft_bin_spacing_hz": 0.16666666666666666,
+          "fft_time_samples": 4000
+        },
+        "residual_centered_dt_displacement_proxy": {
+          "peak_hz": 0.6666666666666666,
+          "f50_hz": 0.6666666666666666,
+          "f90_hz": 1.0,
+          "f95_hz": 1.0,
+          "energy_ge2Hz_pct": 0.00010860053324854391,
+          "energy_ge5Hz_pct": 1.8819260718453997e-07,
+          "fft_bin_spacing_hz": 0.16666666666666666,
+          "fft_time_samples": 4000
+        }
+      },
+      "data_squared_norm_concentration": {
+        "target": {
+          "offset_lt_m_fraction_pct": {
+            "250": 30.99252498325907,
+            "500": 47.22449631003586,
+            "1000": 74.98888412383897,
+            "2000": 99.25309709110002
+          },
+          "top3_receiver_fraction_pct": 40.5984170950213,
+          "source_relative_time_le1s_fraction_pct": 29.383281242392222,
+          "source_relative_time_ge2s_fraction_pct": 44.95623836769409
+        },
+        "residual": {
+          "offset_lt_m_fraction_pct": {
+            "250": 9.268398372034587,
+            "500": 25.399853574270008,
+            "1000": 71.1869785284545,
+            "2000": 99.87964982799164
+          },
+          "top3_receiver_fraction_pct": 60.98038370666881,
+          "source_relative_time_le1s_fraction_pct": 8.400745355561972,
+          "source_relative_time_ge2s_fraction_pct": 69.03571888485848
+        }
+      },
+      "native_guidance": {
+        "initial": {
+          "max_suggested_ricker_f0_hz": 0.8895421476633422,
+          "max_suggested_dt_s": 0.0024931761004275206
+        },
+        "true": {
+          "max_suggested_ricker_f0_hz": 0.740852955444492,
+          "max_suggested_dt_s": 0.002307666722229806
+        }
+      },
+      "processed_fir_diagnostic": {
+        "coefficients": [
+          0.2,
+          -0.1,
+          0.6,
+          0.4,
+          -0.1
+        ],
+        "sample_offsets": [
+          -2,
+          -1,
+          0,
+          1,
+          2
+        ],
+        "magnitude_response": {
+          "0": 1.0,
+          "1": 0.9999693552668516,
+          "2": 0.9998774257308785,
+          "5": 0.9992341151776338,
+          "10": 0.9969393991212337
+        },
+        "interpretation": "the five-sample FIR has almost unity seismic-band gain; its role in the validated processed objective is not meaningful band expansion"
+      }
+    },
+    "psv_marmousi128": {
+      "configuration": {
+        "nproc": 2,
+        "nstep": 8000,
+        "dt_s": 0.00075,
+        "record_duration_s": 6.0,
+        "f0_hz": 1.0,
+        "source_t0_s": 1.2,
+        "source_type": "one fixed vertical force in active solid",
+        "source_original_xy_m": [
+          [
+            9500.0,
+            540.0
+          ]
+        ],
+        "receivers": "41 solid Cartesian displacement receivers",
+        "boundaries": "native reflecting/free; no PML/Stacey/attenuation",
+        "water_parameters": "fixed; excluded from 67x200 active solid coordinates"
+      },
+      "coordinate_grid": {
+        "shape": [
+          67,
+          200
+        ],
+        "dx_m": 45,
+        "dz_m": 45,
+        "x_first_last_m": [
+          5000,
+          13955
+        ],
+        "depth_first_last_m": [
+          495,
+          3465
+        ],
+        "file_to_depth_orientation": "gradient[:,::-1,:] (native z-up to original depth-down)"
+      },
+      "gradient_statistics": {
+        "l2": {
+          "vp": {
+            "array_shape_depth_x": [
+              67,
+              200
+            ],
+            "all_l2": 9.175332559650953e-05,
+            "solid_l2": 9.175332559650953e-05,
+            "water_fraction_of_all_squared_gradient_pct": 0.0,
+            "peak_all": {
+              "x_m": 9500.0,
+              "depth_m": 495.0,
+              "value": 3.754181565741148e-05,
+              "absolute_value": 3.754181565741148e-05
+            },
+            "peak_solid": {
+              "x_m": 9500.0,
+              "depth_m": 495.0,
+              "value": 3.754181565741148e-05,
+              "absolute_value": 3.754181565741148e-05
+            },
+            "solid_squared_gradient_fraction_pct": {
+              "near_any_source_100m": 36.63841056248176,
+              "near_any_source_200m": 45.649760934625434,
+              "near_any_source_400m": 59.84765555563874,
+              "near_any_source_600m": 74.92213190662737,
+              "near_any_source_800m": 83.80346827543751,
+              "depth_le1000m": 99.95257539623731,
+              "depth_ge2000m": 0.011711121729956071,
+              "bottom_last200m": 0.00010042878096957146,
+              "sides_each200m": 0.0005474198411118275,
+              "central_deep_roi": 0.07761691845744548
+            },
+            "top_solid_cells_squared_gradient_fraction_pct": {
+              "0.1": {
+                "selected_cells": 14,
+                "fraction_pct": 60.630245026980575
+              },
+              "1": {
+                "selected_cells": 134,
+                "fraction_pct": 99.2042434225571
+              },
+              "5": {
+                "selected_cells": 670,
+                "fraction_pct": 99.92393261294615
+              }
+            },
+            "effective_solid_cell_fraction_pct": 0.13780797297084535,
+            "solid_p995_abs_over_solid_absmax": 0.09343892643821308,
+            "central_deep_roi_absmax_over_all_absmax": 0.007306441362459922,
+            "zero_solid_fraction_pct": 0.0
+          },
+          "vs": {
+            "array_shape_depth_x": [
+              67,
+              200
+            ],
+            "all_l2": 0.004411136310996181,
+            "solid_l2": 0.004411136310996181,
+            "water_fraction_of_all_squared_gradient_pct": 0.0,
+            "peak_all": {
+              "x_m": 9185.0,
+              "depth_m": 540.0,
+              "value": 0.0008055508798914061,
+              "absolute_value": 0.0008055508798914061
+            },
+            "peak_solid": {
+              "x_m": 9185.0,
+              "depth_m": 540.0,
+              "value": 0.0008055508798914061,
+              "absolute_value": 0.0008055508798914061
+            },
+            "solid_squared_gradient_fraction_pct": {
+              "near_any_source_100m": 1.5576745358782855,
+              "near_any_source_200m": 10.80451941470109,
+              "near_any_source_400m": 40.028839047338074,
+              "near_any_source_600m": 64.54853242952774,
+              "near_any_source_800m": 74.50136049294741,
+              "depth_le1000m": 99.99599947160064,
+              "depth_ge2000m": 1.7290872303437106e-05,
+              "bottom_last200m": 1.658466787023995e-07,
+              "sides_each200m": 3.04395668467648e-06,
+              "central_deep_roi": 0.03568106421770215
+            },
+            "top_solid_cells_squared_gradient_fraction_pct": {
+              "0.1": {
+                "selected_cells": 14,
+                "fraction_pct": 31.46968261123381
+              },
+              "1": {
+                "selected_cells": 134,
+                "fraction_pct": 88.71886663630612
+              },
+              "5": {
+                "selected_cells": 670,
+                "fraction_pct": 99.97057884308425
+              }
+            },
+            "effective_solid_cell_fraction_pct": 0.6318971106040799,
+            "solid_p995_abs_over_solid_absmax": 0.33620399727409406,
+            "central_deep_roi_absmax_over_all_absmax": 0.01888339591332968,
+            "zero_solid_fraction_pct": 0.0
+          },
+          "rho": {
+            "array_shape_depth_x": [
+              67,
+              200
+            ],
+            "all_l2": 0.0002747125714521773,
+            "solid_l2": 0.0002747125714521773,
+            "water_fraction_of_all_squared_gradient_pct": 0.0,
+            "peak_all": {
+              "x_m": 9545.0,
+              "depth_m": 495.0,
+              "value": -6.564705807553503e-05,
+              "absolute_value": 6.564705807553503e-05
+            },
+            "peak_solid": {
+              "x_m": 9545.0,
+              "depth_m": 495.0,
+              "value": -6.564705807553503e-05,
+              "absolute_value": 6.564705807553503e-05
+            },
+            "solid_squared_gradient_fraction_pct": {
+              "near_any_source_100m": 16.031623012951815,
+              "near_any_source_200m": 31.23617065047282,
+              "near_any_source_400m": 56.661826018581955,
+              "near_any_source_600m": 75.65018481683778,
+              "near_any_source_800m": 82.45206589243395,
+              "depth_le1000m": 99.97837325912275,
+              "depth_ge2000m": 0.0017263379841946697,
+              "bottom_last200m": 0.00017246418053558385,
+              "sides_each200m": 6.404160700944971e-05,
+              "central_deep_roi": 0.14070268931484972
+            },
+            "top_solid_cells_squared_gradient_fraction_pct": {
+              "0.1": {
+                "selected_cells": 14,
+                "fraction_pct": 33.63122670094662
+              },
+              "1": {
+                "selected_cells": 134,
+                "fraction_pct": 85.89964516180937
+              },
+              "5": {
+                "selected_cells": 670,
+                "fraction_pct": 99.92865247783972
+              }
+            },
+            "effective_solid_cell_fraction_pct": 0.5708660923448794,
+            "solid_p995_abs_over_solid_absmax": 0.254935629035135,
+            "central_deep_roi_absmax_over_all_absmax": 0.03308958817299788,
+            "zero_solid_fraction_pct": 0.0
+          }
+        },
+        "processed": {
+          "vp": {
+            "array_shape_depth_x": [
+              67,
+              200
+            ],
+            "all_l2": 0.1401942364584691,
+            "solid_l2": 0.1401942364584691,
+            "water_fraction_of_all_squared_gradient_pct": 0.0,
+            "peak_all": {
+              "x_m": 9500.0,
+              "depth_m": 495.0,
+              "value": 0.055885450823149475,
+              "absolute_value": 0.055885450823149475
+            },
+            "peak_solid": {
+              "x_m": 9500.0,
+              "depth_m": 495.0,
+              "value": 0.055885450823149475,
+              "absolute_value": 0.055885450823149475
+            },
+            "solid_squared_gradient_fraction_pct": {
+              "near_any_source_100m": 34.51850251641642,
+              "near_any_source_200m": 42.51271622597626,
+              "near_any_source_400m": 57.164192548573226,
+              "near_any_source_600m": 71.06013071746301,
+              "near_any_source_800m": 80.29836915419004,
+              "depth_le1000m": 99.92444328933735,
+              "depth_ge2000m": 0.019177554546890706,
+              "bottom_last200m": 0.00019229070437647942,
+              "sides_each200m": 0.0028189361581615105,
+              "central_deep_roi": 0.11505735623542104
+            },
+            "top_solid_cells_squared_gradient_fraction_pct": {
+              "0.1": {
+                "selected_cells": 14,
+                "fraction_pct": 57.71544104056169
+              },
+              "1": {
+                "selected_cells": 134,
+                "fraction_pct": 98.9436247528764
+              },
+              "5": {
+                "selected_cells": 670,
+                "fraction_pct": 99.86566061903598
+              }
+            },
+            "effective_solid_cell_fraction_pct": 0.15086725437633658,
+            "solid_p995_abs_over_solid_absmax": 0.10693315787444725,
+            "central_deep_roi_absmax_over_all_absmax": 0.007508252800474228,
+            "zero_solid_fraction_pct": 0.0
+          },
+          "vs": {
+            "array_shape_depth_x": [
+              67,
+              200
+            ],
+            "all_l2": 6.665259309579785,
+            "solid_l2": 6.665259309579785,
+            "water_fraction_of_all_squared_gradient_pct": 0.0,
+            "peak_all": {
+              "x_m": 9185.0,
+              "depth_m": 540.0,
+              "value": 1.1268530066324716,
+              "absolute_value": 1.1268530066324716
+            },
+            "peak_solid": {
+              "x_m": 9185.0,
+              "depth_m": 540.0,
+              "value": 1.1268530066324716,
+              "absolute_value": 1.1268530066324716
+            },
+            "solid_squared_gradient_fraction_pct": {
+              "near_any_source_100m": 1.2380941604949904,
+              "near_any_source_200m": 9.055336545788798,
+              "near_any_source_400m": 33.37791660602983,
+              "near_any_source_600m": 54.98296227910559,
+              "near_any_source_800m": 65.56277467676985,
+              "depth_le1000m": 99.99321300793463,
+              "depth_ge2000m": 3.692790939403595e-05,
+              "bottom_last200m": 5.125582838761196e-07,
+              "sides_each200m": 9.636804717945954e-06,
+              "central_deep_roi": 0.04655558864601474
+            },
+            "top_solid_cells_squared_gradient_fraction_pct": {
+              "0.1": {
+                "selected_cells": 14,
+                "fraction_pct": 26.30654154077165
+              },
+              "1": {
+                "selected_cells": 134,
+                "fraction_pct": 86.78052210061291
+              },
+              "5": {
+                "selected_cells": 670,
+                "fraction_pct": 99.9535175048143
+              }
+            },
+            "effective_solid_cell_fraction_pct": 0.7973907184042816,
+            "solid_p995_abs_over_solid_absmax": 0.4042934746637668,
+            "central_deep_roi_absmax_over_all_absmax": 0.021550759313934093,
+            "zero_solid_fraction_pct": 0.0
+          },
+          "rho": {
+            "array_shape_depth_x": [
+              67,
+              200
+            ],
+            "all_l2": 0.4098101510511103,
+            "solid_l2": 0.4098101510511103,
+            "water_fraction_of_all_squared_gradient_pct": 0.0,
+            "peak_all": {
+              "x_m": 9545.0,
+              "depth_m": 495.0,
+              "value": -0.09778210127856246,
+              "absolute_value": 0.09778210127856246
+            },
+            "peak_solid": {
+              "x_m": 9545.0,
+              "depth_m": 495.0,
+              "value": -0.09778210127856246,
+              "absolute_value": 0.09778210127856246
+            },
+            "solid_squared_gradient_fraction_pct": {
+              "near_any_source_100m": 16.096104447956446,
+              "near_any_source_200m": 32.59673420962092,
+              "near_any_source_400m": 56.02007172424402,
+              "near_any_source_600m": 72.5483479666251,
+              "near_any_source_800m": 79.21074323538888,
+              "depth_le1000m": 99.96106670506327,
+              "depth_ge2000m": 0.003234652761776098,
+              "bottom_last200m": 0.0002556430035593416,
+              "sides_each200m": 0.00019047547099421816,
+              "central_deep_roi": 0.18078568836048348
+            },
+            "top_solid_cells_squared_gradient_fraction_pct": {
+              "0.1": {
+                "selected_cells": 14,
+                "fraction_pct": 32.94836538877202
+              },
+              "1": {
+                "selected_cells": 134,
+                "fraction_pct": 82.57590137157614
+              },
+              "5": {
+                "selected_cells": 670,
+                "fraction_pct": 99.87698361163872
+              }
+            },
+            "effective_solid_cell_fraction_pct": 0.5794803831031445,
+            "solid_p995_abs_over_solid_absmax": 0.2528621182523424,
+            "central_deep_roi_absmax_over_all_absmax": 0.03605605402190095,
+            "zero_solid_fraction_pct": 0.0
+          }
+        }
+      },
+      "temporal_spectrum": {
+        "target_displacement": {
+          "peak_hz": 0.8333333333333333,
+          "f50_hz": 0.8333333333333333,
+          "f90_hz": 1.3333333333333333,
+          "f95_hz": 1.5,
+          "energy_ge2Hz_pct": 0.3064357161384082,
+          "energy_ge5Hz_pct": 6.17188935804307e-08,
+          "fft_bin_spacing_hz": 0.16666666666666666,
+          "fft_time_samples": 8000
+        },
+        "residual_displacement": {
+          "peak_hz": 1.0,
+          "f50_hz": 1.0,
+          "f90_hz": 1.5,
+          "f95_hz": 1.6666666666666665,
+          "energy_ge2Hz_pct": 0.684050073548729,
+          "energy_ge5Hz_pct": 1.3609662692618865e-07,
+          "fft_bin_spacing_hz": 0.16666666666666666,
+          "fft_time_samples": 8000
+        },
+        "residual_centered_dt_displacement_proxy": {
+          "peak_hz": 1.1666666666666665,
+          "f50_hz": 1.1666666666666665,
+          "f90_hz": 1.6666666666666665,
+          "f95_hz": 1.8333333333333333,
+          "energy_ge2Hz_pct": 2.19060175191249,
+          "energy_ge5Hz_pct": 1.5043446674302665e-07,
+          "fft_bin_spacing_hz": 0.16666666666666666,
+          "fft_time_samples": 8000
+        }
+      },
+      "data_squared_norm_concentration": {
+        "target": {
+          "offset_lt_m_fraction_pct": {
+            "250": 21.767336316652678,
+            "500": 34.04275481443278,
+            "1000": 57.4175143911369,
+            "2000": 99.1236165335244
+          },
+          "top3_receiver_fraction_pct": 27.98193813782284,
+          "source_relative_time_le1s_fraction_pct": 21.78868606660756,
+          "source_relative_time_ge2s_fraction_pct": 58.48135371722086
+        },
+        "residual": {
+          "offset_lt_m_fraction_pct": {
+            "250": 4.001194377814545,
+            "500": 13.921926967587419,
+            "1000": 38.73930044304858,
+            "2000": 99.51998133642223
+          },
+          "top3_receiver_fraction_pct": 42.69657377854282,
+          "source_relative_time_le1s_fraction_pct": 3.958373075627017,
+          "source_relative_time_ge2s_fraction_pct": 79.92794066333153
+        }
+      },
+      "native_guidance": {
+        "initial": {
+          "max_suggested_ricker_f0_hz": 1.7788483767078889,
+          "max_suggested_dt_s": 0.0012465880502137603
+        },
+        "true": {
+          "max_suggested_ricker_f0_hz": 1.4533959140617245,
+          "max_suggested_dt_s": 0.0011538333611149027
+        }
+      },
+      "processed_fir_diagnostic": {
+        "coefficients": [
+          0.2,
+          -0.1,
+          0.6,
+          0.4,
+          -0.1
+        ],
+        "sample_offsets": [
+          -2,
+          -1,
+          0,
+          1,
+          2
+        ],
+        "magnitude_response": {
+          "0": 1.0,
+          "1": 0.9999923387438646,
+          "2": 0.9999693552668516,
+          "5": 0.9998084831714544,
+          "10": 0.9992341151776338
+        },
+        "interpretation": "the five-sample FIR has almost unity seismic-band gain; its role in the validated processed objective is not meaningful band expansion"
+      }
+    }
+  },
+  "findings": [
+    "The fine baseline is overwhelmingly shallow in all three raw solid gradients; simply changing color scales does not change the information content.",
+    "The majority of residual squared norm is already late in the record, so an early-time mute alone is not established as sufficient.",
+    "A fixed-water pressure-source pilot, independent-shot objectives and explicitly weighted body-wave observations are motivated ablations, not guaranteed stratigraphic recovery."
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "scope": "Actual native gradients/data/cotangents and fixed objective weights only; no model material arrays or large wavefields",
+  "native_case": "examples/psv_gradient_detail_water1",
+  "input_model_sha256": "8f720845c46628e3803d7433d6832d669ff496caf14fef63e6a8c6e80ab8a683",
+  "gradient_coordinates": "physical solid [Vp,Vs,rho], increasing native(z,x), shape(3,67,200); fixed water",
+  "history_policy": "one shared six-field native forward history on disk, two distinct data-AD cotangents/native adjoints; no replay, no temporal AD; temporary history removed only after archives and before check-only forward",
+  "no_gradient_postprocessing": true,
+  "outputs": [
+    {
+      "path": "Par_file",
+      "bytes": 24816,
+      "sha256": "818461f8e303e9730869d48557d70a6521c9dc03483093ccc8979417736abf17"
+    },
+    {
+      "path": "SOURCE",
+      "bytes": 3391,
+      "sha256": "e1296bc7629d173164bd5b3bb6f386f948c50292d38ef9a7b7d987945e8c4b45"
+    },
+    {
+      "path": "STATIONS",
+      "bytes": 1017,
+      "sha256": "1dcb43364f924c6f86121fecdc5c821176b5495c5f4e34b7f210edfe585ea69b"
+    },
+    {
+      "path": "data_and_fixed_window.npz",
+      "bytes": 10347306,
+      "sha256": "bb710e53bf4082b720393304a10140f94ced2fbc613f1c1efd7fe17568fde88d"
+    },
+    {
+      "path": "experiment_executed.py",
+      "bytes": 18396,
+      "sha256": "d8720d3464e23fc5e109d1f334e804aad97dfb7aca7c88abed9e4d0a4a713a90"
+    },
+    {
+      "path": "gradient_l2.npz",
+      "bytes": 10380734,
+      "sha256": "0cd5dc78b26cee828cd48edb6858a6db71532cba7ad9eef9542800fe76d92d6a"
+    },
+    {
+      "path": "gradient_reflection_window_l2.npz",
+      "bytes": 6421679,
+      "sha256": "7d4ef9e8f7150c371737574c7e35bcf5d181217f1971fbd9435e0439f06dec8a"
+    },
+    {
+      "path": "grid_gradients.npz",
+      "bytes": 618086,
+      "sha256": "09f85b9924ab416dc1f70a7342043b073fd026346c678386c5925c3d06faf81b"
+    },
+    {
+      "path": "interfaces_elastic_analytic.dat",
+      "bytes": 58,
+      "sha256": "48de59fbe4043c2fede780173851694afdcc4d144b678dd75979c4710db2d6a2"
+    },
+    {
+      "path": "pilot.json",
+      "bytes": 159303,
+      "sha256": "2d08ad312c02542243221863e964d272e8957acba837ad11cd8a81349bacf26e"
+    }
+  ],
+  "executed_source": "experiment_executed.py; exact runtime SHA in pilot.json. Restore under scripts/ before re-running that archived version."
+}

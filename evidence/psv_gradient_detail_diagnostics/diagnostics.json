@@ -1,0 +1,320 @@
+{
+  "status": "read-only diagnostics",
+  "source_case": "evidence/psv_marmousi128",
+  "input_model_sha256": "8f720845c46628e3803d7433d6832d669ff496caf14fef63e6a8c6e80ab8a683",
+  "gradients": {
+    "l2": {
+      "vp": {
+        "l2": 9.175332559650951e-05,
+        "linf": 3.754181565741148e-05,
+        "finite": true,
+        "common_active_focus_native_m": [
+          4500.0,
+          2925.0
+        ],
+        "energy_inside_common_solid_focus_radius": {
+          "300": 0.5415499665206438,
+          "600": 0.7492213190662739,
+          "1000": 0.9144475280919531
+        },
+        "energy_by_depth": {
+          "495_1000m": 0.999525753962373,
+          "1000_1500m": 0.0002167912995434344,
+          "1500_2000m": 0.0001403435207841312,
+          "2000_3000m": 0.00010952132194121137,
+          "3000_3466m": 7.589895358349352e-06
+        },
+        "windowed_spatial_spectrum": {
+          "wavelength_below_250m": 0.005439133067811941,
+          "wavelength_below_500m": 0.04721847748531266,
+          "wavelength_below_1000m": 0.5588948414506251,
+          "wavelength_below_2000m": 0.8373218413180815
+        },
+        "deep_1000_3000m_windowed_spectrum": {
+          "wavelength_below_250m": 0.00030211757727442446,
+          "wavelength_below_500m": 0.007878578369361924,
+          "wavelength_below_1000m": 0.498634786778664,
+          "wavelength_below_2000m": 0.8990882445014223
+        },
+        "negative_gradient_model_correction_cosine": 0.025155147945766662
+      },
+      "vs": {
+        "l2": 0.004411136310996181,
+        "linf": 0.0008055508798914061,
+        "finite": true,
+        "common_active_focus_native_m": [
+          4500.0,
+          2925.0
+        ],
+        "energy_inside_common_solid_focus_radius": {
+          "300": 0.2368909441444883,
+          "600": 0.6454853242952775,
+          "1000": 0.8245269699023171
+        },
+        "energy_by_depth": {
+          "495_1000m": 0.9999599947160064,
+          "1000_1500m": 3.938050241940865e-05,
+          "1500_2000m": 4.518728511941749e-07,
+          "2000_3000m": 1.6127622757191402e-07,
+          "3000_3466m": 1.1632495462457048e-08
+        },
+        "windowed_spatial_spectrum": {
+          "wavelength_below_250m": 0.016942589499128344,
+          "wavelength_below_500m": 0.11997115589691787,
+          "wavelength_below_1000m": 0.35861335908607295,
+          "wavelength_below_2000m": 0.5648399742491872
+        },
+        "deep_1000_3000m_windowed_spectrum": {
+          "wavelength_below_250m": 0.0013223093832822775,
+          "wavelength_below_500m": 0.1469723173508028,
+          "wavelength_below_1000m": 0.42623174870841757,
+          "wavelength_below_2000m": 0.8758747663723203
+        },
+        "negative_gradient_model_correction_cosine": 0.01525164121737795
+      },
+      "rho": {
+        "l2": 0.0002747125714521773,
+        "linf": 6.564705807553503e-05,
+        "finite": true,
+        "common_active_focus_native_m": [
+          4500.0,
+          2925.0
+        ],
+        "energy_inside_common_solid_focus_radius": {
+          "300": 0.4344546342077001,
+          "600": 0.7565018481683778,
+          "1000": 0.8755215634360912
+        },
+        "energy_by_depth": {
+          "495_1000m": 0.9997837325912271,
+          "1000_1500m": 0.0001808431365323768,
+          "1500_2000m": 1.816089239824465e-05,
+          "2000_3000m": 1.4953999434467204e-05,
+          "3000_3466m": 2.309380407479494e-06
+        },
+        "windowed_spatial_spectrum": {
+          "wavelength_below_250m": 0.03672423169481644,
+          "wavelength_below_500m": 0.17991548150735528,
+          "wavelength_below_1000m": 0.45171105991868504,
+          "wavelength_below_2000m": 0.6003277714876081
+        },
+        "deep_1000_3000m_windowed_spectrum": {
+          "wavelength_below_250m": 0.0006146046696006617,
+          "wavelength_below_500m": 0.14568695438484836,
+          "wavelength_below_1000m": 0.7898202617846286,
+          "wavelength_below_2000m": 0.9876189991802474
+        },
+        "negative_gradient_model_correction_cosine": null
+      }
+    },
+    "processed": {
+      "vp": {
+        "l2": 0.1401942364584691,
+        "linf": 0.055885450823149475,
+        "finite": true,
+        "common_active_focus_native_m": [
+          4500.0,
+          2925.0
+        ],
+        "energy_inside_common_solid_focus_radius": {
+          "300": 0.5216502308943002,
+          "600": 0.71060130717463,
+          "1000": 0.8907727704932376
+        },
+        "energy_by_depth": {
+          "495_1000m": 0.9992444328933735,
+          "1000_1500m": 0.0003944270861202694,
+          "1500_2000m": 0.00016936447503751253,
+          "2000_3000m": 0.0001803589929296722,
+          "3000_3466m": 1.1416552539234875e-05
+        },
+        "windowed_spatial_spectrum": {
+          "wavelength_below_250m": 0.004258364624665999,
+          "wavelength_below_500m": 0.05251532568801844,
+          "wavelength_below_1000m": 0.47129649935177814,
+          "wavelength_below_2000m": 0.7260755085066614
+        },
+        "deep_1000_3000m_windowed_spectrum": {
+          "wavelength_below_250m": 0.00031271325391910005,
+          "wavelength_below_500m": 0.012253805371824295,
+          "wavelength_below_1000m": 0.47958490994497976,
+          "wavelength_below_2000m": 0.8355010473538699
+        },
+        "negative_gradient_model_correction_cosine": 0.026493497678058572
+      },
+      "vs": {
+        "l2": 6.665259309579785,
+        "linf": 1.1268530066324716,
+        "finite": true,
+        "common_active_focus_native_m": [
+          4500.0,
+          2925.0
+        ],
+        "energy_inside_common_solid_focus_radius": {
+          "300": 0.19551884264400754,
+          "600": 0.5498296227910558,
+          "1000": 0.7532419965416283
+        },
+        "energy_by_depth": {
+          "495_1000m": 0.9999321300793462,
+          "1000_1500m": 6.646175491600574e-05,
+          "1500_2000m": 1.0388866435903824e-06,
+          "2000_3000m": 3.421421012570502e-07,
+          "3000_3466m": 2.7136992683309232e-08
+        },
+        "windowed_spatial_spectrum": {
+          "wavelength_below_250m": 0.014698142220867294,
+          "wavelength_below_500m": 0.10326547044304986,
+          "wavelength_below_1000m": 0.3188616938120297,
+          "wavelength_below_2000m": 0.5209194676635127
+        },
+        "deep_1000_3000m_windowed_spectrum": {
+          "wavelength_below_250m": 0.0013707718871219699,
+          "wavelength_below_500m": 0.12474167623047072,
+          "wavelength_below_1000m": 0.3919957454757207,
+          "wavelength_below_2000m": 0.8513584306929227
+        },
+        "negative_gradient_model_correction_cosine": 0.014849705401281041
+      },
+      "rho": {
+        "l2": 0.4098101510511103,
+        "linf": 0.09778210127856246,
+        "finite": true,
+        "common_active_focus_native_m": [
+          4500.0,
+          2925.0
+        ],
+        "energy_inside_common_solid_focus_radius": {
+          "300": 0.4379396546504159,
+          "600": 0.7254834796662507,
+          "1000": 0.8479400163603908
+        },
+        "energy_by_depth": {
+          "495_1000m": 0.9996106670506326,
+          "1000_1500m": 0.0003275159629316309,
+          "1500_2000m": 2.947045881795086e-05,
+          "2000_3000m": 2.8830215568194155e-05,
+          "3000_3466m": 3.51631204956682e-06
+        },
+        "windowed_spatial_spectrum": {
+          "wavelength_below_250m": 0.03311566647995481,
+          "wavelength_below_500m": 0.16738969159055844,
+          "wavelength_below_1000m": 0.4057970751144712,
+          "wavelength_below_2000m": 0.5598236347001339
+        },
+        "deep_1000_3000m_windowed_spectrum": {
+          "wavelength_below_250m": 0.0008847456729489477,
+          "wavelength_below_500m": 0.22997689919357148,
+          "wavelength_below_1000m": 0.8097593745751921,
+          "wavelength_below_2000m": 0.9778932141519503
+        },
+        "negative_gradient_model_correction_cosine": null
+      }
+    }
+  },
+  "data": {
+    "l2": {
+      "predicted": {
+        "rms": 0.0024061638006707335,
+        "linf": 0.023307650981043843,
+        "f50_hz": 0.8333333333333017,
+        "f90_hz": 1.3333333333332829,
+        "f95_hz": 1.4999999999999432,
+        "energy_above_hz": {
+          "0.5": 0.8598031498157314,
+          "1.0": 0.27335024965002164,
+          "1.5": 0.02200928075589201,
+          "2.0": 0.0006489186739447112,
+          "3.0": 9.745644869037744e-08
+        }
+      },
+      "residual": {
+        "rms": 0.0028079510976526563,
+        "linf": 0.03596229353159891,
+        "f50_hz": 0.9999999999999621,
+        "f90_hz": 1.4999999999999432,
+        "f95_hz": 1.6666666666666035,
+        "energy_above_hz": {
+          "0.5": 0.9525484649892428,
+          "1.0": 0.49020921292875874,
+          "1.5": 0.06185585590872615,
+          "2.0": 0.002185258714329579,
+          "3.0": 4.1201997223462316e-07
+        }
+      },
+      "residual_energy_by_horizontal_offset": {
+        "0_250m": 0.04001194377814545,
+        "250_500m": 0.09920732589772874,
+        "500_1000m": 0.24817373475461157,
+        "1000_2000m": 0.6078068089337366,
+        "2000_4000m": 0.004680409045637977,
+        "4000_10000m": 0.00011977759013985974
+      }
+    },
+    "processed": {
+      "predicted": {
+        "rms": 0.0024061638006707335,
+        "linf": 0.023307650981043843,
+        "f50_hz": 0.8333333333333017,
+        "f90_hz": 1.3333333333332829,
+        "f95_hz": 1.4999999999999432,
+        "energy_above_hz": {
+          "0.5": 0.8598031498157314,
+          "1.0": 0.27335024965002164,
+          "1.5": 0.02200928075589201,
+          "2.0": 0.0006489186739447112,
+          "3.0": 9.745644869037744e-08
+        }
+      },
+      "residual": {
+        "rms": 0.0028079510976526563,
+        "linf": 0.03596229353159891,
+        "f50_hz": 0.9999999999999621,
+        "f90_hz": 1.4999999999999432,
+        "f95_hz": 1.6666666666666035,
+        "energy_above_hz": {
+          "0.5": 0.9525484649892428,
+          "1.0": 0.49020921292875874,
+          "1.5": 0.06185585590872615,
+          "2.0": 0.002185258714329579,
+          "3.0": 4.1201997223462316e-07
+        }
+      },
+      "residual_energy_by_horizontal_offset": {
+        "0_250m": 0.04001194377814545,
+        "250_500m": 0.09920732589772874,
+        "500_1000m": 0.24817373475461157,
+        "1000_2000m": 0.6078068089337366,
+        "2000_4000m": 0.004680409045637977,
+        "4000_10000m": 0.00011977759013985974
+      }
+    }
+  },
+  "caution": "Spatial Fourier power and source/depth concentration diagnose bandwidth/illumination; high wavenumber at a point source is not resolved geology.",
+  "resource_forecasts": {
+    "existing_1Hz_full_6s": {
+      "elements": 7168,
+      "native_steps": 8000,
+      "full_history_gb": 44.766432,
+      "not_a_native_resolution_pass": "Both true/initial native f0/dt guides must be measured before any recorded run"
+    },
+    "proposed_2Hz_full_4s": {
+      "elements": 16128,
+      "native_steps": 8000,
+      "full_history_gb": 100.50989952,
+      "not_a_native_resolution_pass": "Both true/initial native f0/dt guides must be measured before any recorded run"
+    },
+    "proposed_3Hz_full_4s": {
+      "elements": 36288,
+      "native_steps": 12000,
+      "full_history_gb": 338.7384864,
+      "not_a_native_resolution_pass": "Both true/initial native f0/dt guides must be measured before any recorded run"
+    },
+    "proposed_2Hz_2970m_ROI_4s": {
+      "elements": 8064,
+      "native_steps": 8000,
+      "full_history_gb": 50.3203008,
+      "not_a_native_resolution_pass": "Both true/initial native f0/dt guides must be measured before any recorded run"
+    }
+  }
+}

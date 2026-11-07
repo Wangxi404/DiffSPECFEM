@@ -1,0 +1,56 @@
+{
+  "scope": "Actual native gradients/data/cotangents and fixed objective weights only; no model material arrays or large wavefields",
+  "native_case": "examples/psv_gradient_detail_water2",
+  "input_model_sha256": "8f720845c46628e3803d7433d6832d669ff496caf14fef63e6a8c6e80ab8a683",
+  "gradient_coordinates": "physical solid [Vp,Vs,rho], increasing native(z,x), shape(3,67,200); fixed water",
+  "history_policy": "one shared six-field native forward history on disk, 1 distinct data-AD cotangents/native adjoints; no replay, no temporal AD; temporary history removed only after archives and before check-only forward",
+  "no_gradient_postprocessing": true,
+  "outputs": [
+    {
+      "path": "Par_file",
+      "bytes": 24843,
+      "sha256": "d608563c826fb6c5b4f8b6f503b4885d83fac319f29e641a6725345ed981d6dd"
+    },
+    {
+      "path": "SOURCE",
+      "bytes": 3391,
+      "sha256": "5a14882d5ff02d37141e6d87af86bc659194a153f376d2b10d4e09bef0d5f97d"
+    },
+    {
+      "path": "STATIONS",
+      "bytes": 1017,
+      "sha256": "1dcb43364f924c6f86121fecdc5c821176b5495c5f4e34b7f210edfe585ea69b"
+    },
+    {
+      "path": "data_and_fixed_window.npz",
+      "bytes": 15347879,
+      "sha256": "1a30afd514c7f061997a23c0e9667178b87579bb1b6684d1bd77c77910fde59a"
+    },
+    {
+      "path": "experiment_executed.py",
+      "bytes": 21561,
+      "sha256": "631d5bebca79e0dbf4b7c5bd2ab24075299c88c703b874759804984d223e79de"
+    },
+    {
+      "path": "gradient_l2.npz",
+      "bytes": 15454448,
+      "sha256": "d7568a003124a1c829510938efc268192a171d80b2f14c52804737316e84355d"
+    },
+    {
+      "path": "grid_gradients.npz",
+      "bytes": 308278,
+      "sha256": "a1adff9eaec16f1d0d58b4ab3fefbba89117147751c1091bea71446def2e4676"
+    },
+    {
+      "path": "interfaces_elastic_analytic.dat",
+      "bytes": 59,
+      "sha256": "3df5e211ad4d46a3e62ec6e7214fbff1c7127df9fce9f0b92ed80e53be6f2c20"
+    },
+    {
+      "path": "pilot.json",
+      "bytes": 229838,
+      "sha256": "f6115523db10bd6322f5efb8b3715983c33ffcec6640852747b10bb5e9a683ca"
+    }
+  ],
+  "executed_source": "experiment_executed.py; exact runtime SHA in pilot.json. Restore under scripts/ before re-running that archived version."
+}

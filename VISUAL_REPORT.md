@@ -1,5 +1,10 @@
 # Coupled P–SV on Marmousi-II
 
+For the new **water-source / 2 Hz gradient-detail experiments**, see
+[GRADIENT_DETAIL.md](GRADIENT_DETAIL.md). They retain the same prepared models,
+use a denser native mesh, and show raw derivatives with declared linear display
+limits. The original 1 Hz numerical-verification gallery below remains intact.
+
 The main demonstration now uses **P–SV with acoustic water and elastic solid**
 from the official SPECFEM2D source. Both native displacement components are
 recorded. The older SH-only gallery belongs to the v0.2.0 regression and is

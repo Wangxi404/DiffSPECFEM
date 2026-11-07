@@ -1,0 +1,385 @@
+{
+  "status": "PASS for report/README-sized exports",
+  "reviewed_utc": "2026-11-07T06:13:47.581914+00:00",
+  "workflow": "nature-figure Python/backend-neutral final-PDF audits plus actual whole-figure and individual-panel visual inspection",
+  "plotting_source_modified": false,
+  "native_simulation_rerun": false,
+  "figures": {
+    "models_and_gradient_detail": {
+      "passed": true,
+      "files": {
+        "png": {
+          "sha256": "1e6154045d7a4ec9614df99c291b1ab838692d856656999b287fa7d6d5f4fe2d",
+          "bytes": 393903
+        },
+        "pdf": {
+          "sha256": "233facd33eadd667f995bf55c9a04a8f75911430964c740b3f3849fd40fcb6fd",
+          "bytes": 144559
+        },
+        "svg": {
+          "sha256": "8a103b339dfefea9bc5fcfb34857b4b976ecb0cb86fb9122b79fdbcc3524032e",
+          "bytes": 272879
+        }
+      },
+      "glyph_audit": {
+        "min_required_pt": 5.0,
+        "min_found_pt": 7.0,
+        "below_minimum": 0
+      },
+      "collision_audit": {
+        "verdict": "PASS",
+        "summary": {
+          "fail": 0,
+          "warn": 0,
+          "contained_fill_overlays": 0,
+          "contained_image_overlays": 0
+        }
+      },
+      "alignment": {
+        "verdict": "PASS",
+        "physical_tolerance_pt": 1.5,
+        "summary": {
+          "fail": 0,
+          "warn": 0,
+          "comparisons": 8,
+          "exemptions": 0
+        },
+        "pdf_panel_title_anchor_max_x_spread_pt": 0.0,
+        "pdf_panel_title_anchor_max_y_spread_pt": 0.0
+      },
+      "visual_checks": {
+        "complete_figure_viewed": true,
+        "every_panel_pdf_crop_viewed": true,
+        "axes_and_units_readable": true,
+        "no_title_tick_colorbar_overlap": true,
+        "no_page_clipping": true,
+        "fixed_water_and_color_saturation_disclosed": true,
+        "uncertainty_or_error_bars": "not applicable for deterministic field maps"
+      },
+      "panels": [
+        {
+          "panel": "a",
+          "unique_question": "Actual target Vp input",
+          "evidence_role": "context/target",
+          "summary": "raw deterministic map",
+          "uncertainty": "none; not a replicate aggregate",
+          "review": "Shared true/initial Vp scale; full water and geology visible.",
+          "labels_and_colorbar": "readable",
+          "alignment": "PASS",
+          "collision": "PASS",
+          "passed": true
+        },
+        {
+          "panel": "b",
+          "unique_question": "Actual sigma150m Vp input",
+          "evidence_role": "starting-model control",
+          "summary": "raw deterministic map",
+          "uncertainty": "none; not a replicate aggregate",
+          "review": "Same axes/color scale as a; smoothing clearly visible and labelled.",
+          "labels_and_colorbar": "readable",
+          "alignment": "PASS",
+          "collision": "PASS",
+          "passed": true
+        },
+        {
+          "panel": "c",
+          "unique_question": "Old solid-source1Hz Vp derivative",
+          "evidence_role": "baseline",
+          "summary": "raw deterministic map",
+          "uncertainty": "none; not a replicate aggregate",
+          "review": "Broad lobes/shallow saturation visible; actual scale labelled; no recovery inference.",
+          "labels_and_colorbar": "readable",
+          "alignment": "PASS",
+          "collision": "PASS",
+          "passed": true
+        },
+        {
+          "panel": "d",
+          "unique_question": "Water-source2Hz Vp derivative",
+          "evidence_role": "physical intervention",
+          "summary": "raw deterministic map",
+          "uncertainty": "none; not a replicate aggregate",
+          "review": "Changed raw response extends/decomposes subsurface lobes; remains broad, not a recovered thin-layer model.",
+          "labels_and_colorbar": "readable",
+          "alignment": "PASS",
+          "collision": "PASS",
+          "passed": true
+        },
+        {
+          "panel": "e",
+          "unique_question": "Actual target Vs input",
+          "evidence_role": "second-parameter target",
+          "summary": "raw deterministic map",
+          "uncertainty": "none; not a replicate aggregate",
+          "review": "Full water Vs0 retained, same geometry and clear Vs units.",
+          "labels_and_colorbar": "readable",
+          "alignment": "PASS",
+          "collision": "PASS",
+          "passed": true
+        },
+        {
+          "panel": "f",
+          "unique_question": "Actual sigma150m Vs input",
+          "evidence_role": "second-parameter starting control",
+          "summary": "raw deterministic map",
+          "uncertainty": "none; not a replicate aggregate",
+          "review": "Smoother true-derived initial field, distinct from all derivative panels.",
+          "labels_and_colorbar": "readable",
+          "alignment": "PASS",
+          "collision": "PASS",
+          "passed": true
+        },
+        {
+          "panel": "g",
+          "unique_question": "Old solid-source1Hz Vs derivative",
+          "evidence_role": "surface-dominated baseline",
+          "summary": "raw deterministic map",
+          "uncertainty": "none; not a replicate aggregate",
+          "review": "Strong shallow/near-source lobe and weak depth response are visible.",
+          "labels_and_colorbar": "readable",
+          "alignment": "PASS",
+          "collision": "PASS",
+          "passed": true
+        },
+        {
+          "panel": "h",
+          "unique_question": "Water-source2Hz Vs derivative",
+          "evidence_role": "second-parameter intervention",
+          "summary": "raw deterministic map",
+          "uncertainty": "none; not a replicate aggregate",
+          "review": "More spatially distributed fine response below the fixed-water boundary; residual shallow dominance remains visible.",
+          "labels_and_colorbar": "readable",
+          "alignment": "PASS",
+          "collision": "PASS",
+          "passed": true
+        }
+      ]
+    },
+    "water_source_and_window_ablation": {
+      "passed": true,
+      "files": {
+        "png": {
+          "sha256": "daa21d32e1bdebede6cf541ec83fcd3167f3b20b7294d959575f25cf6eeee07a",
+          "bytes": 341870
+        },
+        "pdf": {
+          "sha256": "2216171fc549d2d6b6fc6021c0b389b69e856746a07bc6271033d87474888a22",
+          "bytes": 116076
+        },
+        "svg": {
+          "sha256": "cbbe8f69f400be68e276906594e4324277001b4b8438c7f1ebbcfbf0300bee8e",
+          "bytes": 220681
+        }
+      },
+      "glyph_audit": {
+        "min_required_pt": 5.0,
+        "min_found_pt": 7.0,
+        "below_minimum": 0
+      },
+      "collision_audit": {
+        "verdict": "PASS",
+        "summary": {
+          "fail": 0,
+          "warn": 0,
+          "contained_fill_overlays": 0,
+          "contained_image_overlays": 0
+        }
+      },
+      "alignment": {
+        "verdict": "PASS",
+        "physical_tolerance_pt": 1.5,
+        "summary": {
+          "fail": 0,
+          "warn": 0,
+          "comparisons": 7,
+          "exemptions": 0
+        },
+        "pdf_panel_title_anchor_max_x_spread_pt": 0.0,
+        "pdf_panel_title_anchor_max_y_spread_pt": 0.0
+      },
+      "visual_checks": {
+        "complete_figure_viewed": true,
+        "every_panel_pdf_crop_viewed": true,
+        "axes_and_units_readable": true,
+        "no_title_tick_colorbar_overlap": true,
+        "no_page_clipping": true,
+        "fixed_water_and_color_saturation_disclosed": true,
+        "uncertainty_or_error_bars": "not applicable for deterministic field maps"
+      },
+      "panels": [
+        {
+          "panel": "a",
+          "unique_question": "Solid-source1Hz Vp L2 derivative",
+          "evidence_role": "source control",
+          "summary": "raw deterministic map",
+          "uncertainty": "none; not a replicate aggregate",
+          "review": "Shared model/mesh with b/c; broad raw lobes, scale explicit.",
+          "labels_and_colorbar": "readable",
+          "alignment": "PASS",
+          "collision": "PASS",
+          "passed": true
+        },
+        {
+          "panel": "b",
+          "unique_question": "Water-source1Hz Vp L2 derivative",
+          "evidence_role": "source-only intervention",
+          "summary": "raw deterministic map",
+          "uncertainty": "none; not a replicate aggregate",
+          "review": "Source units/energy differ; independently stated scale is not an amplitude effect size.",
+          "labels_and_colorbar": "readable",
+          "alignment": "PASS",
+          "collision": "PASS",
+          "passed": true
+        },
+        {
+          "panel": "c",
+          "unique_question": "Water-source1Hz fixed-window Vp derivative",
+          "evidence_role": "objective ablation",
+          "summary": "raw deterministic map",
+          "uncertainty": "none; not a replicate aggregate",
+          "review": "Window may look more structured after separate display scaling; quantitative depth statistics must accompany the negative/partial result.",
+          "labels_and_colorbar": "readable",
+          "alignment": "PASS",
+          "collision": "PASS",
+          "passed": true
+        },
+        {
+          "panel": "d",
+          "unique_question": "Solid-source1Hz Vs L2 derivative",
+          "evidence_role": "second-parameter control",
+          "summary": "raw deterministic map",
+          "uncertainty": "none; not a replicate aggregate",
+          "review": "Near-surface dominance visible, no artificial gradient texture.",
+          "labels_and_colorbar": "readable",
+          "alignment": "PASS",
+          "collision": "PASS",
+          "passed": true
+        },
+        {
+          "panel": "e",
+          "unique_question": "Water-source1Hz Vs L2 derivative",
+          "evidence_role": "second-parameter source-only intervention",
+          "summary": "raw deterministic map",
+          "uncertainty": "none; not a replicate aggregate",
+          "review": "All samples retained, source position/mode\u2014not postprocessing\u2014changed.",
+          "labels_and_colorbar": "readable",
+          "alignment": "PASS",
+          "collision": "PASS",
+          "passed": true
+        },
+        {
+          "panel": "f",
+          "unique_question": "Water-source1Hz fixed-window Vs derivative",
+          "evidence_role": "second-parameter objective ablation",
+          "summary": "raw deterministic map",
+          "uncertainty": "none; not a replicate aggregate",
+          "review": "Retains the window result even though its deep squared-norm share is lower; no claim of universal improvement.",
+          "labels_and_colorbar": "readable",
+          "alignment": "PASS",
+          "collision": "PASS",
+          "passed": true
+        }
+      ]
+    }
+  },
+  "data_integrity": {
+    "gradient_postprocessing": "none",
+    "all_derivative_samples_retained": true,
+    "fixed_water_hatched": true,
+    "model_and_derivative_distinguished": true,
+    "color_limit_rule": "Per panel symmetric linear bounds from P99(abs(raw g)) among solid input parameters depth>=1km; all parameters displayed, extreme values color-saturate only.",
+    "display_saturation": {
+      "old_vp": {
+        "absolute_limit": 6.355628482471507e-08,
+        "percentile": 99.0,
+        "scale_region": "solid input samples at depth>=1000m; display limit only, no samples removed",
+        "saturated_fraction_all_solid": 0.07388059701492537,
+        "derivative_modified": false
+      },
+      "best_vp": {
+        "absolute_limit": 1.502348429391719e-16,
+        "percentile": 99.0,
+        "scale_region": "solid input samples at depth>=1000m; display limit only, no samples removed",
+        "saturated_fraction_all_solid": 0.1058955223880597,
+        "derivative_modified": false
+      },
+      "old_vs": {
+        "absolute_limit": 1.4253769163536907e-06,
+        "percentile": 99.0,
+        "scale_region": "solid input samples at depth>=1000m; display limit only, no samples removed",
+        "saturated_fraction_all_solid": 0.08343283582089553,
+        "derivative_modified": false
+      },
+      "best_vs": {
+        "absolute_limit": 5.848322096820265e-16,
+        "percentile": 99.0,
+        "scale_region": "solid input samples at depth>=1000m; display limit only, no samples removed",
+        "saturated_fraction_all_solid": 0.0708955223880597,
+        "derivative_modified": false
+      },
+      "solid_vp": {
+        "absolute_limit": 6.355628482471507e-08,
+        "percentile": 99.0,
+        "scale_region": "solid input samples at depth>=1000m; display limit only, no samples removed",
+        "saturated_fraction_all_solid": 0.07388059701492537,
+        "derivative_modified": false
+      },
+      "water_vp": {
+        "absolute_limit": 1.1721969863755719e-16,
+        "percentile": 99.0,
+        "scale_region": "solid input samples at depth>=1000m; display limit only, no samples removed",
+        "saturated_fraction_all_solid": 0.10820895522388059,
+        "derivative_modified": false
+      },
+      "window_vp": {
+        "absolute_limit": 1.6358718814680285e-17,
+        "percentile": 99.0,
+        "scale_region": "solid input samples at depth>=1000m; display limit only, no samples removed",
+        "saturated_fraction_all_solid": 0.07059701492537314,
+        "derivative_modified": false
+      },
+      "solid_vs": {
+        "absolute_limit": 1.4253769163536907e-06,
+        "percentile": 99.0,
+        "scale_region": "solid input samples at depth>=1000m; display limit only, no samples removed",
+        "saturated_fraction_all_solid": 0.08343283582089553,
+        "derivative_modified": false
+      },
+      "water_vs": {
+        "absolute_limit": 5.404136566119484e-16,
+        "percentile": 99.0,
+        "scale_region": "solid input samples at depth>=1000m; display limit only, no samples removed",
+        "saturated_fraction_all_solid": 0.09880597014925373,
+        "derivative_modified": false
+      },
+      "window_vs": {
+        "absolute_limit": 6.531540121608684e-17,
+        "percentile": 99.0,
+        "scale_region": "solid input samples at depth>=1000m; display limit only, no samples removed",
+        "saturated_fraction_all_solid": 0.05970149253731343,
+        "derivative_modified": false
+      }
+    }
+  },
+  "bounded_scientific_claim": "These are real changed objective sensitivities/illumination and bandwidth, not a reconstructed model or evidence that all thin Marmousi layers are recovered.",
+  "amplitude_comparison": "Not supported: elastic-force and acoustic-source source-factor units and energies differ, and data windows change the objective. Separate numeric colorbars are deliberate; compare spatial structure and the separately reported dimensionless norm fractions.",
+  "uncertainty": "Not applicable: deterministic single native simulation/model/objective maps, not aggregates of stochastic replicates.",
+  "reviewed_source_warnings": [
+    {
+      "check": "EXPORT-RASTER",
+      "decision": "accepted for requested digital report",
+      "reason": "PNG preview plus editable PDF/SVG provided; TIFF submission format was not requested."
+    },
+    {
+      "check": "RASTER-DPI",
+      "decision": "accepted for requested digital report",
+      "reason": "300dpi PNG meets requested preview floor; PDF/SVG retain text/axes vectors and the raw map rasterization is from full sample arrays."
+    },
+    {
+      "check": "FINAL-WIDTH",
+      "decision": "report-sized scope only",
+      "reason": "Exports are348.0mm and294.64mm wide. This QA checks their actual final PDF glyph sizes, not a183mm rescale. Re-export/re-audit before journal-column reduction; do not claim production-format submission readiness."
+    }
+  ],
+  "plotter_sha256": "349cf93c0bd7eff5b8119be108dd9c04bf455c166c0373247724dee9655045db"
+}

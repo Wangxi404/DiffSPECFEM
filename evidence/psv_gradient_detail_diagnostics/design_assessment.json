@@ -1,0 +1,75 @@
+{
+  "status": "selected water1 and water2 native experiments completed and accepted; no further native job running",
+  "unchanged_truth_and_parameters": "Original full prepared Marmousi-II; no Vs floor; fixed acoustic water; active solid Vp/Vs/rho; initial Gaussian sigma150m unchanged in selected pilots",
+  "metric_definition": "Depth/focus fractions are squared Euclidean discrete model-gradient norm fractions, not physical radiated energy, reconstruction accuracy, or proof of spatial resolution.",
+  "baseline_problem": {
+    "source": "solid vertical force depth540m",
+    "frequency_hz": 1.0,
+    "receiver_count": 41,
+    "receiver_spacing_m": 218.875,
+    "record_s": 6.0,
+    "outer_boundaries": "free/reflecting",
+    "observed": "over99.95% of each raw gradient squared norm above1km; residual predominantly1-2km offsets and low frequency"
+  },
+  "options": [
+    {
+      "change": "native Gaussian chi source in water depth150m",
+      "selected": true,
+      "history_gb": 44.4,
+      "reason": "Avoid direct active-solid point-force S-wave singularity; retain real coupled P/S conversion and fixed-water source1/kappa term. Actual measured improvement in deep raw-gradient shares; source units/amplitude not comparable to elastic force."
+    },
+    {
+      "change": "fixed late/offset data objective",
+      "selected": "tested as negative/partial ablation",
+      "reason": "Does not create frequency information and cannot guarantee separation of surface/interface/outer-boundary waves; tested window worsened deep Vp/Vs shares while improving rho share. Full result retained."
+    },
+    {
+      "change": "192x84 mesh,2Hz,dt.0005,12000steps6s",
+      "selected": true,
+      "history_gb_actual": 149.466240024,
+      "reason": "Real excitation-band increase, actual native guides and independent C/B/raw-chain audit passed; strict model dots6.4594e-6 and7.1771e-7 at3e-4/1e-4;22min total; unchanged truth/sigma/source/41receivers relative to water1."
+    },
+    {
+      "change": "sigma75m initial model",
+      "selected": false,
+      "history_gb_same_native_case": 44.4,
+      "tradeoff": "More accurate synthetic prior can reduce nonlinear mismatch but does not create missing data bandwidth; sigma75 error lies at shorter spatial scales, potentially less observable at1Hz. Must smooth full78x200 truth before restoring water/extracting solid, keep true arrays unchanged, and disclose truth-derived synthetic prior."
+    },
+    {
+      "change": "near-true mixture e.g true+.25*(sigma150-true)",
+      "selected": false,
+      "tradeoff": "Useful controlled linear/Born-regime diagnostic, not evidence of practical inversion from an unknown model. Every displayed gradient would still require native simulation and validation; never use the true field as a gradient."
+    },
+    {
+      "change": "small high-frequency ROI",
+      "selected": false,
+      "forecast_2Hz_2970m_roi_4s_history_gb": 50.32,
+      "tradeoff": "Cheaper high resolution, but new reflecting sidewalls can introduce misleading late interference. Requires explicit different-case label and careful buffer/time-window study; cannot pass off crop artifacts as full-model geological detail."
+    },
+    {
+      "change": "longer record at1Hz",
+      "selected": false,
+      "history_gb_8s": 59.2,
+      "history_gb_12s": 88.8,
+      "tradeoff": "No bandwidth increase; existing late residual is already strong and shallow/interface dominated, while reflecting boundaries produce more multiples. Not the first useful change."
+    },
+    {
+      "change": "receiver121/201 at same aperture",
+      "selected": false,
+      "history_gb_unchanged": true,
+      "tradeoff": "New observations and better spatial sampling, especially low-apparent-velocity SV/interface waves; PDE field cost similar but traces/dataAD/Ctranspose grow with receiver count. A matched new target/control case is required. Bulk SV wavelength alone is conservative; actual horizontal apparent wavelength governs line-array aliasing."
+    },
+    {
+      "change": "independent sequential multiple water shots",
+      "selected": false,
+      "peak_history_gb_per_shot_2Hz": 149.47,
+      "tradeoff": "Improves aperture/illumination. Must sum or average independently evaluated per-shot data losses and native gradients. Merely setting NSOURCES>1 is simultaneous encoding and adds cross terms. Runtime scales with independent shots; do not launch without a separate CPU/time budget."
+    }
+  ],
+  "acceptance": "Native control bitwise; both true/initial source and dt guides; real data-AD cotangent; native C/B geometry integrity; informative model-direction identities at two epsilons, each relative_error<1e-5 independent of absolute tolerance; no temporalAD/productionFD/gradient postprocessing.",
+  "case_names": [
+    "psv_gradient_detail_water1",
+    "psv_gradient_detail_water2"
+  ],
+  "source": "scripts/experiment_gradient_detail_psv.py"
+}

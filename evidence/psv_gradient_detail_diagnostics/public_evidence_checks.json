@@ -1,0 +1,158 @@
+{
+  "passed": true,
+  "current_script_sha256": "97d64e6a81bafbea0fc413c0fba468285f4b91715e3424add616932666c45ccc",
+  "cases": [
+    {
+      "case": "water1",
+      "manifest_complete": true,
+      "manifest_count": 10,
+      "runtime_script_sha256": "d8720d3464e23fc5e109d1f334e804aad97dfb7aca7c88abed9e4d0a4a713a90",
+      "runtime_snapshot_matches": true,
+      "current_script_matches_runtime": false,
+      "npz_whitelist": {
+        "grid_gradients.npz": {
+          "x_native": [
+            200
+          ],
+          "z_native": [
+            67
+          ],
+          "gradient_l2": [
+            3,
+            67,
+            200
+          ],
+          "gradient_reflection_window_l2": [
+            3,
+            67,
+            200
+          ]
+        },
+        "gradient_l2.npz": {
+          "gradient": [
+            3,
+            67,
+            200
+          ],
+          "data": [
+            41,
+            2,
+            8000
+          ],
+          "cotangent": [
+            41,
+            2,
+            8000
+          ],
+          "sample_time": [
+            8000
+          ]
+        },
+        "gradient_reflection_window_l2.npz": {
+          "gradient": [
+            3,
+            67,
+            200
+          ],
+          "data": [
+            41,
+            2,
+            8000
+          ],
+          "cotangent": [
+            41,
+            2,
+            8000
+          ],
+          "sample_time": [
+            8000
+          ]
+        },
+        "data_and_fixed_window.npz": {
+          "data": [
+            41,
+            2,
+            8000
+          ],
+          "target": [
+            41,
+            2,
+            8000
+          ],
+          "sample_time": [
+            8000
+          ],
+          "weight": [
+            41,
+            1,
+            8000
+          ]
+        }
+      }
+    },
+    {
+      "case": "water2",
+      "manifest_complete": true,
+      "manifest_count": 9,
+      "runtime_script_sha256": "631d5bebca79e0dbf4b7c5bd2ab24075299c88c703b874759804984d223e79de",
+      "runtime_snapshot_matches": true,
+      "current_script_matches_runtime": false,
+      "npz_whitelist": {
+        "grid_gradients.npz": {
+          "x_native": [
+            200
+          ],
+          "z_native": [
+            67
+          ],
+          "gradient_l2": [
+            3,
+            67,
+            200
+          ]
+        },
+        "gradient_l2.npz": {
+          "gradient": [
+            3,
+            67,
+            200
+          ],
+          "data": [
+            41,
+            2,
+            12000
+          ],
+          "cotangent": [
+            41,
+            2,
+            12000
+          ],
+          "sample_time": [
+            12000
+          ]
+        },
+        "data_and_fixed_window.npz": {
+          "data": [
+            41,
+            2,
+            12000
+          ],
+          "target": [
+            41,
+            2,
+            12000
+          ],
+          "sample_time": [
+            12000
+          ],
+          "weight": [
+            41,
+            1,
+            12000
+          ]
+        }
+      }
+    }
+  ],
+  "no_pending_public_files": true
+}

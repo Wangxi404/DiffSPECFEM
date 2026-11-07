@@ -1,0 +1,284 @@
+{
+  "reviewer_only": true,
+  "native_solver_runs": 0,
+  "model_arrays_included": false,
+  "objectives": {
+    "l2": {
+      "data_vjp": {
+        "exact_equal": true,
+        "absolute_linf": 0.0,
+        "relative_l2": 0.0
+      },
+      "native_cotangent_binary": {
+        "exact_equal": true,
+        "absolute_linf": 0.0,
+        "relative_l2": 0.0
+      },
+      "raw_native_vs_saved": {
+        "exact_equal": true,
+        "absolute_linf": 0.0,
+        "relative_l2": 0.0
+      },
+      "raw_to_grid_chainrule": {
+        "exact_equal": false,
+        "absolute_linf": 1.5777218104420236e-30,
+        "relative_l2": 1.3167416139555055e-16
+      },
+      "native_rho_map": {
+        "exact_equal": false,
+        "absolute_linf": 1.3642420526593924e-12,
+        "relative_l2": 9.087460039248737e-17
+      },
+      "native_lambda_map": {
+        "exact_equal": false,
+        "absolute_linf": 5.340576171875e-05,
+        "relative_l2": 6.387124926938566e-16
+      },
+      "native_mu_map": {
+        "exact_equal": false,
+        "absolute_linf": 1.71661376953125e-05,
+        "relative_l2": 3.0393543387472226e-16
+      },
+      "native_rows": 403200,
+      "solid_rows": 345600,
+      "water_rows": 57600,
+      "water_native_cotangents_exact_zero": true,
+      "value_independent": 8.370585310002086e-11,
+      "value_reported": 8.370585310002089e-11,
+      "independent_modeldot_rhs": 1.298689411089073e-09,
+      "source_array_sha256": {
+        "gradient": "99c3de37dffa2bdac3fcd41ff8065a433f1786940ed999815aa8c1fb79e4aaae",
+        "data": "7fa16a94cddb86d9ada561073f1e3eec29f2809ef150e9a461acbfe3477efdd4",
+        "cotangent": "a1cafa603debda525c148a8014792b29829e914a844a7d0f7dc5cc325c6a545c",
+        "sample_time": "43b8ce98296d2a1ada84f920ecabcc4627780e8f656882e0758f04731323ecf5"
+      },
+      "raw_gradient_is_finite": true,
+      "modeldot_at_read": [],
+      "modeldot_at_final": [
+        {
+          "passed": true,
+          "informative": true,
+          "lhs": {
+            "real": 1.2986810223255018e-09,
+            "imag": 0.0
+          },
+          "rhs": {
+            "real": 1.298689411089073e-09,
+            "imag": 0.0
+          },
+          "absolute_error": 8.388763571310591e-15,
+          "relative_error": 6.459407075842579e-06,
+          "helper_passed": true,
+          "epsilon": 0.0003
+        },
+        {
+          "passed": true,
+          "informative": true,
+          "lhs": {
+            "real": 1.2986884790013701e-09,
+            "imag": 0.0
+          },
+          "rhs": {
+            "real": 1.298689411089073e-09,
+            "imag": 0.0
+          },
+          "absolute_error": 9.320877029569932e-16,
+          "relative_error": 7.177141008452129e-07,
+          "helper_passed": true,
+          "epsilon": 0.0001
+        }
+      ],
+      "independent_modeldot_absolute_errors": [
+        8.388763571310591e-15,
+        9.320877029569932e-16
+      ],
+      "independent_modeldot_relative_errors": [
+        6.459407075842579e-06,
+        7.177141008452129e-07
+      ],
+      "centered_difference_order": 1.999997205374749,
+      "reported_rhs_matches_independent": [
+        true,
+        true
+      ],
+      "local_public_arrays_match_private_source": {
+        "gradient": true,
+        "data": true,
+        "cotangent": true,
+        "sample_time": true
+      }
+    }
+  },
+  "producer_status_at_read": "running",
+  "source_runtime_hash_matches": true,
+  "runtime_script_sha256": "631d5bebca79e0dbf4b7c5bd2ab24075299c88c703b874759804984d223e79de",
+  "native_baseline_vs_record": {
+    "exact_equal": true,
+    "absolute_linf": 0.0,
+    "relative_l2": 0.0
+  },
+  "native_record_vs_saved": {
+    "exact_equal": true,
+    "absolute_linf": 0.0,
+    "relative_l2": 0.0
+  },
+  "native_target_vs_saved": {
+    "exact_equal": true,
+    "absolute_linf": 0.0,
+    "relative_l2": 0.0
+  },
+  "native_sampling_coupling_geometry": {
+    "ranks": [
+      "psv_rank000000_",
+      "psv_rank000001_"
+    ],
+    "native_sampling_lhs": -9.691650412476292,
+    "native_sampling_rhs": -9.69165041247629,
+    "native_sampling_relative_error": 1.832873415567594e-16,
+    "native_coupling_lhs": -2350.772826551078,
+    "native_coupling_rhs": -2350.7728265510787,
+    "native_coupling_relative_error": 1.9344589394188454e-16,
+    "interface_edges": 192,
+    "interface_length_m": 8955.000000000016,
+    "expected_edges": 192,
+    "expected_length_m": 8955.0,
+    "source_files_sha256": {
+      "psv_rank000000_sampling_native_nodes.txt": "e5d65a3ec07b7403903b9b6e42cd9aa8ee81fcd5963cc00aa5fb93ebbb1548d1",
+      "psv_rank000000_sampling_native_receivers.txt": "e0e0eb3e2b49250d0ff56b068c565c670f0612a0556571b50cf8982da59eea3b",
+      "psv_rank000000_coupling_probe.txt": "51f2a5d391a935b3060ee5f2d96c8fa23de0180a01e138865db9c26df61e5067",
+      "psv_rank000000_coupling_geometry.txt": "a5a1e70d5c4cfed414bdb56ccddb6734008f60dbf6d5def73eb46ef15fd57039",
+      "psv_rank000001_sampling_native_nodes.txt": "5ca2bac04ffecfce465c48b03fb187cac3a777c580044fa8f93cdf3920308a57",
+      "psv_rank000001_sampling_native_receivers.txt": "ece9f2aaa7cd1fe197832edbee2599a1971633a3c6306aa7c3612383169693bf",
+      "psv_rank000001_coupling_probe.txt": "837355b88649dc700b89bee2211897549642b8bd51013e1e48726bb2406b8f04",
+      "psv_rank000001_coupling_geometry.txt": "a5a1e70d5c4cfed414bdb56ccddb6734008f60dbf6d5def73eb46ef15fd57039"
+    },
+    "passed": true
+  },
+  "method": "Clamped bilinear interpolation to every native solid GLL row, independent chain rule mu=rho*Vs^2/lambda=rho*(Vp^2-2Vs^2), np.add.at scatter including duplicate MPI/GLL rows; actual native C/B probes use saved MPI inverse multiplicities.",
+  "producer_status_at_final": "passed",
+  "source_resolution": {
+    "passed": true,
+    "initial": {
+      "max_f0_hz": 2.6681758111051668,
+      "max_dt_s": 0.0008310071957209128
+    },
+    "true": {
+      "max_f0_hz": 2.2017106750043944,
+      "max_dt_s": 0.0007692222407432685
+    }
+  },
+  "model_dot_strict_passed": true,
+  "public_grid_source_identity": {
+    "gradient_source_bytes_match": true,
+    "x_matches_expected_45m_grid": true,
+    "z_matches_expected_45m_grid": true,
+    "pending_vs_final_all_arrays_equal": true
+  },
+  "status": "Native discrete derivative, MPI sampling/coupling, compact and complete light public source reviews passed for the 2Hz L2 pilot; final visual QA tracked separately.",
+  "limitations": [
+    "Only one mixed physical-model direction at two centered-difference step sizes was checked for this new 2Hz pilot.",
+    "FD LHS is from saved runtime JSON; the independent native-kernel/static chain-rule RHS was recomputed with no solver rerun.",
+    "Two Hz and the 45m input grid do not establish resolution of all 100m Marmousi layers.",
+    "True and initial density are the same constant; the rho derivative is objective sensitivity, not density recovery.",
+    "Source type, mesh, duration and frequency differ from earlier cases; gradient amplitude is not an improvement effect size.",
+    "Free/reflecting outer boundaries remain and can contribute cavity reflections."
+  ],
+  "actual_numerical_settings": {
+    "f0_hz": 2.0,
+    "dt_s": 0.0005,
+    "nstep": 12000,
+    "nominal_duration_s": 6.0,
+    "user_t0_s": 0.6,
+    "data_shape": [
+      41,
+      2,
+      12000
+    ],
+    "sample_time_first_last_s": [
+      -0.6,
+      5.399500000000001
+    ],
+    "Par_file_sha256": "d608563c826fb6c5b4f8b6f503b4885d83fac319f29e641a6725345ed981d6dd"
+  },
+  "temporal_spectrum": {
+    "definition": "Per trace temporal mean removal, Hann, unpadded rFFT, sum power over receiver/component; not mechanical energy or an independent dispersion guarantee.",
+    "statistics": {
+      "target": {
+        "f50_hz": 1.6666666666666665,
+        "f90_hz": 2.5,
+        "f95_hz": 2.833333333333333,
+        "squared_spectral_norm_fraction_above_3Hz": 0.02455141915178623
+      },
+      "predicted": {
+        "f50_hz": 1.6666666666666665,
+        "f90_hz": 2.5,
+        "f95_hz": 2.833333333333333,
+        "squared_spectral_norm_fraction_above_3Hz": 0.02162558295263812
+      },
+      "residual": {
+        "f50_hz": 2.0,
+        "f90_hz": 2.833333333333333,
+        "f95_hz": 3.0,
+        "squared_spectral_norm_fraction_above_3Hz": 0.04330678527223943
+      }
+    }
+  },
+  "squared_gradient_definition": "Per-family sum(g^2) in physical SI model coordinates; not mechanical energy; do not compare norms across Vp/Vs/rho units.",
+  "physical_gradient_squared_norm_fraction_by_depth": {
+    "vp": {
+      "depth_ge1000m": 0.09198510774148647,
+      "depth_ge2000m": 0.01645921467233169
+    },
+    "vs": {
+      "depth_ge1000m": 0.12832364486187522,
+      "depth_ge2000m": 0.006151397424000311
+    },
+    "rho": {
+      "depth_ge1000m": 0.18829929600837073,
+      "depth_ge2000m": 0.0647973073351188
+    }
+  },
+  "local_public_manifest": [
+    {
+      "path": "Par_file",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "SOURCE",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "STATIONS",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "data_and_fixed_window.npz",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "gradient_l2.npz",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "grid_gradients.npz",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "interfaces_elastic_analytic.dat",
+      "present": true,
+      "match": true
+    },
+    {
+      "path": "pilot.json",
+      "present": true,
+      "match": true
+    }
+  ],
+  "local_public_complete": true
+}
