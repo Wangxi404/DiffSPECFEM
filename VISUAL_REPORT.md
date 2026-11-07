@@ -152,16 +152,23 @@ record. The visual additions do not alter those records.
 
 ```bash
 python scripts/visualize_evidence.py
-python scripts/audit_visual_evidence.py
 ```
 
-The renderer needs NumPy, matplotlib and Pillow. For the independent source,
-alignment, final-PDF glyph and collision checks, the installed `nature-figure`
-QA scripts are resolved from `NATURE_FIGURE_QA` or the normal skill directory;
-PyMuPDF is needed for PDF geometry inspection. Use `--qa-scripts` to point to
-another installed copy. The source NPZ is included, so local rendering needs no
-remote machine, native build or benchmark run. `extract_native_frames.py`
-documents how the source frames were obtained and verifies original hashes.
+The renderer needs NumPy, matplotlib and Pillow. Its mandatory alignment gate
+uses the [bundled helper](scripts/figure_qa/README.md), with its original Apache
+license and upstream attribution, so no installed skill is required. The source
+NPZ is included, so local rendering needs no remote machine, native build or
+benchmark run. `extract_native_frames.py` documents how the source frames were
+obtained and verifies original hashes. `--qa-scripts` or `NATURE_FIGURE_QA` can
+override the renderer's bundled helper directory.
+
+The independent source, final-PDF glyph and collision tools remain optional
+post-export audits. Their final results are already committed. To rerun them
+with an installed nature-figure scripts directory and PyMuPDF, use:
+
+```bash
+python scripts/audit_visual_evidence.py --qa-scripts /path/to/nature-figure/scripts
+```
 
 The [source manifest](evidence/visuals/manifest.json) records every input hash,
 coordinates, times, extraction rule, unit convention and numerical closure.

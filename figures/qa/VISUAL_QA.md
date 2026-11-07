@@ -59,3 +59,12 @@ journal column widths. These are deliberate repository/report deliverables;
 editable PDF/SVG and 300 dpi PNG are the export contract. No journal submission
 claim is made. All required source and final-PDF checks exit zero; the source
 validator is run without promoting these declared export warnings to errors.
+
+Portability follow-up: the unmodified, Apache-licensed alignment helper is now
+bundled under `scripts/figure_qa`. Rendering with `NATURE_FIGURE_QA` unset and
+`--skip-animation` passed all five alignment gates and produced byte-identical
+PNGs for all five plates. The existing final PDF/SVG files and their completed
+PDF audits were retained because geometry and scientific content did not change.
+The bundled helper's Git blob is
+`48f6f2b477b2b12cd4f83004d2e83aad9ac7e4b4`, matching the attributed upstream
+revision, and the original Apache license was copied byte-for-byte.

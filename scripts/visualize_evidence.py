@@ -23,7 +23,8 @@ import PIL
 ROOT = Path(__file__).resolve().parents[1]
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--qa-scripts', type=Path, default=Path(os.environ.get(
-    'NATURE_FIGURE_QA', Path.home()/'.codex/skills/nature-figure/scripts')))
+    'NATURE_FIGURE_QA', ROOT/'scripts/figure_qa')),
+    help='Alignment helper directory (default: bundled scripts/figure_qa; NATURE_FIGURE_QA may override)')
 parser.add_argument('--skip-animation', action='store_true')
 args = parser.parse_args()
 sys.path.insert(0, str(args.qa_scripts))

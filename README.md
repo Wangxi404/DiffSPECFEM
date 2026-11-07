@@ -31,6 +31,9 @@ Full-size plates, legends, exact sampling rules and QA are in the
 [native snapshots](figures/02_native_wavefield.pdf),
 [source data and hashes](evidence/visuals/manifest.json) and
 [rendering code](scripts/visualize_evidence.py) are included.
+Rebuild with `python scripts/visualize_evidence.py`; the alignment helper and
+its [upstream attribution/license](scripts/figure_qa/README.md) are bundled,
+so rendering requires only NumPy, matplotlib and Pillow, with no installed skill.
 
 | Validated quantity | 32×32 native SH case |
 |---|---:|

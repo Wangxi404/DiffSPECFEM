@@ -306,8 +306,8 @@
     },
     {
       "file": "scripts/visualize_evidence.py",
-      "bytes": 22386,
-      "sha256": "44afe1d6fb2d1cdbbe2fa5cace5b2367b5f4737a4e81eb90d6b5cdb031b1bd86"
+      "bytes": 22468,
+      "sha256": "59b69f488b70fe3895c7c16d8b4a2642ffb48f5306ebdd1fdffb540c215c8a06"
     }
   ],
   "outputs": [

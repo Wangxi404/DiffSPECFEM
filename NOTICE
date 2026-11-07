@@ -10,3 +10,13 @@ and license notices are retained. Main historical authors include Dimitri
 Komatitsch and Jeroen Tromp; the upstream project credits its additional
 contributors. SPECFEM2D is licensed under GPL-3.0-or-later. Its source notices
 and third-party notices remain authoritative for the fetched upstream code.
+
+Bundled scientific-figure alignment helper
+scripts/figure_qa/audit_panel_alignment.py is an unmodified third-party file
+from Yuan1z0825/nature-skills, commit
+8630593a086755d2003cbd1a79cd1118c6963202, Git blob
+48f6f2b477b2b12cd4f83004d2e83aad9ac7e4b4. Authorship remains with the
+upstream contributors. It is distributed under Apache License 2.0, whose
+original text is retained in scripts/figure_qa/LICENSE.Apache-2.0.
+See scripts/figure_qa/README.md for the source link and attribution.
+The project GPL license does not replace this third-party file's license.
