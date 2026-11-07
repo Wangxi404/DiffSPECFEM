@@ -280,5 +280,11 @@
       "match": true
     }
   ],
-  "local_public_complete": true
+  "local_public_complete": true,
+  "strict_float64_observation_bitpattern_comparison": {
+    "baseline_vs_record_actual_float64_uint64_view_equal": true,
+    "record_vs_saved_actual_float64_uint64_view_equal": true,
+    "target_vs_saved_actual_float64_uint64_view_equal": true,
+    "scope": "Float64 observed traces read from actual native .semd files, matching solver wrapper observation boundary."
+  }
 }

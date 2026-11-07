@@ -239,5 +239,11 @@
       "psv_rank000001_coupling_probe.txt": "259b28e3501757e37f77ca549b4c6805d101b5b412b83942d12f2838e3018e2d",
       "psv_rank000001_coupling_geometry.txt": "a79ea7bfc792b915bbb0bc06754e939671e72cdbf9654ce74ffc977f989e9669"
     }
+  },
+  "strict_float64_observation_bitpattern_comparison": {
+    "baseline_vs_record_actual_float64_uint64_view_equal": true,
+    "record_vs_saved_actual_float64_uint64_view_equal": true,
+    "target_vs_saved_actual_float64_uint64_view_equal": true,
+    "scope": "Float64 observed traces read from actual native .semd files, matching solver wrapper observation boundary."
   }
 }
