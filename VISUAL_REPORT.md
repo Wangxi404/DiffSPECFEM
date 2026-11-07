@@ -1,5 +1,9 @@
 # Native SH visual evidence
 
+**Scope clarification:** these archived figures are SH regression evidence,
+not P–SV. A full water-bearing P–SV Marmousi-II example is under development;
+no P–SV correctness or wavefield result is claimed by this report yet.
+
 Five figure plates and a wavefield animation make the numerical contract
 inspectable. They use the accepted 32×32-element, two-rank SH validation case,
 with 16,641 unique physical GLL nodes, four displacement receivers, 800 native

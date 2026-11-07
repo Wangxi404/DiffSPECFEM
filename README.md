@@ -1,5 +1,16 @@
 # DiffSPECFEM
 
+**Validation status:** the released v0.2.0 derivative interface and gallery below
+cover **SH only**, not P–SV. Native SPECFEM2D itself supports both modes.
+The intended **P–SV Marmousi-II case, including the water layer and fluid–solid
+coupling, is now being implemented and is not yet validated**. The SH examples
+remain regression tests; they must not be presented as P–SV results.
+
+The original extension was built from a clean pinned official SPECFEM2D source
+using a frozen generic skill. It did not copy or use an earlier private
+DiffSpecfem implementation. Source revision, explicit patches and application
+records below document that path.
+
 A runnable differentiation extension of **official SPECFEM2D**, pinned to
 [`abf3196e3192af3343f2b402c82f34205577e672`](https://github.com/SPECFEM/specfem2d/tree/abf3196e3192af3343f2b402c82f34205577e672).
 It computes a PyTorch data-objective VJP and sends that cotangent to a compiled
