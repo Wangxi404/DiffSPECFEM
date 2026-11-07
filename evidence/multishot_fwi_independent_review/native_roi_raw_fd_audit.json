@@ -1,0 +1,266 @@
+{
+  "passed": true,
+  "scope": "Independent read-only recomputation from all twenty actual native \u00b1FD receiver arrays, original five-shot gradient/cotangents and fixed target data. First coarse anchor only; no solver/adjoint/GPU or optimizer run by reviewer.",
+  "numerical_driver_sha256": "28eed616dacde81f48eb1d470b927f7969166fe1a74468be88e6dd3ac01716c6",
+  "executed_checker_sha256": "cc682e85d59c769c76af3226a51f4d16f44e62052bde7090dc23efb1800d69cc",
+  "verification_json_sha256": "0751d0abc91ec1d451c1d9bc2eb2fafb7f20077446a751a37a5f51a1842abf7b",
+  "raw_manifest_sha256": "e1c6689667080244a21e13357499135b4185cbfd00865c495acc546cc69c1f06",
+  "manifest_files_verified": 54,
+  "manifest_bytes_verified": 373396189,
+  "direction_sha256": "3da207ba97a276ba75035fabefe7747668abb21be1ab2fa1c7a2f6f60f506853",
+  "anchor_vp_sha256": "8b972eab04e45fc277a641a6924b6c7686d2f3687e15fd806720b82f184f46c6",
+  "global_mean_gradient_sha256": "2ccfab97674890a4240f65dde90c4c392efd8990324e18de4f33f90eff0a626f",
+  "direction_gradient_abs_cosine": 0.9999999999999998,
+  "original_gradient_recomputed": false,
+  "original_gradient_sum_then_mean_uint64_equal": true,
+  "unknown_true_Vp_read_by_independent_auditor": false,
+  "shot_count": 5,
+  "full_global_sample_N": 8050000,
+  "anchors": [
+    {
+      "shot_id": 0,
+      "shape": [
+        161,
+        2,
+        5000
+      ],
+      "full_per_shot_N": 1610000,
+      "cotangent_relative_l2": 1.1012369089707407e-16,
+      "original_anchor_cache_sha256": "6cfb88c671bbc6feccdbdb55972594c81c29806f88a8d28de6d8a0210f715e9b",
+      "target_sha256": "66d5f535fa0d78a4e63f3330f69ddce2eefcdf2c78ffe6c3d0e7c57ff525eaf0",
+      "source_sha256": "f35cd534ebc56b4343e2722998d6cd141191e9f3447a4e39700831c1dff657c1",
+      "cached_anchor_data_and_cot_uint64_equal_original": true
+    },
+    {
+      "shot_id": 1,
+      "shape": [
+        161,
+        2,
+        5000
+      ],
+      "full_per_shot_N": 1610000,
+      "cotangent_relative_l2": 9.663781048570225e-17,
+      "original_anchor_cache_sha256": "d2b103de2c83a6b9f403b1ae083d53c68972cbe1140bea62a003d08102162e6b",
+      "target_sha256": "5a6bd3118a769eeabf46740313f10cd508495ac6d801e0124d11a3a3ca9a8f45",
+      "source_sha256": "9146b97ac9c3b565e53e684edc77cc766f7da92f637e27bb2c6c112f31122fe8",
+      "cached_anchor_data_and_cot_uint64_equal_original": true
+    },
+    {
+      "shot_id": 2,
+      "shape": [
+        161,
+        2,
+        5000
+      ],
+      "full_per_shot_N": 1610000,
+      "cotangent_relative_l2": 1.5156188278382574e-16,
+      "original_anchor_cache_sha256": "77c7f01111150648d337ab7bd67e430180bd2d92bdd3ad7aceb20ff64dd96286",
+      "target_sha256": "09987d3b81b3b0053f0e4fbb9d4c88f074bd4f6c2fcbbc4dbee563d1f92c8458",
+      "source_sha256": "20d69b8c5680e5a741313da21ff6725362ec6028853b1f318c2e61192f12a451",
+      "cached_anchor_data_and_cot_uint64_equal_original": true
+    },
+    {
+      "shot_id": 3,
+      "shape": [
+        161,
+        2,
+        5000
+      ],
+      "full_per_shot_N": 1610000,
+      "cotangent_relative_l2": 9.951837136770755e-17,
+      "original_anchor_cache_sha256": "b3b95589e96659e1944ecc4db0dccd8951f53e0a25e63d73fa9fffe06fe370d8",
+      "target_sha256": "614568c7b046fa97ab847328e2042a886ec1ea3d3868ccad1827e0759d465d82",
+      "source_sha256": "afc611e3f6576712f2964df7437c5aab4f5fdd96095e8e41691975de250e4c81",
+      "cached_anchor_data_and_cot_uint64_equal_original": true
+    },
+    {
+      "shot_id": 4,
+      "shape": [
+        161,
+        2,
+        5000
+      ],
+      "full_per_shot_N": 1610000,
+      "cotangent_relative_l2": 1.4366556147816671e-16,
+      "original_anchor_cache_sha256": "127ac8830ce03705a339d9b392e818d7c4849aca7ff497fa678a3161fb4c8a07",
+      "target_sha256": "3e5ec2a38a3ee7b6e08c0efde10c29f4898b0ad70132f6562c34e22e49248545",
+      "source_sha256": "1d03840560fe7c2f015a7f02515fd284151589bbe04169db11a46d13e47b3756",
+      "cached_anchor_data_and_cot_uint64_equal_original": true
+    }
+  ],
+  "checks": [
+    {
+      "h_m_s": 0.1,
+      "rhs_independently_recomputed": 0.0001231317252429899,
+      "raw_full_shot_JVP_cot_lhs": 0.00012313172343693642,
+      "JVP_relative_error": 1.46676533492988e-08,
+      "raw_full_mean_scalar_FD_lhs": 0.0001231317153843961,
+      "scalar_relative_error": 8.006542397345002e-08,
+      "plus_recomputed_global_mean_loss": 0.010817348222241053,
+      "minus_recomputed_global_mean_loss": 0.010792721879164174,
+      "actual_scalar_loss_difference": 2.462634307687922e-05,
+      "per_shot_JVP_cot_terms_before_global_mean": [
+        9.271469756402204e-05,
+        9.669079735697051e-05,
+        0.00012112720851434458,
+        0.0001625981603588483,
+        0.00014252775339049668
+      ],
+      "actual_model_plus_sha256": "f53bebb58e6d91c937efc7be1aa966922778996eba0aa52bed891a6c71515541",
+      "actual_model_minus_sha256": "29b3249ccf07c35855ff53e673966a0541acf667d2484e853f33fd82990a6f59",
+      "maximum_actual_plus_Vp_change_m_s": 0.09999999999990905,
+      "maximum_actual_minus_Vp_change_m_s": 0.09999999999990905,
+      "passed": true
+    },
+    {
+      "h_m_s": 0.05,
+      "rhs_independently_recomputed": 0.0001231317252429899,
+      "raw_full_shot_JVP_cot_lhs": 0.00012313172479153737,
+      "JVP_relative_error": 3.6664191442415553e-09,
+      "raw_full_mean_scalar_FD_lhs": 0.00012313172277841206,
+      "scalar_relative_error": 2.0015782498248978e-08,
+      "plus_recomputed_global_mean_loss": 0.010811187861532342,
+      "minus_recomputed_global_mean_loss": 0.0107988746892545,
+      "actual_scalar_loss_difference": 1.2313172277841206e-05,
+      "per_shot_JVP_cot_terms_before_global_mean": [
+        9.271469825347696e-05,
+        9.669079832732634e-05,
+        0.00012112721041549293,
+        0.00016259816259866808,
+        0.00014252775436272264
+      ],
+      "actual_model_plus_sha256": "7a629e6e7c113c22e2a40c2147135c6a07f16ad667a605de26c8a34e155913fe",
+      "actual_model_minus_sha256": "d876d59eb9750fce6d7c14648f582272cc0ce66c4c4d534d0c114c1f753bcb5d",
+      "maximum_actual_plus_Vp_change_m_s": 0.049999999999954525,
+      "maximum_actual_minus_Vp_change_m_s": 0.049999999999954525,
+      "passed": true
+    }
+  ],
+  "JVP_error_order": 2.000194446362051,
+  "scalar_error_order": 2.0000413357161264,
+  "relative_gate_unchanged": 1e-05,
+  "absolute_gate_not_used": true,
+  "twenty_raw_FD_files": [
+    {
+      "path": "h0.1_plus/shot_000.npz",
+      "sha256": "ace98d0e01f34d45d94b0ea5de7e6f41c06dbe76e657e5b9bdfc8adaa2f3c033",
+      "model_sha256": "f53bebb58e6d91c937efc7be1aa966922778996eba0aa52bed891a6c71515541"
+    },
+    {
+      "path": "h0.1_minus/shot_000.npz",
+      "sha256": "686c4d535337481d50b414e969eac9c1a6a282d8bbb8817d88b896e7b00b5975",
+      "model_sha256": "29b3249ccf07c35855ff53e673966a0541acf667d2484e853f33fd82990a6f59"
+    },
+    {
+      "path": "h0.1_plus/shot_001.npz",
+      "sha256": "3f0d3e1b1a4644717bc212f69df59aa205325e5fd72c10d383b0f86d82c6e73d",
+      "model_sha256": "f53bebb58e6d91c937efc7be1aa966922778996eba0aa52bed891a6c71515541"
+    },
+    {
+      "path": "h0.1_minus/shot_001.npz",
+      "sha256": "4d75ca77008966bfe7311b2e83c98a03abb3549fb1db71ceaac033c149ad3f00",
+      "model_sha256": "29b3249ccf07c35855ff53e673966a0541acf667d2484e853f33fd82990a6f59"
+    },
+    {
+      "path": "h0.1_plus/shot_002.npz",
+      "sha256": "fe24abe6fda55e38d0a7b16e69d202c5cd66c50f3c6bed2e1dfbce3780f0fdeb",
+      "model_sha256": "f53bebb58e6d91c937efc7be1aa966922778996eba0aa52bed891a6c71515541"
+    },
+    {
+      "path": "h0.1_minus/shot_002.npz",
+      "sha256": "1a51ccc2d2f1a513c59e558a9ccb614b4cb303b04a41ac160e00bc9e7b9b7048",
+      "model_sha256": "29b3249ccf07c35855ff53e673966a0541acf667d2484e853f33fd82990a6f59"
+    },
+    {
+      "path": "h0.1_plus/shot_003.npz",
+      "sha256": "0a3aff24809577b038feb0e3b651510d5e68de284caa96cf668dd65aa309a4e9",
+      "model_sha256": "f53bebb58e6d91c937efc7be1aa966922778996eba0aa52bed891a6c71515541"
+    },
+    {
+      "path": "h0.1_minus/shot_003.npz",
+      "sha256": "99d636734f7f4be836a22121f7a9b209ee7405584613fda83f285f566e76ecdd",
+      "model_sha256": "29b3249ccf07c35855ff53e673966a0541acf667d2484e853f33fd82990a6f59"
+    },
+    {
+      "path": "h0.1_plus/shot_004.npz",
+      "sha256": "a3703af3790141614403064b96f53d2b0c699eee0e46641689e0090f461038d3",
+      "model_sha256": "f53bebb58e6d91c937efc7be1aa966922778996eba0aa52bed891a6c71515541"
+    },
+    {
+      "path": "h0.1_minus/shot_004.npz",
+      "sha256": "76f1411bab830cfe291961abf5edf36c78f16e2698fa1d36f0efe81cc25b04ef",
+      "model_sha256": "29b3249ccf07c35855ff53e673966a0541acf667d2484e853f33fd82990a6f59"
+    },
+    {
+      "path": "h0.05_plus/shot_000.npz",
+      "sha256": "ec144cd8eaa0c21a77e47a6147b834d9e29fd9331f4c25590ff6b1dbd27beb4a",
+      "model_sha256": "7a629e6e7c113c22e2a40c2147135c6a07f16ad667a605de26c8a34e155913fe"
+    },
+    {
+      "path": "h0.05_minus/shot_000.npz",
+      "sha256": "2c197a263cc2947bddaaef8531833e928c6d6c9eb3cbfd46f498351d57943311",
+      "model_sha256": "d876d59eb9750fce6d7c14648f582272cc0ce66c4c4d534d0c114c1f753bcb5d"
+    },
+    {
+      "path": "h0.05_plus/shot_001.npz",
+      "sha256": "6686220c1481dcb8c858fe12a1e4cdf78e4101c0ebae95f37551797a6bdb81e6",
+      "model_sha256": "7a629e6e7c113c22e2a40c2147135c6a07f16ad667a605de26c8a34e155913fe"
+    },
+    {
+      "path": "h0.05_minus/shot_001.npz",
+      "sha256": "e84cc231d6a950612766983d7941a8db0b7d1d3998c34c1938bb7403a0fa5871",
+      "model_sha256": "d876d59eb9750fce6d7c14648f582272cc0ce66c4c4d534d0c114c1f753bcb5d"
+    },
+    {
+      "path": "h0.05_plus/shot_002.npz",
+      "sha256": "19126284c4be9a52597d4d1e50dfe2f8aadd406168a6f75d5eadd77613543fab",
+      "model_sha256": "7a629e6e7c113c22e2a40c2147135c6a07f16ad667a605de26c8a34e155913fe"
+    },
+    {
+      "path": "h0.05_minus/shot_002.npz",
+      "sha256": "2632c7fca4d519a2d71d6eeaefc8c35c0567deedf27eca44c00fa4fb25b2de17",
+      "model_sha256": "d876d59eb9750fce6d7c14648f582272cc0ce66c4c4d534d0c114c1f753bcb5d"
+    },
+    {
+      "path": "h0.05_plus/shot_003.npz",
+      "sha256": "2dfc33e734435ba35a652167a53482397f69448c36d3e58c3eef20fe1b96a1e3",
+      "model_sha256": "7a629e6e7c113c22e2a40c2147135c6a07f16ad667a605de26c8a34e155913fe"
+    },
+    {
+      "path": "h0.05_minus/shot_003.npz",
+      "sha256": "26369fb992896447661a169edee79d169f01197f30b5a498faf544b8a1489a1c",
+      "model_sha256": "d876d59eb9750fce6d7c14648f582272cc0ce66c4c4d534d0c114c1f753bcb5d"
+    },
+    {
+      "path": "h0.05_plus/shot_004.npz",
+      "sha256": "564185b93465817468b6203dca09e9baf4f7294f0775f910fe3ea79f1f551d05",
+      "model_sha256": "7a629e6e7c113c22e2a40c2147135c6a07f16ad667a605de26c8a34e155913fe"
+    },
+    {
+      "path": "h0.05_minus/shot_004.npz",
+      "sha256": "5ade725cdb075d1e709930c2f6b9e8623764ed6034e57e77b6facfb4a531dae9",
+      "model_sha256": "d876d59eb9750fce6d7c14648f582272cc0ce66c4c4d534d0c114c1f753bcb5d"
+    }
+  ],
+  "recorded_native_full_forwards": 20,
+  "recorded_native_MPI_ranks": 2,
+  "no_adjoint_record_or_optimizer_in_check_namespace": true,
+  "output_directory": "<TEMP>/native-raw-fd-independent-qdbu39es",
+  "limits": [
+    "This closes the raw finite-difference LHS evidence gap for the first coarse ROI anchor only. Original unit missing-trace limits remain unchanged.",
+    "It does not certify later models, the fine-grid stage, the full bounded inversion schedule or geological recovery."
+  ],
+  "independent_reader_source_sha256": "7a2716a4b3a148e8817e20452dcf833b3780dddd5b6606609fd113835d115bf0",
+  "original_private_report_sha256": "9fcacd9899ad69fbc52e0e48630f88a00993ddc0a96dc883fe0c93b5ce8217a6",
+  "sanitization": {
+    "scope": "Only ephemeral output-directory prefix replaced; all original numerical values and source hashes preserved.",
+    "private_archive_relative_path": ".cache/private-review/multishot_fwi_independent_review/native_roi_raw_fd_audit.json",
+    "home_and_host_identity_removed": true,
+    "temporary_paths_use_logical_TEMP_identifier": true
+  },
+  "portable_public_reproducer": {
+    "path": "audit_native_raw_fd.py",
+    "sha256": "7a2716a4b3a148e8817e20452dcf833b3780dddd5b6606609fd113835d115bf0",
+    "scope": "This exact portable reader was executed against the preserved raw files; read-only NumPy, no solver/adjoint/GPU."
+  }
+}

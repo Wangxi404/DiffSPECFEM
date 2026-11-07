@@ -34,3 +34,4 @@ __pycache__/
 /evidence/**/DATA/tomo_file.xyz
 /evidence/**/direction_*.npy
 /.local-development/
+/.cache/

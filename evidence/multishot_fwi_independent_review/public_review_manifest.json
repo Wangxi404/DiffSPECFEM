@@ -1,0 +1,97 @@
+{
+  "scope": "Only independent-review evidence and portable reproducers. Actual numerical solver scripts, frozen experiment sources and root-owned actual-plot QA receipt untouched.",
+  "files": [
+    {
+      "path": "audit_native_actual_fwi.py",
+      "bytes": 15398,
+      "sha256": "1cf117d3174245e9411f2dc8c50cfa9b7c0999d0e1123930586f7177504771e6",
+      "original_private_file_sha256": "e0ab836017302c715787b22bf54d32926b6ccaf68e77620825c65740968fe3cd"
+    },
+    {
+      "path": "design_and_feasibility.json",
+      "bytes": 8181,
+      "sha256": "29970e4db2e2e75b59af4f92be9a46174b73a57ae6328c065d8d81ee588bbe43",
+      "original_private_file_sha256": "7047622528e648f6f30e9e823ad8c73854a70d5941d613bca6fbc9748505f7b5"
+    },
+    {
+      "path": "independent_native_full_loop.py",
+      "bytes": 11409,
+      "sha256": "39a3f6d301dbd4eb97d0c0a5db45b14b9c70e8ae99520c966bdffe36209e3cb6",
+      "original_private_file_sha256": "9950eeb506ad0660b84dceff7bde3e29ee918f33107681adfff537f8c8f92415"
+    },
+    {
+      "path": "initial_control_flow_probes.json",
+      "bytes": 2359,
+      "sha256": "6d9bf38d3a3ed508ac186ab4d93d87bc635d2c32a76f210aed45602ea43d2610",
+      "original_private_file_sha256": "c0ce902eb14bc844cf2def654db8e1941b502069d0dcd23741c5990634ec844d"
+    },
+    {
+      "path": "native_loop_control_flow_receipt.json",
+      "bytes": 4776,
+      "sha256": "a6f65524be217ac98db9f57cb79227f892292ff5125e14cee9a282d418e9d484",
+      "original_private_file_sha256": "66e0cf39f64c72d11f558c6bceafc41be04dd432a3ff9c895e1baa2d54ffac3f"
+    },
+    {
+      "path": "native_real_unit_audit.json",
+      "bytes": 21427,
+      "sha256": "9d46eae35616d366b98f33e4df10e4d29f91f650dac95cb63be447db325c4fa2",
+      "original_private_file_sha256": "49af85c86506d1c1f5b5a4757134d305a896525db5c45164e5c2f03d0d625558"
+    },
+    {
+      "path": "native_roi_first_epoch_audit.json",
+      "bytes": 17214,
+      "sha256": "3303fd5422c676530da55bbe2478a1de62b7f857d9c97f4a3534ed288f5c5962",
+      "original_private_file_sha256": "5b4d481ca0d1c4d2c665fb2a1e8192fa5c032e3d3523d4d95f0efc963dea815d"
+    },
+    {
+      "path": "plotter_actual_native_wave_qa.json",
+      "bytes": 18174,
+      "sha256": "fe3d8b2e2961c1391f5aeb376094d230d553d48ba74f08e5be5154f45767e54f",
+      "original_private_file_sha256": "4e85efda42b1e3460090938761436e2094cce1564d08b63aae6ac31c8bdba335"
+    },
+    {
+      "path": "plotter_source_review.json",
+      "bytes": 5988,
+      "sha256": "256d84f8150c9fa567f88adb6500b00d42331c8a2604987d2c055cd6d86eb8c6",
+      "original_private_file_sha256": "d06c74d51246b06e37b11db9b08105d186a7c96ed98866d9da95b59a2d2eae28"
+    },
+    {
+      "path": "remote_plotting_environment_audit.json",
+      "bytes": 15178,
+      "sha256": "489a8b12ed687eed41ba4f5d313ab301222a07225545e2758cc924ac49aa9e85",
+      "original_private_file_sha256": "be187e10c34f5e984eeeb6ab440656cf00792ef4a140389a239216a5f6bad03a"
+    },
+    {
+      "path": "training_input_material_audit.json",
+      "bytes": 2217,
+      "sha256": "b4dd399cfcb9331986e38e8b9525accd551ac8d275678ef867ed263723ebef0d",
+      "original_private_file_sha256": "172d0a16d8d4ea74f7f20ca21cda49c8b986945206a67d03376c2960adae76fb"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3206,
+      "sha256": "db46da853b15ea1b17baf41730599a542afdab5a12851c7b3784d8a9145cadc1",
+      "original_private_file_sha256": null
+    },
+    {
+      "path": "audit_native_raw_fd.py",
+      "bytes": 10865,
+      "sha256": "7a2716a4b3a148e8817e20452dcf833b3780dddd5b6606609fd113835d115bf0",
+      "original_private_file_sha256": "7a2716a4b3a148e8817e20452dcf833b3780dddd5b6606609fd113835d115bf0"
+    },
+    {
+      "path": "native_roi_raw_fd_audit.json",
+      "bytes": 12241,
+      "sha256": "2610cd143dcea44990c9931cf7006133ba01cf820194b9affcbd99500bae8236",
+      "original_private_file_sha256": "9fcacd9899ad69fbc52e0e48630f88a00993ddc0a96dc883fe0c93b5ce8217a6"
+    }
+  ],
+  "original_private_archive_manifest_sha256": "899ddd6759ea19d4ef04096aa6139705cc561611db0abbbfe333a54b4268dd3d",
+  "original_numeric_values_and_solver_source_hashes_preserved": true,
+  "private_originals_ignored_by_git": true,
+  "root_owned_plotter_QA_excluded": [
+    "plotter_actual_cpu_wave_qa.json"
+  ],
+  "portability_syntax_and_help_checked": true,
+  "new_actual_process_group_policy_test": null
+}

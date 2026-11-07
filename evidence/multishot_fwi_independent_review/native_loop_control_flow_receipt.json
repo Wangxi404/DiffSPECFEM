@@ -1,0 +1,135 @@
+{
+  "passed": true,
+  "scope": "Actual optimize/batch/Armijo/L-BFGS/stage/cache/checkpoint/ledger control flow with an analytic tiny CPU observation engine. No native wave solver, MPI or GPU process launched; derivative physics remains separately qualified.",
+  "source_sha256": "28eed616dacde81f48eb1d470b927f7969166fe1a74468be88e6dd3ac01716c6",
+  "directory": "<TEMP>/native_real_loop_cpu_e1ztxvb8",
+  "uninterrupted_vs_two_interruption_resume_final_Vp_uint64_equal": true,
+  "checks": {
+    "uninterrupted": {
+      "ledger": {
+        "passed": true,
+        "status": "PASS",
+        "complete": true,
+        "iterations": 4,
+        "accepted_updates": 4,
+        "shot_count": 3,
+        "iteration_statuses": {
+          "accepted": 4,
+          "converged": 0,
+          "rejected": 0,
+          "failed": 0,
+          "interrupted": 0
+        },
+        "scope": "Orchestration metadata only; not a numerical-gradient or inversion-convergence certificate"
+      },
+      "status": "epoch_cap",
+      "stage_first_history_counts": {
+        "s0": 0,
+        "s1": 0
+      },
+      "accepted_actual_delta_slopes": [
+        -0.0803693528427554,
+        -0.06321523461423538,
+        -0.014462356162784018,
+        -0.0038884868236601197
+      ]
+    },
+    "resumed": {
+      "ledger": {
+        "passed": true,
+        "status": "PASS",
+        "complete": true,
+        "iterations": 4,
+        "accepted_updates": 4,
+        "shot_count": 3,
+        "iteration_statuses": {
+          "accepted": 4,
+          "converged": 0,
+          "rejected": 0,
+          "failed": 0,
+          "interrupted": 0
+        },
+        "scope": "Orchestration metadata only; not a numerical-gradient or inversion-convergence certificate"
+      },
+      "status": "epoch_cap",
+      "stage_first_history_counts": {
+        "s0": 0,
+        "s1": 0
+      },
+      "accepted_actual_delta_slopes": [
+        -0.0803693528427554,
+        -0.06321523461423538,
+        -0.014462356162784018,
+        -0.0038884868236601197
+      ]
+    }
+  },
+  "immutable_target_rejection": {
+    "rejected": true,
+    "message": "Frozen stage observations changed"
+  },
+  "immutable_source_rejection": {
+    "rejected": true,
+    "message": "Immutable source/case changed"
+  },
+  "immutable_runtime_rejection": {
+    "rejected": true,
+    "message": "Runtime/API/native binary signature changed"
+  },
+  "actual_analytic_forward_calls": 72,
+  "zero_gradient_no_update": {
+    "status": "data_gradient_stationarity",
+    "ledger": {
+      "passed": true,
+      "status": "PASS",
+      "complete": true,
+      "iterations": 2,
+      "accepted_updates": 0,
+      "shot_count": 3,
+      "iteration_statuses": {
+        "accepted": 0,
+        "converged": 2,
+        "rejected": 0,
+        "failed": 0,
+        "interrupted": 0
+      },
+      "scope": "Orchestration metadata only; not a numerical-gradient or inversion-convergence certificate"
+    }
+  },
+  "projected_stationarity_no_update": {
+    "status": "data_gradient_stationarity",
+    "ledger": {
+      "passed": true,
+      "status": "PASS",
+      "complete": true,
+      "iterations": 2,
+      "accepted_updates": 0,
+      "shot_count": 3,
+      "iteration_statuses": {
+        "accepted": 0,
+        "converged": 2,
+        "rejected": 0,
+        "failed": 0,
+        "interrupted": 0
+      },
+      "scope": "Orchestration metadata only; not a numerical-gradient or inversion-convergence certificate"
+    }
+  },
+  "limitation": "Native forward/gradient and binary-file availability are mocked solely for surrounding control flow. This does not substitute for actual native unit and directional checks.",
+  "reproducer_sha256": "9950eeb506ad0660b84dceff7bde3e29ee918f33107681adfff537f8c8f92415",
+  "original_private_report_sha256": "66e0cf39f64c72d11f558c6bceafc41be04dd432a3ff9c895e1baa2d54ffac3f",
+  "sanitization": {
+    "scope": "Public path identifiers only; all original numeric values, solver/source SHA values, outcomes and limitations preserved.",
+    "private_archive_relative_path": ".cache/private-review/multishot_fwi_independent_review/native_loop_control_flow_receipt.json",
+    "home_and_host_identity_removed": true,
+    "temporary_paths_use_logical_TEMP_identifier": true,
+    "environment_paths_keep_environment_name_and_site_packages_relative_file": true,
+    "placeholders_are_not_literal_executable_paths": true
+  },
+  "portable_public_reproducer": {
+    "path": "independent_native_full_loop.py",
+    "sha256": "39a3f6d301dbd4eb97d0c0a5db45b14b9c70e8ae99520c966bdffe36209e3cb6",
+    "original_reproducer_hash_fields_preserved": true,
+    "scope": "Public script path/CLI handling is relocatable; its SHA may differ from the original private executed reader. The historical numeric solver/source SHA remains unchanged."
+  }
+}

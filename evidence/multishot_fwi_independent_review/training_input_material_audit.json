@@ -1,0 +1,63 @@
+{
+  "status": "Input design arrays independently checked; actual multi-shot forward/gradient/iteration evidence pending",
+  "training_container_sha256": "7b3a5f6896d0efaca1521c1bc7a0c06496709bf5efc47d56f75a40f8dabfdc70",
+  "unknown_true_vp_key_absent": true,
+  "training_keys": [
+    "vp_initial",
+    "vs_fixed",
+    "rho_fixed",
+    "x_native",
+    "z_native",
+    "active_mask"
+  ],
+  "shape": [
+    35,
+    56
+  ],
+  "known_vs_rho_actual_uint64_equal": {
+    "vs": true,
+    "rho": true
+  },
+  "vp_initial_exact_prior_or_crop_uint64_equal": true,
+  "initial_field_sha256": {
+    "vp": "8b972eab04e45fc277a641a6924b6c7686d2f3687e15fd806720b82f184f46c6",
+    "vs": "ba3f07241a96222c91a6181eba94377ab60a8a25d316ec3b38d1e685998ff0ef",
+    "rho": "1947c8b41f519203dfafc55d703a13b11379877e390ad948bcfbec33a4e74100"
+  },
+  "axes": {
+    "x_native": {
+      "first": 0.0,
+      "last": 2475.0,
+      "count": 56,
+      "step": 45.0
+    },
+    "z_native": {
+      "first": 0.0,
+      "last": 1530.0,
+      "count": 35,
+      "step": 45.0
+    }
+  },
+  "water_cells_in_parameter_grid": 0,
+  "explicit_active_count": 1960,
+  "initial_materials": {
+    "rho_min": 2450.0,
+    "mu_min": 247800454.90416586,
+    "solid_mu_min": 247800454.90416586,
+    "lambda_min": -8092386187.207165,
+    "negative_lambda_count": 9,
+    "bulk3d_min": 2611822679.9808006,
+    "kappa2d_min": 6248517968.316895,
+    "finite_positive_energy": true
+  },
+  "scope": "Only material/coordinate/source-input provenance. No optimizer true-Vp reads or solver/GPU calls; no input model arrays copied into audit.",
+  "original_private_report_sha256": "172d0a16d8d4ea74f7f20ca21cda49c8b986945206a67d03376c2960adae76fb",
+  "sanitization": {
+    "scope": "Public path identifiers only; all original numeric values, solver/source SHA values, outcomes and limitations preserved.",
+    "private_archive_relative_path": ".cache/private-review/multishot_fwi_independent_review/training_input_material_audit.json",
+    "home_and_host_identity_removed": true,
+    "temporary_paths_use_logical_TEMP_identifier": true,
+    "environment_paths_keep_environment_name_and_site_packages_relative_file": true,
+    "placeholders_are_not_literal_executable_paths": true
+  }
+}

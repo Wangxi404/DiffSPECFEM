@@ -19,6 +19,14 @@ patches, original-binary hashes, failures and repairs are recorded in
 
 ## Models, wavefields and gradients
 
+**Full-shot Vp inversion is now runnable.** Each iteration evaluates all five
+independent shots at one current model, accumulates their derivatives and
+accepts one update after full-shot line search. The new Marmousi-II ROI has
+separate 2/4 Hz stages and known Vs/density priors. See the
+[protocol and output table](FULL_SHOT_FWI.md),
+[figure contract](FULL_SHOT_FIGURES.md) and
+[independent numerical/control-flow audits](evidence/multishot_fwi_independent_review/).
+
 **New: Vp-only with known true Vs.** Vp alone is blurred; a fresh native
 forward, data AD VJP and adjoint pass informative Vp directional checks at two
 step sizes (relative errors 5.96e−6 and 6.62e−7). The explicit material-policy
