@@ -1,0 +1,78 @@
+{
+  "name": "psv_negative_lambda_20261107-vponly",
+  "parent_model_sha256": "f0eb2130cb91695d22daf9fa5ae24e74159c4ecb59ba776b8653d5874d8d8c6c",
+  "model_role": "synthetic negative-lambda coupled regression",
+  "active_coordinates": [
+    "vp"
+  ],
+  "fixed_coordinates": [
+    "vs_true",
+    "rho_true",
+    "native acoustic water"
+  ],
+  "no_clipping_or_floors": true,
+  "water_density_convention": "Fixed native water rho1000 in synthetic unit; rho2450 in Marmousi case (controlled convention, not original Marmousi density)",
+  "negative_lambda_policy": "explicit opt-in, positive rho/mu/bulk3D; locally negative Poisson allowed",
+  "model_path": "data/prepared/negative_lambda_20261107-vponly.npz",
+  "model_sha256": "cf1193468384f00c74d02f69d3952d55a7fc5542914327c07716bf3010928cdf",
+  "initial": {
+    "finite": true,
+    "rho_min": 2394.9339828220177,
+    "vp_min": 1925.7376754849483,
+    "vp_max": 2194.836,
+    "vs_min": 1597.661532662903,
+    "vs_max": 1803.9875923026295,
+    "vp_vs_min_ratio": 1.182,
+    "mu_min_pa": 6282805207.356383,
+    "lambda_min_pa": -4633964500.80007,
+    "negative_lambda_count": 81,
+    "kappa2D_min_pa": 2658313423.9626136,
+    "bulk3D_min_pa": 457102810.8028221,
+    "poisson_min": -0.759052588108501,
+    "stable": true,
+    "field_sha256": {
+      "vp": "d727fc85c9d0eacdb9e497f2b753ce9d86bcefb9feb206961440f6719531a5a7",
+      "vs": "5faf3a32c95a7c8e7caab99b90159ce3335bf72f21950ba51c6479070323f369",
+      "rho": "90aa93f5cf2e0e14ed2832087851c7ddadf6bb4b474281b8d16a583c7eeea36e"
+    }
+  },
+  "target": {
+    "finite": true,
+    "rho_min": 2394.9339828220177,
+    "vp_min": 2045.0067618085159,
+    "vp_max": 2309.104118147366,
+    "vs_min": 1597.661532662903,
+    "vs_max": 1803.9875923026295,
+    "vp_vs_min_ratio": 1.2799999999999998,
+    "mu_min_pa": 6282805207.356383,
+    "lambda_min_pa": -2935472416.0000005,
+    "negative_lambda_count": 81,
+    "kappa2D_min_pa": 4010942844.3763175,
+    "bulk3D_min_pa": 1916674441.9241896,
+    "poisson_min": -0.2832080200501258,
+    "stable": true,
+    "field_sha256": {
+      "vp": "5140be8e2a6ea1172571af579f230bd704235be2c6f326687b676bf5d83aea76",
+      "vs": "5faf3a32c95a7c8e7caab99b90159ce3335bf72f21950ba51c6479070323f369",
+      "rho": "90aa93f5cf2e0e14ed2832087851c7ddadf6bb4b474281b8d16a583c7eeea36e"
+    }
+  },
+  "status": "passed fresh native baseline/data VJP/Vp-only multi-epsilon checks",
+  "native_case": "unchanged parent numerics/acquisition, SAVE_MODEL=ascii adds diagnostic GLL material export only",
+  "validation_evidence": "evidence/psv_negative_lambda_20261107-vponly/validation.json",
+  "native_guidance": {
+    "initial": {
+      "max_f0_hz": 1.9200000000000004,
+      "max_dt_s": 0.00786724678499949
+    },
+    "target": {
+      "max_f0_hz": 1.9200000000000004,
+      "max_dt_s": 0.007477928920093479
+    },
+    "passed": true
+  },
+  "native_binary_sha256": {
+    "vendor/specfem2d-psv/bin/xspecfem2D": "6c71b1ebd7c03f8db3ead56315be6ba088160d3f5c6abbbee1d3e7758c76b43d",
+    "psv-baseline-xspecfem2D": "705549f87e2f8427e30cf664576c49f2bbe2bde0f93997aa055229226ac2cd50"
+  }
+}

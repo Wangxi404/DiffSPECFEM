@@ -1,0 +1,100 @@
+{
+  "active_coordinates": [
+    "vp"
+  ],
+  "fixed": "true Vs and rho; fixed native acoustic water",
+  "no_gradient_postprocessing": true,
+  "files": [
+    {
+      "path": "Par_file",
+      "bytes": 24841,
+      "sha256": "d77c4372bb73f3ef7ec9e83d05738fdc9041bf65bf7a3cd320a1b7d4b7e20af8"
+    },
+    {
+      "path": "SOURCE",
+      "bytes": 3391,
+      "sha256": "5a14882d5ff02d37141e6d87af86bc659194a153f376d2b10d4e09bef0d5f97d"
+    },
+    {
+      "path": "STATIONS",
+      "bytes": 1017,
+      "sha256": "1dcb43364f924c6f86121fecdc5c821176b5495c5f4e34b7f210edfe585ea69b"
+    },
+    {
+      "path": "cli_reproduction_checks.json",
+      "bytes": 870,
+      "sha256": "826b255fae9259adcad3debc3e9d3569501c31c4f8a27a9e152024f55c439580"
+    },
+    {
+      "path": "comparison_receipt.json",
+      "bytes": 2679,
+      "sha256": "dfe371828c97e8b7cf1378d83ddfddbbf36f0b3041cb4cff100c860a7395082d"
+    },
+    {
+      "path": "experiment_executed.py",
+      "bytes": 20490,
+      "sha256": "4cf73259d71dd65613e85749710668f19b94ea0ccd51f42a6b615f8e1a5647c3"
+    },
+    {
+      "path": "independent_audit.json",
+      "bytes": 11829,
+      "sha256": "e9f6dfa349857d98ee91eb119fa6e957258a08a75dca6b8eafe0d0ae58e509d0"
+    },
+    {
+      "path": "interfaces_elastic_analytic.dat",
+      "bytes": 59,
+      "sha256": "3df5e211ad4d46a3e62ec6e7214fbff1c7127df9fce9f0b92ed80e53be6f2c20"
+    },
+    {
+      "path": "local_public_receipt.json",
+      "bytes": 2371,
+      "sha256": "bef486f132134008b8604428bfb190cdb2fa045abe8765f902e3737bd048800f"
+    },
+    {
+      "path": "native_post_integrity.json",
+      "bytes": 1555,
+      "sha256": "88bf9b3156f281fe4439754f318bc211483d5adfa24f070f37dd79a43397d4fb"
+    },
+    {
+      "path": "official_packet_post.json",
+      "bytes": 119,
+      "sha256": "d2247fb2dafb3bd43e65a9b83a7b08114f551e61568c729b0b226c1715979d8e"
+    },
+    {
+      "path": "packet_post_native.json",
+      "bytes": 2180,
+      "sha256": "32faddfe54a6e8fdb4f3d1a59d63a391635a5f7cbc2075e1c357ea287f2f4f06"
+    },
+    {
+      "path": "packet_pre_native.json",
+      "bytes": 2180,
+      "sha256": "32faddfe54a6e8fdb4f3d1a59d63a391635a5f7cbc2075e1c357ea287f2f4f06"
+    },
+    {
+      "path": "pre_run_figure_contract.json",
+      "bytes": 2205,
+      "sha256": "76a52cd7c6aa58e1461450891b86f4edbff26ebe5203f14fdd490047057f3bd4"
+    },
+    {
+      "path": "source_equivalence.json",
+      "bytes": 825,
+      "sha256": "0386755acb8ee8dbd5b29597c5c59d6ddbb8afe9a7a032fe3668d7cc748dc943"
+    },
+    {
+      "path": "trace_samples.npz",
+      "bytes": 58735,
+      "sha256": "90a233a4aa7989163d863b0a358e1861a8ab6a742fb4c355d7491fd96d68d9a3"
+    },
+    {
+      "path": "validation.json",
+      "bytes": 27611,
+      "sha256": "7b7a05de6dc78b9cd3bbe8dab6f6d55861bde35427cc10fde4992f818c0a9d03"
+    },
+    {
+      "path": "vp_gradient.npz",
+      "bytes": 103724,
+      "sha256": "efed1fd4fe837c2ff0621b84e24fc2d374e028dbe403f5634944d411a6ab4b5c"
+    }
+  ],
+  "additional_receipts": "Independent postprocessing, exact-source/CLI reproduction and unchanged-core checks add no native propagation."
+}

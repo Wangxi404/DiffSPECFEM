@@ -1,0 +1,353 @@
+{
+  "native_solver_runs": 0,
+  "model_arrays_included": false,
+  "case": "psv_negative_lambda_20261107-vponly",
+  "producer_status": "passed",
+  "producer_passed": true,
+  "raw_to_Vp_chainrule": {
+    "relative_l2": 1.29569040784227e-16,
+    "absolute_linf": 1.0587911840678754e-22,
+    "numeric_exact": false
+  },
+  "Vp_chain_formula": "scatter(2*rho*Vp*g_lambda) with clamped bilinear GLL/input map and duplicate row accumulation",
+  "native_rho_map": {
+    "relative_l2": 1.0701015147540937e-16,
+    "absolute_linf": 9.094947017729282e-13,
+    "numeric_exact": false
+  },
+  "native_mu_map": {
+    "relative_l2": 2.6281652421070106e-16,
+    "absolute_linf": 6.67572021484375e-06,
+    "numeric_exact": false
+  },
+  "native_lambda_map": {
+    "relative_l2": 1.021433226166597e-15,
+    "absolute_linf": 1.52587890625e-05,
+    "numeric_exact": false
+  },
+  "water_raw_cotangents_zero": true,
+  "L2_data_cotangent": {
+    "relative_l2": 0.0,
+    "absolute_linf": 0.0,
+    "numeric_exact": true
+  },
+  "native_baseline_record_float64_bits_equal": true,
+  "native_record_saved_float64_bits_equal": true,
+  "native_target_saved_float64_bits_equal": true,
+  "Vp_direction_informative_abs_cosine": 0.48311395933451456,
+  "model_dot_recomputed_from_actual_native_plus_minus_traces": [
+    {
+      "epsilon": 0.0003,
+      "actual_native_trace_lhs": -0.005226332649063423,
+      "independent_raw_chain_rhs": -0.005226344345286676,
+      "relative_error": 2.237935826691283e-06,
+      "reported_lhs": -0.005226332649063423,
+      "reported_rhs": -0.005226344345286677,
+      "reported_lhs_matches_actual_native": true,
+      "plus_Taylor_remainder": 1.2560986213142108e-09,
+      "minus_Taylor_remainder": 1.2473935344000288e-09
+    },
+    {
+      "epsilon": 0.0001,
+      "actual_native_trace_lhs": -0.0052263430457051155,
+      "independent_raw_chain_rhs": -0.005226344345286676,
+      "relative_error": 2.4865976571044475e-07,
+      "reported_lhs": -0.0052263430457051155,
+      "reported_rhs": -0.005226344345286677,
+      "reported_lhs_matches_actual_native": true,
+      "plus_Taylor_remainder": 1.3924456380912171e-10,
+      "minus_Taylor_remainder": 1.3892215273968799e-10
+    },
+    {
+      "epsilon": 3e-05,
+      "actual_native_trace_lhs": -0.005226344228319831,
+      "independent_raw_chain_rhs": -0.005226344345286676,
+      "relative_error": 2.238024082152617e-08,
+      "reported_lhs": -0.005226344228319831,
+      "reported_rhs": -0.005226344345286677,
+      "reported_lhs_matches_actual_native": true,
+      "plus_Taylor_remainder": 1.2521860039347625e-11,
+      "minus_Taylor_remainder": 1.2513154603598594e-11
+    }
+  ],
+  "actual_GLL_SAVE_MODEL_invariants": {
+    "native_control": {
+      "proc000000_rho_vp_vs.dat": {
+        "shape": [
+          1125,
+          5
+        ],
+        "solid_all_lambda_negative": true,
+        "solid_min_K3D_Pa": 460887566.66666794,
+        "solid_min_mu_Pa": 6384010000.0,
+        "coords_parsed_export_bits_equal": true,
+        "rho_parsed_export_bits_equal": true,
+        "Vs_parsed_export_bits_equal": true,
+        "mu_parsed_export_bits_equal": true
+      },
+      "proc000001_rho_vp_vs.dat": {
+        "shape": [
+          875,
+          5
+        ],
+        "solid_all_lambda_negative": true,
+        "solid_min_K3D_Pa": 457002611.29033375,
+        "solid_min_mu_Pa": 6282916178.132001,
+        "coords_parsed_export_bits_equal": true,
+        "rho_parsed_export_bits_equal": true,
+        "Vs_parsed_export_bits_equal": true,
+        "mu_parsed_export_bits_equal": true
+      }
+    },
+    "target": {
+      "proc000000_rho_vp_vs.dat": {
+        "shape": [
+          1125,
+          5
+        ],
+        "solid_all_lambda_negative": true,
+        "solid_min_K3D_Pa": 1947139566.666667,
+        "solid_min_mu_Pa": 6384010000.0,
+        "coords_parsed_export_bits_equal": true,
+        "rho_parsed_export_bits_equal": true,
+        "Vs_parsed_export_bits_equal": true,
+        "mu_parsed_export_bits_equal": true
+      },
+      "proc000001_rho_vp_vs.dat": {
+        "shape": [
+          875,
+          5
+        ],
+        "solid_all_lambda_negative": true,
+        "solid_min_K3D_Pa": 1916748301.0823326,
+        "solid_min_mu_Pa": 6282916178.132001,
+        "coords_parsed_export_bits_equal": true,
+        "rho_parsed_export_bits_equal": true,
+        "Vs_parsed_export_bits_equal": true,
+        "mu_parsed_export_bits_equal": true
+      }
+    },
+    "native_gradient": {
+      "proc000000_rho_vp_vs.dat": {
+        "shape": [
+          1125,
+          5
+        ],
+        "solid_all_lambda_negative": true,
+        "solid_min_K3D_Pa": 460887566.66666794,
+        "solid_min_mu_Pa": 6384010000.0,
+        "coords_parsed_export_bits_equal": true,
+        "rho_parsed_export_bits_equal": true,
+        "Vs_parsed_export_bits_equal": true,
+        "mu_parsed_export_bits_equal": true
+      },
+      "proc000001_rho_vp_vs.dat": {
+        "shape": [
+          875,
+          5
+        ],
+        "solid_all_lambda_negative": true,
+        "solid_min_K3D_Pa": 457002611.29033375,
+        "solid_min_mu_Pa": 6282916178.132001,
+        "coords_parsed_export_bits_equal": true,
+        "rho_parsed_export_bits_equal": true,
+        "Vs_parsed_export_bits_equal": true,
+        "mu_parsed_export_bits_equal": true
+      }
+    },
+    "check_plus_0.0003": {
+      "proc000000_rho_vp_vs.dat": {
+        "shape": [
+          1125,
+          5
+        ],
+        "solid_all_lambda_negative": true,
+        "solid_min_K3D_Pa": 463901891.66666794,
+        "solid_min_mu_Pa": 6384010000.0,
+        "coords_parsed_export_bits_equal": true,
+        "rho_parsed_export_bits_equal": true,
+        "Vs_parsed_export_bits_equal": true,
+        "mu_parsed_export_bits_equal": true
+      },
+      "proc000001_rho_vp_vs.dat": {
+        "shape": [
+          875,
+          5
+        ],
+        "solid_all_lambda_negative": true,
+        "solid_min_K3D_Pa": 460896830.40233326,
+        "solid_min_mu_Pa": 6282916178.132001,
+        "coords_parsed_export_bits_equal": true,
+        "rho_parsed_export_bits_equal": true,
+        "Vs_parsed_export_bits_equal": true,
+        "mu_parsed_export_bits_equal": true
+      }
+    },
+    "check_minus_0.0003": {
+      "proc000000_rho_vp_vs.dat": {
+        "shape": [
+          1125,
+          5
+        ],
+        "solid_all_lambda_negative": true,
+        "solid_min_K3D_Pa": 457873691.66666603,
+        "solid_min_mu_Pa": 6384010000.0,
+        "coords_parsed_export_bits_equal": true,
+        "rho_parsed_export_bits_equal": true,
+        "Vs_parsed_export_bits_equal": true,
+        "mu_parsed_export_bits_equal": true
+      },
+      "proc000001_rho_vp_vs.dat": {
+        "shape": [
+          875,
+          5
+        ],
+        "solid_all_lambda_negative": true,
+        "solid_min_K3D_Pa": 454082467.94533205,
+        "solid_min_mu_Pa": 6282916178.132001,
+        "coords_parsed_export_bits_equal": true,
+        "rho_parsed_export_bits_equal": true,
+        "Vs_parsed_export_bits_equal": true,
+        "mu_parsed_export_bits_equal": true
+      }
+    },
+    "check_plus_0.0001": {
+      "proc000000_rho_vp_vs.dat": {
+        "shape": [
+          1125,
+          5
+        ],
+        "solid_all_lambda_negative": true,
+        "solid_min_K3D_Pa": 461892291.666667,
+        "solid_min_mu_Pa": 6384010000.0,
+        "coords_parsed_export_bits_equal": true,
+        "rho_parsed_export_bits_equal": true,
+        "Vs_parsed_export_bits_equal": true,
+        "mu_parsed_export_bits_equal": true
+      },
+      "proc000001_rho_vp_vs.dat": {
+        "shape": [
+          875,
+          5
+        ],
+        "solid_all_lambda_negative": true,
+        "solid_min_K3D_Pa": 457976091.6413331,
+        "solid_min_mu_Pa": 6282916178.132001,
+        "coords_parsed_export_bits_equal": true,
+        "rho_parsed_export_bits_equal": true,
+        "Vs_parsed_export_bits_equal": true,
+        "mu_parsed_export_bits_equal": true
+      }
+    },
+    "check_minus_0.0001": {
+      "proc000000_rho_vp_vs.dat": {
+        "shape": [
+          1125,
+          5
+        ],
+        "solid_all_lambda_negative": true,
+        "solid_min_K3D_Pa": 459882891.66666603,
+        "solid_min_mu_Pa": 6384010000.0,
+        "coords_parsed_export_bits_equal": true,
+        "rho_parsed_export_bits_equal": true,
+        "Vs_parsed_export_bits_equal": true,
+        "mu_parsed_export_bits_equal": true
+      },
+      "proc000001_rho_vp_vs.dat": {
+        "shape": [
+          875,
+          5
+        ],
+        "solid_all_lambda_negative": true,
+        "solid_min_K3D_Pa": 456029180.5573325,
+        "solid_min_mu_Pa": 6282916178.132001,
+        "coords_parsed_export_bits_equal": true,
+        "rho_parsed_export_bits_equal": true,
+        "Vs_parsed_export_bits_equal": true,
+        "mu_parsed_export_bits_equal": true
+      }
+    },
+    "check_plus_3e-05": {
+      "proc000000_rho_vp_vs.dat": {
+        "shape": [
+          1125,
+          5
+        ],
+        "solid_all_lambda_negative": true,
+        "solid_min_K3D_Pa": 460887566.66666794,
+        "solid_min_mu_Pa": 6384010000.0,
+        "coords_parsed_export_bits_equal": true,
+        "rho_parsed_export_bits_equal": true,
+        "Vs_parsed_export_bits_equal": true,
+        "mu_parsed_export_bits_equal": true
+      },
+      "proc000001_rho_vp_vs.dat": {
+        "shape": [
+          875,
+          5
+        ],
+        "solid_all_lambda_negative": true,
+        "solid_min_K3D_Pa": 457976091.6413331,
+        "solid_min_mu_Pa": 6282916178.132001,
+        "coords_parsed_export_bits_equal": true,
+        "rho_parsed_export_bits_equal": true,
+        "Vs_parsed_export_bits_equal": true,
+        "mu_parsed_export_bits_equal": true
+      }
+    },
+    "check_minus_3e-05": {
+      "proc000000_rho_vp_vs.dat": {
+        "shape": [
+          1125,
+          5
+        ],
+        "solid_all_lambda_negative": true,
+        "solid_min_K3D_Pa": 460887566.66666794,
+        "solid_min_mu_Pa": 6384010000.0,
+        "coords_parsed_export_bits_equal": true,
+        "rho_parsed_export_bits_equal": true,
+        "Vs_parsed_export_bits_equal": true,
+        "mu_parsed_export_bits_equal": true
+      },
+      "proc000001_rho_vp_vs.dat": {
+        "shape": [
+          875,
+          5
+        ],
+        "solid_all_lambda_negative": true,
+        "solid_min_K3D_Pa": 457002611.29033375,
+        "solid_min_mu_Pa": 6282916178.132001,
+        "coords_parsed_export_bits_equal": true,
+        "rho_parsed_export_bits_equal": true,
+        "Vs_parsed_export_bits_equal": true,
+        "mu_parsed_export_bits_equal": true
+      }
+    }
+  },
+  "native_guidance": {
+    "initial": {
+      "max_f0_hz": 1.9200000000000004,
+      "max_dt_s": 0.00786724678499949
+    },
+    "target": {
+      "max_f0_hz": 1.9200000000000004,
+      "max_dt_s": 0.007477928920093479
+    },
+    "passed": true
+  },
+  "script_snapshot_matches": true,
+  "source_gradient_array_sha256": "72ad216b56d0868c1932503d6e4731aeff18c6ab0146cf20843c83d7bd64ea80",
+  "model_fixed_Vs_rho_actual_call_hashes_equal_target": true,
+  "passed": true,
+  "actual_GLL_SAVE_MODEL_precision": "Native ASCII format 5e15.5. Equality below refers to the quantized exported tokens/parsed float64, not internal GLL double bit patterns.",
+  "model_dot_convergence_orders": [
+    1.9999991602205403,
+    1.999968011959764
+  ],
+  "scope": "Independent audit of the fresh negative-lambda synthetic native unit only: actual native plus/minus traces, L2 adjoint, Vp-only raw chain rule, fixed true Vs/rho and original native negative-lambda path. Not the full Marmousi result.",
+  "preserved_attempts": "Producer retained a pre-native packet-error attempt and the prior coarse-epsilon attempt with summary false; this final three-epsilon namespace does not overwrite those failed records.",
+  "limitations": [
+    "Native SAVE_MODEL ASCII comparisons are at its emitted precision. Stronger fixed-field evidence is per-call exact input hashes plus the independent native rho/mu map and unchanged native material equations.",
+    "Processed-data AD is a separate data-only check in the producer report; this raw-kernel/model-dot audit verifies the actual native L2 derivative."
+  ]
+}

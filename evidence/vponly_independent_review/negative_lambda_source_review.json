@@ -1,0 +1,77 @@
+{
+  "native_solver_runs": 0,
+  "GPU_tasks": 0,
+  "source_review_only": true,
+  "model_arrays_included": false,
+  "official_sources": {
+    "read_external_model.f90": {
+      "commit": "abf3196e3192af3343f2b402c82f34205577e672",
+      "official_url": "https://github.com/SPECFEM/specfem2d/blob/abf3196e3192af3343f2b402c82f34205577e672/src/specfem2D/read_external_model.f90",
+      "sha256": "a1e8438cdbeae22102d55d05df652882a4cd781d7476fce35ce68d72ad63224d",
+      "relevant_lines": [
+        357,
+        390
+      ]
+    },
+    "read_materials.f90": {
+      "commit": "abf3196e3192af3343f2b402c82f34205577e672",
+      "official_url": "https://github.com/SPECFEM/specfem2d/blob/abf3196e3192af3343f2b402c82f34205577e672/src/specfem2D/read_materials.f90",
+      "sha256": "6f2e1f6b77092766b5ef539e3e248fea5ffa4736653aeea0904726981077b76e",
+      "relevant_lines": [
+        138,
+        157,
+        423,
+        429
+      ]
+    },
+    "compute_forces_viscoelastic.F90": {
+      "commit": "abf3196e3192af3343f2b402c82f34205577e672",
+      "official_url": "https://github.com/SPECFEM/specfem2d/blob/abf3196e3192af3343f2b402c82f34205577e672/src/specfem2D/compute_forces_viscoelastic.F90",
+      "sha256": "80a0c4b35a16089b3abfa866b295ef51e08f9bf4c25e15ea8e4c6fc3ac4fe461",
+      "relevant_lines": [
+        288,
+        295,
+        346,
+        357
+      ]
+    },
+    "check_grid.F90": {
+      "commit": "abf3196e3192af3343f2b402c82f34205577e672",
+      "official_url": "https://github.com/SPECFEM/specfem2d/blob/abf3196e3192af3343f2b402c82f34205577e672/src/specfem2D/check_grid.F90",
+      "sha256": "41ba48970d975bb6ec547001a83fa2b6b35865d349192645810fd74073f345b6",
+      "relevant_lines": [
+        173,
+        177
+      ]
+    }
+  },
+  "mathematical_derivation": {
+    "energy_3D": "W=mu*epsilon_dev:epsilon_dev+(K3D/2)*trace(epsilon)^2",
+    "positive_conditions": "rho>0, mu>0, K3D=lambda+2mu/3>0; plane-strain strains form a subspace, so the restricted energy is positive.",
+    "native_kappa2D": "lambda+mu=K3D+mu/3>0",
+    "negative_lambda_interval": "sqrt(4/3)<Vp/Vs<sqrt(2) gives positive 3D bulk while lambda<0.",
+    "classification": "Analytic derivation; not a numerical stability test."
+  },
+  "native_source_findings": [
+    "read_materials admits negative Poisson ratio inside its [-1,0.5] range and emits an informational rare-material message.",
+    "The isotropic P-SV constitutive force branch forms lambda from rho*Vp^2-2mu and uses lambda, lambda+2mu and mu algebraically. No sqrt(lambda) occurs in that branch.",
+    "The reviewed external-model domain check uses Vs to classify acoustic versus elastic material; it does not classify by lambda sign.",
+    "check_grid uses Vp and sqrt(mu/rho) for wave-speed guidance."
+  ],
+  "guard_design": {
+    "explicit_opt_in_name": "allow_negative_lambda",
+    "default": false,
+    "default_positive_lambda_guard_unchanged": true,
+    "opt_in_positive_bulk_test": "Vp^2>4Vs^2/3; existing finite positive solid Vp/Vs/rho checks retained",
+    "no_model_clipping_or_substitution": true,
+    "native_kernel_modified": false,
+    "python_API_sha256_at_review": "18fc62fa980fc9a1bab0b0b38471b97f3df8bd979f495527fd211d877c8e9e20",
+    "new_driver_sha256_at_review": "bff21dcd9bcc77acc013c3d9b279c9f88a5a3cb2328993edeeffe1aa5db916f3"
+  },
+  "remaining_required_evidence": [
+    "Actual native negative-lambda synthetic unit baseline, recorded forward, finite nonzero traces and measured f0/DT guidance.",
+    "Fresh L2 data VJP and informative Vp-only model dot directions at declared epsilons with dVs=dRho=0.",
+    "Actual GLL rho and mu agree with fixed true fields for initial, target and perturbed runs; retain private native SAVE_MODEL exports."
+  ],
+  "status": "Physics and reviewed native source support the explicit opt-in design; numerical acceptance remains pending."
+}

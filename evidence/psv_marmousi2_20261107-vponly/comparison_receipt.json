@@ -1,0 +1,60 @@
+{
+  "passed": true,
+  "actual_source_receiver_interface_files": {
+    "SOURCE": {
+      "old_sha256": "5a14882d5ff02d37141e6d87af86bc659194a153f376d2b10d4e09bef0d5f97d",
+      "new_sha256": "5a14882d5ff02d37141e6d87af86bc659194a153f376d2b10d4e09bef0d5f97d",
+      "bytes_equal": true
+    },
+    "STATIONS": {
+      "old_sha256": "1dcb43364f924c6f86121fecdc5c821176b5495c5f4e34b7f210edfe585ea69b",
+      "new_sha256": "1dcb43364f924c6f86121fecdc5c821176b5495c5f4e34b7f210edfe585ea69b",
+      "bytes_equal": true
+    },
+    "interfaces_elastic_analytic.dat": {
+      "old_sha256": "3df5e211ad4d46a3e62ec6e7214fbff1c7127df9fce9f0b92ed80e53be6f2c20",
+      "new_sha256": "3df5e211ad4d46a3e62ec6e7214fbff1c7127df9fce9f0b92ed80e53be6f2c20",
+      "bytes_equal": true
+    }
+  },
+  "other_native_parameters_identical": true,
+  "only_par_file_difference": "SAVE_MODEL=ascii adds native material diagnostic export; default suppresses that export",
+  "parent_fields": {
+    "vp_initial": {
+      "old_parent": "5a137134b5fa5a6dfbd97d144d85250916bc0d2fd43b641c81e1eb67d971be66",
+      "new": "5a137134b5fa5a6dfbd97d144d85250916bc0d2fd43b641c81e1eb67d971be66",
+      "exact_equal": true
+    },
+    "vp_true": {
+      "old_parent": "edf854892fa534d3b2b239bb3e4a01e6c0ab97218969cd375fc3b6e1553accde",
+      "new": "edf854892fa534d3b2b239bb3e4a01e6c0ab97218969cd375fc3b6e1553accde",
+      "exact_equal": true
+    },
+    "vs_true": {
+      "old_parent": "7843bddc4f19f96625e9bef2db0fc9ecb19da714cf624fa31fa8ecf9f1c3d548",
+      "new": "7843bddc4f19f96625e9bef2db0fc9ecb19da714cf624fa31fa8ecf9f1c3d548",
+      "exact_equal": true
+    },
+    "rho_true": {
+      "old_parent": "83bf9868878c675d7f3d05fdab8ddd279297c4e68a137fbcd610982dae4a2d8c",
+      "new": "83bf9868878c675d7f3d05fdab8ddd279297c4e68a137fbcd610982dae4a2d8c",
+      "exact_equal": true
+    }
+  },
+  "initial_vs_changed_to_true": true,
+  "initial_rho_already_true_in_old_case": true,
+  "new_vs_rho_fixed_to_true": {
+    "vs": true,
+    "rho": true
+  },
+  "sampled_time_coordinates_match": true,
+  "sampled_fresh_targets_match": true,
+  "fresh_full_target_bitwise_match": {
+    "passed": true,
+    "new_trace_sha256": "a89987cf704c557f69eb56bed9b0c2fefc931ccce990fa1f3bad97693682b67a",
+    "old_trace_sha256": "a89987cf704c557f69eb56bed9b0c2fefc931ccce990fa1f3bad97693682b67a",
+    "old_target_reused_as_input": false
+  },
+  "objective_old_and_new": ".5 sum of all unweighted Cartesian displacement residual samples squared",
+  "causal_boundary": "The Vp partial changes because Vs in the evaluation model changes to the known truth. Merely disabling other coordinate gradients at the identical physical model would not change gVp."
+}

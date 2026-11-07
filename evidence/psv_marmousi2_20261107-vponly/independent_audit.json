@@ -1,0 +1,321 @@
+{
+  "native_solver_runs": 0,
+  "GPU_tasks": 0,
+  "model_arrays_included": false,
+  "producer_status": "passed",
+  "producer_passed": true,
+  "case": "psv_marmousi2_20261107-vponly",
+  "raw_rows": 403200,
+  "solid_rows": 345600,
+  "water_rows": 57600,
+  "raw_to_Vp_chainrule": {
+    "relative_l2": 1.203920961135258e-16,
+    "absolute_linf": 1.9721522630525295e-31,
+    "numeric_equal": false
+  },
+  "raw_native_vs_private_saved": {
+    "relative_l2": 0.0,
+    "absolute_linf": 0.0,
+    "numeric_equal": true
+  },
+  "native_rho_map": {
+    "relative_l2": 9.087460039248737e-17,
+    "absolute_linf": 1.3642420526593924e-12,
+    "numeric_equal": false
+  },
+  "native_mu_map": {
+    "relative_l2": 2.605978382725533e-16,
+    "absolute_linf": 2.6702880859375e-05,
+    "numeric_equal": false
+  },
+  "native_lambda_map": {
+    "relative_l2": 6.110313990272589e-16,
+    "absolute_linf": 5.14984130859375e-05,
+    "numeric_equal": false
+  },
+  "actual_high_precision_solid_material": {
+    "rho_min": 2449.999999999999,
+    "mu_min_Pa": 252298894.10719195,
+    "lambda_min_Pa": -8513145005.394512,
+    "K3D_min_Pa": 2017320200.0978642,
+    "negative_lambda_rows": 5155
+  },
+  "fixed_water_native_derivatives_exact_zero": true,
+  "actual_GLL_SAVE_MODEL_invariants": {
+    "native_control": {
+      "proc000000_rho_vp_vs.dat": {
+        "shape": [
+          201600,
+          5
+        ],
+        "coordinates_parsed_export_bits_equal": true,
+        "rho_parsed_export_bits_equal": true,
+        "Vs_parsed_export_bits_equal": true,
+        "mu_parsed_export_bits_equal": true,
+        "solid_min_K3D_Pa_from_quantized_export": 3258868741.33333,
+        "solid_min_mu_Pa_from_quantized_export": 252293184.49999997,
+        "negative_lambda_solid_rows": 3478
+      },
+      "proc000001_rho_vp_vs.dat": {
+        "shape": [
+          201600,
+          5
+        ],
+        "coordinates_parsed_export_bits_equal": true,
+        "rho_parsed_export_bits_equal": true,
+        "Vs_parsed_export_bits_equal": true,
+        "mu_parsed_export_bits_equal": true,
+        "solid_min_K3D_Pa_from_quantized_export": 2018678055.333331,
+        "solid_min_mu_Pa_from_quantized_export": 256413864.24499997,
+        "negative_lambda_solid_rows": 1675
+      }
+    },
+    "target": {
+      "proc000000_rho_vp_vs.dat": {
+        "shape": [
+          201600,
+          5
+        ],
+        "coordinates_parsed_export_bits_equal": true,
+        "rho_parsed_export_bits_equal": true,
+        "Vs_parsed_export_bits_equal": true,
+        "mu_parsed_export_bits_equal": true,
+        "solid_min_K3D_Pa_from_quantized_export": 4929250118.473333,
+        "solid_min_mu_Pa_from_quantized_export": 252293184.49999997,
+        "negative_lambda_solid_rows": 0
+      },
+      "proc000001_rho_vp_vs.dat": {
+        "shape": [
+          201600,
+          5
+        ],
+        "coordinates_parsed_export_bits_equal": true,
+        "rho_parsed_export_bits_equal": true,
+        "Vs_parsed_export_bits_equal": true,
+        "mu_parsed_export_bits_equal": true,
+        "solid_min_K3D_Pa_from_quantized_export": 3660263778.873333,
+        "solid_min_mu_Pa_from_quantized_export": 256413864.24499997,
+        "negative_lambda_solid_rows": 0
+      }
+    },
+    "native_gradient": {
+      "proc000000_rho_vp_vs.dat": {
+        "shape": [
+          201600,
+          5
+        ],
+        "coordinates_parsed_export_bits_equal": true,
+        "rho_parsed_export_bits_equal": true,
+        "Vs_parsed_export_bits_equal": true,
+        "mu_parsed_export_bits_equal": true,
+        "solid_min_K3D_Pa_from_quantized_export": 3258868741.33333,
+        "solid_min_mu_Pa_from_quantized_export": 252293184.49999997,
+        "negative_lambda_solid_rows": 3478
+      },
+      "proc000001_rho_vp_vs.dat": {
+        "shape": [
+          201600,
+          5
+        ],
+        "coordinates_parsed_export_bits_equal": true,
+        "rho_parsed_export_bits_equal": true,
+        "Vs_parsed_export_bits_equal": true,
+        "mu_parsed_export_bits_equal": true,
+        "solid_min_K3D_Pa_from_quantized_export": 2018678055.333331,
+        "solid_min_mu_Pa_from_quantized_export": 256413864.24499997,
+        "negative_lambda_solid_rows": 1675
+      }
+    },
+    "check_plus_0.0003": {
+      "proc000000_rho_vp_vs.dat": {
+        "shape": [
+          201600,
+          5
+        ],
+        "coordinates_parsed_export_bits_equal": true,
+        "rho_parsed_export_bits_equal": true,
+        "Vs_parsed_export_bits_equal": true,
+        "mu_parsed_export_bits_equal": true,
+        "solid_min_K3D_Pa_from_quantized_export": 3266484933.833331,
+        "solid_min_mu_Pa_from_quantized_export": 252293184.49999997,
+        "negative_lambda_solid_rows": 3453
+      },
+      "proc000001_rho_vp_vs.dat": {
+        "shape": [
+          201600,
+          5
+        ],
+        "coordinates_parsed_export_bits_equal": true,
+        "rho_parsed_export_bits_equal": true,
+        "Vs_parsed_export_bits_equal": true,
+        "mu_parsed_export_bits_equal": true,
+        "solid_min_K3D_Pa_from_quantized_export": 2027702385.3333368,
+        "solid_min_mu_Pa_from_quantized_export": 256413864.24499997,
+        "negative_lambda_solid_rows": 1669
+      }
+    },
+    "check_minus_0.0003": {
+      "proc000000_rho_vp_vs.dat": {
+        "shape": [
+          201600,
+          5
+        ],
+        "coordinates_parsed_export_bits_equal": true,
+        "rho_parsed_export_bits_equal": true,
+        "Vs_parsed_export_bits_equal": true,
+        "mu_parsed_export_bits_equal": true,
+        "solid_min_K3D_Pa_from_quantized_export": 3251253773.833329,
+        "solid_min_mu_Pa_from_quantized_export": 252293184.49999997,
+        "negative_lambda_solid_rows": 3492
+      },
+      "proc000001_rho_vp_vs.dat": {
+        "shape": [
+          201600,
+          5
+        ],
+        "coordinates_parsed_export_bits_equal": true,
+        "rho_parsed_export_bits_equal": true,
+        "Vs_parsed_export_bits_equal": true,
+        "mu_parsed_export_bits_equal": true,
+        "solid_min_K3D_Pa_from_quantized_export": 2008151899.833334,
+        "solid_min_mu_Pa_from_quantized_export": 256413864.24499997,
+        "negative_lambda_solid_rows": 1680
+      }
+    },
+    "check_plus_0.0001": {
+      "proc000000_rho_vp_vs.dat": {
+        "shape": [
+          201600,
+          5
+        ],
+        "coordinates_parsed_export_bits_equal": true,
+        "rho_parsed_export_bits_equal": true,
+        "Vs_parsed_export_bits_equal": true,
+        "mu_parsed_export_bits_equal": true,
+        "solid_min_K3D_Pa_from_quantized_export": 3261915071.3333273,
+        "solid_min_mu_Pa_from_quantized_export": 252293184.49999997,
+        "negative_lambda_solid_rows": 3471
+      },
+      "proc000001_rho_vp_vs.dat": {
+        "shape": [
+          201600,
+          5
+        ],
+        "coordinates_parsed_export_bits_equal": true,
+        "rho_parsed_export_bits_equal": true,
+        "Vs_parsed_export_bits_equal": true,
+        "mu_parsed_export_bits_equal": true,
+        "solid_min_K3D_Pa_from_quantized_export": 2021685969.3333368,
+        "solid_min_mu_Pa_from_quantized_export": 256413864.24499997,
+        "negative_lambda_solid_rows": 1671
+      }
+    },
+    "check_minus_0.0001": {
+      "proc000000_rho_vp_vs.dat": {
+        "shape": [
+          201600,
+          5
+        ],
+        "coordinates_parsed_export_bits_equal": true,
+        "rho_parsed_export_bits_equal": true,
+        "Vs_parsed_export_bits_equal": true,
+        "mu_parsed_export_bits_equal": true,
+        "solid_min_K3D_Pa_from_quantized_export": 3255822607.3333254,
+        "solid_min_mu_Pa_from_quantized_export": 252293184.49999997,
+        "negative_lambda_solid_rows": 3484
+      },
+      "proc000001_rho_vp_vs.dat": {
+        "shape": [
+          201600,
+          5
+        ],
+        "coordinates_parsed_export_bits_equal": true,
+        "rho_parsed_export_bits_equal": true,
+        "Vs_parsed_export_bits_equal": true,
+        "mu_parsed_export_bits_equal": true,
+        "solid_min_K3D_Pa_from_quantized_export": 2014166551.8333359,
+        "solid_min_mu_Pa_from_quantized_export": 256413864.24499997,
+        "negative_lambda_solid_rows": 1678
+      }
+    }
+  },
+  "SAVE_MODEL_precision": "Native5e15.5 ASCII: comparisons are exact for quantized exported tokens/parsed values, not internal full-double bits.",
+  "L2_data_cotangent": {
+    "relative_l2": 0.0,
+    "absolute_linf": 0.0,
+    "numeric_equal": true
+  },
+  "native_binary_cotangent_matches": {
+    "relative_l2": 0.0,
+    "absolute_linf": 0.0,
+    "numeric_equal": true
+  },
+  "native_baseline_record_uint64_equal": true,
+  "native_record_private_uint64_equal": true,
+  "native_target_private_uint64_equal": true,
+  "fresh_target_old_target_uint64_equal": true,
+  "Vp_direction_abs_cosine": 0.2414922482173114,
+  "model_dot_actual_native_archives": [
+    {
+      "epsilon": 0.0003,
+      "actual_native_trace_lhs": 4.407621820837495e-10,
+      "independent_raw_chain_rhs": 4.4076480951634476e-10,
+      "relative_error": 5.9610761533505105e-06,
+      "reported_lhs_matches_actual": true,
+      "reported_rhs": 4.407648095163447e-10,
+      "plus_Taylor_remainder": 1.1278047639422486e-15,
+      "minus_Taylor_remainder": 1.1301305759968046e-15
+    },
+    {
+      "epsilon": 0.0001,
+      "actual_native_trace_lhs": 4.407645175774952e-10,
+      "independent_raw_chain_rhs": 4.4076480951634476e-10,
+      "relative_error": 6.623460931363947e-07,
+      "reported_lhs_matches_actual": true,
+      "reported_rhs": 4.407648095163447e-10,
+      "plus_Taylor_remainder": 1.2539817679692216e-16,
+      "minus_Taylor_remainder": 1.2548431830299042e-16
+    }
+  ],
+  "all_model_call_fixed_Vs_rho_hashes_match_true": true,
+  "native_sampling_relative_error": 1.832873415567594e-16,
+  "native_coupling_relative_error": 1.9344589394188454e-16,
+  "native_interface_edges": 192,
+  "native_interface_length_m": 8955.000000000016,
+  "native_guidance": {
+    "initial": {
+      "max_f0_hz": 2.2017106750043944,
+      "max_dt_s": 0.0008310071957209128
+    },
+    "target": {
+      "max_f0_hz": 2.2017106750043944,
+      "max_dt_s": 0.0007692222407432685
+    },
+    "passed": true
+  },
+  "actual_settings": {
+    "nstep": 12000,
+    "dt_s": 0.0005,
+    "duration_s": 6.0,
+    "frequency_hz": 2.0,
+    "mpi_ranks": 2,
+    "threads_per_rank": 1
+  },
+  "snapshot_sha_matches": true,
+  "private_Vp_gradient_array_sha256": "790b8966c5f3f7889175c8a2ff2bd4258bbf04fc9abe8b79fff9e40d955d8f0a",
+  "public_Vp_gradient_array_sha256": "790b8966c5f3f7889175c8a2ff2bd4258bbf04fc9abe8b79fff9e40d955d8f0a",
+  "public_Vp_source_byte_identical": true,
+  "public_grid_axes_source_byte_identical": true,
+  "public_file_sha256": "efed1fd4fe837c2ff0621b84e24fc2d374e028dbe403f5634944d411a6ab4b5c",
+  "passed": true,
+  "centered_difference_convergence_order": 1.9999940929494278,
+  "quantity": "Fresh dense physical solid Vp derivative only; true Vs and designated true rho fixed in complete coupled acoustic/P-SV propagation.",
+  "status": "Independent native Vp-only numerical and remote public-source audit passed; local light-bundle receipt and final visual QA are separate.",
+  "limitations": [
+    "The two centered-difference checks use one informative Vp-only direction. dVs=dRho=0; no claim that the fixed parameters were inverted.",
+    "Native SAVE_MODEL ASCII token equality is at5e15.5 precision, not an internal float64 coefficient-bit proof. Exact input field hashes plus native material mapping and high-precision raw initial coefficients supply additional invariance evidence.",
+    "Full L2 is 0.5*sum((data-target)^2): there is no mean/sample-N or RMS normalizer in this native objective.",
+    "This2Hz case with45m input sampling does not establish recovery of every100m layer or a final inverted model.",
+    "The designated controlled density truth is constant2450kg/m3, not original SEG-Y density texture."
+  ]
+}

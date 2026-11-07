@@ -19,6 +19,18 @@ patches, original-binary hashes, failures and repairs are recorded in
 
 ## Models, wavefields and gradients
 
+**New: Vp-only with known true Vs.** Vp alone is blurred; a fresh native
+forward, data AD VJP and adjoint pass informative Vp directional checks at two
+step sizes (relative errors 5.96e−6 and 6.62e−7). The explicit material-policy
+opt-in admits negative lambda only with positive bulk/shear moduli; native
+update kernels and binaries are unchanged.
+
+[![Known-Vs Vp-only control](figures/vponly/vponly_model_and_gradient.png)](VP_ONLY.md)
+
+The shared-scale comparison **does not show improved deep Vp detail**. Its
+below 1 km squared-gradient fraction drops from 9.20% to 3.42%; the lower data
+misfit is not a recovered model. See [inputs, numerical audits and replay](VP_ONLY.md).
+
 **New: gradient-detail experiments.** Moving the source into fixed water and
 using 2 Hz on a 192×84 mesh increases deeper sensitivity while retaining the
 same Marmousi-II inputs and sigma = 150 m starting model. The linear display

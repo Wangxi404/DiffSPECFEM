@@ -1,0 +1,65 @@
+{
+  "active_coordinates": [
+    "vp"
+  ],
+  "fixed": "true Vs and rho; fixed native acoustic water",
+  "no_gradient_postprocessing": true,
+  "files": [
+    {
+      "path": "Par_file",
+      "bytes": 24815,
+      "sha256": "2af0efeecc2825f0f72517c5eee84d24d1b13b0a7c8c88ebb47cef14241dc44a"
+    },
+    {
+      "path": "SOURCE",
+      "bytes": 3395,
+      "sha256": "9880fb6ce25e9113141a8e1f3e96af01d7ec058d4e23bb90aeb35ece7bd8339f"
+    },
+    {
+      "path": "STATIONS",
+      "bytes": 82,
+      "sha256": "beaf4e68ec7a3a7d02228d30216eea5b01b408336fa8ce5bb46d95eac998e057"
+    },
+    {
+      "path": "experiment_executed.py",
+      "bytes": 20490,
+      "sha256": "4cf73259d71dd65613e85749710668f19b94ea0ccd51f42a6b615f8e1a5647c3"
+    },
+    {
+      "path": "independent_audit.json",
+      "bytes": 12108,
+      "sha256": "c65a60f6e9fa16a4709b13f8cc9601031ff6cb09803fcc2dbee105b3b52201c4"
+    },
+    {
+      "path": "interfaces_elastic_analytic.dat",
+      "bytes": 57,
+      "sha256": "e103e6cb031c3b8554f426361b0887244419aef2711b21df49ebea95bb17c1fc"
+    },
+    {
+      "path": "packet_post_native.json",
+      "bytes": 2180,
+      "sha256": "32faddfe54a6e8fdb4f3d1a59d63a391635a5f7cbc2075e1c357ea287f2f4f06"
+    },
+    {
+      "path": "packet_pre_native.json",
+      "bytes": 2180,
+      "sha256": "32faddfe54a6e8fdb4f3d1a59d63a391635a5f7cbc2075e1c357ea287f2f4f06"
+    },
+    {
+      "path": "trace_samples.npz",
+      "bytes": 36620,
+      "sha256": "fc772812ef99aca51777b7c02d0133f77c672b2346a3fb11f73ca1571b4cae99"
+    },
+    {
+      "path": "validation.json",
+      "bytes": 30414,
+      "sha256": "693d1462a957aee8627878cb41c647dc7a16c785c79fe81f73faa539f01eb287"
+    },
+    {
+      "path": "vp_gradient.npz",
+      "bytes": 1324,
+      "sha256": "f7514c3084b5da51cf9a171b34777cd8fa3643090336426d92e7af802bbdbbd6"
+    }
+  ],
+  "additional_receipts": "Independent postprocessing, exact-source/CLI reproduction and unchanged-core checks add no native propagation."
+}

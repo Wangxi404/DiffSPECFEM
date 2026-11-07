@@ -47,8 +47,11 @@ class PSVSolver:
     All receivers are solid Cartesian displacement receivers; water material
     and its source terms are fixed, so unsupported active-water derivatives
     cannot be requested through these solid-grid coordinates.
+    By default solid lambda must be positive. The explicit
+    ``allow_negative_lambda`` material policy instead requires positive
+    isotropic bulk3D and shear moduli; native numerical updates are unchanged.
     """
-    def __init__(self,x,z,case,*,root=ROOT,ranks=2,work='run_psv',evidence='evidence/psv',par_file='Par_file'):
+    def __init__(self,x,z,case,*,root=ROOT,ranks=2,work='run_psv',evidence='evidence/psv',par_file='Par_file',allow_negative_lambda=False):
         if ranks not in (1,2):
             raise ValueError('Only one or two MPI ranks are supported')
         self.root=Path(root).resolve();self.case=(self.root/Path(case)).resolve()
@@ -59,6 +62,10 @@ class PSVSolver:
         self.vendor=self.root/'vendor/specfem2d-psv';self.calls=[]
         self.nstep=None;self.stations=[]
         self.par_file=par_file
+        # Default preserves the original conservative material contract.
+        # An explicit experiment may admit negative lambda when the full
+        # isotropic elastic energy remains positive (mu>0 and bulk3D>0).
+        self.allow_negative_lambda=bool(allow_negative_lambda)
 
     def _run(self,command,mode=None,label='native'):
         env=os.environ.copy();env.update(OMP_NUM_THREADS='1',MKL_NUM_THREADS='1',OPENBLAS_NUM_THREADS='1')
@@ -83,7 +90,9 @@ class PSVSolver:
         model=np.asarray(model,float)
         if model.shape!=self.shape or not np.isfinite(model).all() or np.min(model)<=0:
             raise ValueError(f'Expected finite positive solid [Vp,Vs,rho] with shape {self.shape}; fixed water is outside these coordinates')
-        if np.any(model[0]**2<=2*model[1]**2):
+        if self.allow_negative_lambda and np.any(model[0]**2<=4./3.*model[1]**2):
+            raise ValueError('Negative-lambda opt-in requires positive isotropic bulk modulus (Vp²>4Vs²/3)')
+        if not self.allow_negative_lambda and np.any(model[0]**2<=2*model[1]**2):
             raise ValueError('This isotropic case requires positive solid lambda (Vp²>2Vs²)')
         if self.work.exists():
             if self.work in (self.root,self.case) or not self.work.name.startswith('run_'):

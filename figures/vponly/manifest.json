@@ -1,0 +1,100 @@
+{
+  "status": "Numerical and report-size exported-PDF visual QA passed; see qa/visual_qa.json",
+  "figure": "vponly_model_and_gradient",
+  "plotter_sha256": "485efe580d884b0b7ebd7fd96be36285fb786af9ade9de334cb3fa64be09aa3f",
+  "model_sha256": "88bc4604203588b92cd0abcfb7fe33d3c98464ff470b91b6488a8e63d7287a55",
+  "new_validation_sha256": "7b7a05de6dc78b9cd3bbe8dab6f6d55861bde35427cc10fde4992f818c0a9d03",
+  "new_vp_gradient_sha256": "efed1fd4fe837c2ff0621b84e24fc2d374e028dbe403f5634944d411a6ab4b5c",
+  "old_gradient_bundle_sha256": "a1adff9eaec16f1d0d58b4ab3fefbba89117147751c1091bea71446def2e4676",
+  "active_coordinates": [
+    "vp"
+  ],
+  "fixed_true_vs_and_rho": true,
+  "fresh_target_bitwise_equal": true,
+  "display": {
+    "rule": "One linear symmetric scale from concatenated |old gVp| and |new gVp| at input-grid depth>=1000m; all67x200 nodes drawn, no derivative values modified",
+    "percentile": 99.0,
+    "absolute_limit": 1.2565903538806226e-16,
+    "saturated_fraction_all_nodes": {
+      "previous_joint": 0.13029850746268656,
+      "new_vponly": 0.1067910447761194
+    },
+    "independent_rescaling": false,
+    "gradient_postprocessing": "none",
+    "gradient_grid": "original67x200 solid parameter coordinates depth495..3465m; first-row VJP includes native one-sided extension to450m, not duplicated as extra gradient samples"
+  },
+  "input_correction_is_not_gradient": true,
+  "known_vs_is_not_inverted": true,
+  "source_units_and_objective": "Matched old/new native acoustic Gaussian chi source at150m, same numeric factor1e8, same .5sum displacement-residual squared",
+  "limitation": "Single-gradient controlled experiment with a known true Vs prior; no blind inversion, recovered model or thin-layer recovery claim.",
+  "comparison_statistics": {
+    "previous_joint": {
+      "l2": 1.3381656383793825e-14,
+      "linf": 1.7329724434538863e-15,
+      "finite": true,
+      "common_active_focus_native_m": [
+        4500.0,
+        2925.0
+      ],
+      "energy_inside_common_solid_focus_radius": {
+        "300": 0.09759697357990331,
+        "600": 0.3420220093553964,
+        "1000": 0.4641839013530951
+      },
+      "energy_by_depth": {
+        "495_1000m": 0.9080148922585134,
+        "1000_1500m": 0.059764785267062484,
+        "1500_2000m": 0.015761107802092295,
+        "2000_3000m": 0.01441873119999538,
+        "3000_3466m": 0.00204048347233631
+      },
+      "windowed_spatial_spectrum": {
+        "wavelength_below_250m": 0.00033165174889013195,
+        "wavelength_below_500m": 0.01396623530067328,
+        "wavelength_below_1000m": 0.2130190193572904,
+        "wavelength_below_2000m": 0.6324924295395026
+      },
+      "deep_1000_3000m_windowed_spectrum": {
+        "wavelength_below_250m": 0.00011770500589221129,
+        "wavelength_below_500m": 0.013488543201786933,
+        "wavelength_below_1000m": 0.17196959046547447,
+        "wavelength_below_2000m": 0.7916746118785295
+      },
+      "negative_gradient_model_correction_cosine": 0.040372841168214275
+    },
+    "new_vponly": {
+      "l2": 9.42818730044011e-15,
+      "linf": 8.269190677023218e-16,
+      "finite": true,
+      "common_active_focus_native_m": [
+        4500.0,
+        2925.0
+      ],
+      "energy_inside_common_solid_focus_radius": {
+        "300": 0.05915799887949719,
+        "600": 0.16291370199707672,
+        "1000": 0.24228217166290905
+      },
+      "energy_by_depth": {
+        "495_1000m": 0.9657985483231819,
+        "1000_1500m": 0.03231374158266967,
+        "1500_2000m": 0.0009557792836263064,
+        "2000_3000m": 0.0007846215222104658,
+        "3000_3466m": 0.00014730928831165676
+      },
+      "windowed_spatial_spectrum": {
+        "wavelength_below_250m": 0.006491669727009933,
+        "wavelength_below_500m": 0.03195736283180816,
+        "wavelength_below_1000m": 0.2317973388359361,
+        "wavelength_below_2000m": 0.48325930139451695
+      },
+      "deep_1000_3000m_windowed_spectrum": {
+        "wavelength_below_250m": 0.02770635741559251,
+        "wavelength_below_500m": 0.1353474533030077,
+        "wavelength_below_1000m": 0.5655112205077807,
+        "wavelength_below_2000m": 0.8973984620171981
+      },
+      "negative_gradient_model_correction_cosine": 0.04201794638297152
+    }
+  }
+}

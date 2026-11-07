@@ -1,0 +1,10 @@
+{
+  "stage": "frozen packet verifier before any native mesh/forward",
+  "native_calls": 0,
+  "status": "failed_pre_native_verifier",
+  "cause": "Experiment verifier compared tar byte SHA to packet content-manifest SHA. Frozen official tools/freeze.py instead hashes canonical11-file JSON entries.",
+  "repair": "Experiment verifier now uses the official canonical-entry algorithm. Packet is unchanged; tar byte SHA is reported separately.",
+  "packet_sha256": "51b19130b19625fb074f76db5165e6517d662a61079723e0381d62bfb96f947a",
+  "archive_tar_sha256": "c1729ff528d2716affd5d3cd4ed2273b7feca254fa9971c87dbf97710f84ef1b",
+  "executed_source_sha256": "bff21dcd9bcc77acc013c3d9b279c9f88a5a3cb2328993edeeffe1aa5db916f3"
+}

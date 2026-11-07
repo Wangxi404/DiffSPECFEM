@@ -1,0 +1,886 @@
+{
+  "status": "failed",
+  "passed": false,
+  "case": "examples/psv_negative_lambda_20261107-vponly",
+  "active_coordinates": [
+    "physical solid Vp (m/s)"
+  ],
+  "fixed_coordinates": "Vs=true, rho=true at every model call; water Vp/rho fixed and Vs=0",
+  "experiment": "negative-lambda synthetic control",
+  "initial": {
+    "finite": true,
+    "rho_min": 2394.9339828220177,
+    "vp_min": 1925.7376754849483,
+    "vp_max": 2194.836,
+    "vs_min": 1597.661532662903,
+    "vs_max": 1803.9875923026295,
+    "vp_vs_min_ratio": 1.182,
+    "mu_min_pa": 6282805207.356383,
+    "lambda_min_pa": -4633964500.80007,
+    "negative_lambda_count": 81,
+    "kappa2D_min_pa": 2658313423.9626136,
+    "bulk3D_min_pa": 457102810.8028221,
+    "poisson_min": -0.759052588108501,
+    "stable": true,
+    "field_sha256": {
+      "vp": "d727fc85c9d0eacdb9e497f2b753ce9d86bcefb9feb206961440f6719531a5a7",
+      "vs": "5faf3a32c95a7c8e7caab99b90159ce3335bf72f21950ba51c6479070323f369",
+      "rho": "90aa93f5cf2e0e14ed2832087851c7ddadf6bb4b474281b8d16a583c7eeea36e"
+    }
+  },
+  "target": {
+    "finite": true,
+    "rho_min": 2394.9339828220177,
+    "vp_min": 2045.0067618085159,
+    "vp_max": 2309.104118147366,
+    "vs_min": 1597.661532662903,
+    "vs_max": 1803.9875923026295,
+    "vp_vs_min_ratio": 1.2799999999999998,
+    "mu_min_pa": 6282805207.356383,
+    "lambda_min_pa": -2935472416.0000005,
+    "negative_lambda_count": 81,
+    "kappa2D_min_pa": 4010942844.3763175,
+    "bulk3D_min_pa": 1916674441.9241896,
+    "poisson_min": -0.2832080200501258,
+    "stable": true,
+    "field_sha256": {
+      "vp": "5140be8e2a6ea1172571af579f230bd704235be2c6f326687b676bf5d83aea76",
+      "vs": "5faf3a32c95a7c8e7caab99b90159ce3335bf72f21950ba51c6479070323f369",
+      "rho": "90aa93f5cf2e0e14ed2832087851c7ddadf6bb4b474281b8d16a583c7eeea36e"
+    }
+  },
+  "model_sha256": "cf1193468384f00c74d02f69d3952d55a7fc5542914327c07716bf3010928cdf",
+  "model_calls": [
+    {
+      "finite": true,
+      "rho_min": 2394.9339828220177,
+      "vp_min": 1925.7376754849483,
+      "vp_max": 2194.836,
+      "vs_min": 1597.661532662903,
+      "vs_max": 1803.9875923026295,
+      "vp_vs_min_ratio": 1.182,
+      "mu_min_pa": 6282805207.356383,
+      "lambda_min_pa": -4633964500.80007,
+      "negative_lambda_count": 81,
+      "kappa2D_min_pa": 2658313423.9626136,
+      "bulk3D_min_pa": 457102810.8028221,
+      "poisson_min": -0.759052588108501,
+      "stable": true,
+      "field_sha256": {
+        "vp": "d727fc85c9d0eacdb9e497f2b753ce9d86bcefb9feb206961440f6719531a5a7",
+        "vs": "5faf3a32c95a7c8e7caab99b90159ce3335bf72f21950ba51c6479070323f369",
+        "rho": "90aa93f5cf2e0e14ed2832087851c7ddadf6bb4b474281b8d16a583c7eeea36e"
+      }
+    },
+    {
+      "finite": true,
+      "rho_min": 2394.9339828220177,
+      "vp_min": 2045.0067618085159,
+      "vp_max": 2309.104118147366,
+      "vs_min": 1597.661532662903,
+      "vs_max": 1803.9875923026295,
+      "vp_vs_min_ratio": 1.2799999999999998,
+      "mu_min_pa": 6282805207.356383,
+      "lambda_min_pa": -2935472416.0000005,
+      "negative_lambda_count": 81,
+      "kappa2D_min_pa": 4010942844.3763175,
+      "bulk3D_min_pa": 1916674441.9241896,
+      "poisson_min": -0.2832080200501258,
+      "stable": true,
+      "field_sha256": {
+        "vp": "5140be8e2a6ea1172571af579f230bd704235be2c6f326687b676bf5d83aea76",
+        "vs": "5faf3a32c95a7c8e7caab99b90159ce3335bf72f21950ba51c6479070323f369",
+        "rho": "90aa93f5cf2e0e14ed2832087851c7ddadf6bb4b474281b8d16a583c7eeea36e"
+      }
+    },
+    {
+      "finite": true,
+      "rho_min": 2394.9339828220177,
+      "vp_min": 1925.7376754849483,
+      "vp_max": 2194.836,
+      "vs_min": 1597.661532662903,
+      "vs_max": 1803.9875923026295,
+      "vp_vs_min_ratio": 1.182,
+      "mu_min_pa": 6282805207.356383,
+      "lambda_min_pa": -4633964500.80007,
+      "negative_lambda_count": 81,
+      "kappa2D_min_pa": 2658313423.9626136,
+      "bulk3D_min_pa": 457102810.8028221,
+      "poisson_min": -0.759052588108501,
+      "stable": true,
+      "field_sha256": {
+        "vp": "d727fc85c9d0eacdb9e497f2b753ce9d86bcefb9feb206961440f6719531a5a7",
+        "vs": "5faf3a32c95a7c8e7caab99b90159ce3335bf72f21950ba51c6479070323f369",
+        "rho": "90aa93f5cf2e0e14ed2832087851c7ddadf6bb4b474281b8d16a583c7eeea36e"
+      }
+    },
+    {
+      "finite": true,
+      "rho_min": 2394.9339828220177,
+      "vp_min": 1927.1372567487456,
+      "vp_max": 2196.0431598,
+      "vs_min": 1597.661532662903,
+      "vs_max": 1803.9875923026295,
+      "vp_vs_min_ratio": 1.1826501,
+      "mu_min_pa": 6282805207.356383,
+      "lambda_min_pa": -4621790593.612101,
+      "negative_lambda_count": 81,
+      "kappa2D_min_pa": 2668227815.4149666,
+      "bulk3D_min_pa": 467610022.829587,
+      "poisson_min": -0.7541976143269082,
+      "stable": true,
+      "field_sha256": {
+        "vp": "d892d7521a4a1f7061f6755136faf872594929e9d559206fcb81d84aaf615df5",
+        "vs": "5faf3a32c95a7c8e7caab99b90159ce3335bf72f21950ba51c6479070323f369",
+        "rho": "90aa93f5cf2e0e14ed2832087851c7ddadf6bb4b474281b8d16a583c7eeea36e"
+      }
+    },
+    {
+      "finite": true,
+      "rho_min": 2394.9339828220177,
+      "vp_min": 1924.338094221151,
+      "vp_max": 2193.6288401999996,
+      "vs_min": 1597.661532662903,
+      "vs_max": 1803.9875923026295,
+      "vp_vs_min_ratio": 1.1813498999999998,
+      "mu_min_pa": 6282805207.356383,
+      "lambda_min_pa": -4646131714.179879,
+      "negative_lambda_count": 81,
+      "kappa2D_min_pa": 2648404483.92642,
+      "bulk3D_min_pa": 446601376.15389204,
+      "poisson_min": -0.7639425942685695,
+      "stable": true,
+      "field_sha256": {
+        "vp": "bc25c3b661c0a3ffa1303a4bedae8afc1923f7c291d4d5a352a5448e46d16e42",
+        "vs": "5faf3a32c95a7c8e7caab99b90159ce3335bf72f21950ba51c6479070323f369",
+        "rho": "90aa93f5cf2e0e14ed2832087851c7ddadf6bb4b474281b8d16a583c7eeea36e"
+      }
+    },
+    {
+      "finite": true,
+      "rho_min": 2394.9339828220177,
+      "vp_min": 1926.1575498640875,
+      "vp_max": 2195.1981479399997,
+      "vs_min": 1597.661532662903,
+      "vs_max": 1803.9875923026295,
+      "vp_vs_min_ratio": 1.18219503,
+      "mu_min_pa": 6282805207.356383,
+      "lambda_min_pa": -4630313031.493534,
+      "negative_lambda_count": 81,
+      "kappa2D_min_pa": 2661287168.9996233,
+      "bulk3D_min_pa": 460254367.78617907,
+      "poisson_min": -0.7575924346459905,
+      "stable": true,
+      "field_sha256": {
+        "vp": "2fb8738a387e263eb69399f89a148aff9d5cf69dad679955f96062961f433b3f",
+        "vs": "5faf3a32c95a7c8e7caab99b90159ce3335bf72f21950ba51c6479070323f369",
+        "rho": "90aa93f5cf2e0e14ed2832087851c7ddadf6bb4b474281b8d16a583c7eeea36e"
+      }
+    },
+    {
+      "finite": true,
+      "rho_min": 2394.9339828220177,
+      "vp_min": 1925.3178011058092,
+      "vp_max": 2194.47385206,
+      "vs_min": 1597.661532662903,
+      "vs_max": 1803.9875923026295,
+      "vp_vs_min_ratio": 1.18180497,
+      "mu_min_pa": 6282805207.356383,
+      "lambda_min_pa": -4637615367.663869,
+      "negative_lambda_count": 81,
+      "kappa2D_min_pa": 2655340169.553058,
+      "bulk3D_min_pa": 453951773.78347015,
+      "poisson_min": -0.7605158944484451,
+      "stable": true,
+      "field_sha256": {
+        "vp": "c155da645492a0a6940cfa04ea325ac4fb8ef81fa601d90eee803ebbb9d7d715",
+        "vs": "5faf3a32c95a7c8e7caab99b90159ce3335bf72f21950ba51c6479070323f369",
+        "rho": "90aa93f5cf2e0e14ed2832087851c7ddadf6bb4b474281b8d16a583c7eeea36e"
+      }
+    },
+    {
+      "finite": true,
+      "rho_min": 2394.9339828220177,
+      "vp_min": 1925.877633611328,
+      "vp_max": 2194.95671598,
+      "vs_min": 1597.661532662903,
+      "vs_max": 1803.9875923026295,
+      "vp_vs_min_ratio": 1.1820650099999999,
+      "mu_min_pa": 6282805207.356383,
+      "lambda_min_pa": -4632747411.30264,
+      "negative_lambda_count": 81,
+      "kappa2D_min_pa": 2659304617.7941217,
+      "bulk3D_min_pa": 458153272.0234957,
+      "poisson_min": -0.75856552046857,
+      "stable": true,
+      "field_sha256": {
+        "vp": "226f09c481ade7ef89c155c2526eb7f9700a9ec785b9dbab93c3880faff6f3d0",
+        "vs": "5faf3a32c95a7c8e7caab99b90159ce3335bf72f21950ba51c6479070323f369",
+        "rho": "90aa93f5cf2e0e14ed2832087851c7ddadf6bb4b474281b8d16a583c7eeea36e"
+      }
+    },
+    {
+      "finite": true,
+      "rho_min": 2394.9339828220177,
+      "vp_min": 1925.5977173585686,
+      "vp_max": 2194.7152840199997,
+      "vs_min": 1597.661532662903,
+      "vs_max": 1803.9875923026295,
+      "vp_vs_min_ratio": 1.1819349899999998,
+      "mu_min_pa": 6282805207.356383,
+      "lambda_min_pa": -4635181523.359414,
+      "negative_lambda_count": 81,
+      "kappa2D_min_pa": 2657322284.6452675,
+      "bulk3D_min_pa": 456052407.3559265,
+      "poisson_min": -0.7595400060677884,
+      "stable": true,
+      "field_sha256": {
+        "vp": "1c89c3cb02b9317a2df84f7d6f440d4e440e219e06c9a7236efb7c2f506371c4",
+        "vs": "5faf3a32c95a7c8e7caab99b90159ce3335bf72f21950ba51c6479070323f369",
+        "rho": "90aa93f5cf2e0e14ed2832087851c7ddadf6bb4b474281b8d16a583c7eeea36e"
+      }
+    }
+  ],
+  "input_provenance": {
+    "name": "psv_negative_lambda_20261107-vponly",
+    "parent_model_sha256": "f0eb2130cb91695d22daf9fa5ae24e74159c4ecb59ba776b8653d5874d8d8c6c",
+    "model_role": "synthetic negative-lambda coupled regression",
+    "active_coordinates": [
+      "vp"
+    ],
+    "fixed_coordinates": [
+      "vs_true",
+      "rho_true",
+      "native acoustic water"
+    ],
+    "no_clipping_or_floors": true,
+    "water_density_convention": "Fixed native water rho1000 in synthetic unit; rho2450 in Marmousi case (controlled convention, not original Marmousi density)",
+    "negative_lambda_policy": "explicit opt-in, positive rho/mu/bulk3D; locally negative Poisson allowed",
+    "model_path": "data/prepared/negative_lambda_20261107-vponly.npz",
+    "model_sha256": "cf1193468384f00c74d02f69d3952d55a7fc5542914327c07716bf3010928cdf",
+    "initial": {
+      "finite": true,
+      "rho_min": 2394.9339828220177,
+      "vp_min": 1925.7376754849483,
+      "vp_max": 2194.836,
+      "vs_min": 1597.661532662903,
+      "vs_max": 1803.9875923026295,
+      "vp_vs_min_ratio": 1.182,
+      "mu_min_pa": 6282805207.356383,
+      "lambda_min_pa": -4633964500.80007,
+      "negative_lambda_count": 81,
+      "kappa2D_min_pa": 2658313423.9626136,
+      "bulk3D_min_pa": 457102810.8028221,
+      "poisson_min": -0.759052588108501,
+      "stable": true,
+      "field_sha256": {
+        "vp": "d727fc85c9d0eacdb9e497f2b753ce9d86bcefb9feb206961440f6719531a5a7",
+        "vs": "5faf3a32c95a7c8e7caab99b90159ce3335bf72f21950ba51c6479070323f369",
+        "rho": "90aa93f5cf2e0e14ed2832087851c7ddadf6bb4b474281b8d16a583c7eeea36e"
+      }
+    },
+    "target": {
+      "finite": true,
+      "rho_min": 2394.9339828220177,
+      "vp_min": 2045.0067618085159,
+      "vp_max": 2309.104118147366,
+      "vs_min": 1597.661532662903,
+      "vs_max": 1803.9875923026295,
+      "vp_vs_min_ratio": 1.2799999999999998,
+      "mu_min_pa": 6282805207.356383,
+      "lambda_min_pa": -2935472416.0000005,
+      "negative_lambda_count": 81,
+      "kappa2D_min_pa": 4010942844.3763175,
+      "bulk3D_min_pa": 1916674441.9241896,
+      "poisson_min": -0.2832080200501258,
+      "stable": true,
+      "field_sha256": {
+        "vp": "5140be8e2a6ea1172571af579f230bd704235be2c6f326687b676bf5d83aea76",
+        "vs": "5faf3a32c95a7c8e7caab99b90159ce3335bf72f21950ba51c6479070323f369",
+        "rho": "90aa93f5cf2e0e14ed2832087851c7ddadf6bb4b474281b8d16a583c7eeea36e"
+      }
+    },
+    "status": "prepared; native acceptance pending",
+    "native_case": "unchanged parent numerics/acquisition, SAVE_MODEL=ascii adds diagnostic GLL material export only"
+  },
+  "forecast_history_gb": 0.157424256,
+  "max_history_gb": 1.0,
+  "config": {
+    "nstep": 2400,
+    "dt_s": 0.001,
+    "duration_s": 2.4,
+    "frequency_hz": 1.5,
+    "mpi_ranks": 2,
+    "threads_per_rank": 1
+  },
+  "material_policy": {
+    "allow_negative_lambda": true,
+    "bulk3D_positive_required": true,
+    "old_default_unchanged": true,
+    "no_model_clipping": true
+  },
+  "runtime_script_sha256": "22a7d790c20ad56ac9f5ea2a5b3d2c7d6dd242a7f8673c68ad1b184dbc595c9a",
+  "dependency_sha256": {
+    "diffspecfem/psv.py": "18fc62fa980fc9a1bab0b0b38471b97f3df8bd979f495527fd211d877c8e9e20",
+    "diffspecfem/tomography.py": "443c86b1e15c9304d5ed19b5260f520ef0ea75b1da815a760cebfb4a97eda95c",
+    "native/psv_adjoint.f90": "18133011241336e7ff0114c9cd6f8866bbd46107d94562f04190ee2c4c38892f",
+    "native/psv_iterate_time.patch": "a270f140a755dcdfd1c7144d36bc81a5dd4ea41f4bddd5a29057943a862c447e",
+    "scripts/experiment_gradient_detail_psv.py": "97d64e6a81bafbea0fc413c0fba468285f4b91715e3424add616932666c45ccc"
+  },
+  "binary_sha256": {
+    "vendor/specfem2d-psv/bin/xspecfem2D": "6c71b1ebd7c03f8db3ead56315be6ba088160d3f5c6abbbee1d3e7758c76b43d",
+    "psv-baseline-xspecfem2D": "705549f87e2f8427e30cf664576c49f2bbe2bde0f93997aa055229226ac2cd50"
+  },
+  "acceptance_predeclared": {
+    "native_forward": "bitwise",
+    "data_vjp_rtol": 1e-12,
+    "model_dot_rtol": 1e-05,
+    "model_dot_epsilons": [
+      0.001,
+      0.0003,
+      0.0001
+    ],
+    "model_dot_direction": "Vp only; dVs=dRho=0; source/receivers/water/true Vs/rho fixed",
+    "no_absolute_only_pass": true
+  },
+  "route": "one native recorded forward -> actual Torch data-only L2 VJP -> one exact native coupled adjoint -> physical material map transpose -> select Vp; temporal AD=0, production FD=0, replay=0",
+  "gates": {
+    "native_guidance": {
+      "initial": {
+        "max_f0_hz": 1.9200000000000004,
+        "max_dt_s": 0.00786724678499949
+      },
+      "target": {
+        "max_f0_hz": 1.9200000000000004,
+        "max_dt_s": 0.007477928920093479
+      },
+      "passed": true
+    },
+    "native_forward": {
+      "passed": true,
+      "absolute_linf": 0.0,
+      "trace_sha256": "4fd099d80a58649c9294fd829b32bec3fa7e49462f1bd2a89671237a23f40a57"
+    },
+    "fixed_native_coefficients": {
+      "passed": true,
+      "explanation": "Fresh actual native rho/mu match interpolation of fixed true grid fields; Vp alters lambda only. Independent target/perturbed SAVE_MODEL exports retained privately.",
+      "rho_relative_linf": 3.488575647031028e-16,
+      "mu_relative_linf": 7.04858197814181e-16,
+      "actual_gll": {
+        "rho_min": 2394.9339828220177,
+        "mu_min_pa": 6282805207.356384,
+        "lambda_min_pa": -4633964500.800068,
+        "bulk3D_min_pa": 457102810.802825,
+        "kappa2D_min_pa": 2658313423.9626093
+      },
+      "water_raw_derivative_zero": true
+    },
+    "frozen_packet": {
+      "passed": true,
+      "packet_sha256": "51b19130b19625fb074f76db5165e6517d662a61079723e0381d62bfb96f947a"
+    },
+    "fixed_fields_all_model_calls": {
+      "passed": true
+    },
+    "stable_all_model_calls": {
+      "passed": true
+    }
+  },
+  "elapsed_seconds": 8.98219365812838,
+  "default_material_guard": {
+    "rejected": true,
+    "reason": "This isotropic case requires positive solid lambda (Vp\u00b2>2Vs\u00b2)"
+  },
+  "data_objective_checks": {
+    "l2": {
+      "value": 0.0003085163296434656,
+      "numpy_vjp_relative_l2": 0.0,
+      "centered_data_directions": [
+        {
+          "epsilon": 0.0003,
+          "lhs": -2.14519099044682e-06,
+          "rhs": -2.1451909904402326e-06,
+          "relative_error": 3.0707639833153575e-12
+        },
+        {
+          "epsilon": 0.0001,
+          "lhs": -2.14519099044682e-06,
+          "rhs": -2.1451909904402326e-06,
+          "relative_error": 3.0707639833153575e-12
+        }
+      ],
+      "passed": true,
+      "leaf_grad_fn": "None",
+      "objective_grad_fn": "MulBackward0"
+    },
+    "processed_data_only": {
+      "value": 508.2247932505269,
+      "numpy_vjp_relative_l2": 1.318661821622227e-16,
+      "centered_data_directions": [
+        {
+          "epsilon": 0.0003,
+          "lhs": -168.70384559723564,
+          "rhs": -168.7038549156075,
+          "relative_error": 5.523508559298072e-08
+        },
+        {
+          "epsilon": 0.0001,
+          "lhs": -168.7038538804586,
+          "rhs": -168.7038549156075,
+          "relative_error": 6.135893567292646e-09
+        }
+      ],
+      "passed": true,
+      "leaf_grad_fn": "None",
+      "objective_grad_fn": "MulBackward0"
+    }
+  },
+  "data_spectrum": {
+    "predicted": {
+      "rms": 0.0005013970128324971,
+      "linf": 0.0014715737659310982,
+      "f50_hz": 1.25,
+      "f90_hz": 1.6666666666666667,
+      "f95_hz": 2.0833333333333335,
+      "energy_above_hz": {
+        "0.5": 0.9442881208838286,
+        "1.0": 0.7381755706393052,
+        "1.5": 0.32558821372558683,
+        "2.0": 0.07441249808105257,
+        "3.0": 0.0012006941949002901
+      }
+    },
+    "target": {
+      "rms": 0.0005283273935868741,
+      "linf": 0.0015633239253462561,
+      "f50_hz": 1.25,
+      "f90_hz": 1.6666666666666667,
+      "f95_hz": 2.0833333333333335,
+      "energy_above_hz": {
+        "0.5": 0.9478003202493361,
+        "1.0": 0.7905371461858984,
+        "1.5": 0.38851791627512017,
+        "2.0": 0.07919654659569704,
+        "3.0": 0.0015781384389488707
+      }
+    },
+    "residual": {
+      "rms": 0.00017926828406384195,
+      "linf": 0.000810113641349134,
+      "f50_hz": 1.25,
+      "f90_hz": 2.0833333333333335,
+      "f95_hz": 2.5,
+      "energy_above_hz": {
+        "0.5": 0.8974650072417845,
+        "1.0": 0.7622835541505598,
+        "1.5": 0.4548834335199886,
+        "2.0": 0.19829291200944615,
+        "3.0": 0.005430856751334188
+      }
+    }
+  },
+  "data_leaf_grad_fn": "None",
+  "objective_grad_fn": "MulBackward0",
+  "objective_value": 0.0003085163296434656,
+  "history": {
+    "files": [
+      {
+        "path": "psv_rank000000_history.bin",
+        "bytes": 89510412,
+        "sha256": "54c1b828b422a36d31d2668407d40e054b228b0d64e5a774bf1ee325a9822590"
+      },
+      {
+        "path": "psv_rank000001_history.bin",
+        "bytes": 70617612,
+        "sha256": "f3253bd1d98fcc4a1914988c2156d601422f7d47eadf0762899e5c5619af3edc"
+      }
+    ],
+    "total_bytes": 160128024,
+    "replay_count": 0,
+    "live_state": "O(nglob); six-field history streamed from disk",
+    "retention": "temporary full history; hash retained and full forward/adjoint archive excludes it; deleted by prepare only after adjoint"
+  },
+  "adjoint_and_static_seconds": 0.6323378747329116,
+  "direction": {
+    "active": [
+      "vp"
+    ],
+    "dvs_zero": true,
+    "drho_zero": true,
+    "vp_sha256": "cef9eee5c16bcf8e002ce2a50efce812344dfa2437e4b7e4dfae1aabefedd2b5",
+    "slope": -0.005226344345286677,
+    "gradient_direction_abs_cosine": 0.4831139593345146,
+    "informative": true
+  },
+  "model_dot": [
+    {
+      "passed": false,
+      "informative": true,
+      "lhs": {
+        "real": -0.0052262143898392475,
+        "imag": 0.0
+      },
+      "rhs": {
+        "real": -0.005226344345286677,
+        "imag": 0.0
+      },
+      "absolute_error": 1.2995544742926135e-07,
+      "relative_error": 2.4865458309585033e-05,
+      "epsilon": 0.001,
+      "taylor_remainder_plus": 1.4068966751228307e-08,
+      "taylor_remainder_minus": 1.3746564016734304e-08
+    },
+    {
+      "passed": true,
+      "informative": true,
+      "lhs": {
+        "real": -0.005226332649063423,
+        "imag": 0.0
+      },
+      "rhs": {
+        "real": -0.005226344345286677,
+        "imag": 0.0
+      },
+      "absolute_error": 1.1696223253809812e-08,
+      "relative_error": 2.237935826857242e-06,
+      "epsilon": 0.0003,
+      "taylor_remainder_plus": 1.2560986213144226e-09,
+      "taylor_remainder_minus": 1.247393534399817e-09
+    },
+    {
+      "passed": true,
+      "informative": true,
+      "lhs": {
+        "real": -0.0052263430457051155,
+        "imag": 0.0
+      },
+      "rhs": {
+        "real": -0.005226344345286677,
+        "imag": 0.0
+      },
+      "absolute_error": 1.2995815612884543e-09,
+      "relative_error": 2.4865976587640424e-07,
+      "epsilon": 0.0001,
+      "taylor_remainder_plus": 1.392445638092276e-10,
+      "taylor_remainder_minus": 1.389221527395821e-10
+    }
+  ],
+  "native_calls": [
+    {
+      "launched_argv": [
+        "nice",
+        "-n",
+        "10",
+        "/home/xiwang/DiffSPECFEM-PSV/vendor/specfem2d-psv/bin/xmeshfem2D"
+      ],
+      "ranks": 2,
+      "mode": null,
+      "seconds": 0.4243742171674967,
+      "returncode": 0,
+      "log": "/home/xiwang/DiffSPECFEM-PSV/run_psv_negative_lambda_20261107-vponly/mesh.log",
+      "resource_log": "/home/xiwang/DiffSPECFEM-PSV/run_psv_negative_lambda_20261107-vponly/mesh.resources.txt"
+    },
+    {
+      "launched_argv": [
+        "nice",
+        "-n",
+        "10",
+        "mpirun",
+        "--bind-to",
+        "core",
+        "-np",
+        "2",
+        "/home/xiwang/DiffSPECFEM-PSV/psv-baseline-xspecfem2D"
+      ],
+      "ranks": 2,
+      "mode": null,
+      "seconds": 0.4870450245216489,
+      "returncode": 0,
+      "log": "/home/xiwang/DiffSPECFEM-PSV/run_psv_negative_lambda_20261107-vponly/native_baseline.log",
+      "resource_log": "/home/xiwang/DiffSPECFEM-PSV/run_psv_negative_lambda_20261107-vponly/native_baseline.resources.txt"
+    },
+    {
+      "launched_argv": [
+        "nice",
+        "-n",
+        "10",
+        "/home/xiwang/DiffSPECFEM-PSV/vendor/specfem2d-psv/bin/xmeshfem2D"
+      ],
+      "ranks": 2,
+      "mode": null,
+      "seconds": 0.37735978327691555,
+      "returncode": 0,
+      "log": "/home/xiwang/DiffSPECFEM-PSV/run_psv_negative_lambda_20261107-vponly/mesh.log",
+      "resource_log": "/home/xiwang/DiffSPECFEM-PSV/run_psv_negative_lambda_20261107-vponly/mesh.resources.txt"
+    },
+    {
+      "launched_argv": [
+        "nice",
+        "-n",
+        "10",
+        "mpirun",
+        "--bind-to",
+        "core",
+        "-np",
+        "2",
+        "/home/xiwang/DiffSPECFEM-PSV/vendor/specfem2d-psv/bin/xspecfem2D"
+      ],
+      "ranks": 2,
+      "mode": null,
+      "seconds": 0.4902866333723068,
+      "returncode": 0,
+      "log": "/home/xiwang/DiffSPECFEM-PSV/run_psv_negative_lambda_20261107-vponly/forward.log",
+      "resource_log": "/home/xiwang/DiffSPECFEM-PSV/run_psv_negative_lambda_20261107-vponly/forward.resources.txt"
+    },
+    {
+      "launched_argv": [
+        "nice",
+        "-n",
+        "10",
+        "/home/xiwang/DiffSPECFEM-PSV/vendor/specfem2d-psv/bin/xmeshfem2D"
+      ],
+      "ranks": 2,
+      "mode": null,
+      "seconds": 0.378814815543592,
+      "returncode": 0,
+      "log": "/home/xiwang/DiffSPECFEM-PSV/run_psv_negative_lambda_20261107-vponly/mesh.log",
+      "resource_log": "/home/xiwang/DiffSPECFEM-PSV/run_psv_negative_lambda_20261107-vponly/mesh.resources.txt"
+    },
+    {
+      "launched_argv": [
+        "nice",
+        "-n",
+        "10",
+        "mpirun",
+        "--bind-to",
+        "core",
+        "-np",
+        "2",
+        "/home/xiwang/DiffSPECFEM-PSV/vendor/specfem2d-psv/bin/xspecfem2D"
+      ],
+      "ranks": 2,
+      "mode": "record",
+      "seconds": 0.6169055653735995,
+      "returncode": 0,
+      "log": "/home/xiwang/DiffSPECFEM-PSV/run_psv_negative_lambda_20261107-vponly/forward.log",
+      "resource_log": "/home/xiwang/DiffSPECFEM-PSV/run_psv_negative_lambda_20261107-vponly/forward.resources.txt"
+    },
+    {
+      "launched_argv": [
+        "nice",
+        "-n",
+        "10",
+        "mpirun",
+        "--bind-to",
+        "core",
+        "-np",
+        "2",
+        "/home/xiwang/DiffSPECFEM-PSV/vendor/specfem2d-psv/bin/xspecfem2D"
+      ],
+      "ranks": 2,
+      "mode": "adjoint",
+      "seconds": 0.6184001415967941,
+      "returncode": 0,
+      "log": "/home/xiwang/DiffSPECFEM-PSV/run_psv_negative_lambda_20261107-vponly/adjoint.log",
+      "resource_log": "/home/xiwang/DiffSPECFEM-PSV/run_psv_negative_lambda_20261107-vponly/adjoint.resources.txt"
+    },
+    {
+      "launched_argv": [
+        "nice",
+        "-n",
+        "10",
+        "/home/xiwang/DiffSPECFEM-PSV/vendor/specfem2d-psv/bin/xmeshfem2D"
+      ],
+      "ranks": 2,
+      "mode": null,
+      "seconds": 0.3926898427307606,
+      "returncode": 0,
+      "log": "/home/xiwang/DiffSPECFEM-PSV/run_psv_negative_lambda_20261107-vponly/mesh.log",
+      "resource_log": "/home/xiwang/DiffSPECFEM-PSV/run_psv_negative_lambda_20261107-vponly/mesh.resources.txt"
+    },
+    {
+      "launched_argv": [
+        "nice",
+        "-n",
+        "10",
+        "mpirun",
+        "--bind-to",
+        "core",
+        "-np",
+        "2",
+        "/home/xiwang/DiffSPECFEM-PSV/vendor/specfem2d-psv/bin/xspecfem2D"
+      ],
+      "ranks": 2,
+      "mode": null,
+      "seconds": 0.4968473194167018,
+      "returncode": 0,
+      "log": "/home/xiwang/DiffSPECFEM-PSV/run_psv_negative_lambda_20261107-vponly/forward.log",
+      "resource_log": "/home/xiwang/DiffSPECFEM-PSV/run_psv_negative_lambda_20261107-vponly/forward.resources.txt"
+    },
+    {
+      "launched_argv": [
+        "nice",
+        "-n",
+        "10",
+        "/home/xiwang/DiffSPECFEM-PSV/vendor/specfem2d-psv/bin/xmeshfem2D"
+      ],
+      "ranks": 2,
+      "mode": null,
+      "seconds": 0.3800728125497699,
+      "returncode": 0,
+      "log": "/home/xiwang/DiffSPECFEM-PSV/run_psv_negative_lambda_20261107-vponly/mesh.log",
+      "resource_log": "/home/xiwang/DiffSPECFEM-PSV/run_psv_negative_lambda_20261107-vponly/mesh.resources.txt"
+    },
+    {
+      "launched_argv": [
+        "nice",
+        "-n",
+        "10",
+        "mpirun",
+        "--bind-to",
+        "core",
+        "-np",
+        "2",
+        "/home/xiwang/DiffSPECFEM-PSV/vendor/specfem2d-psv/bin/xspecfem2D"
+      ],
+      "ranks": 2,
+      "mode": null,
+      "seconds": 0.4913216792047024,
+      "returncode": 0,
+      "log": "/home/xiwang/DiffSPECFEM-PSV/run_psv_negative_lambda_20261107-vponly/forward.log",
+      "resource_log": "/home/xiwang/DiffSPECFEM-PSV/run_psv_negative_lambda_20261107-vponly/forward.resources.txt"
+    },
+    {
+      "launched_argv": [
+        "nice",
+        "-n",
+        "10",
+        "/home/xiwang/DiffSPECFEM-PSV/vendor/specfem2d-psv/bin/xmeshfem2D"
+      ],
+      "ranks": 2,
+      "mode": null,
+      "seconds": 0.4011174626648426,
+      "returncode": 0,
+      "log": "/home/xiwang/DiffSPECFEM-PSV/run_psv_negative_lambda_20261107-vponly/mesh.log",
+      "resource_log": "/home/xiwang/DiffSPECFEM-PSV/run_psv_negative_lambda_20261107-vponly/mesh.resources.txt"
+    },
+    {
+      "launched_argv": [
+        "nice",
+        "-n",
+        "10",
+        "mpirun",
+        "--bind-to",
+        "core",
+        "-np",
+        "2",
+        "/home/xiwang/DiffSPECFEM-PSV/vendor/specfem2d-psv/bin/xspecfem2D"
+      ],
+      "ranks": 2,
+      "mode": null,
+      "seconds": 0.5002810843288898,
+      "returncode": 0,
+      "log": "/home/xiwang/DiffSPECFEM-PSV/run_psv_negative_lambda_20261107-vponly/forward.log",
+      "resource_log": "/home/xiwang/DiffSPECFEM-PSV/run_psv_negative_lambda_20261107-vponly/forward.resources.txt"
+    },
+    {
+      "launched_argv": [
+        "nice",
+        "-n",
+        "10",
+        "/home/xiwang/DiffSPECFEM-PSV/vendor/specfem2d-psv/bin/xmeshfem2D"
+      ],
+      "ranks": 2,
+      "mode": null,
+      "seconds": 0.3794197039678693,
+      "returncode": 0,
+      "log": "/home/xiwang/DiffSPECFEM-PSV/run_psv_negative_lambda_20261107-vponly/mesh.log",
+      "resource_log": "/home/xiwang/DiffSPECFEM-PSV/run_psv_negative_lambda_20261107-vponly/mesh.resources.txt"
+    },
+    {
+      "launched_argv": [
+        "nice",
+        "-n",
+        "10",
+        "mpirun",
+        "--bind-to",
+        "core",
+        "-np",
+        "2",
+        "/home/xiwang/DiffSPECFEM-PSV/vendor/specfem2d-psv/bin/xspecfem2D"
+      ],
+      "ranks": 2,
+      "mode": null,
+      "seconds": 0.4906903998926282,
+      "returncode": 0,
+      "log": "/home/xiwang/DiffSPECFEM-PSV/run_psv_negative_lambda_20261107-vponly/forward.log",
+      "resource_log": "/home/xiwang/DiffSPECFEM-PSV/run_psv_negative_lambda_20261107-vponly/forward.resources.txt"
+    },
+    {
+      "launched_argv": [
+        "nice",
+        "-n",
+        "10",
+        "/home/xiwang/DiffSPECFEM-PSV/vendor/specfem2d-psv/bin/xmeshfem2D"
+      ],
+      "ranks": 2,
+      "mode": null,
+      "seconds": 0.38038728572428226,
+      "returncode": 0,
+      "log": "/home/xiwang/DiffSPECFEM-PSV/run_psv_negative_lambda_20261107-vponly/mesh.log",
+      "resource_log": "/home/xiwang/DiffSPECFEM-PSV/run_psv_negative_lambda_20261107-vponly/mesh.resources.txt"
+    },
+    {
+      "launched_argv": [
+        "nice",
+        "-n",
+        "10",
+        "mpirun",
+        "--bind-to",
+        "core",
+        "-np",
+        "2",
+        "/home/xiwang/DiffSPECFEM-PSV/vendor/specfem2d-psv/bin/xspecfem2D"
+      ],
+      "ranks": 2,
+      "mode": null,
+      "seconds": 0.48543555848300457,
+      "returncode": 0,
+      "log": "/home/xiwang/DiffSPECFEM-PSV/run_psv_negative_lambda_20261107-vponly/forward.log",
+      "resource_log": "/home/xiwang/DiffSPECFEM-PSV/run_psv_negative_lambda_20261107-vponly/forward.resources.txt"
+    },
+    {
+      "launched_argv": [
+        "nice",
+        "-n",
+        "10",
+        "/home/xiwang/DiffSPECFEM-PSV/vendor/specfem2d-psv/bin/xmeshfem2D"
+      ],
+      "ranks": 2,
+      "mode": null,
+      "seconds": 0.3810077840462327,
+      "returncode": 0,
+      "log": "/home/xiwang/DiffSPECFEM-PSV/run_psv_negative_lambda_20261107-vponly/mesh.log",
+      "resource_log": "/home/xiwang/DiffSPECFEM-PSV/run_psv_negative_lambda_20261107-vponly/mesh.resources.txt"
+    },
+    {
+      "launched_argv": [
+        "nice",
+        "-n",
+        "10",
+        "mpirun",
+        "--bind-to",
+        "core",
+        "-np",
+        "2",
+        "/home/xiwang/DiffSPECFEM-PSV/vendor/specfem2d-psv/bin/xspecfem2D"
+      ],
+      "ranks": 2,
+      "mode": null,
+      "seconds": 0.49636214040219784,
+      "returncode": 0,
+      "log": "/home/xiwang/DiffSPECFEM-PSV/run_psv_negative_lambda_20261107-vponly/forward.log",
+      "resource_log": "/home/xiwang/DiffSPECFEM-PSV/run_psv_negative_lambda_20261107-vponly/forward.resources.txt"
+    }
+  ]
+}

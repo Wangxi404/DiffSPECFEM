@@ -1,0 +1,98 @@
+{
+  "status": "PASS at report export size",
+  "backend": "Python matplotlib; actual exported PDF inspected with PyMuPDF",
+  "figure_hashes": {
+    "png": "6b837fafa09dd2291496d1ea8026088b64703b9336c973c25b09f3c145d17b2a",
+    "pdf": "b51f77eae92539205a54be005d5e05b73004449bca7aca58a261ddca3c5d1766",
+    "svg": "4868978e2ee6e0ca5a4c66f184f16b88118fee051c42b9f422d30fa751936c19"
+  },
+  "plotter_sha256": "485efe580d884b0b7ebd7fd96be36285fb786af9ade9de334cb3fa64be09aa3f",
+  "glyph_min_pt": 7,
+  "glyph_floor_pt": 5,
+  "glyph_below_floor": 0,
+  "alignment": {
+    "verdict": "PASS",
+    "tolerance_pt": 1.5,
+    "fail": 0,
+    "warn": 0,
+    "comparisons": 7
+  },
+  "collision": {
+    "verdict": "PASS",
+    "fail": 0,
+    "warn": 0
+  },
+  "complete_png_and_actual_pdf_viewed": true,
+  "panels": [
+    {
+      "panel": "a",
+      "claim": "Actual true Vp input, with known acoustic water",
+      "role": "target context",
+      "actual_pdf_crop_viewed": true,
+      "labels_units_and_full_colorbar_readable": true,
+      "no_clipping_or_overlap": true,
+      "summary": "raw deterministic input/derivative field; no replicate uncertainty",
+      "passed": true
+    },
+    {
+      "panel": "b",
+      "claim": "Actual original sigma150m Vp initial input",
+      "role": "starting-model control",
+      "actual_pdf_crop_viewed": true,
+      "labels_units_and_full_colorbar_readable": true,
+      "no_clipping_or_overlap": true,
+      "summary": "raw deterministic input/derivative field; no replicate uncertainty",
+      "passed": true
+    },
+    {
+      "panel": "c",
+      "claim": "True Vs held fixed in every solve",
+      "role": "declared known prior",
+      "actual_pdf_crop_viewed": true,
+      "labels_units_and_full_colorbar_readable": true,
+      "no_clipping_or_overlap": true,
+      "summary": "raw deterministic input/derivative field; no replicate uncertainty",
+      "passed": true
+    },
+    {
+      "panel": "d",
+      "claim": "Old blurred-Vp/blurred-Vs raw Vp derivative",
+      "role": "old starting-model control",
+      "actual_pdf_crop_viewed": true,
+      "labels_units_and_full_colorbar_readable": true,
+      "no_clipping_or_overlap": true,
+      "summary": "raw deterministic input/derivative field; no replicate uncertainty",
+      "passed": true
+    },
+    {
+      "panel": "e",
+      "claim": "Fresh blurred-Vp/true-Vs raw Vp derivative",
+      "role": "new conditional sensitivity",
+      "actual_pdf_crop_viewed": true,
+      "labels_units_and_full_colorbar_readable": true,
+      "no_clipping_or_overlap": true,
+      "summary": "raw deterministic input/derivative field; no replicate uncertainty",
+      "passed": true
+    },
+    {
+      "panel": "f",
+      "claim": "True-minus-initial Vp input correction",
+      "role": "reference; explicitly NOT a gradient",
+      "actual_pdf_crop_viewed": true,
+      "labels_units_and_full_colorbar_readable": true,
+      "no_clipping_or_overlap": true,
+      "summary": "raw deterministic input/derivative field; no replicate uncertainty",
+      "passed": true
+    }
+  ],
+  "integrity": {
+    "all_solid_gradient_nodes_retained": true,
+    "no_gradient_postprocessing": true,
+    "same_old_new_linear_color_limits": true,
+    "delta_vp_is_input_not_derivative": true,
+    "true_vs_is_fixed_prior_not_recovered": true,
+    "constant_density_convention_disclosed": true
+  },
+  "scientific_result": "This control does not show improved deep Vp sensitivity or thin-bed resolution. The below1km squared-gradient fraction decreases9.20% to3.42%.",
+  "source_preflight_warnings": "Report-width/300dpi PNG/no TIFF accepted for requested digital repository output; this is not183mm journal-production certification."
+}

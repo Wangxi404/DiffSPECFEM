@@ -1,0 +1,74 @@
+{
+  "native_solver_runs": 0,
+  "GPU_tasks": 0,
+  "model_arrays_included": false,
+  "new_model_sha256": "88bc4604203588b92cd0abcfb7fe33d3c98464ff470b91b6488a8e63d7287a55",
+  "source_model_sha256": "8f720845c46628e3803d7433d6832d669ff496caf14fef63e6a8c6e80ab8a683",
+  "driver_sha256_at_design_review": "22a7d790c20ad56ac9f5ea2a5b3d2c7d6dd242a7f8673c68ad1b184dbc595c9a",
+  "API_sha256_at_design_review": "18fc62fa980fc9a1bab0b0b38471b97f3df8bd979f495527fd211d877c8e9e20",
+  "identity": {
+    "vp_true": {
+      "byte_identical_to_parent": true,
+      "array_sha256": "edf854892fa534d3b2b239bb3e4a01e6c0ab97218969cd375fc3b6e1553accde"
+    },
+    "vs_true": {
+      "byte_identical_to_parent": true,
+      "array_sha256": "7843bddc4f19f96625e9bef2db0fc9ecb19da714cf624fa31fa8ecf9f1c3d548"
+    },
+    "rho_true": {
+      "byte_identical_to_parent": true,
+      "array_sha256": "83bf9868878c675d7f3d05fdab8ddd279297c4e68a137fbcd610982dae4a2d8c"
+    },
+    "vp_initial": {
+      "byte_identical_to_parent": true,
+      "array_sha256": "5a137134b5fa5a6dfbd97d144d85250916bc0d2fd43b641c81e1eb67d971be66"
+    },
+    "vs_initial": {
+      "byte_identical_to_true": true,
+      "array_sha256": "7843bddc4f19f96625e9bef2db0fc9ecb19da714cf624fa31fa8ecf9f1c3d548"
+    },
+    "rho_initial": {
+      "byte_identical_to_true": true,
+      "array_sha256": "83bf9868878c675d7f3d05fdab8ddd279297c4e68a137fbcd610982dae4a2d8c"
+    }
+  },
+  "materials": {
+    "initial": {
+      "rho_min": 2450.0,
+      "mu_min_Pa": 246063685.40679643,
+      "lambda_min_Pa": -9067369770.084358,
+      "negative_lambda_count": 316,
+      "K3D_min_Pa": 1636839097.1036072,
+      "kappa2D_min_Pa": 6103680011.33929,
+      "min_Vp_over_Vs": 1.1980304578587107,
+      "positive_3D_strain_energy": true
+    },
+    "true": {
+      "rho_min": 2450.0,
+      "mu_min_Pa": 246063685.40679643,
+      "lambda_min_Pa": 2343995095.3288417,
+      "negative_lambda_count": 0,
+      "K3D_min_Pa": 3611724849.4250665,
+      "kappa2D_min_Pa": 4245589726.473179,
+      "min_Vp_over_Vs": 1.577613054476597,
+      "positive_3D_strain_energy": true
+    }
+  },
+  "fixed_mu_initial_target_byte_identical": true,
+  "unit": {
+    "initial": {
+      "lambda_max_Pa": -3297187948.7600017,
+      "K3D_min_Pa": 457102810.8028221,
+      "all_lambda_negative": true,
+      "all_K3D_positive": true
+    },
+    "true": {
+      "lambda_max_Pa": -2271862362.980066,
+      "K3D_min_Pa": 1916674441.9241905,
+      "all_lambda_negative": true,
+      "all_K3D_positive": true
+    }
+  },
+  "prepared_input_design_passed": true,
+  "remaining": "Actual native negative-lambda unit and per-call/GLL invariants, actual derivative raw source and Vp-only directions remain pending."
+}

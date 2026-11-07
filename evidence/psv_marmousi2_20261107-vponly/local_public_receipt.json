@@ -1,0 +1,91 @@
+{
+  "created_utc": "2026-11-07T08:42:08.950068+00:00",
+  "native_solver_runs": 0,
+  "GPU_tasks": 0,
+  "model_arrays_included": false,
+  "passed": true,
+  "manifest_files_checked": [
+    {
+      "path": "Par_file",
+      "passed": true
+    },
+    {
+      "path": "SOURCE",
+      "passed": true
+    },
+    {
+      "path": "STATIONS",
+      "passed": true
+    },
+    {
+      "path": "experiment_executed.py",
+      "passed": true
+    },
+    {
+      "path": "interfaces_elastic_analytic.dat",
+      "passed": true
+    },
+    {
+      "path": "packet_post_native.json",
+      "passed": true
+    },
+    {
+      "path": "packet_pre_native.json",
+      "passed": true
+    },
+    {
+      "path": "trace_samples.npz",
+      "passed": true
+    },
+    {
+      "path": "validation.json",
+      "passed": true
+    },
+    {
+      "path": "vp_gradient.npz",
+      "passed": true
+    }
+  ],
+  "canonical_gradient": {
+    "shape": [
+      67,
+      200
+    ],
+    "dtype": "float64",
+    "file_sha256": "efed1fd4fe837c2ff0621b84e24fc2d374e028dbe403f5634944d411a6ab4b5c",
+    "array_sha256": "790b8966c5f3f7889175c8a2ff2bd4258bbf04fc9abe8b79fff9e40d955d8f0a",
+    "byte_identity_to_independently_read_private_native_source": true,
+    "axes_match_actual45m_input_coordinates": true
+  },
+  "native_data_objective": "0.5*sum((data-target)^2), no mean or RMS normalization",
+  "sample_check": {
+    "full_data_shape": [
+      41,
+      2,
+      12000
+    ],
+    "sample_shape": [
+      5,
+      2,
+      241
+    ],
+    "receiver_indices_match_declared_selection": true,
+    "time_indices_match_declared_selection": true,
+    "sample_cotangent_equals_data_minus_target_uint64": true,
+    "timestamp_max_abs_error_s": 0.0,
+    "normalizer_used": 1,
+    "normalization_note": "The native production objective is a sum. Dividing by either full or sampled N would change it; this differs from the Hybrid pressure-mean objective.",
+    "full_objective_not_reconstructed_from_sample": true
+  },
+  "active_parameters": [
+    "dense physical solid Vp"
+  ],
+  "fixed_parameters": [
+    "true Vs",
+    "designated true rho",
+    "native acoustic water"
+  ],
+  "independent_native_numerical_audit": "independent_audit.json",
+  "validation_sha256": "7b7a05de6dc78b9cd3bbe8dab6f6d55861bde35427cc10fde4992f818c0a9d03",
+  "manifest_sha256": "cfc15f76b9c7bdce5fca956acf36437d5c3db8c8cfad0a3f4510843ab7377ced"
+}

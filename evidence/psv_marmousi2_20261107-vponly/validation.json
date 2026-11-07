@@ -1,0 +1,811 @@
+{
+  "status": "passed",
+  "passed": true,
+  "case": "examples/psv_marmousi2_20261107-vponly",
+  "active_coordinates": [
+    "physical solid Vp (m/s)"
+  ],
+  "fixed_coordinates": "Vs=true, rho=true at every model call; water Vp/rho fixed and Vs=0",
+  "experiment": "new matched Marmousi-II Vp-only experiment",
+  "initial": {
+    "finite": true,
+    "rho_min": 2450.0,
+    "vp_min": 1630.4600919878367,
+    "vp_max": 4351.191073724727,
+    "vs_min": 316.9134855270386,
+    "vs_max": 2751.999855041504,
+    "vp_vs_min_ratio": 1.1980304578587107,
+    "mu_min_pa": 246063685.40679643,
+    "lambda_min_pa": -9067369770.084358,
+    "negative_lambda_count": 316,
+    "kappa2D_min_pa": 6103680011.33929,
+    "bulk3D_min_pa": 1636839097.1036072,
+    "poisson_min": -0.6486938784279541,
+    "stable": true,
+    "field_sha256": {
+      "vp": "5a137134b5fa5a6dfbd97d144d85250916bc0d2fd43b641c81e1eb67d971be66",
+      "vs": "7843bddc4f19f96625e9bef2db0fc9ecb19da714cf624fa31fa8ecf9f1c3d548",
+      "rho": "83bf9868878c675d7f3d05fdab8ddd279297c4e68a137fbcd610982dae4a2d8c"
+    }
+  },
+  "target": {
+    "finite": true,
+    "rho_min": 2450.0,
+    "vp_min": 1537.5499725341797,
+    "vp_max": 4699.999809265137,
+    "vs_min": 316.9134855270386,
+    "vs_max": 2751.999855041504,
+    "vp_vs_min_ratio": 1.577613054476597,
+    "mu_min_pa": 246063685.40679643,
+    "lambda_min_pa": 2343995095.3288417,
+    "negative_lambda_count": 0,
+    "kappa2D_min_pa": 4245589726.473179,
+    "bulk3D_min_pa": 3611724849.4250665,
+    "poisson_min": 0.16417325374651326,
+    "stable": true,
+    "field_sha256": {
+      "vp": "edf854892fa534d3b2b239bb3e4a01e6c0ab97218969cd375fc3b6e1553accde",
+      "vs": "7843bddc4f19f96625e9bef2db0fc9ecb19da714cf624fa31fa8ecf9f1c3d548",
+      "rho": "83bf9868878c675d7f3d05fdab8ddd279297c4e68a137fbcd610982dae4a2d8c"
+    }
+  },
+  "model_sha256": "88bc4604203588b92cd0abcfb7fe33d3c98464ff470b91b6488a8e63d7287a55",
+  "model_calls": [
+    {
+      "finite": true,
+      "rho_min": 2450.0,
+      "vp_min": 1630.4600919878367,
+      "vp_max": 4351.191073724727,
+      "vs_min": 316.9134855270386,
+      "vs_max": 2751.999855041504,
+      "vp_vs_min_ratio": 1.1980304578587107,
+      "mu_min_pa": 246063685.40679643,
+      "lambda_min_pa": -9067369770.084358,
+      "negative_lambda_count": 316,
+      "kappa2D_min_pa": 6103680011.33929,
+      "bulk3D_min_pa": 1636839097.1036072,
+      "poisson_min": -0.6486938784279541,
+      "stable": true,
+      "field_sha256": {
+        "vp": "5a137134b5fa5a6dfbd97d144d85250916bc0d2fd43b641c81e1eb67d971be66",
+        "vs": "7843bddc4f19f96625e9bef2db0fc9ecb19da714cf624fa31fa8ecf9f1c3d548",
+        "rho": "83bf9868878c675d7f3d05fdab8ddd279297c4e68a137fbcd610982dae4a2d8c"
+      }
+    },
+    {
+      "finite": true,
+      "rho_min": 2450.0,
+      "vp_min": 1537.5499725341797,
+      "vp_max": 4699.999809265137,
+      "vs_min": 316.9134855270386,
+      "vs_max": 2751.999855041504,
+      "vp_vs_min_ratio": 1.577613054476597,
+      "mu_min_pa": 246063685.40679643,
+      "lambda_min_pa": 2343995095.3288417,
+      "negative_lambda_count": 0,
+      "kappa2D_min_pa": 4245589726.473179,
+      "bulk3D_min_pa": 3611724849.4250665,
+      "poisson_min": 0.16417325374651326,
+      "stable": true,
+      "field_sha256": {
+        "vp": "edf854892fa534d3b2b239bb3e4a01e6c0ab97218969cd375fc3b6e1553accde",
+        "vs": "7843bddc4f19f96625e9bef2db0fc9ecb19da714cf624fa31fa8ecf9f1c3d548",
+        "rho": "83bf9868878c675d7f3d05fdab8ddd279297c4e68a137fbcd610982dae4a2d8c"
+      }
+    },
+    {
+      "finite": true,
+      "rho_min": 2450.0,
+      "vp_min": 1630.4600919878367,
+      "vp_max": 4351.191073724727,
+      "vs_min": 316.9134855270386,
+      "vs_max": 2751.999855041504,
+      "vp_vs_min_ratio": 1.1980304578587107,
+      "mu_min_pa": 246063685.40679643,
+      "lambda_min_pa": -9067369770.084358,
+      "negative_lambda_count": 316,
+      "kappa2D_min_pa": 6103680011.33929,
+      "bulk3D_min_pa": 1636839097.1036072,
+      "poisson_min": -0.6486938784279541,
+      "stable": true,
+      "field_sha256": {
+        "vp": "5a137134b5fa5a6dfbd97d144d85250916bc0d2fd43b641c81e1eb67d971be66",
+        "vs": "7843bddc4f19f96625e9bef2db0fc9ecb19da714cf624fa31fa8ecf9f1c3d548",
+        "rho": "83bf9868878c675d7f3d05fdab8ddd279297c4e68a137fbcd610982dae4a2d8c"
+      }
+    },
+    {
+      "finite": true,
+      "rho_min": 2450.0,
+      "vp_min": 1630.6144669888863,
+      "vp_max": 4351.638216872132,
+      "vs_min": 316.9134855270386,
+      "vs_max": 2751.999855041504,
+      "vp_vs_min_ratio": 1.198288790596655,
+      "mu_min_pa": 246063685.40679643,
+      "lambda_min_pa": -9057430146.065258,
+      "negative_lambda_count": 316,
+      "kappa2D_min_pa": 6105041849.537379,
+      "bulk3D_min_pa": 1646778721.1227074,
+      "poisson_min": -0.647062534538905,
+      "stable": true,
+      "field_sha256": {
+        "vp": "3a12d07d905f37a2d0ee394b716f2713c0661ddf3640b268a0bb0e8ef7a3e120",
+        "vs": "7843bddc4f19f96625e9bef2db0fc9ecb19da714cf624fa31fa8ecf9f1c3d548",
+        "rho": "83bf9868878c675d7f3d05fdab8ddd279297c4e68a137fbcd610982dae4a2d8c"
+      }
+    },
+    {
+      "finite": true,
+      "rho_min": 2450.0,
+      "vp_min": 1630.305716986787,
+      "vp_max": 4350.743930577322,
+      "vs_min": 316.9134855270386,
+      "vs_max": 2751.999855041504,
+      "vp_vs_min_ratio": 1.1977721251207665,
+      "mu_min_pa": 246063685.40679643,
+      "lambda_min_pa": -9077307251.041523,
+      "negative_lambda_count": 317,
+      "kappa2D_min_pa": 6102318312.579791,
+      "bulk3D_min_pa": 1626901616.1464424,
+      "poisson_min": -0.6503295158612982,
+      "stable": true,
+      "field_sha256": {
+        "vp": "bfa47f6cb53150fe39a15218a39de37aeb974e8726673bb51f50bdd8fb861a9c",
+        "vs": "7843bddc4f19f96625e9bef2db0fc9ecb19da714cf624fa31fa8ecf9f1c3d548",
+        "rho": "83bf9868878c675d7f3d05fdab8ddd279297c4e68a137fbcd610982dae4a2d8c"
+      }
+    },
+    {
+      "finite": true,
+      "rho_min": 2450.0,
+      "vp_min": 1630.51155032152,
+      "vp_max": 4351.3401214405285,
+      "vs_min": 316.9134855270386,
+      "vs_max": 2751.999855041504,
+      "vp_vs_min_ratio": 1.1981165687713589,
+      "mu_min_pa": 246063685.40679643,
+      "lambda_min_pa": -9064056800.195982,
+      "negative_lambda_count": 316,
+      "kappa2D_min_pa": 6104133941.912142,
+      "bulk3D_min_pa": 1640152066.9919834,
+      "poisson_min": -0.6481496209010921,
+      "stable": true,
+      "field_sha256": {
+        "vp": "80eb004fc33686dec98665dd6830f042d47bf31d06b5ee70c088157113d1e594",
+        "vs": "7843bddc4f19f96625e9bef2db0fc9ecb19da714cf624fa31fa8ecf9f1c3d548",
+        "rho": "83bf9868878c675d7f3d05fdab8ddd279297c4e68a137fbcd610982dae4a2d8c"
+      }
+    },
+    {
+      "finite": true,
+      "rho_min": 2450.0,
+      "vp_min": 1630.4086336541534,
+      "vp_max": 4351.042026008926,
+      "vs_min": 316.9134855270386,
+      "vs_max": 2751.999855041504,
+      "vp_vs_min_ratio": 1.1979443469460627,
+      "mu_min_pa": 246063685.40679643,
+      "lambda_min_pa": -9070682501.854738,
+      "negative_lambda_count": 316,
+      "kappa2D_min_pa": 6103226096.259613,
+      "bulk3D_min_pa": 1633526365.3332272,
+      "poisson_min": -0.6492386130145706,
+      "stable": true,
+      "field_sha256": {
+        "vp": "a095fc8a5e6c91a86ab8d63a147f512e81d44595e12da5f0af7963b70add373f",
+        "vs": "7843bddc4f19f96625e9bef2db0fc9ecb19da714cf624fa31fa8ecf9f1c3d548",
+        "rho": "83bf9868878c675d7f3d05fdab8ddd279297c4e68a137fbcd610982dae4a2d8c"
+      }
+    }
+  ],
+  "input_provenance": {
+    "name": "psv_marmousi2_20261107-vponly",
+    "parent_model_sha256": "8f720845c46628e3803d7433d6832d669ff496caf14fef63e6a8c6e80ab8a683",
+    "model_role": "Marmousi-II solid-domain input with original sigma150m Vp initial; true Vs/rho fixed",
+    "active_coordinates": [
+      "vp"
+    ],
+    "fixed_coordinates": [
+      "vs_true",
+      "rho_true",
+      "native acoustic water"
+    ],
+    "no_clipping_or_floors": true,
+    "water_density_convention": "Fixed native water rho1000 in synthetic unit; rho2450 in Marmousi case (controlled convention, not original Marmousi density)",
+    "negative_lambda_policy": "explicit opt-in, positive rho/mu/bulk3D; locally negative Poisson allowed",
+    "model_path": "data/prepared/marmousi2_20261107-vponly.npz",
+    "model_sha256": "88bc4604203588b92cd0abcfb7fe33d3c98464ff470b91b6488a8e63d7287a55",
+    "initial": {
+      "finite": true,
+      "rho_min": 2450.0,
+      "vp_min": 1630.4600919878367,
+      "vp_max": 4351.191073724727,
+      "vs_min": 316.9134855270386,
+      "vs_max": 2751.999855041504,
+      "vp_vs_min_ratio": 1.1980304578587107,
+      "mu_min_pa": 246063685.40679643,
+      "lambda_min_pa": -9067369770.084358,
+      "negative_lambda_count": 316,
+      "kappa2D_min_pa": 6103680011.33929,
+      "bulk3D_min_pa": 1636839097.1036072,
+      "poisson_min": -0.6486938784279541,
+      "stable": true,
+      "field_sha256": {
+        "vp": "5a137134b5fa5a6dfbd97d144d85250916bc0d2fd43b641c81e1eb67d971be66",
+        "vs": "7843bddc4f19f96625e9bef2db0fc9ecb19da714cf624fa31fa8ecf9f1c3d548",
+        "rho": "83bf9868878c675d7f3d05fdab8ddd279297c4e68a137fbcd610982dae4a2d8c"
+      }
+    },
+    "target": {
+      "finite": true,
+      "rho_min": 2450.0,
+      "vp_min": 1537.5499725341797,
+      "vp_max": 4699.999809265137,
+      "vs_min": 316.9134855270386,
+      "vs_max": 2751.999855041504,
+      "vp_vs_min_ratio": 1.577613054476597,
+      "mu_min_pa": 246063685.40679643,
+      "lambda_min_pa": 2343995095.3288417,
+      "negative_lambda_count": 0,
+      "kappa2D_min_pa": 4245589726.473179,
+      "bulk3D_min_pa": 3611724849.4250665,
+      "poisson_min": 0.16417325374651326,
+      "stable": true,
+      "field_sha256": {
+        "vp": "edf854892fa534d3b2b239bb3e4a01e6c0ab97218969cd375fc3b6e1553accde",
+        "vs": "7843bddc4f19f96625e9bef2db0fc9ecb19da714cf624fa31fa8ecf9f1c3d548",
+        "rho": "83bf9868878c675d7f3d05fdab8ddd279297c4e68a137fbcd610982dae4a2d8c"
+      }
+    },
+    "status": "prepared; native acceptance pending",
+    "native_case": "unchanged parent numerics/acquisition, SAVE_MODEL=ascii adds diagnostic GLL material export only"
+  },
+  "forecast_history_gb": 150.76484928,
+  "max_history_gb": 160.0,
+  "config": {
+    "nstep": 12000,
+    "dt_s": 0.0005,
+    "duration_s": 6.0,
+    "frequency_hz": 2.0,
+    "mpi_ranks": 2,
+    "threads_per_rank": 1
+  },
+  "material_policy": {
+    "allow_negative_lambda": true,
+    "bulk3D_positive_required": true,
+    "old_default_unchanged": true,
+    "no_model_clipping": true
+  },
+  "runtime_script_sha256": "4cf73259d71dd65613e85749710668f19b94ea0ccd51f42a6b615f8e1a5647c3",
+  "dependency_sha256": {
+    "diffspecfem/psv.py": "18fc62fa980fc9a1bab0b0b38471b97f3df8bd979f495527fd211d877c8e9e20",
+    "diffspecfem/tomography.py": "443c86b1e15c9304d5ed19b5260f520ef0ea75b1da815a760cebfb4a97eda95c",
+    "native/psv_adjoint.f90": "18133011241336e7ff0114c9cd6f8866bbd46107d94562f04190ee2c4c38892f",
+    "native/psv_iterate_time.patch": "a270f140a755dcdfd1c7144d36bc81a5dd4ea41f4bddd5a29057943a862c447e",
+    "scripts/experiment_gradient_detail_psv.py": "97d64e6a81bafbea0fc413c0fba468285f4b91715e3424add616932666c45ccc"
+  },
+  "binary_sha256": {
+    "vendor/specfem2d-psv/bin/xspecfem2D": "6c71b1ebd7c03f8db3ead56315be6ba088160d3f5c6abbbee1d3e7758c76b43d",
+    "psv-baseline-xspecfem2D": "705549f87e2f8427e30cf664576c49f2bbe2bde0f93997aa055229226ac2cd50"
+  },
+  "acceptance_predeclared": {
+    "native_forward": "bitwise",
+    "data_vjp_rtol": 1e-12,
+    "model_dot_rtol": 1e-05,
+    "model_dot_epsilons": [
+      0.0003,
+      0.0001
+    ],
+    "model_dot_direction": "Vp only; dVs=dRho=0; source/receivers/water/true Vs/rho fixed",
+    "no_absolute_only_pass": true
+  },
+  "route": "one native recorded forward -> actual Torch data-only L2 VJP -> one exact native coupled adjoint -> physical material map transpose -> select Vp; temporal AD=0, production FD=0, replay=0",
+  "gates": {
+    "native_guidance": {
+      "initial": {
+        "max_f0_hz": 2.2017106750043944,
+        "max_dt_s": 0.0008310071957209128
+      },
+      "target": {
+        "max_f0_hz": 2.2017106750043944,
+        "max_dt_s": 0.0007692222407432685
+      },
+      "passed": true
+    },
+    "fresh_target_matches_old_physics": {
+      "passed": true,
+      "new_trace_sha256": "a89987cf704c557f69eb56bed9b0c2fefc931ccce990fa1f3bad97693682b67a",
+      "old_trace_sha256": "a89987cf704c557f69eb56bed9b0c2fefc931ccce990fa1f3bad97693682b67a",
+      "old_target_reused_as_input": false
+    },
+    "native_forward": {
+      "passed": true,
+      "absolute_linf": 0.0,
+      "trace_sha256": "f8d4e0ef8aa90e246fac22d065ff0658dc69d5d7289efeec9bcad56b6b4136df"
+    },
+    "fixed_native_coefficients": {
+      "passed": true,
+      "explanation": "Fresh actual native rho/mu match interpolation of fixed true grid fields; Vp alters lambda only. Independent target/perturbed SAVE_MODEL exports retained privately.",
+      "rho_relative_linf": 5.568334908813844e-16,
+      "mu_relative_linf": 1.2335263487973222e-15,
+      "actual_gll": {
+        "rho_min": 2449.999999999999,
+        "mu_min_pa": 252298894.10719195,
+        "lambda_min_pa": -8513145005.394512,
+        "bulk3D_min_pa": 2017320200.0978642,
+        "kappa2D_min_pa": 6116089462.672695
+      },
+      "water_raw_derivative_zero": true
+    },
+    "frozen_packet": {
+      "passed": true,
+      "packet_sha256": "51b19130b19625fb074f76db5165e6517d662a61079723e0381d62bfb96f947a"
+    },
+    "fixed_fields_all_model_calls": {
+      "passed": true
+    },
+    "stable_all_model_calls": {
+      "passed": true
+    }
+  },
+  "elapsed_seconds": 913.1390392845497,
+  "default_material_guard": {
+    "rejected": true,
+    "reason": "This isotropic case requires positive solid lambda (Vp\u00b2>2Vs\u00b2)"
+  },
+  "data_objective_checks": {
+    "l2": {
+      "value": 1.0777421849873532e-11,
+      "numpy_vjp_relative_l2": 0.0,
+      "centered_data_directions": [
+        {
+          "epsilon": 0.0003,
+          "lhs": -1.2340960883279745e-13,
+          "rhs": -1.2340960883795758e-13,
+          "relative_error": 4.181307166551856e-11
+        },
+        {
+          "epsilon": 0.0001,
+          "lhs": -1.2340960885164595e-13,
+          "rhs": -1.2340960883795758e-13,
+          "relative_error": 1.1091814520657048e-10
+        }
+      ],
+      "passed": true,
+      "leaf_grad_fn": "None",
+      "objective_grad_fn": "MulBackward0"
+    },
+    "processed_data_only": {
+      "value": 13190.257698734475,
+      "numpy_vjp_relative_l2": 1.6359447392462178e-16,
+      "centered_data_directions": [
+        {
+          "epsilon": 0.0003,
+          "lhs": 390.99127443175047,
+          "rhs": 390.9912619946488,
+          "relative_error": 3.1809153960076545e-08
+        },
+        {
+          "epsilon": 0.0001,
+          "lhs": 390.9912633753265,
+          "rhs": 390.9912619946488,
+          "relative_error": 3.5312239205202534e-09
+        }
+      ],
+      "passed": true,
+      "leaf_grad_fn": "None",
+      "objective_grad_fn": "MulBackward0"
+    }
+  },
+  "data_spectrum": {
+    "predicted": {
+      "rms": 1.635190738744717e-08,
+      "linf": 1.6584883472692407e-07,
+      "f50_hz": 1.6666666666666665,
+      "f90_hz": 2.5,
+      "f95_hz": 2.833333333333333,
+      "energy_above_hz": {
+        "0.5": 0.9409857751914329,
+        "1.0": 0.845773389233192,
+        "1.5": 0.551973494963403,
+        "2.0": 0.24627644606033264,
+        "3.0": 0.022559232449032088
+      }
+    },
+    "target": {
+      "rms": 1.6312059590436058e-08,
+      "linf": 1.7257567833799798e-07,
+      "f50_hz": 1.6666666666666665,
+      "f90_hz": 2.5,
+      "f95_hz": 2.833333333333333,
+      "energy_above_hz": {
+        "0.5": 0.9401131721151438,
+        "1.0": 0.8401392464287413,
+        "1.5": 0.549518707726983,
+        "2.0": 0.25426630155446317,
+        "3.0": 0.024551419151786238
+      }
+    },
+    "residual": {
+      "rms": 4.680312912953319e-09,
+      "linf": 4.4133022289315104e-08,
+      "f50_hz": 2.0,
+      "f90_hz": 3.1666666666666665,
+      "f95_hz": 3.333333333333333,
+      "energy_above_hz": {
+        "0.5": 0.9980834223386843,
+        "1.0": 0.969173779951749,
+        "1.5": 0.7972399409109302,
+        "2.0": 0.4940488517331808,
+        "3.0": 0.10412502728675356
+      }
+    }
+  },
+  "data_leaf_grad_fn": "None",
+  "objective_grad_fn": "MulBackward0",
+  "objective_value": 1.0777421849873532e-11,
+  "history": {
+    "files": [
+      {
+        "path": "psv_rank000000_history.bin",
+        "bytes": 74733120012,
+        "sha256": "6ec52d31f1c7371d2c2c8c5a3bd8903b5a4454648ca62644149c570d644e6e76"
+      },
+      {
+        "path": "psv_rank000001_history.bin",
+        "bytes": 74733120012,
+        "sha256": "449c5a5c97dff03a69fbdd890e076c4097322c093be5d2a7871440a3c8df3ae6"
+      }
+    ],
+    "total_bytes": 149466240024,
+    "replay_count": 0,
+    "live_state": "O(nglob); six-field history streamed from disk",
+    "retention": "temporary full history; hash retained and full forward/adjoint archive excludes it; deleted by prepare only after adjoint"
+  },
+  "adjoint_and_static_seconds": 205.79446157906204,
+  "vp_gradient_statistics": {
+    "l2": 9.42818730044011e-15,
+    "linf": 8.269190677023218e-16,
+    "finite": true,
+    "common_active_focus_native_m": [
+      4500.0,
+      2925.0
+    ],
+    "energy_inside_common_solid_focus_radius": {
+      "300": 0.05915799887949719,
+      "600": 0.16291370199707672,
+      "1000": 0.24228217166290905
+    },
+    "energy_by_depth": {
+      "495_1000m": 0.9657985483231819,
+      "1000_1500m": 0.03231374158266967,
+      "1500_2000m": 0.0009557792836263064,
+      "2000_3000m": 0.0007846215222104658,
+      "3000_3466m": 0.00014730928831165676
+    },
+    "windowed_spatial_spectrum": {
+      "wavelength_below_250m": 0.006491669727009933,
+      "wavelength_below_500m": 0.03195736283180816,
+      "wavelength_below_1000m": 0.2317973388359361,
+      "wavelength_below_2000m": 0.48325930139451695
+    },
+    "deep_1000_3000m_windowed_spectrum": {
+      "wavelength_below_250m": 0.02770635741559251,
+      "wavelength_below_500m": 0.1353474533030077,
+      "wavelength_below_1000m": 0.5655112205077807,
+      "wavelength_below_2000m": 0.8973984620171981
+    },
+    "negative_gradient_model_correction_cosine": 0.04201794638297152
+  },
+  "direction": {
+    "active": [
+      "vp"
+    ],
+    "dvs_zero": true,
+    "drho_zero": true,
+    "vp_sha256": "803388065171dc5c50aaac1dbcf351ffae507df7d379443dbbfb20cd9a4ad430",
+    "slope": 4.407648095163447e-10,
+    "gradient_direction_abs_cosine": 0.24149224821731138,
+    "informative": true
+  },
+  "model_dot": [
+    {
+      "passed": true,
+      "informative": true,
+      "lhs": {
+        "real": 4.407621820837495e-10,
+        "imag": 0.0
+      },
+      "rhs": {
+        "real": 4.407648095163447e-10,
+        "imag": 0.0
+      },
+      "absolute_error": 2.627432595192264e-15,
+      "relative_error": 5.961076153233218e-06,
+      "epsilon": 0.0003,
+      "taylor_remainder_plus": 1.1278047639422738e-15,
+      "taylor_remainder_minus": 1.1301305759967794e-15
+    },
+    {
+      "passed": true,
+      "informative": true,
+      "lhs": {
+        "real": 4.407645175774952e-10,
+        "imag": 0.0
+      },
+      "rhs": {
+        "real": 4.407648095163447e-10,
+        "imag": 0.0
+      },
+      "absolute_error": 2.9193884952345936e-16,
+      "relative_error": 6.623460930191013e-07,
+      "epsilon": 0.0001,
+      "taylor_remainder_plus": 1.2539817679692847e-16,
+      "taylor_remainder_minus": 1.254843183029841e-16
+    }
+  ],
+  "native_calls": [
+    {
+      "launched_argv": [
+        "nice",
+        "-n",
+        "10",
+        "/home/xiwang/DiffSPECFEM-PSV/vendor/specfem2d-psv/bin/xmeshfem2D"
+      ],
+      "ranks": 2,
+      "mode": null,
+      "seconds": 0.45074474159628153,
+      "returncode": 0,
+      "log": "/home/xiwang/DiffSPECFEM-PSV/run_psv_marmousi2_20261107-vponly/mesh.log",
+      "resource_log": "/home/xiwang/DiffSPECFEM-PSV/run_psv_marmousi2_20261107-vponly/mesh.resources.txt"
+    },
+    {
+      "launched_argv": [
+        "nice",
+        "-n",
+        "10",
+        "mpirun",
+        "--bind-to",
+        "core",
+        "-np",
+        "2",
+        "/home/xiwang/DiffSPECFEM-PSV/psv-baseline-xspecfem2D"
+      ],
+      "ranks": 2,
+      "mode": null,
+      "seconds": 76.11124544776976,
+      "returncode": 0,
+      "log": "/home/xiwang/DiffSPECFEM-PSV/run_psv_marmousi2_20261107-vponly/native_baseline.log",
+      "resource_log": "/home/xiwang/DiffSPECFEM-PSV/run_psv_marmousi2_20261107-vponly/native_baseline.resources.txt"
+    },
+    {
+      "launched_argv": [
+        "nice",
+        "-n",
+        "10",
+        "/home/xiwang/DiffSPECFEM-PSV/vendor/specfem2d-psv/bin/xmeshfem2D"
+      ],
+      "ranks": 2,
+      "mode": null,
+      "seconds": 0.4613664420321584,
+      "returncode": 0,
+      "log": "/home/xiwang/DiffSPECFEM-PSV/run_psv_marmousi2_20261107-vponly/mesh.log",
+      "resource_log": "/home/xiwang/DiffSPECFEM-PSV/run_psv_marmousi2_20261107-vponly/mesh.resources.txt"
+    },
+    {
+      "launched_argv": [
+        "nice",
+        "-n",
+        "10",
+        "mpirun",
+        "--bind-to",
+        "core",
+        "-np",
+        "2",
+        "/home/xiwang/DiffSPECFEM-PSV/vendor/specfem2d-psv/bin/xspecfem2D"
+      ],
+      "ranks": 2,
+      "mode": null,
+      "seconds": 76.25932261999696,
+      "returncode": 0,
+      "log": "/home/xiwang/DiffSPECFEM-PSV/run_psv_marmousi2_20261107-vponly/forward.log",
+      "resource_log": "/home/xiwang/DiffSPECFEM-PSV/run_psv_marmousi2_20261107-vponly/forward.resources.txt"
+    },
+    {
+      "launched_argv": [
+        "nice",
+        "-n",
+        "10",
+        "/home/xiwang/DiffSPECFEM-PSV/vendor/specfem2d-psv/bin/xmeshfem2D"
+      ],
+      "ranks": 2,
+      "mode": null,
+      "seconds": 0.45349367521703243,
+      "returncode": 0,
+      "log": "/home/xiwang/DiffSPECFEM-PSV/run_psv_marmousi2_20261107-vponly/mesh.log",
+      "resource_log": "/home/xiwang/DiffSPECFEM-PSV/run_psv_marmousi2_20261107-vponly/mesh.resources.txt"
+    },
+    {
+      "launched_argv": [
+        "nice",
+        "-n",
+        "10",
+        "mpirun",
+        "--bind-to",
+        "core",
+        "-np",
+        "2",
+        "/home/xiwang/DiffSPECFEM-PSV/vendor/specfem2d-psv/bin/xspecfem2D"
+      ],
+      "ranks": 2,
+      "mode": "record",
+      "seconds": 168.7417424460873,
+      "returncode": 0,
+      "log": "/home/xiwang/DiffSPECFEM-PSV/run_psv_marmousi2_20261107-vponly/forward.log",
+      "resource_log": "/home/xiwang/DiffSPECFEM-PSV/run_psv_marmousi2_20261107-vponly/forward.resources.txt"
+    },
+    {
+      "launched_argv": [
+        "nice",
+        "-n",
+        "10",
+        "mpirun",
+        "--bind-to",
+        "core",
+        "-np",
+        "2",
+        "/home/xiwang/DiffSPECFEM-PSV/vendor/specfem2d-psv/bin/xspecfem2D"
+      ],
+      "ranks": 2,
+      "mode": "adjoint",
+      "seconds": 205.16257304418832,
+      "returncode": 0,
+      "log": "/home/xiwang/DiffSPECFEM-PSV/run_psv_marmousi2_20261107-vponly/adjoint.log",
+      "resource_log": "/home/xiwang/DiffSPECFEM-PSV/run_psv_marmousi2_20261107-vponly/adjoint.resources.txt"
+    },
+    {
+      "launched_argv": [
+        "nice",
+        "-n",
+        "10",
+        "/home/xiwang/DiffSPECFEM-PSV/vendor/specfem2d-psv/bin/xmeshfem2D"
+      ],
+      "ranks": 2,
+      "mode": null,
+      "seconds": 0.4788487358018756,
+      "returncode": 0,
+      "log": "/home/xiwang/DiffSPECFEM-PSV/run_psv_marmousi2_20261107-vponly/mesh.log",
+      "resource_log": "/home/xiwang/DiffSPECFEM-PSV/run_psv_marmousi2_20261107-vponly/mesh.resources.txt"
+    },
+    {
+      "launched_argv": [
+        "nice",
+        "-n",
+        "10",
+        "mpirun",
+        "--bind-to",
+        "core",
+        "-np",
+        "2",
+        "/home/xiwang/DiffSPECFEM-PSV/vendor/specfem2d-psv/bin/xspecfem2D"
+      ],
+      "ranks": 2,
+      "mode": null,
+      "seconds": 52.131844732910395,
+      "returncode": 0,
+      "log": "/home/xiwang/DiffSPECFEM-PSV/run_psv_marmousi2_20261107-vponly/forward.log",
+      "resource_log": "/home/xiwang/DiffSPECFEM-PSV/run_psv_marmousi2_20261107-vponly/forward.resources.txt"
+    },
+    {
+      "launched_argv": [
+        "nice",
+        "-n",
+        "10",
+        "/home/xiwang/DiffSPECFEM-PSV/vendor/specfem2d-psv/bin/xmeshfem2D"
+      ],
+      "ranks": 2,
+      "mode": null,
+      "seconds": 0.46258556470274925,
+      "returncode": 0,
+      "log": "/home/xiwang/DiffSPECFEM-PSV/run_psv_marmousi2_20261107-vponly/mesh.log",
+      "resource_log": "/home/xiwang/DiffSPECFEM-PSV/run_psv_marmousi2_20261107-vponly/mesh.resources.txt"
+    },
+    {
+      "launched_argv": [
+        "nice",
+        "-n",
+        "10",
+        "mpirun",
+        "--bind-to",
+        "core",
+        "-np",
+        "2",
+        "/home/xiwang/DiffSPECFEM-PSV/vendor/specfem2d-psv/bin/xspecfem2D"
+      ],
+      "ranks": 2,
+      "mode": null,
+      "seconds": 52.114610192365944,
+      "returncode": 0,
+      "log": "/home/xiwang/DiffSPECFEM-PSV/run_psv_marmousi2_20261107-vponly/forward.log",
+      "resource_log": "/home/xiwang/DiffSPECFEM-PSV/run_psv_marmousi2_20261107-vponly/forward.resources.txt"
+    },
+    {
+      "launched_argv": [
+        "nice",
+        "-n",
+        "10",
+        "/home/xiwang/DiffSPECFEM-PSV/vendor/specfem2d-psv/bin/xmeshfem2D"
+      ],
+      "ranks": 2,
+      "mode": null,
+      "seconds": 0.46202876791357994,
+      "returncode": 0,
+      "log": "/home/xiwang/DiffSPECFEM-PSV/run_psv_marmousi2_20261107-vponly/mesh.log",
+      "resource_log": "/home/xiwang/DiffSPECFEM-PSV/run_psv_marmousi2_20261107-vponly/mesh.resources.txt"
+    },
+    {
+      "launched_argv": [
+        "nice",
+        "-n",
+        "10",
+        "mpirun",
+        "--bind-to",
+        "core",
+        "-np",
+        "2",
+        "/home/xiwang/DiffSPECFEM-PSV/vendor/specfem2d-psv/bin/xspecfem2D"
+      ],
+      "ranks": 2,
+      "mode": null,
+      "seconds": 52.034561653621495,
+      "returncode": 0,
+      "log": "/home/xiwang/DiffSPECFEM-PSV/run_psv_marmousi2_20261107-vponly/forward.log",
+      "resource_log": "/home/xiwang/DiffSPECFEM-PSV/run_psv_marmousi2_20261107-vponly/forward.resources.txt"
+    },
+    {
+      "launched_argv": [
+        "nice",
+        "-n",
+        "10",
+        "/home/xiwang/DiffSPECFEM-PSV/vendor/specfem2d-psv/bin/xmeshfem2D"
+      ],
+      "ranks": 2,
+      "mode": null,
+      "seconds": 0.45173848420381546,
+      "returncode": 0,
+      "log": "/home/xiwang/DiffSPECFEM-PSV/run_psv_marmousi2_20261107-vponly/mesh.log",
+      "resource_log": "/home/xiwang/DiffSPECFEM-PSV/run_psv_marmousi2_20261107-vponly/mesh.resources.txt"
+    },
+    {
+      "launched_argv": [
+        "nice",
+        "-n",
+        "10",
+        "mpirun",
+        "--bind-to",
+        "core",
+        "-np",
+        "2",
+        "/home/xiwang/DiffSPECFEM-PSV/vendor/specfem2d-psv/bin/xspecfem2D"
+      ],
+      "ranks": 2,
+      "mode": null,
+      "seconds": 52.725724594667554,
+      "returncode": 0,
+      "log": "/home/xiwang/DiffSPECFEM-PSV/run_psv_marmousi2_20261107-vponly/forward.log",
+      "resource_log": "/home/xiwang/DiffSPECFEM-PSV/run_psv_marmousi2_20261107-vponly/forward.resources.txt"
+    }
+  ],
+  "public_samples": {
+    "rule": "5 evenly spaced receiver ids and241 evenly spaced native sample indices; model-free QA sample only, NOT full data or plotting a substitute waveform",
+    "full_data_shape": [
+      41,
+      2,
+      12000
+    ],
+    "full_data_sha256": "f8d4e0ef8aa90e246fac22d065ff0658dc69d5d7289efeec9bcad56b6b4136df",
+    "full_target_sha256": "a89987cf704c557f69eb56bed9b0c2fefc931ccce990fa1f3bad97693682b67a",
+    "full_cotangent_sha256": "0d283734f0fe20ee6237ea87ade091e0c552af6abe9217ffecebd162d8638a2b"
+  }
+}

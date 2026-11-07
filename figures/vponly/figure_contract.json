@@ -1,0 +1,12 @@
+{
+  "question": "How does fixing true Vs/rho change the fresh Vp derivative at the same blurred Vp input?",
+  "claim": "A controlled known-Vs/rho Vp-only sensitivity experiment; interpretation follows the actual raw result, not an assumed improvement.",
+  "backend": "Python matplotlib",
+  "active_coordinates": [
+    "physical solid Vp"
+  ],
+  "models": "true Vp, actual sigma150m Vp start, fixed true Vs; native fixed acoustic water and constant rho2450 convention",
+  "gradient_integrity": "No smoothing, gain, sharpening, illumination correction or model texture. Both raw gradients share one linear scale.",
+  "correction_panel": "True-minus-initial Vp is an explicitly labeled input correction, NOT a gradient or reconstruction.",
+  "exports": "Report-sized PNG300dpi and editable PDF/SVG; min5pt glyphs, strict1.5pt alignment, final-PDF QA required"
+}

@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "scope": "CLI parsing and existing-output protection only; no solver launched, no new model/case generated",
+  "current_source_sha256": "40a35f66ced68c78c7494806c3562bd92b5e4fa4f277299bfb4a75a683d58c76",
+  "commands": [
+    {
+      "command": "prepare",
+      "unit": false,
+      "name": "my_vponly"
+    },
+    {
+      "command": "run",
+      "unit": false,
+      "name": "my_vponly",
+      "output": "evidence/my_vponly",
+      "packet": "/Users/sid/seismo/ADInversion/hybridAD/SeismicDiffSkill/releases/v0.2.0",
+      "max_history_gb": 160.0
+    }
+  ],
+  "existing_output_guard_passed": true,
+  "existing_validation_unchanged": true,
+  "prepared_model_present": true,
+  "fresh_case_would_be": "examples/my_vponly",
+  "fresh_private_model_would_be": "data/prepared/my_vponly.npz",
+  "fresh_public_outputs_would_be": "evidence/my_vponly/public"
+}

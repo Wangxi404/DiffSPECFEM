@@ -1,5 +1,9 @@
 # Coupled P–SV on Marmousi-II
 
+The new [known-true-Vs Vp-only control](VP_ONLY.md) recomputes its prediction,
+residual, VJP and native adjoint. It passes strict directional checks while
+retaining the negative result for improved deep gradient detail.
+
 For the new **water-source / 2 Hz gradient-detail experiments**, see
 [GRADIENT_DETAIL.md](GRADIENT_DETAIL.md). They retain the same prepared models,
 use a denser native mesh, and show raw derivatives with declared linear display

@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/home/xiwang/DiffSPECFEM-PSV/scripts/experiment_vponly_psv.py", line 293, in <module>
+    raise SystemExit(main())
+  File "/home/xiwang/DiffSPECFEM-PSV/scripts/experiment_vponly_psv.py", line 289, in main
+    return run(args)
+  File "/home/xiwang/DiffSPECFEM-PSV/scripts/experiment_vponly_psv.py", line 154, in run
+    write_json(ev/'packet_pre_native.json',verify_packet(args.packet))
+  File "/home/xiwang/DiffSPECFEM-PSV/scripts/experiment_vponly_psv.py", line 56, in verify_packet
+    assert digest(packet/'skill.tar')==manifest['packet_sha256']
+AssertionError

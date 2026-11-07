@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "current_source_sha256": "40a35f66ced68c78c7494806c3562bd92b5e4fa4f277299bfb4a75a683d58c76",
+  "executed_source_sha256": "4cf73259d71dd65613e85749710668f19b94ea0ccd51f42a6b615f8e1a5647c3",
+  "same_mathematical_helper_AST": {
+    "array_hash": true,
+    "materials": true,
+    "verify_packet": true,
+    "data_checks": true,
+    "names": true
+  },
+  "numerical_run_body_after_default_guard_AST_identical": true,
+  "changes": "Non-numerical fresh --name / --output CLI and corresponding case/model/evidence namespace selection. Executed snapshot remains exact and unchanged.",
+  "reproduction": "prepare --name my_vponly; run --name my_vponly --output evidence/my_vponly --packet /path/to/frozen/v0.2.0; compact evidence in evidence/my_vponly/public",
+  "single_vp_forward_assembly_AST_identical": true
+}

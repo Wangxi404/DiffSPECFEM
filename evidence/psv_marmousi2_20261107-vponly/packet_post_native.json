@@ -1,0 +1,66 @@
+{
+  "passed": true,
+  "version": "0.2.0",
+  "packet_sha256": "51b19130b19625fb074f76db5165e6517d662a61079723e0381d62bfb96f947a",
+  "manifest_sha256": "5c5902a2c04141e25eb856f574f23925bdde1f28a464a4f68d215bc38776b1e4",
+  "archive_tar_sha256": "c1729ff528d2716affd5d3cd4ed2273b7feca254fa9971c87dbf97710f84ef1b",
+  "files": [
+    {
+      "path": "LICENSE",
+      "bytes": 1060,
+      "sha256": "8dccc2ed406daefaa2cbf6747c0dc1f70596a918c220722a87618c35827d6585"
+    },
+    {
+      "path": "SKILL.md",
+      "bytes": 7166,
+      "sha256": "c7e6bc9117ea6082600e9740861b33cf5009dbaf9668bc91a7bd36cbd47aa717"
+    },
+    {
+      "path": "agents/openai.yaml",
+      "bytes": 280,
+      "sha256": "68a9548b4fac66cd86cb761393a3258bcb88a7db26e30c05cb252c1e7b5606e8"
+    },
+    {
+      "path": "assets/visual-example.json",
+      "bytes": 5042,
+      "sha256": "63f3f7e02672a1e6512d1f768cb80b6a09ded4d4b9dba6bf56f0ffd45a32208f"
+    },
+    {
+      "path": "assets/visual-example.png",
+      "bytes": 249786,
+      "sha256": "3fc8e6e71b776f5316b42d77863a908cbb61c90d013db08877b7b2d0e5a215a1"
+    },
+    {
+      "path": "references/application-record.md",
+      "bytes": 2100,
+      "sha256": "b0316176ca23ee227d2b06b17e3cd252f1906182940d6bdd0d20700c86ac466c"
+    },
+    {
+      "path": "references/derivative-contract.md",
+      "bytes": 3984,
+      "sha256": "405c3e0d94c8d80ad5327bc11a6e8b1c6f8674c19407556ceebe2dab8a5d768a"
+    },
+    {
+      "path": "references/numerical-acceptance.md",
+      "bytes": 4360,
+      "sha256": "b2e95784b7974ab406fe37334eb3b084146f3b812409fb2f2183ea35da9c818f"
+    },
+    {
+      "path": "references/visualization-deliverables.md",
+      "bytes": 6329,
+      "sha256": "31e01b1d15ea456fd2385e63920cf7bb0be0261b47c24f6b3ad19b8637c3d8a5"
+    },
+    {
+      "path": "scripts/numerics.py",
+      "bytes": 12155,
+      "sha256": "ad8e5ef78da730d41dbe97a8e7ea7514204b055ebc870c6ff34638317cf825f8"
+    },
+    {
+      "path": "scripts/visualize.py",
+      "bytes": 12790,
+      "sha256": "5ebe85aec93aa7c905d6b74e5d999b0fb642972bd48a1f0193581e40f090e8cd"
+    }
+  ],
+  "packet_path": "/home/xiwang/DiffSPECFEM-PSV/data/frozen-skill-v0.2.0",
+  "packet_modified": false
+}

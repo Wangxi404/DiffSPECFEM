@@ -1,0 +1,60 @@
+{
+  "status": "original_predeclared_gate_failed_and_retained",
+  "reason": "Coarse centered model difference at h1e-3 has truncation error2.49e-5 above unchanged1e-5 relative threshold; h3e-4 and1e-4 pass with second-order error reduction.",
+  "original_threshold": 1e-05,
+  "steps": [
+    {
+      "passed": false,
+      "informative": true,
+      "lhs": {
+        "real": -0.0052262143898392475,
+        "imag": 0.0
+      },
+      "rhs": {
+        "real": -0.005226344345286677,
+        "imag": 0.0
+      },
+      "absolute_error": 1.2995544742926135e-07,
+      "relative_error": 2.4865458309585033e-05,
+      "epsilon": 0.001,
+      "taylor_remainder_plus": 1.4068966751228307e-08,
+      "taylor_remainder_minus": 1.3746564016734304e-08
+    },
+    {
+      "passed": true,
+      "informative": true,
+      "lhs": {
+        "real": -0.005226332649063423,
+        "imag": 0.0
+      },
+      "rhs": {
+        "real": -0.005226344345286677,
+        "imag": 0.0
+      },
+      "absolute_error": 1.1696223253809812e-08,
+      "relative_error": 2.237935826857242e-06,
+      "epsilon": 0.0003,
+      "taylor_remainder_plus": 1.2560986213144226e-09,
+      "taylor_remainder_minus": 1.247393534399817e-09
+    },
+    {
+      "passed": true,
+      "informative": true,
+      "lhs": {
+        "real": -0.0052263430457051155,
+        "imag": 0.0
+      },
+      "rhs": {
+        "real": -0.005226344345286677,
+        "imag": 0.0
+      },
+      "absolute_error": 1.2995815612884543e-09,
+      "relative_error": 2.4865976587640424e-07,
+      "epsilon": 0.0001,
+      "taylor_remainder_plus": 1.392445638092276e-10,
+      "taylor_remainder_minus": 1.389221527395821e-10
+    }
+  ],
+  "repair": "A fresh final unit run declares h3e-4,1e-4,3e-5 before running, keeps1e-5 threshold, and passes. No native or adjoint numerical code change.",
+  "final_unit": "../psv_negative_lambda_20261107-vponly"
+}
