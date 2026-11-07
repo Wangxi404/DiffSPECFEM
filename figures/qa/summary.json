@@ -1,0 +1,57 @@
+[
+  {
+    "check": "source-validation",
+    "exit_code": 0,
+    "log": "figures/qa/source-validation.log"
+  },
+  {
+    "check": "01_models.text",
+    "exit_code": 0,
+    "log": "figures/qa/01_models.text.log"
+  },
+  {
+    "check": "01_models.collision",
+    "exit_code": 0,
+    "log": "figures/qa/01_models.collision.log"
+  },
+  {
+    "check": "02_native_wavefield.text",
+    "exit_code": 0,
+    "log": "figures/qa/02_native_wavefield.text.log"
+  },
+  {
+    "check": "02_native_wavefield.collision",
+    "exit_code": 0,
+    "log": "figures/qa/02_native_wavefield.collision.log"
+  },
+  {
+    "check": "03_data_and_adjoint_source.text",
+    "exit_code": 0,
+    "log": "figures/qa/03_data_and_adjoint_source.text.log"
+  },
+  {
+    "check": "03_data_and_adjoint_source.collision",
+    "exit_code": 0,
+    "log": "figures/qa/03_data_and_adjoint_source.collision.log"
+  },
+  {
+    "check": "04_spatial_gradients.text",
+    "exit_code": 0,
+    "log": "figures/qa/04_spatial_gradients.text.log"
+  },
+  {
+    "check": "04_spatial_gradients.collision",
+    "exit_code": 0,
+    "log": "figures/qa/04_spatial_gradients.collision.log"
+  },
+  {
+    "check": "05_taylor_evidence.text",
+    "exit_code": 0,
+    "log": "figures/qa/05_taylor_evidence.text.log"
+  },
+  {
+    "check": "05_taylor_evidence.collision",
+    "exit_code": 0,
+    "log": "figures/qa/05_taylor_evidence.collision.log"
+  }
+]

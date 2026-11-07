@@ -1,0 +1,333 @@
+{
+  "backend": "Python / matplotlib; no generated or synthetic scientific data",
+  "runtime": {
+    "python": "3.9.25",
+    "numpy": "2.0.2",
+    "matplotlib": "3.9.4",
+    "Pillow": "11.3.0"
+  },
+  "export_contract": "300 dpi PNG and editable PDF/SVG; fixed report canvases, no cropping",
+  "animation": {
+    "display_fps": 10,
+    "native_frames": 44,
+    "pixels": [
+      1860,
+      1830
+    ],
+    "playback_policy": "illustrative, actual native timestamps in titles"
+  },
+  "case": "examples/sh_two_layer_32",
+  "ranks": 2,
+  "data_shape": [
+    4,
+    800
+  ],
+  "unique_physical_nodes": 16641,
+  "local_node_count_sum": 16786,
+  "duplicated_interface_nodes": 145,
+  "shared_node_merge": "exact x,z match; all extracted displacement/acceleration states bitwise equal; multiplicities checked",
+  "display_axis_canonicalization": "round physical coordinates to 12 decimal places in meters only to remove element-arithmetic axis roundoff; unique node count unchanged",
+  "max_display_coordinate_rounding_m": 6.821210263296962e-13,
+  "history_trace_reconstruction_linf": 0.0,
+  "frame_extraction": {
+    "sources": [
+      {
+        "file": "ds_rank000000_history.bin",
+        "bytes": 107430412,
+        "sha256": "cb5234f37531d63e2b6db39895cae4e5cedc89235173ccf7a5ff90cd791fab68",
+        "header_nglob_nstep_nrecloc": [
+          8393,
+          800,
+          3
+        ]
+      },
+      {
+        "file": "ds_rank000001_history.bin",
+        "bytes": 107430412,
+        "sha256": "0408906bed2ac2fe97e1754d15636fa5bd8bc87cef5e17f2d6e2cf292de34b5b",
+        "header_nglob_nstep_nrecloc": [
+          8393,
+          800,
+          1
+        ]
+      }
+    ],
+    "selection": "union(range(0,800,20), [199,399,599,799]); no spatial subsampling",
+    "layout": "native post-step [frame, field=(displacement,acceleration), local_node]",
+    "dt_s": 0.001,
+    "user_t0_s": 0.22,
+    "native_elapsed_s": [
+      0.001,
+      0.021,
+      0.041,
+      0.061,
+      0.081,
+      0.101,
+      0.121,
+      0.14100000000000001,
+      0.161,
+      0.181,
+      0.2,
+      0.201,
+      0.221,
+      0.241,
+      0.261,
+      0.281,
+      0.301,
+      0.321,
+      0.341,
+      0.361,
+      0.381,
+      0.4,
+      0.401,
+      0.421,
+      0.441,
+      0.461,
+      0.481,
+      0.501,
+      0.521,
+      0.541,
+      0.561,
+      0.581,
+      0.6,
+      0.601,
+      0.621,
+      0.641,
+      0.661,
+      0.681,
+      0.7010000000000001,
+      0.721,
+      0.741,
+      0.761,
+      0.781,
+      0.8
+    ],
+    "upstream_trace_label_s": [
+      -0.22,
+      -0.2,
+      -0.18,
+      -0.16,
+      -0.14,
+      -0.12,
+      -0.1,
+      -0.07999999999999999,
+      -0.06,
+      -0.04000000000000001,
+      -0.02099999999999999,
+      -0.01999999999999999,
+      0.0,
+      0.01999999999999999,
+      0.04000000000000001,
+      0.060000000000000026,
+      0.07999999999999999,
+      0.1,
+      0.12000000000000002,
+      0.13999999999999999,
+      0.16,
+      0.17900000000000002,
+      0.18000000000000002,
+      0.19999999999999998,
+      0.22,
+      0.24000000000000002,
+      0.26,
+      0.28,
+      0.30000000000000004,
+      0.32000000000000006,
+      0.3400000000000001,
+      0.36,
+      0.379,
+      0.38,
+      0.4,
+      0.42000000000000004,
+      0.44000000000000006,
+      0.4600000000000001,
+      0.4800000000000001,
+      0.5,
+      0.52,
+      0.54,
+      0.56,
+      0.5790000000000001
+    ]
+  },
+  "source_xy_km": [
+    0.65,
+    -0.65
+  ],
+  "receiver_xy_km": [
+    [
+      0.85,
+      -0.45
+    ],
+    [
+      1.15,
+      -1.15
+    ],
+    [
+      0.85,
+      -0.45
+    ],
+    [
+      1.45,
+      -0.55
+    ]
+  ],
+  "source_and_receiver_policy": "all 4 receivers retained, including duplicate; full 2 km square retained",
+  "model_policy": "exact native two-region map; reference/start is heterogeneous; target log perturbation [.025,-.02,.035,-.03]; no Gaussian smoothing",
+  "wavefield_policy": "nearest-cell display of all 16641 physical GLL nodes; no interpolation to a regular pixel grid; 44 declared native times",
+  "wavefield_common_limit_mm": 3.671959648383397,
+  "gradient_policy": "sum each element\u2019s 25 discrete GLL coefficient derivatives; includes quadrature/Jacobian, not continuous density; no smoothing/clipping/scaling",
+  "processed_regional_gradient_from_maps": [
+    0.00431406502728369,
+    -3.395908729042496e-05,
+    0.037222058415139356,
+    0.7937745482912737
+  ],
+  "processed_regional_gradient_saved": [
+    0.00431406502728369,
+    -3.395908729042149e-05,
+    0.03722205841513935,
+    0.7937745482912735
+  ],
+  "objective_units": {
+    "l2": "m\u00b2",
+    "processed": "dimensionless"
+  },
+  "ad_cotangent_policy": "dJ/dd at same native post-step sample; no dt multiplication, sign change, time reversal or source-force conversion",
+  "source_files": [
+    {
+      "file": "diffspecfem/adapter.py",
+      "bytes": 5414,
+      "sha256": "1bf3b3db37061dfec62c8ef8940c1e5e6cf9806c569b8909ad207c5b0dc1ab28"
+    },
+    {
+      "file": "evidence/mpi2/validation.json",
+      "bytes": 46153,
+      "sha256": "e44629f40ecb565b8e2b6941a764607107d905ad6b721cb148edbb2818a7930f"
+    },
+    {
+      "file": "evidence/mpi2_32/gradient_l2/OUTPUT_FILES/XX.R01.BXY.semd",
+      "bytes": 44000,
+      "sha256": "4fa9c2159c52223604c970fbc27b139ddd281e849a5acb6252e9f56a0537a451"
+    },
+    {
+      "file": "evidence/mpi2_32/gradient_l2/OUTPUT_FILES/ds_rank000000_sampling.txt",
+      "bytes": 3450,
+      "sha256": "c86562c20705643bab60d049b9abe2c1a7ef0a85493bfb3d504d4a03fd060e54"
+    },
+    {
+      "file": "evidence/mpi2_32/gradient_l2/OUTPUT_FILES/ds_rank000000_sampling_native_nodes.txt",
+      "bytes": 1141448,
+      "sha256": "594338365e4c17278ded84c7072d646e4fc2f2d32bb25ae12156e440fd85ba4e"
+    },
+    {
+      "file": "evidence/mpi2_32/gradient_l2/OUTPUT_FILES/ds_rank000001_sampling.txt",
+      "bytes": 1150,
+      "sha256": "a58e93fa02de04a0b795231620d9e1eefac5dbea57c9792ae50434bf90d248b7"
+    },
+    {
+      "file": "evidence/mpi2_32/gradient_l2/OUTPUT_FILES/ds_rank000001_sampling_native_nodes.txt",
+      "bytes": 1141448,
+      "sha256": "637da123c1ec81815c9939c92b78ef970719241577c3c3ec2c6f808fb3193696"
+    },
+    {
+      "file": "evidence/mpi2_32/gradient_l2/history_manifest.json",
+      "bytes": 339,
+      "sha256": "7b52d91cd34221aa8be22c8493787f1aeb768799d76237a8e6493fd24a5e1d78"
+    },
+    {
+      "file": "evidence/mpi2_32/gradient_l2.npz",
+      "bytes": 2305030,
+      "sha256": "d346ca5f7ab267aa5e35127716b09a02481d9cddb3545c3f7e05189c4809e979"
+    },
+    {
+      "file": "evidence/mpi2_32/gradient_processed/OUTPUT_FILES/ds_rank000000_raw_kernels.txt",
+      "bytes": 2572800,
+      "sha256": "4bfa5f686666372b52e7c00590a658ca4972881bf7464041059a602092895f57"
+    },
+    {
+      "file": "evidence/mpi2_32/gradient_processed/OUTPUT_FILES/ds_rank000001_raw_kernels.txt",
+      "bytes": 2572800,
+      "sha256": "f07c471934dd5993ad5fd6538a5210925866e4d747254b2c2c897bffd303a5b8"
+    },
+    {
+      "file": "evidence/mpi2_32/gradient_processed.npz",
+      "bytes": 2305030,
+      "sha256": "53193d342d9e6816cb57cb8834318b08d1da3b7073be0e1920fe60a0c0329f44"
+    },
+    {
+      "file": "evidence/mpi2_32/native_reference.npy",
+      "bytes": 25728,
+      "sha256": "e4b4654c705affdef6a89df5c94b0ddb90cc5dad65c4f08a475526c3adae09fa"
+    },
+    {
+      "file": "evidence/mpi2_32/target.npy",
+      "bytes": 25728,
+      "sha256": "183190a68939e116e8d1c55d0aebb3a2d83109f9a03119bd1cd7b00cdec90d60"
+    },
+    {
+      "file": "evidence/mpi2_32/validation.json",
+      "bytes": 46415,
+      "sha256": "762100a4e6879df84bdb91c473e3e1652513d2d275e3f89e2205b1c1fcb8d1b0"
+    },
+    {
+      "file": "evidence/visuals/native_frames_mpi2_32.npz",
+      "bytes": 11097913,
+      "sha256": "a80caa89144232b87a7fe4d6198b3350f71f0c4676d2671eeb5e1bfcd5bafa24"
+    },
+    {
+      "file": "examples/sh_two_layer_32/DATA/Par_file",
+      "bytes": 24229,
+      "sha256": "694fc5586a23dd15ae8eaa82dc6e4d3bdff29315d6b7ca4d68360a88d64acc5a"
+    },
+    {
+      "file": "examples/sh_two_layer_32/DATA/SOURCE",
+      "bytes": 3518,
+      "sha256": "3348a415f939eb3c784af1281347322ba577c77ceebf257063a10acd291f6f3c"
+    },
+    {
+      "file": "examples/sh_two_layer_32/DATA/STATIONS",
+      "bytes": 83,
+      "sha256": "0ac56afc2b785fdf5578fa6dca7ff3d9b1278e60059e95f8691c439249114606"
+    },
+    {
+      "file": "native/discrete_adjoint.f90",
+      "bytes": 8459,
+      "sha256": "f1fff5c7a0bf4a73c1f6237091ee1dec8b7783ad288f43d7ffb706cb2048a65c"
+    },
+    {
+      "file": "scripts/extract_native_frames.py",
+      "bytes": 1972,
+      "sha256": "21b3de67f86b7c8ca668c2827141f74feea571bff8e83c121a032b3ac27d9d18"
+    },
+    {
+      "file": "scripts/validate_mpi.py",
+      "bytes": 6222,
+      "sha256": "7833000a6a1d841a5c4a018841b795047e55b8c80d4d49a6a01efb6bed34b0d5"
+    },
+    {
+      "file": "scripts/visualize_evidence.py",
+      "bytes": 22386,
+      "sha256": "44afe1d6fb2d1cdbbe2fa5cace5b2367b5f4737a4e81eb90d6b5cdb031b1bd86"
+    }
+  ],
+  "outputs": [
+    "figures/01_models.pdf",
+    "figures/01_models.png",
+    "figures/01_models.svg",
+    "figures/02_native_wavefield.pdf",
+    "figures/02_native_wavefield.png",
+    "figures/02_native_wavefield.svg",
+    "figures/03_data_and_adjoint_source.pdf",
+    "figures/03_data_and_adjoint_source.png",
+    "figures/03_data_and_adjoint_source.svg",
+    "figures/04_spatial_gradients.pdf",
+    "figures/04_spatial_gradients.png",
+    "figures/04_spatial_gradients.svg",
+    "figures/05_taylor_evidence.pdf",
+    "figures/05_taylor_evidence.png",
+    "figures/05_taylor_evidence.svg",
+    "figures/FIGURE_CONTRACT.md",
+    "figures/native_sh_wavefield.gif"
+  ],
+  "limits": "Fixed discrete SH test, four regional parameters, two MPI ranks; grid/source guidance is not continuum convergence or full-field inversion."
+}

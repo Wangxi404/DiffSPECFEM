@@ -9,6 +9,47 @@ The new extension is copyright 2026 Sid and licensed GPL-3.0-or-later.
 Upstream SPECFEM2D author notices are retained under GPL-3.0-or-later; see
 `NOTICE` and the complete license text in `LICENSE`.
 
+## See the native evidence
+
+The animation is extracted from the **actual validated 32×32, two-rank native
+SH histories**, with a fixed displacement scale and the complete 2 km square.
+It uses the heterogeneous reference/starting model. All plots below use real
+native arrays; the target changes four regional log parameters.
+
+![Actual native SH wavefield, 44 saved post-step states](figures/native_sh_wavefield.gif)
+
+| Physical contrast | Spatial native gradient |
+|---|---|
+| [![Starting and target density/Vs maps](figures/01_models.png)](figures/01_models.pdf) | [![Raw native coefficient and log-coordinate gradients](figures/04_spatial_gradients.png)](figures/04_spatial_gradients.pdf) |
+| Exact two-layer starting/target models and differences; shared scales. | Raw SEM coefficient derivatives summed within each element; no smoothing. |
+| **Data → AD cotangent** | **Independent native perturbation checks** |
+| [![Target, starting, residual and AD data source](figures/03_data_and_adjoint_source.png)](figures/03_data_and_adjoint_source.pdf) | [![Every declared Taylor epsilon and centered derivative error](figures/05_taylor_evidence.png)](figures/05_taylor_evidence.pdf) |
+| All four receivers and 800 native samples, including the duplicate station. | Both objectives, three parameter directions and all eight epsilons. |
+
+Full-size plates, legends, exact sampling rules and QA are in the
+[visual report](VISUAL_REPORT.md). Each PNG has an editable PDF/SVG companion;
+[native snapshots](figures/02_native_wavefield.pdf),
+[source data and hashes](evidence/visuals/manifest.json) and
+[rendering code](scripts/visualize_evidence.py) are included.
+
+| Validated quantity | 32×32 native SH case |
+|---|---:|
+| Native MPI ranks / unique physical nodes | 2 / 16,641 |
+| Time steps / DT / source peak frequency | 800 / 0.001 s / 6 Hz |
+| Native source-frequency recommendation | ≤ 8.192 Hz |
+| Original-native vs extension forward traces | Bitwise identical |
+| L2 / processed model-dot relative error | 1.113×10⁻⁹ / 1.215×10⁻⁹ |
+| Native sampling/scatter dot relative error | 1.214×10⁻¹⁶ |
+| Full-history sampling-to-trace relative error | 1.568×10⁻¹⁶ |
+| Selected plotted histories → saved traces | Exact in the visualization check |
+| Production propagation per gradient | 1 native forward + 1 native adjoint |
+
+This is a fixed discrete differentiation test with four regional coordinates.
+The reference is a real two-layer model, not a Gaussian-blurred full-field
+starting model. The 32×32 case meets native grid/source guidance; this is not a
+continuum-convergence or full-field inversion claim. The original coarse and
+failed validation attempts remain documented below and in `REPORT.md`.
+
 This is a deliberately bounded application of the frozen generic skill
 `differentiate-seismic-solver` v0.1.0. The original frozen packet is unchanged;
 its SHA256 is `b09e0ee57324f715b80178c2a30cb26a2140b1ea3d5545ad8b15dc5680dca49f`

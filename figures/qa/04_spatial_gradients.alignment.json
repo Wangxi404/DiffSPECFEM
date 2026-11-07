@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "applicable": true,
+  "auditable": true,
+  "verdict": "PASS",
+  "backend": "python-matplotlib",
+  "summary": {
+    "fail": 0,
+    "warn": 0,
+    "comparisons": 4,
+    "exemptions": 0
+  },
+  "tolerances": {
+    "alignment_pt": 1.5,
+    "gutter_pt": 1.5
+  },
+  "layout": {
+    "schema_version": 1,
+    "backend": "python-matplotlib",
+    "figure": {
+      "width_pt": 633.6,
+      "height_pt": 604.8000000000001
+    },
+    "panels": [
+      {
+        "id": "a",
+        "bbox_pt": [
+          111.3967426093812,
+          414.4989767441861,
+          241.21776586519513,
+          544.32
+        ],
+        "grid_id": "matplotlib-grid-1",
+        "row_start": 0,
+        "row_stop": 1,
+        "col_start": 0,
+        "col_stop": 3
+      },
+      {
+        "id": "b",
+        "bbox_pt": [
+          427.2302341348049,
+          414.4989767441861,
+          557.0512573906188,
+          544.32
+        ],
+        "grid_id": "matplotlib-grid-2",
+        "row_start": 0,
+        "row_stop": 1,
+        "col_start": 0,
+        "col_stop": 3
+      },
+      {
+        "id": "c",
+        "bbox_pt": [
+          111.39674260938116,
+          125.6014883720931,
+          241.21776586519513,
+          255.42251162790706
+        ],
+        "grid_id": "matplotlib-grid-3",
+        "row_start": 0,
+        "row_stop": 1,
+        "col_start": 0,
+        "col_stop": 3
+      },
+      {
+        "id": "d",
+        "bbox_pt": [
+          427.2302341348049,
+          125.6014883720931,
+          557.0512573906188,
+          255.42251162790706
+        ],
+        "grid_id": "matplotlib-grid-4",
+        "row_start": 0,
+        "row_stop": 1,
+        "col_start": 0,
+        "col_stop": 3
+      }
+    ],
+    "row_groups": [
+      {
+        "id": "row-1",
+        "panels": [
+          "a",
+          "b"
+        ]
+      },
+      {
+        "id": "row-2",
+        "panels": [
+          "c",
+          "d"
+        ]
+      }
+    ],
+    "column_groups": [
+      {
+        "id": "column-1",
+        "panels": [
+          "a",
+          "c"
+        ]
+      },
+      {
+        "id": "column-2",
+        "panels": [
+          "b",
+          "d"
+        ]
+      }
+    ],
+    "boundary_groups": [],
+    "exemptions": []
+  },
+  "findings": []
+}
